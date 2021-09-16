@@ -1,0 +1,42 @@
+:root {
+    --primary-main: #a65cf0;
+    --primary-light: #c998fb;
+    --primary-shade: #7033ac;
+    --pink-light: #f8efff;
+    --pink-violet: #ebd1ff;
+    --secondary-main: #ff862f;
+    --secondary-light: #ffbd59;
+    --secondary-shade: #bb370e;
+    --red-input: #ff6972;
+    --green-input: #b8ec64;
+    --gold: #d5b986;
+    --white: #fff;
+    --grey-light: #f6f6f6;
+    --md-grey: #eaeaea;
+    --grey: #999;
+    --grey-shade: #666;
+    --black: #333;
+    --lime-color: #daffd1;
+  }
+
+  $breakpoints: (
+  xs: 576px,
+  sm: 767px,
+  md: 1023px,
+  lg: 1200px,
+  xl: 1920px,
+);
+
+// $breakpoints: (
+//   xxxs: 320px,
+//   xxs: 355px,
+//   xxs: 484px,
+//   xs: 570px,
+//   sm: 700px,
+//   md: 767px,
+//   lg: 860px,
+//   xl: 960px,
+//   xxl: 1023px,
+//   xxxl: 1200px,
+//   xxxxl: 1320px,
+// );

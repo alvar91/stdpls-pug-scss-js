@@ -1,0 +1,79 @@
+.fa {
+  margin-right: 14px;
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  color: transparent;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to top, #f26522, #fa0891 99%);
+  background-clip: text;
+  width: 20px;
+  
+  &--phone {
+    color: transparent;
+    transform: rotate(90deg);
+    background: linear-gradient(to bottom, #f26522, #fa0891 99%);
+    background-clip: text;
+  }
+
+  &--phone::before {
+    content: "\f095";
+  }
+
+  &--envelope:before {
+    content: "\f0e0";
+  }
+
+  &--user:before {
+    content: "\f007";
+  }
+
+  &--link:before {
+    content: "\f0c1";
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 950px) {
+  .fa {
+    &--phone {
+      font-size: 18px;
+    }
+
+    &--envelope {
+      font-size: 18px;
+    }
+
+    &--user {
+      font-size: 18px;
+    }
+
+    &--link {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 1330px) {
+  .fa {
+    &--phone {
+      font-size: 20px;
+    }
+
+    &--envelope {
+      font-size: 20px;
+    }
+
+    &--user {
+      font-size: 20px;
+    }
+
+    &--link {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+include ./mixins.pug
+
+- var listItemsTop = {"about": "О компании", "guarantee": "Гарантия и возврат", "corporate": "Корпоративным клиентам", "design": "Дизайн-решение"}
+- var listItemsMiddle = {"catalog": "Каталог", "shop": "Магазины", "showroom": "Шоу-рум", "delivery":"Доставка и оплата", "discount":"Дисконт", "contacts": "Контакты"}
+- var cities = {"moscow": {"label": "Москва", "selected": "true"}, "kazan": {"label": "Казань", "selected": "false"}, "ufa": {"label": "Уфа","selected": "false"}, "perm": {"label": "Пермь","selected": "false"}}
+- var categories = {"category": {"label": "Категория","selected": "true"}, "armchairs": {"label": "Кресла", "selected": "false"}, "pouf": {"label": "Пуфы", "selected": "false"}, "bed": {"label": "Кровати", "selected": "false"}, "stand": {"label": "Тумбы", "selected": "false"},"commode": {"label": "Комоды","selected": "false"},"chair": {"label": "Стулья","selected": "false"},"table": {"label": "Столы", "selected": "false"}, "accesuar": {"label": "Акксесуары","selected": "false"}}
+- var goodsCount = 0
+
+header.header
+    .header-top
+        .logo-mobile__wrapper
+            a(href="/" class="header__logo" aria-label="Ссылка на главную страницу")
+                +logo()
+            </a>
+        .container.header-top__container
+            label.city-label
+                | Ваш регион:
+                select(name="city-select" id="#city-select" class="city-select" data-trigger)
+                    +optionsMenu(cities)
+
+            a(href="tel:+74958854547" class="tel-number")
+                +phoneIcon()
+                span
+                    | +7 (495) 885-45-47
+            nav.header-top__nav.desktop-nav
+                +listMenu("header-top", listItemsTop)
+
+        .tablet-nav__wrapper
+            .container
+                .tablet-nav__container
+                    nav.header-top__nav.tablet-nav
+                        +listMenu("header-top", listItemsTop)
+                    +headerBox(goodsCount)
+
+    .header-middle
+        .container.header-middle__container
+            button.burger
+                span.burger__line
+                span.burger__line
+                span.burger__line
+
+            a(href="/" class="header__logo header__logo--middle")
+                +logo()
+
+            nav.header__nav
+                +listMenu("header-middle", listItemsMiddle)
+            +headerBox()
+    .header-bottom
+        .container.header-bottom__container
+            form(class="search-form" tabindex="0" aria-label="Форма поиска по сайту")
+                input(type="search" name="search" id="type-search" placeholder="Я хочу купить..." class="search-form__input")
+                button(class="header__search-btn btn-reset" type="submit" aria-label="Поиск по сайту")
+                    span.btn-arrow
+            label.header-bottom__label
+                select(name="furnitures" id="header-bottom__select")
+                    +optionsMenu(categories)
+            +headerBox()

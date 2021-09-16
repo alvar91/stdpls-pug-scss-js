@@ -1,0 +1,12 @@
+.error {
+    display: flex;
+    flex-direction: column;
+  &__title {
+    margin: 0 auto 42px;
+  }
+  &__link {
+    margin: 0;
+    @include font(15px, 400);
+    line-height: 30px;
+  }
+}

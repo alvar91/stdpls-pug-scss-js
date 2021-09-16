@@ -1,0 +1,41 @@
+{
+  "name": "stdpls-pug-scss-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:alvar91/skillbox-diploma-pug-scss-jquery.git",
+  "author": "Aleksey <aleksey91scorp@bk.ru>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gulp --mode development",
+    "build": "gulp build --mode production",
+    "deploy": "gulp build && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "del": "^5.1.0",
+    "gh-pages": "^2.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-cli": "^2.2.0",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-load-plugins": "^2.0.2",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-util": "^3.0.8",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "choices.js": "^9.0.1",
+    "nouislider": "^15.2.0",
+    "swiper": "^6.7.5"
+  }
+}

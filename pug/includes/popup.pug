@@ -1,0 +1,23 @@
+section.popup.js-form
+    .popup__content.js-content
+        h2.popup__title
+            | Оставить заявку
+        button(type="button" class="popup__button-close js-form-close")
+        p.popup__text
+            | Заполните форму ниже и я свяжусь с вами в ближайшее время!
+        form(class="form" id="order-form" action="#")
+            label.form__group
+                i(class="fa fa--user")
+                input(class="input" name="name" type="text" placeholder="Ваше имя" required minlength=2)
+            label.form__group
+                i(class="fa fa--envelope")
+                input(class="input" name="email" type="email" placeholder="Ваш e-mail" required)
+            label.form__group
+                i(class="fa fa--phone")
+                input(class="input" name="phone" placeholder="Ваш номер телефона" type="tel" required)
+            label.form__check
+                    input(name="checkbox" type="checkbox")
+                    span
+                        | Подтверждаю согласие на обработку своих персональных данных            
+            button(class="button button--red" type="submit")
+                | Оставить заявку
