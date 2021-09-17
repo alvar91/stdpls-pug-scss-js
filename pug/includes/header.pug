@@ -20,7 +20,7 @@ header.header
 
             a(href="tel:+74958854547" class="tel-number")
                 +phoneIcon()
-                span
+                span.tel-number__text
                     | +7 (495) 885-45-47
             nav.header-top__nav.desktop-nav
                 +listMenu("header-top", listItemsTop)
@@ -49,7 +49,7 @@ header.header
         .container.header-bottom__container
             form(class="search-form" tabindex="0" aria-label="Форма поиска по сайту")
                 input(type="search" name="search" id="type-search" placeholder="Я хочу купить..." class="search-form__input")
-                button(class="header__search-btn btn-reset" type="submit" aria-label="Поиск по сайту")
+                button(class="header__search-btn" type="submit" aria-label="Поиск по сайту")
                     span.btn-arrow
             label.header-bottom__label
                 select(name="furnitures" id="header-bottom__select")

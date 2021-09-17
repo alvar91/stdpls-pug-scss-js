@@ -12,17 +12,16 @@ body {
   margin: 0;
   padding: 0;
   min-width: 320px;
-  font-family: "Roboto", "Arial", sans-serif;
-  //color: $font-grey;
+  font-family: "OpenSans", "Arial", sans-serif;
   background-color: var(--white);
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
  
-
 body::-webkit-scrollbar-thumb {
   background-color: var(--primary-main);
   outline: 1px solid var(--white);
@@ -32,25 +31,35 @@ a {
   display: inline-block;
   margin: 0;
   text-decoration: none;
-  transition-duration: 0.2s;
-  transition-timing-function: ease;
+  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
 
   &:hover {
     color: var(--primary-main);
+    transition: color 0.3s ease;
   }
 
-  &:active,
+  &:active {
+    outline: none;
+    color: var(--primary-shade);
+    background-color: transparent;
+    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
+  }
+
   &:focus {
     outline: none;
     color: var(--primary-shade);
     background-color: var(--pink-violet);
+    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
   }
 }
 
-// img {
-//   max-width: 100%;
-//   height: auto;
-// }
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 .visually-hidden {
   position: absolute!important;
@@ -60,4 +69,21 @@ a {
   height: 1px!important;
   width: 1px!important;
   overflow: hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
 }

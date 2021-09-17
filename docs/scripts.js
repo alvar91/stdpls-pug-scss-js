@@ -109,43 +109,43 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  'use strict';
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
 
-  var choices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a('[data-trigger]', {
+  var choices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a("[data-trigger]", {
     searchEnabled: false,
-    itemSelectText: ''
+    itemSelectText: ""
   });
-  var selectchoices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a('#header-bottom__select', {
+  var selectchoices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a("#header-bottom__select", {
     searchEnabled: false,
-    itemSelectText: ''
+    itemSelectText: ""
   });
-  var swiperPromo = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.promo__swiper.swiper-container', {
-    direction: 'horizontal',
+  var swiperPromo = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".promo__swiper.swiper-container", {
+    direction: "horizontal",
     slidesPerGroup: 1,
     slidesPerColumn: 1,
     slidesPerView: 1,
     loop: true,
-    effect: 'fade',
+    effect: "fade",
     fadeEffect: {
       crossFade: true
     },
     pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets'
+      el: ".swiper-pagination",
+      type: "bullets"
     },
     autoplay: {
       delay: 3000
     }
   });
-  var offersSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.offer_cards__field.swiper-container', {
-    direction: 'horizontal',
+  var offersSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".offer_cards__field.swiper-container", {
+    direction: "horizontal",
     slidesPerColumn: 1,
-    slidesPerView: 'auto',
+    slidesPerView: "auto",
     spaceBetween: 32,
     navigation: {
-      nextEl: '.offer__button_next',
-      prevEl: '.offer__button_prev'
+      nextEl: ".offer__button_next",
+      prevEl: ".offer__button_prev"
     },
     breakpoints: {
       320: {
@@ -159,14 +159,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
-  var usefulSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.useful__swiper.swiper-container', {
-    direction: 'horizontal',
+  var usefulSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".useful__swiper.swiper-container", {
+    direction: "horizontal",
     slidesPerColumn: 1,
-    slidesPerView: 'auto',
+    slidesPerView: "auto",
     spaceBetween: 32,
     navigation: {
-      nextEl: '.useful__button_next',
-      prevEl: '.useful__button_prev'
+      nextEl: ".useful__button_next",
+      prevEl: ".useful__button_prev"
     },
     breakpoints: {
       320: {
@@ -182,9 +182,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
-  var catalogSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper-container.catalog_products__field', {
-    direction: 'horizontal',
-    slidesPerColumnFill: 'row',
+  var catalogSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-container.catalog_products__field", {
+    direction: "horizontal",
+    slidesPerColumnFill: "row",
     breakpoints: {
       1: {
         slidesPerGroup: 2,
@@ -206,36 +206,36 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     },
     pagination: {
-      el: '.catalog_pagination.swiper-pagination',
+      el: ".catalog_pagination.swiper-pagination",
       clickable: true,
       renderBullet: function renderBullet(index, className) {
         return '<span class="' + className + '">' + (index + 1) + "</span>";
       }
     }
   });
-  var productSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper-container.product__swiper', {
-    direction: 'horizontal',
+  var productSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-container.product__swiper", {
+    direction: "horizontal",
     breakpoints: {
       300: {
         slidesPerGroup: 2,
         slidesPerColumn: 1,
-        slidesPerView: 'auto',
+        slidesPerView: "auto",
         spaceBetween: 16
       },
       767: {
         slidesPerGroup: 2,
         slidesPerColumn: 1,
-        slidesPerView: 'auto',
+        slidesPerView: "auto",
         spaceBetween: 32
       }
     },
     navigation: {
-      nextEl: '.product__button_next',
-      prevEl: '.product__button_prev'
+      nextEl: ".product__button_next",
+      prevEl: ".product__button_prev"
     }
   });
-  var modalSwiperThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper-container.slider__thumbs', {
-    direction: 'horizontal',
+  var modalSwiperThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-container.slider__thumbs", {
+    direction: "horizontal",
     breakpoints: {
       319: {
         spaceBetween: 63,
@@ -259,11 +259,11 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     },
     navigation: {
-      nextEl: '.slider__thumbs_next',
-      prevEl: '.slider__thumbs_prev'
+      nextEl: ".slider__thumbs_next",
+      prevEl: ".slider__thumbs_prev"
     }
   });
-  var modalSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper-container.modal__slider', {
+  var modalSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-container.modal__slider", {
     loop: true,
     spaceBetween: 10,
     slidesPerView: 1,
@@ -272,35 +272,35 @@ document.addEventListener('DOMContentLoaded', function () {
       swiper: modalSwiperThumbs
     }
   });
-  var productCards = document.querySelectorAll('.product__item');
-  var mainPageProductBtn = document.querySelector('.product_btn');
+  var productCards = document.querySelectorAll(".product__item");
+  var mainPageProductBtn = document.querySelector(".product_btn");
 
   if (mainPageProductBtn) {
-    mainPageProductBtn.addEventListener('click', function () {
-      if (!mainPageProductBtn.classList.contains('active')) {
+    mainPageProductBtn.addEventListener("click", function () {
+      if (!mainPageProductBtn.classList.contains("active")) {
         productCards.forEach(function (el) {
-          if (el.classList.contains('display_none')) {
-            el.classList.remove('display_none');
-            el.classList.add('display_block');
+          if (el.classList.contains("display_none")) {
+            el.classList.remove("display_none");
+            el.classList.add("display_block");
           }
         });
-        mainPageProductBtn.textContent = 'Свернуть';
-        mainPageProductBtn.classList.add('active');
+        mainPageProductBtn.textContent = "Свернуть";
+        mainPageProductBtn.classList.add("active");
       } else {
         productCards.forEach(function (el) {
-          if (el.classList.contains('display_block')) {
-            el.classList.remove('display_block');
-            el.classList.add('display_none');
+          if (el.classList.contains("display_block")) {
+            el.classList.remove("display_block");
+            el.classList.add("display_none");
           }
         });
-        mainPageProductBtn.textContent = 'Смотреть больше товаров';
-        mainPageProductBtn.classList.remove('active');
+        mainPageProductBtn.textContent = "Смотреть больше товаров";
+        mainPageProductBtn.classList.remove("active");
       }
     });
   }
 
-  var rangeSlider = document.querySelector('.fiter__range');
-  var rangeInputs = document.querySelectorAll('.input_number');
+  var rangeSlider = document.querySelector(".fiter__range");
+  var rangeInputs = document.querySelectorAll(".input_number");
 
   if (rangeSlider) {
     nouislider__WEBPACK_IMPORTED_MODULE_2___default.a.create(rangeSlider, {
@@ -309,11 +309,11 @@ document.addEventListener('DOMContentLoaded', function () {
       step: 25000,
       keyboardSupport: true,
       range: {
-        'min': [2000],
-        'max': [250000]
+        min: [2000],
+        max: [250000]
       }
     });
-    rangeSlider.noUiSlider.on('update', function (values, handle) {
+    rangeSlider.noUiSlider.on("update", function (values, handle) {
       rangeInputs[handle].value = Math.round(values[handle]);
     });
 
@@ -324,77 +324,95 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     rangeInputs.forEach(function (item, i) {
-      item.addEventListener('change', function (e) {
+      item.addEventListener("change", function (e) {
         setRangeSlider(i, e.currentTarget.value);
       });
     });
   }
 
-  var handles = document.querySelectorAll('.noUi-handle');
-  var noUiLine = document.querySelector('.noUi-connect');
+  var handles = document.querySelectorAll(".noUi-handle");
+  var noUiLine = document.querySelector(".noUi-connect");
   handles.forEach(function (el) {
-    el.addEventListener('focus', function () {
-      noUiLine.style.background = '#7033ac';
+    el.addEventListener("focus", function () {
+      noUiLine.style.background = "#7033ac";
     });
   });
   handles.forEach(function (el) {
-    el.addEventListener('blur', function () {
-      noUiLine.style.background = '#a65cf0';
+    el.addEventListener("blur", function () {
+      noUiLine.style.background = "#a65cf0";
     });
   });
-  var burger = document.querySelector('.burger');
-  var hederNav = document.querySelector('.header__nav');
+  var burger = document.querySelector(".burger");
+  var headerNav = document.querySelector(".header__nav");
+
+  function closeMenu() {
+    burger.classList.remove("active");
+    headerNav.classList.remove("active");
+  }
+
+  function openMenu() {
+    burger.classList.add("active");
+    headerNav.classList.add("active");
+  }
 
   if (burger) {
-    burger.addEventListener('click', function () {
-      burger.classList.toggle('active');
-      hederNav.classList.toggle('active');
-    });
-    burger.addEventListener('keydown', function (e) {
-      if (e.code == 'Enter') {
-        burger.classList.toggle('active');
-        hederNav.classList.toggle('active');
+    document.body.addEventListener("click", function (e) {
+      var target = e.target;
+
+      if (!target.closest(".active")) {
+        closeMenu();
       }
+    });
+    burger.addEventListener("click", function () {
+      if (burger.classList.contains("active")) {
+        closeMenu();
+        return;
+      }
+
+      openMenu();
+    });
+    window.addEventListener("resize", function () {
+      closeMenu();
     });
   }
 
-  var feedbackName = document.querySelector('.feedback__name');
-  var nameAlert = document.querySelector('.name_alert');
-  var feedbackForm = document.querySelector('.feedback__form');
+  var feedbackName = document.querySelector(".feedback__name");
+  var nameAlert = document.querySelector(".name_alert");
+  var feedbackForm = document.querySelector(".feedback__form");
 
   if (feedbackForm) {
-    feedbackForm.addEventListener('submit', function (e) {
+    feedbackForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
       if (feedbackName.value.match(/\w/g)) {
-        nameAlert.style.color = '#ff6972';
-        feedbackName.classList.add('alert');
+        nameAlert.style.color = "#ff6972";
+        feedbackName.classList.add("alert");
       } else {
-        nameAlert.style.color = 'transparent';
-        feedbackName.classList.remove('alert');
+        nameAlert.style.color = "transparent";
+        feedbackName.classList.remove("alert");
         feedbackForm.reset();
-        modalField.classList.add('active');
+        modalField.classList.add("active");
         disableScroll();
         setTimeout(function () {
-          modalField.classList.remove('active');
+          modalField.classList.remove("active");
           anableScroll();
         }, 3000);
       }
     });
   }
 
-  var filterOpen = document.querySelectorAll('.filters__open_btn');
-  var filterDropdown = document.querySelectorAll('.tablet_filter__inner');
+  var filterOpen = document.querySelectorAll(".filters__open_btn");
+  var filterDropdown = document.querySelectorAll(".tablet_filter__inner");
   filterOpen.forEach(function (item, i) {
-    item.addEventListener('click', function () {
-      item.classList.toggle('active');
-      filterDropdown[i].classList.toggle('active');
+    item.addEventListener("click", function () {
+      item.classList.toggle("active");
+      filterDropdown[i].classList.toggle("active");
     });
   });
-  var checkboxIinputs = document.querySelectorAll('.filter_checkbox');
-  var optionsField = document.querySelector('.catalog__options');
-  var checkboxName = document.querySelectorAll('.checkbox_name');
-  var checkboxCost = document.querySelectorAll('.checkbox_cost');
+  var checkboxIinputs = document.querySelectorAll(".filter_checkbox");
+  var optionsField = document.querySelector(".catalog__options");
+  var checkboxName = document.querySelectorAll(".checkbox_name");
+  var checkboxCost = document.querySelectorAll(".checkbox_cost");
 
   var openHiddenFilters = function openHiddenFilters(btnSelector, hiddenCategory, string) {
     var button = document.querySelectorAll(btnSelector);
@@ -402,11 +420,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (button) {
       button.forEach(function (element) {
-        element.addEventListener('click', function () {
-          element.classList.toggle('active');
+        element.addEventListener("click", function () {
+          element.classList.toggle("active");
 
-          if (element.classList.contains('active')) {
-            element.textContent = 'Свернуть';
+          if (element.classList.contains("active")) {
+            element.textContent = "Свернуть";
           } else {
             element.textContent = string;
           }
@@ -420,8 +438,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  openHiddenFilters('.filter__category__btn', '.filter_category__hidden', '+ еще 12');
-  openHiddenFilters('.filter__color__btn', '.filter__color_hidden', '+ еще 7');
+  openHiddenFilters(".filter__category__btn", ".filter_category__hidden", "+ еще 12");
+  openHiddenFilters(".filter__color__btn", ".filter__color_hidden", "+ еще 7");
 
   var Option = /*#__PURE__*/function () {
     function Option(selector, checkboxName, parentSelector) {
@@ -435,7 +453,7 @@ document.addEventListener('DOMContentLoaded', function () {
     _createClass(Option, [{
       key: "render",
       value: function render() {
-        var el = document.createElement('span');
+        var el = document.createElement("span");
         el.classList.add(this.selector);
         el.innerHTML = "".concat(this.checkboxName, "\n          <button class=\"catalog__option_btn btn_reset\">\n            <svg width=\"12\" height=\"12\" viewbox=\"0 0 12 12\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n              <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\n                d=\"M1.42872 0.238643L6.75487 5.42386C7.08171 5.74206 7.08171 6.25794 6.75487 6.57614L1.42872 11.7614C1.10188 12.0795 0.571969 12.0795 0.245129 11.7614C-0.0817098 11.4432 -0.0817098 10.9273 0.24513 10.6091L4.97949 6L0.24513 1.39091C-0.0817089 1.07272 -0.0817089 0.556834 0.24513 0.238643C0.57197 -0.0795478 1.10188 -0.0795477 1.42872 0.238643Z\" />\n              <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\n                d=\"M10.5713 0.238643L5.24513 5.42386C4.91829 5.74206 4.91829 6.25794 5.24513 6.57614L10.5713 11.7614C10.8981 12.0795 11.428 12.0795 11.7549 11.7614C12.0817 11.4432 12.0817 10.9273 11.7549 10.6091L7.02051 6L11.7549 1.39091C12.0817 1.07272 12.0817 0.556834 11.7549 0.238643C11.428 -0.0795478 10.8981 -0.0795477 10.5713 0.238643Z\" />\n            </svg>\n          </button>");
         this.parent.append(el);
@@ -452,7 +470,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   checkboxIinputs.forEach(function (item, i) {
-    item.addEventListener('click', function () {
+    item.addEventListener("click", function () {
       var currentName;
       checkboxName.forEach(function (item) {
         if (item) {
@@ -461,12 +479,12 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       if (item.checked == true) {
-        if (item.classList.contains('checkbox_category')) {
-          new Option('lime_color', currentName, '.catalog__options').render();
-        } else if (item.classList.contains('checkbox_sale')) {
-          new Option('pink_violet_color', currentName, '.catalog__options').render();
-        } else if (item.classList.contains('checkbox_color')) {
-          new Option('md_grey', currentName, '.catalog__options').render();
+        if (item.classList.contains("checkbox_category")) {
+          new Option("lime_color", currentName, ".catalog__options").render();
+        } else if (item.classList.contains("checkbox_sale")) {
+          new Option("pink_violet_color", currentName, ".catalog__options").render();
+        } else if (item.classList.contains("checkbox_color")) {
+          new Option("md_grey", currentName, ".catalog__options").render();
         }
       }
 
@@ -474,43 +492,43 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   checkboxCost.forEach(function (item) {
-    item.addEventListener('change', function () {
+    item.addEventListener("change", function () {
       var inputValue = item.value;
-      var el = document.createElement('span');
-      el.classList.add('bone_color');
+      var el = document.createElement("span");
+      el.classList.add("bone_color");
       el.innerHTML = "\u0414\u043E ".concat(inputValue, "\n          <button class=\"catalog__option_btn btn_reset\">\n            <svg width=\"12\" height=\"12\" viewbox=\"0 0 12 12\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n              <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\n                d=\"M1.42872 0.238643L6.75487 5.42386C7.08171 5.74206 7.08171 6.25794 6.75487 6.57614L1.42872 11.7614C1.10188 12.0795 0.571969 12.0795 0.245129 11.7614C-0.0817098 11.4432 -0.0817098 10.9273 0.24513 10.6091L4.97949 6L0.24513 1.39091C-0.0817089 1.07272 -0.0817089 0.556834 0.24513 0.238643C0.57197 -0.0795478 1.10188 -0.0795477 1.42872 0.238643Z\" />\n              <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\n                d=\"M10.5713 0.238643L5.24513 5.42386C4.91829 5.74206 4.91829 6.25794 5.24513 6.57614L10.5713 11.7614C10.8981 12.0795 11.428 12.0795 11.7549 11.7614C12.0817 11.4432 12.0817 10.9273 11.7549 10.6091L7.02051 6L11.7549 1.39091C12.0817 1.07272 12.0817 0.556834 11.7549 0.238643C11.428 -0.0795478 10.8981 -0.0795477 10.5713 0.238643Z\" />\n            </svg>\n          </button>");
-      document.querySelector('.catalog__options').append(el);
-      item.value = '';
+      document.querySelector(".catalog__options").append(el);
+      item.value = "";
     });
   });
 
   if (optionsField) {
-    optionsField.addEventListener('click', function (e) {
+    optionsField.addEventListener("click", function (e) {
       var target = e.target.parentElement;
 
-      if (target.classList.contains('catalog__option_btn') || target.tagName == 'svg') {
-        target.closest('span').remove();
+      if (target.classList.contains("catalog__option_btn") || target.tagName == "svg") {
+        target.closest("span").remove();
       }
     });
   }
 
-  var modalForm = document.querySelector('.modal__form');
-  var modalThank = document.createElement('div');
-  var modalWindow = document.querySelector('.modal');
-  var modalInner = document.querySelector('.modal__inner');
-  var productBtn = document.querySelector('.product__btn');
-  var modalField = document.querySelector('.modal__field');
-  var body = document.querySelector('body');
-  var modalCloseBtn = document.querySelector('.modal__close_btn');
-  var productImg = document.querySelector('.product__main_img');
-  var modalSlider = document.querySelector('.modal__slider__field');
-  var modalSliderCloseBtn = document.querySelector('.modal__slider__btn');
-  var modalSliderField = document.querySelector('.modal__slider__field');
-  var modalFixed = document.querySelectorAll('.fixed');
+  var modalForm = document.querySelector(".modal__form");
+  var modalThank = document.createElement("div");
+  var modalWindow = document.querySelector(".modal");
+  var modalInner = document.querySelector(".modal__inner");
+  var productBtn = document.querySelector(".product__btn");
+  var modalField = document.querySelector(".modal__field");
+  var body = document.querySelector("body");
+  var modalCloseBtn = document.querySelector(".modal__close_btn");
+  var productImg = document.querySelector(".product__main_img");
+  var modalSlider = document.querySelector(".modal__slider__field");
+  var modalSliderCloseBtn = document.querySelector(".modal__slider__btn");
+  var modalSliderField = document.querySelector(".modal__slider__field");
+  var modalFixed = document.querySelectorAll(".fixed");
 
   var disableScroll = function disableScroll() {
-    var scrollWidth = window.innerWidth - document.body.clientWidth + 'px';
-    body.style.overflow = 'hidden';
+    var scrollWidth = window.innerWidth - document.body.clientWidth + "px";
+    body.style.overflow = "hidden";
     modalFixed.forEach(function (el) {
       el.paddingRight = scrollWidth;
     });
@@ -518,7 +536,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   var anableScroll = function anableScroll() {
-    body.style.overflow = 'auto';
+    body.style.overflow = "auto";
     modalFixed.forEach(function (el) {
       el.paddingRight = 0;
     });
@@ -526,99 +544,99 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   if (productImg) {
-    productImg.addEventListener('click', function () {
-      modalSlider.classList.toggle('hidden');
+    productImg.addEventListener("click", function () {
+      modalSlider.classList.toggle("hidden");
       disableScroll();
     });
   }
 
   if (modalSliderCloseBtn) {
-    modalSliderCloseBtn.addEventListener('click', function () {
-      modalSlider.classList.toggle('hidden');
+    modalSliderCloseBtn.addEventListener("click", function () {
+      modalSlider.classList.toggle("hidden");
       anableScroll();
     });
   }
 
   if (modalSliderField) {
-    modalSliderField.addEventListener('click', function (e) {
+    modalSliderField.addEventListener("click", function (e) {
       var target = e.target;
 
       if (target == modalSliderField) {
-        modalSlider.classList.toggle('hidden');
+        modalSlider.classList.toggle("hidden");
         anableScroll();
       }
     });
   }
 
   if (productBtn) {
-    productBtn.addEventListener('click', function () {
-      modalField.classList.add('active');
+    productBtn.addEventListener("click", function () {
+      modalField.classList.add("active");
       disableScroll();
     });
   }
 
   if (modalCloseBtn) {
-    modalCloseBtn.addEventListener('click', function () {
-      modalField.classList.remove('active');
+    modalCloseBtn.addEventListener("click", function () {
+      modalField.classList.remove("active");
       anableScroll();
     });
   }
 
   if (modalField) {
-    modalField.addEventListener('click', function (e) {
+    modalField.addEventListener("click", function (e) {
       if (e.target == modalField) {
-        modalField.classList.remove('active');
+        modalField.classList.remove("active");
         anableScroll();
       }
     });
   }
 
-  modalThank.classList.add('modal__thank');
+  modalThank.classList.add("modal__thank");
   modalThank.innerHTML = "<div class=\"modal__thank__img\">\n    <svg viewBox=\"0 0 32 23\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n    <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M5.08411 20.6446C9.11043 20.6446 9.86916 17.0981 9.86916 14.2587C10.3474 14.2587 14.1267 14.2587 15.8505 14.2587C25.2271 14.2587 25.2295 0.96875 16.1495 0.96875C13.6798 0.96875 12.0891 2.46863 11.6633 2.99113C6.59708 2.99113 5.98131 5.64294 5.98131 10.792C5.98131 11.7854 5.98131 15.0144 5.98131 15.5118C5.98131 16.7225 5.49563 17.508 4.18662 17.508C3.06901 17.508 2.53967 16.5166 2.09316 15.1254C1.86049 15.2506 0.22669 16.1359 0 16.281C0.494354 17.6708 1.0237 20.6446 5.08411 20.6446ZM10.7765 8.76935C12.3104 8.76935 12.4408 11.0806 10.668 11.0806C9.17353 11.0806 9.21241 8.76935 10.7765 8.76935ZM16.1498 15.6955C14.8534 15.6955 11.0654 15.4143 11.0654 15.4143V22.5398L14.6542 22.5912L15.5514 17.4367L26.9159 17.2228L27.2153 22.8741L31.4022 22.9257C31.4022 22.9257 32 11.8567 32 9.63608C32 5.51717 30.1604 3.18592 26.0187 2.99113C24.9809 2.94236 23.6232 2.74842 22.729 2.70221C26.6267 7.45342 23.5254 15.6955 16.1498 15.6955ZM23.3274 18.5846L23.6262 22.7714L26.0187 22.823L25.7196 18.5846H23.3274ZM15.8505 22.6431L18.243 22.6944L18.8408 18.5846H16.7474L15.8505 22.6431Z\" fill=\"#FF862F\"/>\n    </svg>\n    </div>\n    <div class=\"modal__thank__text\">\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u043C\u044B \u0432\u0430\u043C \u043F\u0435\u0440\u0435\u0437\u0432\u043E\u043D\u0438\u043C!</div>";
 
   if (modalForm) {
-    modalForm.addEventListener('submit', function (e) {
+    modalForm.addEventListener("submit", function (e) {
       e.preventDefault();
       modalWindow.prepend(modalThank);
-      modalWindow.classList.add('thank');
-      modalInner.style.display = 'none';
+      modalWindow.classList.add("thank");
+      modalInner.style.display = "none";
       setTimeout(function () {
         modalThank.remove();
-        modalWindow.classList.remove('thank');
-        modalInner.style.display = 'block';
+        modalWindow.classList.remove("thank");
+        modalInner.style.display = "block";
         modalForm.reset();
-        modalField.classList.remove('active');
+        modalField.classList.remove("active");
         anableScroll();
       }, 3000);
     });
   }
 
-  var map = document.getElementById('map');
+  var map = document.getElementById("map");
 
   if (map) {
     ymaps.ready(function () {
-      var myMap = new ymaps.Map('map', {
+      var myMap = new ymaps.Map("map", {
         center: [55.75, 37.62],
         zoom: 14
       }, {
-        searchControlProvider: 'yandex#search'
+        searchControlProvider: "yandex#search"
       }),
           MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
           myPlacemarkWithContent = new ymaps.Placemark([55.752831393462664, 37.63848494650637], {
         balloonContent: "\n          <div class=\"balloon\">\n          <h4>SitDownPls \u043D\u0430 \u0421\u043E\u043B\u044F\u043D\u043A\u0435 </h4>\n          <address>\u043C. \u041A\u0438\u0442\u0430\u0439-\u0433\u043E\u0440\u043E\u0434, \u0443\u043B. \u0421\u043E\u043B\u044F\u043D\u043A\u0430, \u0434.24</address>\n          <a href=\"tel:+74958854547\" class=\"tel_number\">\n            <svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n              <path\n                d=\"M16.3425 12.0983C15.215 12.0983 14.1242 11.915 13.1067 11.585C12.7858 11.475 12.4283 11.5575 12.1808 11.805L10.7417 13.6108C8.1475 12.3733 5.71833 10.0358 4.42583 7.35L6.21333 5.82833C6.46083 5.57167 6.53417 5.21417 6.43333 4.89333C6.09417 3.87583 5.92 2.785 5.92 1.6575C5.92 1.1625 5.5075 0.75 5.0125 0.75H1.84083C1.34583 0.75 0.75 0.97 0.75 1.6575C0.75 10.1733 7.83583 17.25 16.3425 17.25C16.9933 17.25 17.25 16.6725 17.25 16.1683V13.0058C17.25 12.5108 16.8375 12.0983 16.3425 12.0983Z\" />\n            </svg>\n            <span>+7 (495) 885-45-47</span>\n          </a>\n          <div class=\"worktime\">\n            <span class=\"grey_text\">\u0427\u0430\u0441\u044B \u0440\u0430\u0431\u043E\u0442\u044B:</span>\n            \u0441 10:00 \u0434\u043E 21:00\n          </div>\n          <div class=\"balloon__descr\">\n            <span class=\"grey_text\">\u0427\u0442\u043E \u0437\u0434\u0435\u0441\u044C:</span>\n            \u0448\u043E\u0443\u0440\u0443\u043C, \u043F\u0443\u043D\u043A\u0442 \u043E\u0442\u0433\u0440\u0443\u0437\u043A\u0438, \u043F\u0443\u043D\u043A\u0442 \u0432\u044B\u0434\u0430\u0447\u0438, \u043F\u0443\u043D\u043A\u0442 \u043E\u0431\u043C\u0435\u043D\u0430-\u0432\u043E\u0437\u0432\u0440\u0430\u0442\u0430, \u0441\u0435\u0440\u0432\u0438\u0441\u043D\u044B\u0439 \u0446\u0435\u043D\u0442\u0440\n          </div>\n        </div>\n        "
       }, {
-        iconLayout: 'default#imageWithContent',
-        iconImageHref: './img/svg/mapIcon.svg',
+        iconLayout: "default#imageWithContent",
+        iconImageHref: "./img/svg/mapIcon.svg",
         iconImageSize: [32, 22],
         iconImageOffset: [-20, 0],
         iconContentOffset: [0],
         iconContentLayout: MyIconContentLayout
       });
       var myPlacemark = new ymaps.Placemark([55.76147157505062, 37.65023838640963], {
-        balloonContent: 'Второй баллун'
+        balloonContent: "Второй баллун"
       }, {
-        iconLayout: 'default#imageWithContent',
-        iconImageHref: './img/svg/mapIcon.svg',
+        iconLayout: "default#imageWithContent",
+        iconImageHref: "./img/svg/mapIcon.svg",
         iconImageSize: [32, 22],
         iconImageOffset: [-20, 0],
         iconContentOffset: [0],
