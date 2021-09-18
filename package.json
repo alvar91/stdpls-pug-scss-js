@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "gulp --mode development",
     "build": "gulp build --mode production",
-    "deploy": "gulp build && gh-pages -d dist"
+    "deploy": "gulp build && gh-pages -d dist",
+    "webp": "gulp webp"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -29,6 +30,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-util": "^3.0.8",
+    "gulp-webp": "^4.0.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-stream": "^5.2.1"

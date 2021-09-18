@@ -7,6 +7,7 @@ const gulpUtil = require("gulp-util");
 const gulpCleanCSS = require("gulp-clean-css");
 const del = require("del");
 const browserSync = require("browser-sync");
+const webp = require("gulp-webp");
 
 const isDevelopment = gulpUtil.env.mode === "development" ? true : false;
 
@@ -75,13 +76,6 @@ gulp.task("fonts", function () {
     .pipe(browserSync.stream());
 });
 
-// gulp.task("jquery", function () {
-//   return gulp
-//     .src("./jquery/*.*")
-//     .pipe(gulp.dest("./docs/"))
-//     .pipe(browserSync.stream());
-// });
-
 gulp.task("images", function () {
   return gulp
     .src("./images/*.*")
@@ -129,3 +123,7 @@ gulp.task(
   )
 );
 gulp.task("default", gulp.series("build", "watch"));
+
+gulp.task("webp", () =>
+  gulp.src("images/*.{jpg,png}").pipe(webp()).pipe(gulp.dest("images/"))
+);
