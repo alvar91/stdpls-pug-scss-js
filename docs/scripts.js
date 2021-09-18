@@ -133,10 +133,10 @@ document.addEventListener("DOMContentLoaded", function () {
     pagination: {
       el: ".swiper-pagination",
       type: "bullets"
-    },
-    autoplay: {
-      delay: 3000
-    }
+    } // autoplay: {
+    //   delay: 3000,
+    // },
+
   });
   var offersSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".offer_cards__field.swiper-container", {
     direction: "horizontal",

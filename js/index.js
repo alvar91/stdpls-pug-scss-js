@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
       type: "bullets",
     },
 
-    autoplay: {
-      delay: 3000,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    // },
   });
 
   const offersSwiper = new Swiper(".offer_cards__field.swiper-container", {

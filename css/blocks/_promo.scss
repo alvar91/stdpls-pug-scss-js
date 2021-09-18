@@ -1,11 +1,12 @@
 .promo {
   margin-bottom: 70px;
+  overflow-x: hidden;
 
   &__swiper.swiper-container {
     width: 100vw;
 
     @include mobile {
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
   }
 
@@ -71,10 +72,14 @@
 
 .slide {
   &__inner {
-    padding: 80px 0;
+    padding: 78px 12px;
 
     @include laptop {
-      padding: 78px 0;
+      padding: 80px 0;
+    }
+
+    @include tablet {
+        padding: 78px 0;
     }
 
     @include mobile {
@@ -84,8 +89,8 @@
 }
 
 .promo__swiper.swiper-container .swiper-pagination-bullet {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
 
   //   @include laptop() {
@@ -119,7 +124,7 @@
   > .swiper-pagination-bullets
   .swiper-pagination-bullet {
   @include laptop() {
-    margin: 0 7px;
+    margin: 0 8px;
   }
 
   @include mobile() {
