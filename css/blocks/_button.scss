@@ -1,0 +1,97 @@
+.button {
+  padding: 22px 50px;
+  border: 2px solid var(--primary-main);
+  border-radius: 10px;
+  @include font(16px, 700);
+  line-height: 1;
+  color: var(--white);
+  background-color: var(--primary-main);
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--primary-light);
+    transition: background-color 0.3s;
+  }
+
+  &:active {
+    border: 2px solid var(--primary-shade);
+    background-color: var(--primary-shade);
+    transition: background-color 0.3s;
+  }
+
+  &:focus {
+    border: 2px solid var(--primary-shade);
+    background-color: var(--primary-light);
+    transition: background-color 0.3s;
+  }
+}
+
+.button-circle {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--primary-main);
+  border-radius: 100px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--primary-main);
+    transition: background-color 0.3s;
+  }
+
+  &:focus {
+    border: 2px solid var(--primary-shade);
+    background-color: var(--primary-main);
+    outline: none;
+  }
+
+  &:active {
+    border: 2px solid var(--primary-shade);
+    background-color: var(--primary-shade);
+    transition: background-color 0.3s;
+  }
+
+  &:disabled {
+    border: 2px solid var(--grey-shade);
+    background-color: transparent;
+    transition: background-color 0.3s;
+  }
+
+  & span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+    margin-top: -4px;
+    margin-left: -4px;
+    border-top: 2px solid var(--primary-main);
+    border-right: 2px solid var(--primary-main);
+    transform: rotate(45deg);
+  }
+
+  &:hover span {
+    border-top: 2px solid var(--white);
+    border-right: 2px solid var(--white);
+    transition: border-color 0.3s;
+  }
+
+  &:focus span {
+    border-top: 2px solid var(--white);
+    border-right: 2px solid var(--white);
+    transition: border-color 0.3s;
+  }
+
+  &:active span {
+    border-top: 2px solid var(--white);
+    border-right: 2px solid var(--white);
+    transition: border-color 0.3s;
+  }
+
+  &:disabled span {
+    border-top: 2px solid var(--grey-shade);
+    border-right: 2px solid var(--grey-shade);
+    transition: border-color 0.3s;
+  }
+}

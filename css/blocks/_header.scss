@@ -258,74 +258,74 @@
     }
   }
 
-  &__search-btn {
-    width: 32px;
-    height: 32px;
-    border: 2px solid var(--primary-main);
-    border-radius: 100px;
-    background-color: transparent;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  // &__search-btn {
+  //   width: 32px;
+  //   height: 32px;
+  //   border: 2px solid var(--primary-main);
+  //   border-radius: 100px;
+  //   background-color: transparent;
+  //   cursor: pointer;
+  //   transition: background-color 0.3s;
 
-    &:hover {
-      background-color: var(--primary-main);
-      transition: background-color 0.3s;
-    }
+  //   &:hover {
+  //     background-color: var(--primary-main);
+  //     transition: background-color 0.3s;
+  //   }
 
-    &:focus {
-      border: 2px solid var(--primary-shade);
-      background-color: var(--primary-main);
-      outline: none;
-    }
+  //   &:focus {
+  //     border: 2px solid var(--primary-shade);
+  //     background-color: var(--primary-main);
+  //     outline: none;
+  //   }
 
-    &:active {
-      border: 2px solid var(--primary-shade);
-      background-color: var(--primary-shade);
-      transition: background-color 0.3s;
-    }
+  //   &:active {
+  //     border: 2px solid var(--primary-shade);
+  //     background-color: var(--primary-shade);
+  //     transition: background-color 0.3s;
+  //   }
 
-    &:disabled {
-      border: 2px solid var(--grey-shade);
-      background-color: transparent;
-      transition: background-color 0.3s;
-    }
+  //   &:disabled {
+  //     border: 2px solid var(--grey-shade);
+  //     background-color: transparent;
+  //     transition: background-color 0.3s;
+  //   }
 
-    & span {
-      display: inline-block;
-      vertical-align: middle;
-      width: 10px;
-      height: 10px;
-      margin-top: -4px;
-      margin-left: -4px;
-      border-top: 2px solid var(--primary-main);
-      border-right: 2px solid var(--primary-main);
-      transform: rotate(45deg);
-    }
+  //   & span {
+  //     display: inline-block;
+  //     vertical-align: middle;
+  //     width: 10px;
+  //     height: 10px;
+  //     margin-top: -4px;
+  //     margin-left: -4px;
+  //     border-top: 2px solid var(--primary-main);
+  //     border-right: 2px solid var(--primary-main);
+  //     transform: rotate(45deg);
+  //   }
 
-    &:hover span {
-      border-top: 2px solid var(--white);
-      border-right: 2px solid var(--white);
-      transition: border-color 0.3s;
-    }
+  //   &:hover span {
+  //     border-top: 2px solid var(--white);
+  //     border-right: 2px solid var(--white);
+  //     transition: border-color 0.3s;
+  //   }
 
-    &:focus span {
-      border-top: 2px solid var(--white);
-      border-right: 2px solid var(--white);
-      transition: border-color 0.3s;
-    }
+  //   &:focus span {
+  //     border-top: 2px solid var(--white);
+  //     border-right: 2px solid var(--white);
+  //     transition: border-color 0.3s;
+  //   }
 
-    &:active span {
-      border-top: 2px solid var(--white);
-      border-right: 2px solid var(--white);
-      transition: border-color 0.3s;
-    }
+  //   &:active span {
+  //     border-top: 2px solid var(--white);
+  //     border-right: 2px solid var(--white);
+  //     transition: border-color 0.3s;
+  //   }
 
-    &:disabled span {
-      border-top: 2px solid var(--grey-shade);
-      border-right: 2px solid var(--grey-shade);
-      transition: border-color 0.3s;
-    }
-  }
+  //   &:disabled span {
+  //     border-top: 2px solid var(--grey-shade);
+  //     border-right: 2px solid var(--grey-shade);
+  //     transition: border-color 0.3s;
+  //   }
+  // }
 }
 
 .logo-mobile__wrapper {
@@ -813,6 +813,12 @@
 
   &.active {
     @include tablet() {
+      height: 22px;
+
+      .burger__line {
+        width: 80%;
+      }
+
       .burger__line:first-child {
         transform: rotate(45deg) translateX(2px);
         transition: transform 0.3s;
@@ -829,6 +835,8 @@
     }
 
     @include mobile() {
+      height: 26px;
+
       .burger__line:first-child {
         transform: rotate(45deg) translateX(3px);
       }
@@ -886,7 +894,7 @@
       border-radius: 0px 0 10px 10px;
       padding: 22px 77px 30px 22px;
       margin-top: 3px;
-      margin-left: -25px;
+      margin-left: -30px;
       z-index: 8;
 
       @include laptop() {

@@ -8,27 +8,23 @@ section.promo
                     .slide__inner
                         .promo__sale
                             | Скидка&nbsp;15% на&nbsp;первую покупку
-                        button.promo__btn
-                            | Получить
+                        +buttonFilled("Получить", ["promo__btn"])
 
             .swiper-slide.promo__slide2
                 .container
                     .slide__inner
                         .promo__sale
                             | 1000+ аксессуаров для дома
-                        button.promo__btn
-                            | Подробнее
+                        +buttonFilled("Подробнее", ["promo__btn"])
 
             .swiper-slide.promo__slide3
                 .container
                     .slide__inner
                         .promo__sale
                             | Коллекция стильного и&nbsp;яркого текстиля
-                        button.promo__btn
-                            | Подробнее
+                        +buttonFilled("Подробнее", ["promo__btn"])
                 
         .swiper-pagination
 
     .container.promo-btn-container
-        button.promo__btn.promo__btn--mobile
-            | Подробнее
+        +buttonFilled("Получить", ["promo__btn--mobile"])

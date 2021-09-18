@@ -1,0 +1,128 @@
+.promo {
+  margin-bottom: 70px;
+
+  &__swiper.swiper-container {
+    width: 100vw;
+
+    @include mobile {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__slide1 {
+    background-image: url("images/promo-1.jpg");
+  }
+
+  &__slide2 {
+    background-image: url("images/promo-2.jpg");
+  }
+
+  &__slide3 {
+    background-image: url("images/promo-3.jpg");
+  }
+
+  &__sale {
+    max-width: 560px;
+    @include font(48px, 700);
+    line-height: 65px;
+    color: var(--grey);
+    margin-bottom: 50px;
+
+    @include mobile {
+      margin-bottom: 95px;
+      max-width: 250px;
+      font-size: 20px;
+      line-height: 27px;
+    }
+  }
+
+  &-btn-container {
+    display: none;
+
+    @include mobile() {
+      display: block;
+    }
+  }
+
+  &__btn {
+    display: block;
+
+    @include mobile() {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+      width: 100%;
+
+      @include mobile() {
+        display: block;
+      }
+    }
+  }
+}
+
+.swiper-slide {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.slide {
+  &__inner {
+    padding: 80px 0;
+
+    @include laptop {
+      padding: 78px 0;
+    }
+
+    @include mobile {
+      padding: 30px 0 30px 20px;
+    }
+  }
+}
+
+.promo__swiper.swiper-container .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+
+  //   @include laptop() {
+  //     width: 16px;
+  //     height: 16px;
+  //   }
+
+  @include mobile() {
+    width: 6px;
+    height: 6px;
+  }
+
+  &.swiper-pagination-bullet-active {
+    background: var(--black);
+  }
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  @include laptop() {
+    bottom: 20px;
+  }
+
+  @include mobile() {
+    bottom: 6px;
+  }
+}
+
+.swiper-container-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  @include laptop() {
+    margin: 0 7px;
+  }
+
+  @include mobile() {
+    margin: 0 4px;
+  }
+}
