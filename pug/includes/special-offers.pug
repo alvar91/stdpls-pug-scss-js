@@ -1,0 +1,18 @@
+include ./mixins.pug
+
+- var products = [{"name": "Кресло велюровое “X-24”", "ticket": "9 000", "sale": "15 990", "cost": "24 990", "image": "special_offers-1", "currency": "RUB"},{"name": "Диван тканевый “Z-44”", "ticket": "10 000", "sale": "22 990", "cost": "32 990", "image": "special_offers-2", "currency": "RUB"},{"name": "Будильник “Quartz-23”", "ticket": "600", "sale": "1 290", "cost": "1 890", "image": "special_offers-3", "currency": "RUB"},{"name": "Мини-скульптура “Oh my deer”", "ticket": "300", "sale": "690", "cost": "990", "image": "special_offers-4", "currency": "RUB"},{"name": "Диван вел-флок “Z-85”", "ticket": "10 000", "sale": "22 990", "cost": "32 990", "image": "special_offers-5", "currency": "RUB"},{"name": "Термометр + гидрометр “H-18”", "ticket": "700", "sale": "1 390", "cost": "2 090", "image": "special_offers-6", "currency": "RUB"}]
+
+section.special-offers
+    .container.special-offers__container
+        h2.section-title.offers-title
+            | Специальные предложения
+
+        .offer__swiper_btns__wrapper.swiper__controls
+            button(class="offer__button-prev swiper__button-prev btn-reset" aria-label="Список наших предложений. Назад")
+                span.btn-arrow
+            button(class="offer__button-next swiper__button-next btn-reset" aria-label="Список наших предложений. Вперед")
+                span.btn-arrow
+
+        .offer_cards__field.swiper-container
+            .swiper-wrapper
+                +productsList(products)
