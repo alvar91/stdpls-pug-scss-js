@@ -79,7 +79,7 @@
     }
 
     @include tablet {
-        padding: 78px 0;
+      padding: 78px 0;
     }
 
     @include mobile {
@@ -91,12 +91,6 @@
 .promo__swiper.swiper-container .swiper-pagination-bullet {
   width: 15px;
   height: 15px;
-  cursor: pointer;
-
-  //   @include laptop() {
-  //     width: 16px;
-  //     height: 16px;
-  //   }
 
   @include mobile() {
     width: 6px;

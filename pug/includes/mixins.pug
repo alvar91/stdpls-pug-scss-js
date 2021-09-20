@@ -30,7 +30,7 @@ mixin listMenu(classMenu, listItems)
     ul(class=`${classMenu}__list`)
         each item, key in listItems
             li(class=`${classMenu}__list-item`)
-                a(href=`/${key}` class=`${classMenu}__link`)
+                a(href=`/${key}` class=`link ${classMenu}__link`)
                     | #{item}
 
 mixin optionsMenu(optionsItems)
@@ -41,9 +41,9 @@ mixin optionsMenu(optionsItems)
 
 mixin headerBox(goodsCount)
     .header__box
-        a(href="#" class="personal-cabinet" aria-label="Вход в личный кабинет")
+        a(href="#" class="link personal-cabinet" aria-label="Вход в личный кабинет")
             +personIcon()
-        a(href="#" class="basket" aria-label="Корзина товаров")
+        a(href="#" class="link basket" aria-label="Корзина товаров")
             +cartIcon(goodsCount)
 
 mixin personIcon()
@@ -68,20 +68,28 @@ mixin productsList(products)
     each product in products
         - var cur = product.currency === "RUB" ? "руб" : "USD"
 
-        article.swiper-slide.card
-            .card__ticket
-                | - #{product.ticket}
-            .card_img__wrapper
-                picture
-                    source(type="image/webp" srcset=`img/webp/${product.image}.webp`)
-                    img(src=`img/images/${product.image}.png` alt=`${product.name}` class="card_img")
-                h3.card__title
-                    | #{product.name}
-                .card__cost_wrapper
-                    span.card_sale
-                        | #{product.sale} #{cur}
-                    span.card_cost
-                        | #{product.cost} #{cur}
-                a(href="#" class="offer_card__link")
-                    | Купить
+        li.swiper-slide.card
+            article.card__article
+                .card__ticket
+                    | - #{product.ticket}
+                .card__wrapper
+                    picture
+                        source(type="image/webp" srcset=`images/${product.image}.webp`)
+                        img(class="card__img" src=`images/${product.image}.png` alt=`${product.name}`)
+                    .card__description
+                        h3.card__title
+                            a(class="link card__link" href="#")
+                                | #{product.name}
+                        .card__cost-wrapper
+                            span.card__sale
+                                | #{product.sale} #{cur}
+                            span.card__cost
+                                | #{product.cost} #{cur}
+                        button.button-transparent.card__buy-btn
+                            | Купить
+                        if product.scheme
+                            picture
+                                source(srcset=`images/${product.scheme}.webp` type="image/webp")
+                                img(class="card__scheme" src=`images/${product.scheme}.png` alt="scheme")
+
 

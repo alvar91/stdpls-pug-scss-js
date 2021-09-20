@@ -18,7 +18,7 @@ header.header
                 select(name="city-select" id="#city-select" class="city-select" data-trigger)
                     +optionsMenu(cities)
 
-            a(href="tel:+74958854547" class="tel-number")
+            a(href="tel:+74958854547" class="link tel-number")
                 +phoneIcon()
                 span.tel-number__text
                     | +7 (495) 885-45-47
@@ -34,12 +34,12 @@ header.header
 
     .header-middle
         .container.header-middle__container
-            button.burger
+            button.burger.js-burger
                 span.burger__line
                 span.burger__line
                 span.burger__line
 
-            a(href="/" class="header__logo header__logo--middle")
+            a(href="/" class="link header__logo header__logo--middle")
                 +logo()
 
             nav.header__nav

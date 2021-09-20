@@ -1,18 +1,18 @@
 include ./mixins.pug
 
-- var products = [{"name": "Кресло велюровое “X-24”", "ticket": "9 000", "sale": "15 990", "cost": "24 990", "image": "special_offers-1", "currency": "RUB"},{"name": "Диван тканевый “Z-44”", "ticket": "10 000", "sale": "22 990", "cost": "32 990", "image": "special_offers-2", "currency": "RUB"},{"name": "Будильник “Quartz-23”", "ticket": "600", "sale": "1 290", "cost": "1 890", "image": "special_offers-3", "currency": "RUB"},{"name": "Мини-скульптура “Oh my deer”", "ticket": "300", "sale": "690", "cost": "990", "image": "special_offers-4", "currency": "RUB"},{"name": "Диван вел-флок “Z-85”", "ticket": "10 000", "sale": "22 990", "cost": "32 990", "image": "special_offers-5", "currency": "RUB"},{"name": "Термометр + гидрометр “H-18”", "ticket": "700", "sale": "1 390", "cost": "2 090", "image": "special_offers-6", "currency": "RUB"}]
+- var products = [{"name": "Кресло велюровое “X-24”", "ticket": "9 000", "sale": "15 990", "cost": "24 990", "image": "special-offers-1", "currency": "RUB"},{"name": "Диван тканевый “Z-44”", "ticket": "10 000", "sale": "22 990", "cost": "32 990", "image": "special-offers-2", "scheme": "special-offers-2.1","currency": "RUB"},{"name": "Будильник “Quartz-23”", "ticket": "600", "sale": "1 290", "cost": "1 890", "image": "special-offers-3", "currency": "RUB"},{"name": "Мини-скульптура “Oh my deer”", "ticket": "300", "sale": "690", "cost": "990", "image": "special-offers-4", "currency": "RUB"},{"name": "Диван вел-флок “Z-85”", "ticket": "10 000", "sale": "22 990", "cost": "32 990", "image": "special-offers-5", "scheme": "special-offers-5.1", "currency": "RUB"},{"name": "Термометр + гидрометр “H-18”", "ticket": "700", "sale": "1 390", "cost": "2 090", "image": "special-offers-6", "currency": "RUB"}]
 
 section.special-offers
     .container.special-offers__container
-        h2.section-title.offers-title
+        h2.section-title.special-offers__title
             | Специальные предложения
 
-        .offer__swiper_btns__wrapper.swiper__controls
-            button(class="offer__button-prev swiper__button-prev btn-reset" aria-label="Предыдущий слайд")
-                span.btn-arrow
-            button(class="offer__button-next swiper__button-next btn-reset" aria-label="Следующий слайд")
-                span.btn-arrow
+        .special-offers__btns
+            button(class="button-circle button-circle--left special-offers__prev js-special-offers-prev" aria-label="Предыдущий слайд")
+                span
+            button(class="button-circle special-offers__next js-special-offers-next" aria-label="Следующий слайд")
+                span
 
-        .offer_cards__field.swiper-container
-            .swiper-wrapper
+        .special-offers__cards.swiper-container.js-special-offers-swiper
+            ul.swiper-wrapper.special-offers__list
                 +productsList(products)

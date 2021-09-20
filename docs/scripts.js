@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
     searchEnabled: false,
     itemSelectText: ""
   });
-  var swiperPromo = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".promo__swiper.swiper-container", {
+  var swiperPromo = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".js-promo-swiper", {
     direction: "horizontal",
     slidesPerGroup: 1,
     slidesPerColumn: 1,
@@ -138,25 +138,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // },
 
   });
-  var offersSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".offer_cards__field.swiper-container", {
+  var offersSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".js-special-offers-swiper", {
     direction: "horizontal",
     slidesPerColumn: 1,
     slidesPerView: "auto",
     spaceBetween: 32,
     navigation: {
-      nextEl: ".offer__button_next",
-      prevEl: ".offer__button_prev"
+      nextEl: ".js-special-offers-next",
+      prevEl: ".js-special-offers-prev"
     },
     breakpoints: {
       320: {
         slidesPerGroup: 1
-      },
-      570: {
-        slidesPerGroup: 2
-      },
-      1025: {
-        slidesPerGroup: 3
-      }
+      } // 570: {
+      //   slidesPerGroup: 2,
+      // },
+      // 1023: {
+      //   slidesPerGroup: 3,
+      // },
+
     }
   });
   var usefulSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".useful__swiper.swiper-container", {
@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", function () {
       noUiLine.style.background = "#a65cf0";
     });
   });
-  var burger = document.querySelector(".burger");
+  var burger = document.querySelector(".js-burger");
   var headerNav = document.querySelector(".header__nav");
 
   function closeMenu() {

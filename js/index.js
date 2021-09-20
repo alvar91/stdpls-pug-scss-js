@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     itemSelectText: "",
   });
 
-  const swiperPromo = new Swiper(".promo__swiper.swiper-container", {
+  const swiperPromo = new Swiper(".js-promo-swiper", {
     direction: "horizontal",
     slidesPerGroup: 1,
     slidesPerColumn: 1,
@@ -35,27 +35,27 @@ document.addEventListener("DOMContentLoaded", () => {
     // },
   });
 
-  const offersSwiper = new Swiper(".offer_cards__field.swiper-container", {
+  const offersSwiper = new Swiper(".js-special-offers-swiper", {
     direction: "horizontal",
     slidesPerColumn: 1,
     slidesPerView: "auto",
     spaceBetween: 32,
 
     navigation: {
-      nextEl: ".offer__button_next",
-      prevEl: ".offer__button_prev",
+      nextEl: ".js-special-offers-next",
+      prevEl: ".js-special-offers-prev",
     },
 
     breakpoints: {
       320: {
         slidesPerGroup: 1,
       },
-      570: {
-        slidesPerGroup: 2,
-      },
-      1025: {
-        slidesPerGroup: 3,
-      },
+      // 570: {
+      //   slidesPerGroup: 2,
+      // },
+      // 1023: {
+      //   slidesPerGroup: 3,
+      // },
     },
   });
 
@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const burger = document.querySelector(".burger");
+  const burger = document.querySelector(".js-burger");
   const headerNav = document.querySelector(".header__nav");
 
   function closeMenu() {

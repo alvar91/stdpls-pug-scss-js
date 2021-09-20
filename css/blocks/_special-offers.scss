@@ -1,0 +1,56 @@
+.special-offers {
+  margin-bottom: 70px;
+
+  @include mobile() {
+    margin-bottom: 119px;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__btns {
+    position: absolute;
+    top: 0;
+    right: 15px;
+
+    @include laptop() {
+      right: 36px;
+    }
+
+    @include phablet() {
+      right: 12px;
+    }
+
+    @include mobile() {
+      top: auto;
+      right: auto;
+      left: calc((100% - 78px) / 2);
+      bottom: -48px;
+      z-index: 2;
+    }
+  }
+
+  &__prev {
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--primary-main);
+    border-radius: 100px;
+  }
+
+  &__next {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--primary-main);
+    border-radius: 100px;
+  }
+
+  &__cards {
+    width: 100%;
+  }
+
+  &__list {
+    @include list-reset();
+  }
+}
