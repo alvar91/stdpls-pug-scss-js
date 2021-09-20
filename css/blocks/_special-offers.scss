@@ -18,6 +18,10 @@
       right: 36px;
     }
 
+    @include tablet() {
+      right: 69px;
+    }
+
     @include phablet() {
       right: 12px;
     }

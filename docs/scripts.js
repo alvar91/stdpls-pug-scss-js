@@ -150,13 +150,13 @@ document.addEventListener("DOMContentLoaded", function () {
     breakpoints: {
       320: {
         slidesPerGroup: 1
-      } // 570: {
-      //   slidesPerGroup: 2,
-      // },
-      // 1023: {
-      //   slidesPerGroup: 3,
-      // },
-
+      },
+      570: {
+        slidesPerGroup: 2
+      },
+      1023: {
+        slidesPerGroup: 3
+      }
     }
   });
   var usefulSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".useful__swiper.swiper-container", {

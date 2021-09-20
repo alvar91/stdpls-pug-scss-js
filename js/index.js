@@ -50,12 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
       320: {
         slidesPerGroup: 1,
       },
-      // 570: {
-      //   slidesPerGroup: 2,
-      // },
-      // 1023: {
-      //   slidesPerGroup: 3,
-      // },
+      570: {
+        slidesPerGroup: 2,
+      },
+      1023: {
+        slidesPerGroup: 3,
+      },
     },
   });
 

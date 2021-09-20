@@ -6,44 +6,66 @@
 }
 
 .card {
-  @include list-reset();
   position: relative;
-  width: 24%;
-  //height: auto;
-  padding: 0 30px 30px;
+  max-width: 296px;
+  min-height: 511px;
   background-color: var(--grey-light);
   border-radius: 10px;
+  text-align: center;
 
-  &:nth-child(2),
-  &:nth-child(5) {
-    width: 48%;
+  &:nth-child(3n + 2) {
+    max-width: 624px;
+
+    @include laptop() {
+      max-width: 296px;
+    }
+
+    .card__article {
+      padding-top: 35px;
+
+      @include laptop() {
+        padding-top: 110px;
+      }
+    }
+
+    .card__img {
+      @include laptop() {
+        width: 254px;
+      }
+    }
   }
 
   @include laptop() {
-    width: calc((100% - 64px) / 3);
+    //max-width: max-content;
   }
 
-  @include tablet() {
-    width: calc((100% - 32px) / 2);
-  }
+  // @include tablet() {
+  //   width: calc((100% - 32px) / 2);
+  // }
 
-  @include phablet() {
-    padding: 0 20px 30px;
-  }
+  // @include phablet() {
+  //   padding: 0 20px 30px;
+  // }
 
-  @include mobile() {
-    width: 100%;
-  }
+  // @include mobile() {
+  //   width: 100%;
+  // }
 
   &__article {
+    display: flex;
+    justify-content: space-evenly;
+    //width: 100%;
     height: 100%;
+    //width: max-content;
+    padding-top: 70px;
   }
 
   &__ticket {
     position: absolute;
-    top: 28px;
+    top: 25px;
     left: 0;
-    padding: 7px 29px 9px 19px;
+    padding: 7px 16px 9px 3px;
+    min-width: 73px;
     line-height: 19px;
     @include font(14px, 600);
     color: var(--white);
@@ -52,13 +74,16 @@
   }
 
   &__wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    //display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
     min-height: 298px;
     height: 100%;
-    align-items: center;
-    padding-top: 45px;
+    // align-items: center;
+
+    @include laptop() {
+      max-width: max-content;
+    }
   }
 
   &__title {
@@ -72,12 +97,13 @@
     }
 
     @include mobile() {
-      max-width: 205px;
+      max-width: 222px;
       margin: 0 0 21px;
     }
   }
 
   &__link {
+    font-size: 24px;
     color: var(--black);
   }
 
@@ -90,7 +116,11 @@
   }
 
   &__description {
-    align-self: flex-start;
+    position: absolute;
+    bottom: 35px;
+    left: 30px;
+    width: 222px;
+    text-align: left;
   }
 
   &__sale {
@@ -109,11 +139,12 @@
   }
 
   &__scheme {
+    display: block;
     position: absolute;
     max-width: 235px;
     max-height: 125px;
-    right: 32px;
-    bottom: 32px;
+    left: 333px;
+    bottom: 1px;
 
     @include laptop() {
       display: none;
@@ -122,5 +153,9 @@
 
   &__buy-btn {
     display: inline-block;
+  }
+
+  &__img {
+    //padding-top: 60px;
   }
 }

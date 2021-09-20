@@ -1,6 +1,14 @@
 .promo {
-  margin-bottom: 70px;
+  margin-bottom: 68px;
   overflow-x: hidden;
+  
+  @include laptop() {
+    margin-bottom: 67px;
+  }
+
+  @include mobile {
+    margin-bottom: 66px;
+  }
 
   &__swiper.swiper-container {
     width: 100vw;
