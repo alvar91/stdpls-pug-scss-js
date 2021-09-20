@@ -1,0 +1,12 @@
+include ./mixins.pug
+
+- var ratingProducts = [{"name": "Диван кожаный “R-94”", "rating": "5,0", "cost": "94 990", "image": "rating-img-1", "currency": "RUB"},{"name": "Диван апартековый “T-75”", "rating": "4,9", "cost": "69 990", "image": "rating-img-2", "currency": "RUB"},{"name": "Диван тканевый “D-31”", "rating": "4,8", "cost": "28 490", "image": "rating-img-3", "currency": "RUB"},{"name": "Диван велюровый “Y-68”", "rating": "4,8", "cost": "22 990", "image": "rating-img-4", "currency": "RUB"},{"name": "Диван из шинила “W-95”", "rating": "4,8", "cost": "22 990", "image": "rating-img-5", "currency": "RUB"},{"name": "Диван флоковый “G-41”", "rating": "4,8", "cost": "17 990", "image": "rating-img-6", "currency": "RUB"},{"name": "Диван шиниловый “V-43”", "rating": "4,8", "cost": "19 990", "image": "rating-img-7", "currency": "RUB"},{"name": "Диван велюровый “S-99”", "rating": "4,8", "cost": "19 990", "image": "rating-img-8", "currency": "RUB"}]
+    
+    section.rating
+        .container
+            h2.section-title
+                | Высокий рейтинг
+            ul.product__list
+                +ratingList(ratingProducts)
+            button.button.product_btn
+                | Смотреть больше товаров
