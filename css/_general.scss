@@ -101,6 +101,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .brake-laptop {
+  //display: none;
 
   @include laptop() {
     display: block;
@@ -112,6 +113,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .brake-tablet {
+  display: none;
 
   @include tablet() {
     display: block;
@@ -123,7 +125,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .brake-mobile {
-  display: none;
+  //display: none;
 
   @include mobile() {
     display: block;

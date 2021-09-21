@@ -5,12 +5,31 @@
   background-image: url("images/new-collection-banner.jpg");
   background-repeat: no-repeat;
 
+  background-image: url("images/new-collection-banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  padding: 150px 0;
+
+  @include laptop {
+    padding: 156px 0;
+  } 
+
+  @include tablet() {
+    padding: 158px 0 150px;
+  }
+
   @include phablet() {
     position: relative;
     padding-top: 32px;
     padding-bottom: 160px;
     background-position: top center;
     background-size: 675px;
+  }
+
+  @include mobile() {
+    padding: 34px 0 51px;
   }
 
   &__container {
@@ -66,12 +85,12 @@
     padding: 22px 29px;
 
     @include laptop() {
-        padding: 19px 29px;
+      padding: 19px 29px;
     }
 
     @include phablet() {
-        margin: 0 auto;
-        padding: 20px 84px;
+      margin: 0 auto;
+      padding: 20px 84px;
     }
   }
 }

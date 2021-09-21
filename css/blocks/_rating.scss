@@ -1,6 +1,10 @@
 .rating {
   margin-bottom: 70px;
 
+  @include laptop() {
+    margin-bottom: 67px;
+  }
+
   &__list {
     @include list-reset();
     margin-bottom: 32px;
@@ -14,7 +18,7 @@
 
     @include tablet() {
       grid-template-columns: repeat(2, 1fr);
-      margin-bottom: 35px;
+      margin-bottom: 27px;
     }
 
     @include phablet() {
@@ -42,6 +46,10 @@
       &:nth-child(n + 7) {
         display: none;
       }
+    }
+
+    @include tablet() {
+      min-height: 420px;
     }
 
     @include phablet() {
@@ -133,7 +141,7 @@
     @include phablet() {
       width: 140px;
       padding: 20px 16px;
-      padding-right: 28px;
+      padding-right: 20px;
       padding-top: 0;
       position: unset;
     }
@@ -161,7 +169,7 @@
 
     @include phablet() {
       font-size: 16px;
-      line-height: 19px;
+      line-height: 21px;
     }
   }
 
@@ -199,7 +207,11 @@
     display: block;
     margin: 0 auto;
 
-    padding: 20px 35px;
+    padding: 22px 34px;
+
+    // @include mobile() {
+    //   padding: 20px 34px;
+    // }
   }
 }
 

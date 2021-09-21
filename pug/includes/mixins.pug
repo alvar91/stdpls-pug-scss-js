@@ -116,6 +116,8 @@ mixin ratingList(products)
                     h3.rating__title
                         a(class="link rating__link" href="#")
                             | !{product.name}
+                            <br />
+                            | !{product.model}
                     p.rating__price
                         | #{product.cost} #{cur}
                     button.button-transparent.rating__btn
