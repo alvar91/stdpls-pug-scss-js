@@ -114,9 +114,27 @@ mixin ratingList(products)
                         img(class="rating__img" src=`images/${product.image}.png` alt=`Изображение товара`)
                 .rating__description
                     h3.rating__title
-                        a(class="rating__link" href="#")
+                        a(class="link rating__link" href="#")
                             | !{product.name}
                     p.rating__price
                         | #{product.cost} #{cur}
                     button.button-transparent.rating__btn
                         | Купить
+
+mixin categoriesList(categories)
+    each categorie in categories                
+        li.top__categorie
+            article.categorie__card
+                ul.top__sub-categorie
+                    each subCategorie in categorie.subCategories
+                        li.top__sub-categorie
+                            | #{subCategorie}
+                h3.top__title
+                    a(href="#" class="link top__link")
+                        | #{categorie.categorie}
+                picture
+                    source(type="image/webp" srcset=`images/${categorie.image}.webp`)
+                    img(class="top__img" src=`images/${categorie.image}.png` alt=`${categorie.name}`)
+                a(class="main__categories-list-item-link" href="#")
+                    | В каталог 
+                    span.link-arrow
