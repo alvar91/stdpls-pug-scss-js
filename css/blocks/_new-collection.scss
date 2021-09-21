@@ -1,0 +1,75 @@
+.new-collection {
+  margin-bottom: 70px;
+  padding-top: 157px;
+  padding-bottom: 150px;
+  background-image: url("images/new-collection-banner.jpg");
+  background-repeat: no-repeat;
+
+  @include phablet() {
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 160px;
+    background-position: top center;
+    background-size: 675px;
+  }
+
+  &__container {
+    @include tablet() {
+      padding: 0 36px;
+    }
+
+    @include phablet() {
+      padding: 0 36px;
+    }
+  }
+
+  &__description {
+    width: 508px;
+
+    @include phablet() {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-family: "PlayFair", sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    color: var(--gold);
+
+    @include phablet() {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 42px;
+    font-size: 48px;
+    line-height: 60px;
+    color: var(--white);
+
+    @include phablet() {
+      margin-bottom: 142px;
+      width: 158px;
+      line-height: 20px;
+      font-size: 16px;
+    }
+  }
+
+  &__btn {
+    margin: 0;
+
+    @include laptop() {
+        padding: 19px 49px;
+    }
+
+    @include phablet() {
+        margin: 0 auto;
+        padding: 20px 35px;
+    }
+  }
+}

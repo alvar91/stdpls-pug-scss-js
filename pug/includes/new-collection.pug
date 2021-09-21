@@ -1,9 +1,8 @@
 section.new-collection
-    .container.new_collection__container
-        .new_collection__description
-            span
+    .container.new-collection__container
+        .new-collection__description
+            span.new-collection__title
                 | Оксфорд 1950
-            p
+            p.new-collection__text
                 | Новая коллекция изысканных кресел
-        button.new_collection__btn
-            | Ознакомиться
+        +buttonFilled("Ознакомиться", ["new-collection__btn"])
