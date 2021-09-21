@@ -1,8 +1,16 @@
 .special-offers {
-  margin-bottom: 70px;
+  margin-bottom: 67px;
+
+  @include tablet() {
+    margin-bottom: 67px;
+  }
+
+  @include phablet() {
+    margin-bottom: 66px;
+  }
 
   @include mobile() {
-    margin-bottom: 119px;
+    margin-bottom: 113px;
   }
 
   &__container {

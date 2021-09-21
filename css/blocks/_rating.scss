@@ -10,22 +10,25 @@
 
     @include laptop() {
       grid-template-columns: repeat(3, 1fr);
+      
     }
 
     @include tablet() {
       grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 35px;
     }
 
     @include phablet() {
-      gap: 16px;
+      margin-bottom: 28px;
+      gap: 14px;
     }
   }
 
   &__item {
-    padding-top: 75px;
+    padding-top: 83px;
     position: relative;
     width: 296px;
-    min-height: 420px;
+    min-height: 418px;
     background-color: var(--grey-light);
     border-radius: 10px;
     text-align: center;
@@ -35,6 +38,8 @@
     }
 
     @include laptop() {
+      min-height: 418px;
+
       &:nth-child(n + 7) {
         display: none;
       }
@@ -43,23 +48,52 @@
     @include phablet() {
       width: auto;
       min-width: 140px;
-      padding-top: 53px;
-      min-height: 279px;
+      padding-top: 36px;
+      min-height: 261px;
     }
   }
 
   &__index {
     position: absolute;
     text-align: center;
-    top: 15px;
+    top: 27px;
     left: 30px;
-    padding-left: 22px;
+    //padding-left: 22px;
     color: var(--secondary-main);
+
+    @include laptop() {
+      top: 27px;
+      left: 31px;
+    }
+
+    @include tablet() {
+      top: 28px;
+    }
 
     @include phablet() {
       font-size: 12px;
-      top: 8px;
-      left: 14px;
+      top: 15px;
+      left: 16px;
+    }
+  }
+
+  &__count {
+    padding-left: 4px;
+  }
+
+  &__wrapper {
+    padding-top: 5px;
+
+    @include laptop() {
+      padding-top: 9px;
+    }
+
+    @include tablet() {
+      padding-top: 0px;
+    }
+
+    @include phablet() {
+      padding-top: 14px;
     }
   }
 
@@ -71,15 +105,24 @@
   }
 
   &__description {
-    width: 234px;
+    width: 236px;
     position: absolute;
     bottom: 30px;
     left: 30px;
     text-align: left;
 
+    @include laptop() {
+        width: 236px;
+    }
+
+    @include tablet() {
+      width: 236px;
+    }
+
     @include phablet() {
       width: 140px;
       padding: 20px 16px;
+      padding-right: 28px;
       position: unset;
     }
   }
@@ -90,7 +133,7 @@
     margin-bottom: 23px;
 
     @include phablet() {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
   }
 
@@ -102,10 +145,11 @@
     font-size: 24px;
     line-height: 31px;
     font-weight: normal;
+    word-break: break-word;
 
     @include phablet() {
       font-size: 16px;
-      line-height: 21px;
+      line-height: 19px;
     }
   }
 
@@ -127,20 +171,37 @@
 
   &__btn {
     @include laptop() {
-      padding: 17px 36px;
+      padding: 17px 32px;
+    }
+
+    @include tablet() {
+      padding: 18px 32px;
     }
 
     @include phablet() {
-      padding: 9px 25px;
+      padding: 10px 21px;
     }
   }
 
   &__show-more {
     display: block;
     margin: 0 auto;
+
+    padding: 20px 35px;
   }
 }
 
 .show-card {
   display: block !important;
+}
+
+.rating-star {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+
+  @include tablet() {
+    width: 16px;
+    height: 16px;
+  }
 }
