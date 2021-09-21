@@ -1,7 +1,7 @@
 .new-collection {
   margin-bottom: 70px;
   padding-top: 157px;
-  padding-bottom: 150px;
+  padding-bottom: 154px;
   background-image: url("images/new-collection-banner.jpg");
   background-repeat: no-repeat;
 
@@ -19,7 +19,7 @@
     }
 
     @include phablet() {
-      padding: 0 36px;
+      padding: 0 14px;
     }
   }
 
@@ -62,14 +62,15 @@
 
   &__btn {
     margin: 0;
+    padding: 22px 29px;
 
     @include laptop() {
-        padding: 19px 49px;
+        padding: 19px 29px;
     }
 
     @include phablet() {
         margin: 0 auto;
-        padding: 20px 35px;
+        padding: 20px 84px;
     }
   }
 }
