@@ -102,20 +102,21 @@ mixin ratingList(products)
     each product in products
         - var cur = product.currency === "RUB" ? "руб" : "USD"
 
-        li.product__item
+        li.rating__item
             article.product__card
-                .product__index
+                .rating__index
                     +ratingStar()
                     span
                         | #{product.rating}
-                .product_img__wrapper
+                .rating__wrapper
                     picture
                         source(type="image/webp" srcset=`images/${product.image}.webp`)
-                        img(class="card__img" src=`images/${product.image}.png` alt=`${product.name}`)
-                .product__card__descr
-                    h3.card__title
-                        | #{products.name}
-                    span.product__card__price
+                        img(class="rating__img" src=`images/${product.image}.png` alt=`${product.name}`)
+                .rating__description
+                    h3.rating__title
+                        a(class="rating__link" href="#")
+                            | #{product.name}
+                    p.rating__price
                         | #{product.cost} #{cur}
-                    button.button-transparent
+                    button.button-transparent.rating__btn
                         | Купить

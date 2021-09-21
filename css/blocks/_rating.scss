@@ -1,0 +1,146 @@
+.rating {
+  margin-bottom: 70px;
+
+  &__list {
+    @include list-reset();
+    margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+
+    @include laptop() {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include tablet() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include phablet() {
+      gap: 16px;
+    }
+  }
+
+  &__item {
+    padding-top: 75px;
+    position: relative;
+    width: 296px;
+    min-height: 420px;
+    background-color: var(--grey-light);
+    border-radius: 10px;
+    text-align: center;
+
+    &:nth-child(n + 9) {
+      display: none;
+    }
+
+    @include laptop() {
+      &:nth-child(n + 7) {
+        display: none;
+      }
+    }
+
+    @include phablet() {
+      width: auto;
+      min-width: 140px;
+      padding-top: 53px;
+      min-height: 279px;
+    }
+  }
+
+  &__index {
+    position: absolute;
+    text-align: center;
+    top: 15px;
+    left: 30px;
+    padding-left: 22px;
+    color: var(--secondary-main);
+
+    @include phablet() {
+      font-size: 12px;
+      top: 8px;
+      left: 14px;
+    }
+  }
+
+  &__img {
+    @include phablet() {
+      width: 108px;
+      height: 33px;
+    }
+  }
+
+  &__description {
+    width: 234px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    text-align: left;
+
+    @include phablet() {
+      width: 140px;
+      padding: 20px 16px;
+      position: unset;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 23px;
+
+    @include phablet() {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__link {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: normal;
+
+    @include phablet() {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: var(--grey-shade);
+
+    @include laptop() {
+      font-size: 16px;
+    }
+
+    @include phablet() {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__btn {
+    @include laptop() {
+      padding: 17px 36px;
+    }
+
+    @include phablet() {
+      padding: 9px 25px;
+    }
+  }
+
+  &__show-more {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.show-card {
+  display: block !important;
+}

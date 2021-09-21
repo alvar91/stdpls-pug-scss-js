@@ -194,29 +194,27 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  const productCards = document.querySelectorAll(".product__item");
-  const mainPageProductBtn = document.querySelector(".product_btn");
 
-  if (mainPageProductBtn) {
-    mainPageProductBtn.addEventListener("click", () => {
-      if (!mainPageProductBtn.classList.contains("active")) {
-        productCards.forEach((el) => {
-          if (el.classList.contains("display_none")) {
-            el.classList.remove("display_none");
-            el.classList.add("display_block");
-          }
+  const showMoreBtn = document.querySelector(".js-show-more");
+  const allRatingCards = document.querySelectorAll(".rating__item");
+
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener("click", () => {
+      if (showMoreBtn.classList.contains("js-active")) {
+        allRatingCards.forEach((el) => {
+          el.classList.remove("show-card");
         });
-        mainPageProductBtn.textContent = "Свернуть";
-        mainPageProductBtn.classList.add("active");
+
+        showMoreBtn.classList.remove("js-active");
+        showMoreBtn.textContent = "Смотреть больше товаров";
       } else {
-        productCards.forEach((el) => {
-          if (el.classList.contains("display_block")) {
-            el.classList.remove("display_block");
-            el.classList.add("display_none");
-          }
+        allRatingCards.forEach((el) => {
+          el.classList.add("show-card");
         });
-        mainPageProductBtn.textContent = "Смотреть больше товаров";
-        mainPageProductBtn.classList.remove("active");
+
+        showMoreBtn.classList.add("js-active");
+        showMoreBtn.textContent = "Свернуть";
+
       }
     });
   }
