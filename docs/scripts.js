@@ -159,14 +159,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-  var usefulSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".useful__swiper.swiper-container", {
+  var usefulSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".js-useful-swiper", {
     direction: "horizontal",
     slidesPerColumn: 1,
     slidesPerView: "auto",
     spaceBetween: 32,
     navigation: {
-      nextEl: ".useful__button_next",
-      prevEl: ".useful__button_prev"
+      nextEl: ".js-useful-next",
+      prevEl: ".js-useful-prev"
     },
     breakpoints: {
       320: {

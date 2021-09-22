@@ -28,4 +28,54 @@
       z-index: 2;
     }
   }
+
+  &__list {
+    @include list-reset();
+  }
+
+  &__item {
+    position: relative;
+    max-width: 624px;
+    min-height: 676px;
+    height: auto;
+    background-color: var(--grey-light);
+    border-radius: 10px;
+
+    @include laptop() {
+      width: 296px;
+      min-height: 458px;
+    }
+  }
+
+  &__img {
+    @include laptop() {
+      width: 296px;
+    }
+  }
+
+  &__description {
+    padding: 27px 30px 100px;
+
+    @include laptop() {
+      padding: 25px 37px 114px 30px;
+    }
+  }
+
+  &__content {
+    margin: 0;
+    padding: 0;
+    line-height: 33px;
+    font-size: 24px;
+
+    @include laptop() {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 35px;
+    left: 31px;
+  }
 }

@@ -59,15 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  const usefulSwiper = new Swiper(".useful__swiper.swiper-container", {
+  const usefulSwiper = new Swiper(".js-useful-swiper", {
     direction: "horizontal",
     slidesPerColumn: 1,
     slidesPerView: "auto",
     spaceBetween: 32,
 
     navigation: {
-      nextEl: ".useful__button_next",
-      prevEl: ".useful__button_prev",
+      nextEl: ".js-useful-next",
+      prevEl: ".js-useful-prev",
     },
 
     breakpoints: {

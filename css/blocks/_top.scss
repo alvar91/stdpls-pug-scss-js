@@ -1,6 +1,18 @@
-
-
 .top {
+  margin-bottom: 64px;
+
+  @include laptop() {
+    margin-bottom: 154px;
+  }
+
+  @include tablet() {
+    margin-bottom: 68px;
+  }
+
+  @include mobile() {
+    margin-bottom: 52px;
+  }
+
   &__field {
     @include list-reset();
     display: grid;
@@ -69,7 +81,7 @@
     text-decoration: none;
 
     @include laptop() {
-    bottom: 40px;
+      bottom: 40px;
     }
 
     .link-inner {
@@ -191,7 +203,6 @@
   }
 
   @include mobile() {
-    margin-bottom: 64px;
 
     &__card {
       overflow: hidden;

@@ -148,13 +148,15 @@ mixin categoriesList(categories)
                     span
 
 mixin usefulList(posts)
-    each post in posts 
-        article.swiper-slide.useful__article
-            picture
-            source(srcset=`images/${post.image}.webp` type="image/webp")
-            img(class="useful__img" src=`images/${post.image}.jpg` alt="image")
-            p.useful__description
-                | #{post.content}
-                
-            button.button-transparent
-                | Читать
+    each post in posts
+        li.useful__item.swiper-slide
+            article.swiper-slide.useful__article
+                picture
+                    source(srcset=`images/${post.image}.webp` type="image/webp")
+                    img(class="useful__img" src=`images/${post.image}.jpg` alt="image")
+                .useful__description
+                    p.useful__content
+                        | #{post.content}
+                        
+                button.button-transparent.useful__btn
+                    | Читать
