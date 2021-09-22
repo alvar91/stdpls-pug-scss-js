@@ -125,18 +125,20 @@ mixin ratingList(products)
 
 mixin categoriesList(categories)
     each categorie in categories                
-        li.top__categorie
-            article.categorie__card
-                ul.top__sub-categorie
-                    each subCategorie in categorie.subCategories
-                        li.top__sub-categorie
-                            | #{subCategorie}
-                h3.top__title
-                    a(href="#" class="link top__link")
-                        | #{categorie.categorie}
-                picture
-                    source(type="image/webp" srcset=`images/${categorie.image}.webp`)
-                    img(class="top__img" src=`images/${categorie.image}.png` alt=`${categorie.name}`)
-                a(class="main__categories-list-item-link" href="#")
-                    | В каталог 
+        li.top__card
+            each subCategorie in categorie.subCategories
+                span.top__feature
+                    | #{subCategorie}
+            h3.top__card-name
+                | #{categorie.categorie}
+                a(href="#")
                     span.link-arrow
+                        span
+            picture      
+                source(type="image/webp" srcset=`images/${categorie.image}.webp`)
+                img(class="top__card-img" src=`images/${categorie.image}.png` alt=`${categorie.name}`)
+            a(class="top__card-link" href="#")
+                span.link-inner
+                    | В каталог
+                span.link-arrow
+                    span

@@ -135,3 +135,23 @@
     transform: rotate(180deg);
   }
 }
+
+.link-arrow {
+  display: inline-block;
+  border: 2px solid var(--primary-main);
+  border-radius: 100px;
+  width: 22px;
+  height: 22px;
+}
+
+.link-arrow span {
+  display: inline-block;
+  border-top: 2px solid var(--primary-main);
+  border-right: 2px solid var(--primary-main);
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  margin-left: 3.5px;
+  vertical-align: middle;
+  transform: rotate(45deg);
+}
