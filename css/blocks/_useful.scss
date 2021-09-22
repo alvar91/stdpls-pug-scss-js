@@ -1,0 +1,31 @@
+.useful {
+  &__container {
+    position: relative;
+  }
+
+  &__btns {
+    position: absolute;
+    top: 0;
+    right: 15px;
+
+    @include laptop() {
+      right: 36px;
+    }
+
+    @include tablet() {
+      right: 69px;
+    }
+
+    @include phablet() {
+      right: 12px;
+    }
+
+    @include mobile() {
+      top: auto;
+      right: auto;
+      left: calc((100% - 78px) / 2);
+      bottom: -48px;
+      z-index: 2;
+    }
+  }
+}

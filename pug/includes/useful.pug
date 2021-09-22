@@ -1,0 +1,17 @@
+include ./mixins.pug
+
+- var usefulPosts = [{"content": "И нет сомнений, что сделанные на базе интернет-аналитики выводы представляют собой не что иное?", "image": "useful-img-1"},{"content": "Как принято считать, некоторые особенности приносят несомненную пользу обществу?", "image": "useful-img-2"},{"content": "Ясность нашей позиции очевидна: укрепление и развитие внутренней структуры?", "image": "useful-img-3"},{"content": "Прежде всего, консультация с широким активом однозначно фиксирует необходимость распределения?", "image": "useful-img-4"},{"content": "Как принято считать, некоторые особенности приносят несомненную пользу обществу?", "image": "useful-img-5"}]
+
+section.useful
+    .container.useful__container
+        h2.section-title
+            | Полезное
+
+        .useful__btns
+            button(class="button-circle button-circle--left special-offers__prev js-useful-prev" aria-label="Предыдущий слайд")
+                span
+            button(class="button-circle special-offers__next js-useful-next" aria-label="Следующий слайд")
+                span
+
+        .swiper-wrapper.useful__swiper-wrapper
+            +usefulList(usefulPosts)
