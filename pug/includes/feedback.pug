@@ -1,0 +1,28 @@
+section.feedback.container
+    h2.feedback__title
+        | Мы всегда вам рады!
+    .feedback__content
+        form(action="" enctype="multipart/form-data" class="feedback__form js-form" method="POST")
+            p.feedback__text
+                | Безусловно, новая модель организационной деятельности в значительной степени обусловливает важность распределения внутренних резервов и ресурсов.
+                span.feedback__tooltip                         
+            .just-validate-container
+                input(class="feedback__input" id="name" name="name" type="text" placeholder="Как вас зовут?" data-validate-field="name")
+
+            .just-validate-container
+                .input(class="feedback__input" id="tel" name="tel" type="tel" placeholder="Ваш телефон" data-validate-field="tel")
+
+            .just-validate-container
+                input(class="feedback__input" id="email" name="email" type="email" placeholder="Ваш e-mail" data-validate-field="email")
+            button.feedback__button
+                | Отправить
+            .just-validate-container
+                label.feedback__checkbox.feedback__label
+                    input(type="checkbox" name="checkbox" class="checkbox visually-hidden" checked required data-validate-field="checkbox")
+                    span.feedback__span    
+                        | Принимаю&nbsp;
+                        a(href="#" class="feedback__link")
+                        | пользовательское соглашение 
+        picture
+            source(media="(max-width:1024px)" srcset="")
+            img(src="" alt="Contacts image" class="feedback__img")

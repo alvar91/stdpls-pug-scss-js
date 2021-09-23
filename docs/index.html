@@ -669,6 +669,33 @@
           </div>
         </div>
       </section>
+      <section class="feedback container">
+        <h2 class="feedback__title">Мы всегда вам рады!</h2>
+        <div class="feedback__content">
+          <form class="feedback__form js-form" action="" enctype="multipart/form-data" method="POST">
+            <p class="feedback__text">Безусловно, новая модель организационной деятельности в значительной степени обусловливает важность распределения внутренних резервов и ресурсов.<span class="feedback__tooltip">                        </span></p>
+            <div class="just-validate-container">
+              <input class="feedback__input" id="name" name="name" type="text" placeholder="Как вас зовут?" data-validate-field="name">
+            </div>
+            <div class="just-validate-container">
+              <div class="input feedback__input" id="tel" name="tel" type="tel" placeholder="Ваш телефон" data-validate-field="tel"></div>
+            </div>
+            <div class="just-validate-container">
+              <input class="feedback__input" id="email" name="email" type="email" placeholder="Ваш e-mail" data-validate-field="email">
+            </div>
+            <button class="feedback__button">Отправить</button>
+            <div class="just-validate-container">
+              <label class="feedback__checkbox feedback__label">
+                <input class="checkbox visually-hidden" type="checkbox" name="checkbox" checked required data-validate-field="checkbox"><span class="feedback__span">
+                     Принимаю&nbsp;<a class="feedback__link" href="#"></a>пользовательское соглашение </span>
+              </label>
+            </div>
+          </form>
+          <picture>
+            <source media="(max-width:1024px)" srcset=""><img class="feedback__img" src="" alt="Contacts image">
+          </picture>
+        </div>
+      </section>
     </main>
     <script src="scripts.js"></script>
   </body>
