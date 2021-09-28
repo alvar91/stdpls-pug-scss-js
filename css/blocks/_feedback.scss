@@ -157,6 +157,10 @@
     display: flex;
     align-items: center;
     border-radius: 2px;
+
+    @include phablet() {
+        font-size: 12px;
+    }
   }
   
   &__span::before {
