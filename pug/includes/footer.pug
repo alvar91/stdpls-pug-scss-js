@@ -1,41 +1,62 @@
-footer.page-footer
-    .central-container
-        .page-footer__main
-            .page-footer__wrapper-top
-                nav.page-footer__nav.main-nav
-                    ul.main-nav__list.main-nav__list--footer
-                        li.main-nav__item.main-nav__item--footer
-                            a(class="link main-nav__link main-nav__link--footer" href="#services")
-                                | Услуги
-                        li.main-nav__item.main-nav__item--footer
-                            a(class="link main-nav__link main-nav__link--footer" href="#portfolio")
-                                | Портфолио
-                        li.main-nav__item.main-nav__item--footer
-                            a(class="link main-nav__link main-nav__link--footer" href="#price")
-                                | Стоимость
-                .page-footer__contacts.contacts
-                    a(class="link contacts__item tel tel--footer" href="tel:+74999957755")
-                        i(class="fa fa--phone" aria-hidden="true")
-                        | +7 (499) 995-77-55
-                    a(class="link contacts__item" href="mailto:dmitry@alekseev.com")
-                        i(class="fa fa--envelope" aria-hidden="true")
-                        | dmitry@alekseev.com
-            .page-footer__wrapper-bottom
-                button.page-footer__button.button.button--footer.js-popup-call
-                    | Заказать звонок
-                .page-footer__social.social
-                    ul.social__list
-                        li.social__item
-                            a(class="link social__link social__link--vk" href="https://vk.com/" target="_blank")
-                                | Вконтакте
-                        li.social__item
-                            a(class="link social__link social__link--fb" href="https://ru-ru.facebook.com/" target="_blank")
-                                | Facebook
-                        li.social__item
-                            a(class="link social__link social__link--tw" href="https://twitter.com/?lang=ru" target="_blank")
-                                | Twitter
-                        li.social__item
-                            a(class="link social__link social__link--inst" href="https://www.instagram.com/?hl=ru" target="_blank")
-                                | Instagram
-    .page-footer__copyright.copyright
-        p.copyright__text &copy; Дмитрий Алексеев, 2016 – 2020
+include ./mixins.pug
+
+footer.footer
+    .footer__content.container
+        .footer__left-column
+            +logo()
+            ul.footer__social-list
+                li.footer__item
+                    a(href="#" class="footer__social-link footer__social-link--facebook")
+                li.footer__item
+                    a(href="#" class="footer__social-link footer__social-link--vk")
+                li.footer__item
+                    a(href="#" class="footer__social-link footer__social-link--instagram")
+        .footer__right-column
+            ul.footer__list
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | О нас
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | О компании
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Блог
+            ul.footer__list
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Услуги
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Доставка
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Рассрочка и кредит
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Сборка и установка
+            ul.footer__list
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Связь с нами
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Обратная связь
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Контакты
+            ul.footer__list
+                li.footer__item
+                    | Сотрудничество
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Поставщикам
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Оптовикам
+                li.footer__item
+                    a(href="#" class="footer__link")
+                        | Карьера
+    .footer__copyright
+        p.footer__copyright-text
+            | SDP&reg; &nbsp;2011-2021

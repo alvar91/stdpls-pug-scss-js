@@ -63,14 +63,13 @@
       width: 157px;
       height: 58px;
       padding-top: 7px;
-      background-color: #333;
-      color: #fff;
+      background-color: var(--black);
+      color: var(--white);
       font-size: 9px;
       line-height: 14px;
       text-align: center;
       z-index: -1;
       opacity: 0;
-      -webkit-transition: opacity 0.2s ease;
       transition: opacity 0.2s ease;
     }
 
@@ -82,7 +81,7 @@
       left: 1px;
       width: 12px;
       height: 12px;
-      background-color: #333;
+      background-color: var(--black);
       z-index: -1;
       opacity: 0;
       transition: opacity 0.2s ease;
@@ -93,10 +92,9 @@
     margin: 0;
     padding: 0;
     border: none;
-    border: 2px solid #f6f6f6;
-    color: #333;
-    background-color: #f6f6f6;
-    -webkit-transition: background 0.2s ease;
+    border: 2px solid var(--grey-light);
+    color: var(--black);
+    background-color: var(--grey-light);
     transition: background 0.2s ease;
     width: 100%;
     padding: 17px;
@@ -116,17 +114,17 @@
   }
 
   &__link {
-    color: #a65cf0;
+    color: var(--primary-main);
   }
 
   &__img {
     transform: translateY(-17px);
 
-    @include laptop() {
-      width: 517px;
-      margin-top: 36px;
-      transform: unset;
-    }
+    // @include laptop() {
+    //   width: 517px;
+    //   margin-top: 36px;
+    //   transform: unset;
+    // }
 
     @include tablet() {
       width: unset;
@@ -140,7 +138,7 @@
   }
 
   &__span:hover {
-    outline: 1px solid #a65cf0;
+    outline: 1px solid var(--primary-main);
   }
   
   &__checkbox {
@@ -169,7 +167,7 @@
     display: inline-block;
     width: 14px;
     height: 14px;
-    border: 1px solid #999;
+    border: 1px solid var(--grey);
     border-radius: 2px;
   }
   
@@ -180,7 +178,7 @@
     top: 3px;
     width: 3px;
     height: 6px;
-    border: solid #fff;
+    border: solid var(--white);
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
     transition: border 0.2s ease-in-out, opacity 0.2s ease-in-out;
@@ -194,8 +192,8 @@
   opacity: 0;
 
   &:checked + .feedback__span::before {
-    border-color: #a65cf0;
-    background-color: #a65cf0;
+    border-color: var(--primary-main);
+    background-color: var(--primary-main);
   }
   
   &:checked + .feedback__span::after {
@@ -203,8 +201,8 @@
   }
   
   &:checked + &__span::before {
-    border-color: #a65cf0;
-    background-color: #a65cf0;
+    border-color: var(--primary-main);
+    background-color: var(--primary-main);
   }
   
   &:checked + &__span::after {
@@ -212,24 +210,10 @@
   }
   
   &__span:hover {
-    outline: 1px solid #a65cf0;
+    outline: 1px solid var(--primary-main);
   }
   
   &:focus + &__span {
-    outline: 1px solid #a65cf0;
+    outline: 1px solid var(--primary-main);
   }
 }
-
-
-
-
-// .main__contactus-form-checkbox-link {
-//   color: #a65cf0;
-// }
-
-
-
-
-
-
-
