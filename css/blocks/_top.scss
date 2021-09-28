@@ -277,4 +277,8 @@
       max-width: 121%;
     }
   }
+
+  &__category-list {
+    @include list-reset();
+  }
 }
