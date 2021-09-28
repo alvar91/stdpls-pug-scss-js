@@ -1,0 +1,235 @@
+.feedback {
+  margin-bottom: 70px;
+
+  @include tablet() {
+    margin-bottom: 52px;
+  }
+
+  @include phablet() {
+    margin-bottom: 68px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+
+    @include laptop() {
+      grid-template-columns: 1fr 517px;
+    }
+
+    @include tablet() {
+      grid-template-columns: 1fr 187px;
+    }
+
+    @include phablet() {
+      display: block;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &__tooltip {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    background-image: url("images/question.svg");
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 14px;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background-image: url("images/question-hover.svg");
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    &::before {
+      content: "Реплицированные с зарубежных источников, исследования формируют глобальную сеть.";
+      position: absolute;
+      top: -70px;
+      left: -68px;
+      width: 157px;
+      height: 58px;
+      padding-top: 7px;
+      background-color: #333;
+      color: #fff;
+      font-size: 9px;
+      line-height: 14px;
+      text-align: center;
+      z-index: -1;
+      opacity: 0;
+      -webkit-transition: opacity 0.2s ease;
+      transition: opacity 0.2s ease;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -17px;
+      transform: rotate(45deg);
+      left: 1px;
+      width: 12px;
+      height: 12px;
+      background-color: #333;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+  }
+
+  &__input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border: 2px solid #f6f6f6;
+    color: #333;
+    background-color: #f6f6f6;
+    -webkit-transition: background 0.2s ease;
+    transition: background 0.2s ease;
+    width: 100%;
+    padding: 17px;
+    margin-bottom: 28px;
+    border-radius: 10px;
+  }
+
+  &__button {
+    @include laptop() {
+      margin-bottom: 12px;
+      padding: 16px 32px;
+    }
+
+    @include tablet() {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__link {
+    color: #a65cf0;
+  }
+
+  &__img {
+    transform: translateY(-17px);
+
+    @include laptop() {
+      width: 517px;
+      margin-top: 36px;
+      transform: unset;
+    }
+
+    @include tablet() {
+      width: unset;
+      margin-top: 0;
+      transform: translateY(-28px);
+    }
+
+    @include phablet() {
+      display: none;
+    }
+  }
+
+  &__span:hover {
+    outline: 1px solid #a65cf0;
+  }
+  
+  &__checkbox {
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  &__label {
+    position: relative;
+    display: inline-block;
+    padding-left: 22px;
+  }
+  
+  &__span {
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+  }
+  
+  &__span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #999;
+    border-radius: 2px;
+  }
+  
+  &__span::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    width: 3px;
+    height: 6px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: border 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 0;
+  }
+  
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+
+  &:checked + .feedback__span::before {
+    border-color: #a65cf0;
+    background-color: #a65cf0;
+  }
+  
+  &:checked + .feedback__span::after {
+    opacity: 1;
+  }
+  
+  &:checked + &__span::before {
+    border-color: #a65cf0;
+    background-color: #a65cf0;
+  }
+  
+  &:checked + &__span::after {
+    opacity: 1;
+  }
+  
+  &__span:hover {
+    outline: 1px solid #a65cf0;
+  }
+  
+  &:focus + &__span {
+    outline: 1px solid #a65cf0;
+  }
+}
+
+
+
+
+// .main__contactus-form-checkbox-link {
+//   color: #a65cf0;
+// }
+
+
+
+
+
+
+

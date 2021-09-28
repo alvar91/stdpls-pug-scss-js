@@ -86,6 +86,72 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./js/burger.js":
+/*!**********************!*\
+  !*** ./js/burger.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var burger = document.querySelector(".js-burger");
+var headerNav = document.querySelector(".header__nav");
+
+function closeMenu() {
+  burger.classList.remove("active");
+  headerNav.classList.remove("active");
+}
+
+function openMenu() {
+  burger.classList.add("active");
+  headerNav.classList.add("active");
+}
+
+if (burger) {
+  document.body.addEventListener("click", function (e) {
+    var target = e.target;
+
+    if (!target.closest(".active")) {
+      closeMenu();
+    }
+  });
+  burger.addEventListener("click", function () {
+    if (burger.classList.contains("active")) {
+      closeMenu();
+      return;
+    }
+
+    openMenu();
+  });
+  window.addEventListener("resize", function () {
+    closeMenu();
+  });
+}
+
+/***/ }),
+
+/***/ "./js/choices.js":
+/*!***********************!*\
+  !*** ./js/choices.js ***!
+  \***********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
+/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(choices_js__WEBPACK_IMPORTED_MODULE_0__);
+
+var choices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a("[data-trigger]", {
+  searchEnabled: false,
+  itemSelectText: ""
+});
+var selectchoices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a("#header-bottom__select", {
+  searchEnabled: false,
+  itemSelectText: ""
+});
+
+/***/ }),
+
 /***/ "./js/index.js":
 /*!*********************!*\
   !*** ./js/index.js ***!
@@ -95,549 +161,838 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
-/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(choices_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
-/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! nouislider */ "./node_modules/nouislider/dist/nouislider.js");
-/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_2__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+/* harmony import */ var _burger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./burger.js */ "./js/burger.js");
+/* harmony import */ var _burger_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_burger_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _choices_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./choices.js */ "./js/choices.js");
+/* harmony import */ var _swipers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./swipers.js */ "./js/swipers.js");
+/* harmony import */ var _show_more_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./show-more.js */ "./js/show-more.js");
+/* harmony import */ var _show_more_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_show_more_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _just_validate_min_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./just-validate.min.js */ "./js/just-validate.min.js");
+/* harmony import */ var _just_validate_min_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_just_validate_min_js__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  "use strict";
 
-  var choices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a("[data-trigger]", {
-    searchEnabled: false,
-    itemSelectText: ""
-  });
-  var selectchoices = new choices_js__WEBPACK_IMPORTED_MODULE_0___default.a("#header-bottom__select", {
-    searchEnabled: false,
-    itemSelectText: ""
-  });
-  var swiperPromo = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".js-promo-swiper", {
-    direction: "horizontal",
-    slidesPerGroup: 1,
-    slidesPerColumn: 1,
-    slidesPerView: 1,
-    loop: true,
-    effect: "fade",
-    fadeEffect: {
-      crossFade: true
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets"
-    } // autoplay: {
-    //   delay: 3000,
-    // },
 
-  });
-  var offersSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".js-special-offers-swiper", {
-    direction: "horizontal",
-    slidesPerColumn: 1,
-    slidesPerView: "auto",
-    spaceBetween: 32,
-    navigation: {
-      nextEl: ".js-special-offers-next",
-      prevEl: ".js-special-offers-prev"
-    },
-    breakpoints: {
-      320: {
-        slidesPerGroup: 1
-      },
-      570: {
-        slidesPerGroup: 2
-      },
-      1023: {
-        slidesPerGroup: 3
-      }
-    }
-  });
-  var usefulSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".js-useful-swiper", {
-    direction: "horizontal",
-    slidesPerColumn: 1,
-    slidesPerView: "auto",
-    spaceBetween: 32,
-    navigation: {
-      nextEl: ".js-useful-next",
-      prevEl: ".js-useful-prev"
-    },
-    breakpoints: {
-      320: {
-        slidesPerGroup: 1,
-        spaceBetween: 16
-      },
-      570: {
-        slidesPerGroup: 2,
-        spaceBetween: 32
-      },
-      1023: {
-        slidesPerGroup: 3
-      }
-    }
-  });
-  var catalogSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-container.catalog_products__field", {
-    direction: "horizontal",
-    slidesPerColumnFill: "row",
-    breakpoints: {
-      1: {
-        slidesPerGroup: 2,
-        slidesPerColumn: 3,
-        spaceBetween: 16,
-        slidesPerView: 2
-      },
-      767: {
-        slidesPerGroup: 2,
-        slidesPerColumn: 3,
-        spaceBetween: 32,
-        slidesPerView: 2
-      },
-      1023: {
-        slidesPerGroup: 3,
-        slidesPerColumn: 3,
-        slidesPerView: 3,
-        spaceBetween: 32
-      }
-    },
-    pagination: {
-      el: ".catalog_pagination.swiper-pagination",
-      clickable: true,
-      renderBullet: function renderBullet(index, className) {
-        return '<span class="' + className + '">' + (index + 1) + "</span>";
-      }
-    }
-  });
-  var productSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-container.product__swiper", {
-    direction: "horizontal",
-    breakpoints: {
-      300: {
-        slidesPerGroup: 2,
-        slidesPerColumn: 1,
-        slidesPerView: "auto",
-        spaceBetween: 16
-      },
-      767: {
-        slidesPerGroup: 2,
-        slidesPerColumn: 1,
-        slidesPerView: "auto",
-        spaceBetween: 32
-      }
-    },
-    navigation: {
-      nextEl: ".product__button_next",
-      prevEl: ".product__button_prev"
-    }
-  });
-  var modalSwiperThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-container.slider__thumbs", {
-    direction: "horizontal",
-    breakpoints: {
-      319: {
-        spaceBetween: 63,
-        slidesPerView: 1,
-        slidesPerGroup: 1
-      },
-      400: {
-        spaceBetween: 78,
-        slidesPerView: 2,
-        slidesPerGroup: 1
-      },
-      769: {
-        spaceBetween: 78,
-        slidesPerView: 3,
-        slidesPerGroup: 1
-      },
-      1230: {
-        spaceBetween: 78,
-        slidesPerView: 4,
-        slidesPerGroup: 1
-      }
-    },
-    navigation: {
-      nextEl: ".slider__thumbs_next",
-      prevEl: ".slider__thumbs_prev"
-    }
-  });
-  var modalSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-container.modal__slider", {
-    loop: true,
-    spaceBetween: 10,
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    thumbs: {
-      swiper: modalSwiperThumbs
-    }
-  });
-  var showMoreBtn = document.querySelector(".js-show-more");
-  var allRatingCards = document.querySelectorAll(".rating__item");
+/***/ }),
 
-  if (showMoreBtn) {
-    showMoreBtn.addEventListener("click", function () {
-      if (showMoreBtn.classList.contains("js-active")) {
-        allRatingCards.forEach(function (el) {
-          el.classList.remove("show-card");
-        });
-        showMoreBtn.classList.remove("js-active");
-        showMoreBtn.textContent = "Смотреть больше товаров";
-      } else {
-        allRatingCards.forEach(function (el) {
-          el.classList.add("show-card");
-        });
-        showMoreBtn.classList.add("js-active");
-        showMoreBtn.textContent = "Свернуть";
-      }
-    });
+/***/ "./js/just-validate.min.js":
+/*!*********************************!*\
+  !*** ./js/just-validate.min.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(setImmediate) {
+
+function _typeof2(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
+function _defineProperty(e, t, i) {
+  return t in e ? Object.defineProperty(e, t, {
+    value: i,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : e[t] = i, e;
+}
+
+var _typeof = "function" == typeof Symbol && "symbol" == _typeof2(Symbol.iterator) ? function (e) {
+  return _typeof2(e);
+} : function (e) {
+  return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : _typeof2(e);
+};
+
+!function () {
+  for (var e = ["DocumentType", "Element", "CharacterData"], t = function t() {
+    null != this.parentNode && this.parentNode.removeChild(this);
+  }, i = 0; i < e.length; i++) {
+    var r = e[i];
+    window[r] && !window[r].prototype.remove && (window[r].prototype.remove = t);
   }
+}(), function (e) {
+  function t() {}
 
-  var rangeSlider = document.querySelector(".fiter__range");
-  var rangeInputs = document.querySelectorAll(".input_number");
-
-  if (rangeSlider) {
-    nouislider__WEBPACK_IMPORTED_MODULE_2___default.a.create(rangeSlider, {
-      start: [2000, 250000],
-      connect: true,
-      step: 25000,
-      keyboardSupport: true,
-      range: {
-        min: [2000],
-        max: [250000]
-      }
-    });
-    rangeSlider.noUiSlider.on("update", function (values, handle) {
-      rangeInputs[handle].value = Math.round(values[handle]);
-    });
-
-    var setRangeSlider = function setRangeSlider(index, value) {
-      var arr = [null, null];
-      arr[index] = value;
-      rangeSlider.noUiSlider.set(arr);
+  function i(e, t) {
+    return function () {
+      e.apply(t, arguments);
     };
+  }
 
-    rangeInputs.forEach(function (item, i) {
-      item.addEventListener("change", function (e) {
-        setRangeSlider(i, e.currentTarget.value);
+  function r(e) {
+    if ("object" !== _typeof(this)) throw new TypeError("Promises must be constructed via new");
+    if ("function" != typeof e) throw new TypeError("not a function");
+    this._state = 0, this._handled = !1, this._value = void 0, this._deferreds = [], u(e, this);
+  }
+
+  function n(e, t) {
+    for (; 3 === e._state;) {
+      e = e._value;
+    }
+
+    return 0 === e._state ? void e._deferreds.push(t) : (e._handled = !0, void r._immediateFn(function () {
+      var i = 1 === e._state ? t.onFulfilled : t.onRejected;
+      if (null === i) return void (1 === e._state ? o : s)(t.promise, e._value);
+      var r;
+
+      try {
+        r = i(e._value);
+      } catch (n) {
+        return void s(t.promise, n);
+      }
+
+      o(t.promise, r);
+    }));
+  }
+
+  function o(e, t) {
+    try {
+      if (t === e) throw new TypeError("A promise cannot be resolved with itself.");
+
+      if (t && ("object" === ("undefined" == typeof t ? "undefined" : _typeof(t)) || "function" == typeof t)) {
+        var n = t.then;
+        if (t instanceof r) return e._state = 3, e._value = t, void a(e);
+        if ("function" == typeof n) return void u(i(n, t), e);
+      }
+
+      e._state = 1, e._value = t, a(e);
+    } catch (o) {
+      s(e, o);
+    }
+  }
+
+  function s(e, t) {
+    e._state = 2, e._value = t, a(e);
+  }
+
+  function a(e) {
+    2 === e._state && 0 === e._deferreds.length && r._immediateFn(function () {
+      e._handled || r._unhandledRejectionFn(e._value);
+    });
+
+    for (var t = 0, i = e._deferreds.length; t < i; t++) {
+      n(e, e._deferreds[t]);
+    }
+
+    e._deferreds = null;
+  }
+
+  function l(e, t, i) {
+    this.onFulfilled = "function" == typeof e ? e : null, this.onRejected = "function" == typeof t ? t : null, this.promise = i;
+  }
+
+  function u(e, t) {
+    var i = !1;
+
+    try {
+      e(function (e) {
+        i || (i = !0, o(t, e));
+      }, function (e) {
+        i || (i = !0, s(t, e));
       });
-    });
+    } catch (r) {
+      if (i) return;
+      i = !0, s(t, r);
+    }
   }
 
-  var handles = document.querySelectorAll(".noUi-handle");
-  var noUiLine = document.querySelector(".noUi-connect");
-  handles.forEach(function (el) {
-    el.addEventListener("focus", function () {
-      noUiLine.style.background = "#7033ac";
-    });
-  });
-  handles.forEach(function (el) {
-    el.addEventListener("blur", function () {
-      noUiLine.style.background = "#a65cf0";
-    });
-  });
-  var burger = document.querySelector(".js-burger");
-  var headerNav = document.querySelector(".header__nav");
-
-  function closeMenu() {
-    burger.classList.remove("active");
-    headerNav.classList.remove("active");
-  }
-
-  function openMenu() {
-    burger.classList.add("active");
-    headerNav.classList.add("active");
-  }
-
-  if (burger) {
-    document.body.addEventListener("click", function (e) {
-      var target = e.target;
-
-      if (!target.closest(".active")) {
-        closeMenu();
-      }
-    });
-    burger.addEventListener("click", function () {
-      if (burger.classList.contains("active")) {
-        closeMenu();
-        return;
-      }
-
-      openMenu();
-    });
-    window.addEventListener("resize", function () {
-      closeMenu();
-    });
-  }
-
-  var feedbackName = document.querySelector(".feedback__name");
-  var nameAlert = document.querySelector(".name_alert");
-  var feedbackForm = document.querySelector(".feedback__form");
-
-  if (feedbackForm) {
-    feedbackForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      if (feedbackName.value.match(/\w/g)) {
-        nameAlert.style.color = "#ff6972";
-        feedbackName.classList.add("alert");
-      } else {
-        nameAlert.style.color = "transparent";
-        feedbackName.classList.remove("alert");
-        feedbackForm.reset();
-        modalField.classList.add("active");
-        disableScroll();
-        setTimeout(function () {
-          modalField.classList.remove("active");
-          anableScroll();
-        }, 3000);
-      }
-    });
-  }
-
-  var filterOpen = document.querySelectorAll(".filters__open_btn");
-  var filterDropdown = document.querySelectorAll(".tablet_filter__inner");
-  filterOpen.forEach(function (item, i) {
-    item.addEventListener("click", function () {
-      item.classList.toggle("active");
-      filterDropdown[i].classList.toggle("active");
-    });
-  });
-  var checkboxIinputs = document.querySelectorAll(".filter_checkbox");
-  var optionsField = document.querySelector(".catalog__options");
-  var checkboxName = document.querySelectorAll(".checkbox_name");
-  var checkboxCost = document.querySelectorAll(".checkbox_cost");
-
-  var openHiddenFilters = function openHiddenFilters(btnSelector, hiddenCategory, string) {
-    var button = document.querySelectorAll(btnSelector);
-    var hiddenCheckboxes = document.querySelectorAll(hiddenCategory);
-
-    if (button) {
-      button.forEach(function (element) {
-        element.addEventListener("click", function () {
-          element.classList.toggle("active");
-
-          if (element.classList.contains("active")) {
-            element.textContent = "Свернуть";
-          } else {
-            element.textContent = string;
+  var d = setTimeout;
+  r.prototype["catch"] = function (e) {
+    return this.then(null, e);
+  }, r.prototype.then = function (e, i) {
+    var r = new this.constructor(t);
+    return n(this, new l(e, i, r)), r;
+  }, r.all = function (e) {
+    var t = Array.prototype.slice.call(e);
+    return new r(function (e, i) {
+      function r(o, s) {
+        try {
+          if (s && ("object" === ("undefined" == typeof s ? "undefined" : _typeof(s)) || "function" == typeof s)) {
+            var a = s.then;
+            if ("function" == typeof a) return void a.call(s, function (e) {
+              r(o, e);
+            }, i);
           }
 
-          var toggleSelector = hiddenCategory.slice(1);
-          hiddenCheckboxes.forEach(function (item) {
-            item.classList.toggle(toggleSelector);
+          t[o] = s, 0 === --n && e(t);
+        } catch (l) {
+          i(l);
+        }
+      }
+
+      if (0 === t.length) return e([]);
+
+      for (var n = t.length, o = 0; o < t.length; o++) {
+        r(o, t[o]);
+      }
+    });
+  }, r.resolve = function (e) {
+    return e && "object" === ("undefined" == typeof e ? "undefined" : _typeof(e)) && e.constructor === r ? e : new r(function (t) {
+      t(e);
+    });
+  }, r.reject = function (e) {
+    return new r(function (t, i) {
+      i(e);
+    });
+  }, r.race = function (e) {
+    return new r(function (t, i) {
+      for (var r = 0, n = e.length; r < n; r++) {
+        e[r].then(t, i);
+      }
+    });
+  }, r._immediateFn = "function" == typeof setImmediate && function (e) {
+    setImmediate(e);
+  } || function (e) {
+    d(e, 0);
+  }, r._unhandledRejectionFn = function (e) {
+    "undefined" != typeof console && console && console.warn("Possible Unhandled Promise Rejection:", e);
+  }, r._setImmediateFn = function (e) {
+    r._immediateFn = e;
+  }, r._setUnhandledRejectionFn = function (e) {
+    r._unhandledRejectionFn = e;
+  },  true && module.exports ? module.exports = r : e.Promise || (e.Promise = r);
+}(window), function (e) {
+  e.Promise || (e.Promise = Promise);
+
+  var t = "required",
+      i = "email",
+      r = "minLength",
+      n = "maxLength",
+      o = "password",
+      s = "zip",
+      a = "phone",
+      l = "remote",
+      u = "strength",
+      d = "function",
+      c = function c(e, t) {
+    if ("string" == typeof e) return e;
+    var i = "post" === t.toLowerCase() ? "" : "?";
+    return Array.isArray(e) ? i + e.map(function (e) {
+      return e.name + "=" + e.value;
+    }).join("&") : i + Object.keys(e).map(function (t) {
+      return t + "=" + e[t];
+    }).join("&");
+  },
+      h = function h(e) {
+    var t = e.url,
+        i = e.method,
+        r = e.data,
+        n = e.debug,
+        o = e.callback,
+        s = e.error;
+    if (n) return void o("test");
+    var a = e.async !== !1,
+        l = new XMLHttpRequest(),
+        u = c(r, "get"),
+        d = null;
+    "post" === i.toLowerCase() && (d = c(r, "post"), u = ""), l.open(i, t + u, a), l.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"), l.onreadystatechange = function () {
+      4 === this.readyState && (200 === this.status ? o(this.responseText) : s && s(this.responseText));
+    }, l.send(d);
+  },
+      f = function f(e, t) {
+    this.options = t || {}, this.rules = this.options.rules || {}, this.messages = this.options.messages || void 0, this.colorWrong = this.options.colorWrong || "#B81111", this.result = {}, this.elements = [], this.tooltip = this.options.tooltip || {}, this.tooltipFadeOutTime = this.tooltip.fadeOutTime || 5e3, this.tooltipFadeOutClass = this.tooltip.fadeOutClass || "just-validate-tooltip-hide", this.tooltipSelectorWrap = document.querySelectorAll(this.tooltip.selectorWrap).length ? document.querySelectorAll(this.tooltip.selectorWrap) : document.querySelectorAll(".just-validate-tooltip-container"), this.bindHandlerKeyup = this.handlerKeyup.bind(this), this.submitHandler = this.options.submitHandler || void 0, this.invalidFormCallback = this.options.invalidFormCallback || void 0, this.promisesRemote = [], this.isValidationSuccess = !1, this.focusWrongField = this.options.focusWrongField || !1, this.REGEXP = {
+      email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      zip: /^\d{5}(-\d{4})?$/,
+      phone: /^([0-9]( |-)?)?(\(?[0-9]{3}\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})$/,
+      password: /[^\w\d]*(([0-9]+.*[A-Za-z]+.*)|[A-Za-z]+.*([0-9]+.*))/,
+      strengthPass: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]/
+    }, this.DEFAULT_REMOTE_ERROR = "Error", this.state = {
+      tooltipsTimer: null
+    }, this.setForm(document.querySelector(e));
+  };
+
+  f.prototype = {
+    defaultRules: {
+      email: {
+        required: !0,
+        email: !0
+      },
+      name: {
+        required: !0,
+        minLength: 3,
+        maxLength: 15
+      },
+      text: {
+        required: !0,
+        maxLength: 300,
+        minLength: 5
+      },
+      password: {
+        required: !0,
+        password: !0,
+        minLength: 4,
+        maxLength: 8
+      },
+      zip: {
+        required: !0,
+        zip: !0
+      },
+      phone: {
+        phone: !0
+      }
+    },
+    defaultMessages: {
+      required: "The field is required",
+      email: "Please, type a valid email",
+      maxLength: "The field must contain a maximum of :value characters",
+      minLength: "The field must contain a minimum of :value characters",
+      password: "Password is not valid",
+      remote: "Email already exists",
+      strength: "Password must contents at least one uppercase letter, one lowercase letter and one number",
+      "function": "Function returned false"
+    },
+    handlerKeyup: function handlerKeyup(e) {
+      var t = e.target,
+          i = {
+        name: t.getAttribute("data-validate-field"),
+        value: t.value
+      };
+      delete this.result[i.name], this.validateItem({
+        name: i.name,
+        value: i.value,
+        group: [],
+        isKeyupChange: !0
+      }), this.renderErrors();
+    },
+    setterEventListener: function setterEventListener(e, t, i, r) {
+      switch ("keyup" === t && (i = this.bindHandlerKeyup), r) {
+        case "add":
+          e.addEventListener(t, i);
+          break;
+
+        case "remove":
+          e.removeEventListener(t, i);
+      }
+    },
+    getElementsRealValue: function getElementsRealValue() {
+      for (var e = this.$form.querySelectorAll("*"), t = void 0, i = {}, r = 0, n = e.length; r < n; ++r) {
+        if (t = e[r].getAttribute("name")) {
+          if ("checkbox" === e[r].type) {
+            i[t] = e[r].checked;
+            continue;
+          }
+
+          i[t] = e[r].value;
+        }
+      }
+
+      return i;
+    },
+    validationFailed: function validationFailed() {
+      this.invalidFormCallback && this.invalidFormCallback(this.result);
+      var e = document.querySelector(".js-validate-error-field");
+      this.focusWrongField && e && e.focus && e.focus();
+    },
+    validationSuccess: function validationSuccess() {
+      if (0 === Object.keys(this.result).length) {
+        if (this.isValidationSuccess = !1, this.submitHandler) {
+          var e = this.getElementsRealValue();
+          return void this.submitHandler(this.$form, e, h);
+        }
+
+        this.$form.submit();
+      }
+    },
+    setForm: function setForm(e) {
+      var t = this;
+      this.$form = e, this.$form.setAttribute("novalidate", "novalidate"), this.$form.addEventListener("submit", function (e) {
+        return e.preventDefault(), t.result = [], t.getElements(), t.promisesRemote.length ? void Promise.all(t.promisesRemote).then(function () {
+          t.promisesRemote = [], t.isValidationSuccess ? t.validationSuccess() : t.validationFailed();
+        }) : void (t.isValidationSuccess ? t.validationSuccess() : t.validationFailed());
+      });
+    },
+    isEmail: function isEmail(e) {
+      return this.REGEXP.email.test(e);
+    },
+    isZip: function isZip(e) {
+      return this.REGEXP.zip.test(e);
+    },
+    isPhone: function isPhone(e) {
+      return this.REGEXP.phone.test(e);
+    },
+    isPassword: function isPassword(e) {
+      return this.REGEXP.password.test(e);
+    },
+    isEmpty: function isEmpty(e) {
+      var t = e;
+      return e.trim && (t = e.trim()), !t;
+    },
+    checkLengthMax: function checkLengthMax(e, t) {
+      return e.length <= t;
+    },
+    checkLengthMin: function checkLengthMin(e, t) {
+      return e.length >= t;
+    },
+    checkStrengthPass: function checkStrengthPass(e) {
+      return this.REGEXP.strengthPass.test(e);
+    },
+    getElements: function getElements() {
+      var e = this,
+          t = this.$form.querySelectorAll("[data-validate-field]");
+      this.elements = [];
+
+      for (var i = function i(_i, r) {
+        var n = t[_i],
+            o = n.getAttribute("data-validate-field"),
+            s = n.value,
+            a = !1,
+            l = [];
+
+        if ("checkbox" === n.type && (s = n.checked || "", n.addEventListener("change", function (t) {
+          var i = t.target,
+              r = {
+            name: i.getAttribute("data-validate-field"),
+            value: i.checked
+          };
+          delete e.result[r.name], e.validateItem({
+            name: r.name,
+            value: r.value,
+            group: []
+          }), e.renderErrors();
+        })), "radio" === n.type) {
+          var u = e.elements.filter(function (e) {
+            if (e.name === o) return e;
+          })[0];
+          u ? (u.group.push(n.checked), a = !0) : l.push(n.checked), n.addEventListener("change", function (t) {
+            var i = t.target,
+                r = {
+              name: i.getAttribute("data-validate-field"),
+              value: i.checked
+            };
+            delete e.result[r.name], e.validateItem({
+              name: r.name,
+              value: r.value,
+              group: []
+            }), e.renderErrors();
           });
+        }
+
+        e.setterEventListener(n, "keyup", e.handlerKeyup, "add"), a || e.elements.push({
+          name: o,
+          value: s,
+          group: l
+        });
+      }, r = 0, n = t.length; r < n; ++r) {
+        i(r, n);
+      }
+
+      this.validateElements();
+    },
+    validateRequired: function validateRequired(e) {
+      return !this.isEmpty(e);
+    },
+    validateEmail: function validateEmail(e) {
+      return this.isEmail(e);
+    },
+    validatePhone: function validatePhone(e) {
+      return this.isPhone(e);
+    },
+    validateMinLength: function validateMinLength(e, t) {
+      return this.checkLengthMin(e, t);
+    },
+    validateMaxLength: function validateMaxLength(e, t) {
+      return this.checkLengthMax(e, t);
+    },
+    validateStrengthPass: function validateStrengthPass(e) {
+      return this.checkStrengthPass(e);
+    },
+    validatePassword: function validatePassword(e) {
+      return this.isPassword(e);
+    },
+    validateZip: function validateZip(e) {
+      return this.isZip(e);
+    },
+    validateRemote: function validateRemote(e) {
+      var t = e.value,
+          i = e.name,
+          r = e.url,
+          n = e.successAnswer,
+          o = e.sendParam,
+          s = e.method;
+      return new Promise(function (e) {
+        h({
+          url: r,
+          method: s,
+          data: _defineProperty({}, o, t),
+          async: !0,
+          callback: function callback(t) {
+            t.toLowerCase() === n.toLowerCase() && e("ok"), e({
+              type: "incorrect",
+              name: i
+            });
+          },
+          error: function error() {
+            e({
+              type: "error",
+              name: i
+            });
+          }
         });
       });
-    }
-  };
+    },
+    generateMessage: function generateMessage(e, t, i) {
+      var r = this.messages || this.defaultMessages,
+          n = r[t] && r[t][e] || this.messages && "string" == typeof this.messages[t] && r[t] || this.defaultMessages[e] || this.DEFAULT_REMOTE_ERROR;
+      i && (n = n.replace(":value", i.toString())), this.result[t] = {
+        message: n
+      };
+    },
+    validateElements: function validateElements() {
+      var e = this;
+      return this.lockForm(), this.elements.forEach(function (t) {
+        e.validateItem({
+          name: t.name,
+          value: t.value,
+          group: t.group
+        });
+      }), this.promisesRemote.length ? void Promise.all(this.promisesRemote).then(function (t) {
+        t.forEach(function (t) {
+          return "ok" === t ? void e.renderErrors() : ("error" === t.type && alert("Server error occured. Please try later."), e.generateMessage(l, t.name), void e.renderErrors());
+        });
+      }) : void this.renderErrors();
+    },
+    validateItem: function validateItem(e) {
+      var c = this,
+          h = e.name,
+          f = e.group,
+          m = e.value,
+          v = e.isKeyupChange,
+          p = this.rules[h] || this.defaultRules[h] || !1;
+      if (p) for (var g in p) {
+        var y = p[g];
+        if (g !== t && g !== d && "" == m) return;
 
-  openHiddenFilters(".filter__category__btn", ".filter_category__hidden", "+ еще 12");
-  openHiddenFilters(".filter__color__btn", ".filter__color_hidden", "+ еще 7");
+        switch (g) {
+          case d:
+            if ("function" != typeof y) break;
+            if (y(h, m)) break;
+            return void this.generateMessage(d, h, y);
 
-  var Option = /*#__PURE__*/function () {
-    function Option(selector, checkboxName, parentSelector) {
-      _classCallCheck(this, Option);
+          case t:
+            if (!y) break;
 
-      this.selector = selector;
-      this.checkboxName = checkboxName;
-      this.parent = document.querySelector(parentSelector);
-    }
+            if (f.length) {
+              var b = !1;
+              if (f.forEach(function (e) {
+                c.validateRequired(e) && (b = !0);
+              }), b) break;
+            } else if (this.validateRequired(m)) break;
 
-    _createClass(Option, [{
-      key: "render",
-      value: function render() {
-        var el = document.createElement("span");
-        el.classList.add(this.selector);
-        el.innerHTML = "".concat(this.checkboxName, "\n          <button class=\"catalog__option_btn btn_reset\">\n            <svg width=\"12\" height=\"12\" viewbox=\"0 0 12 12\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n              <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\n                d=\"M1.42872 0.238643L6.75487 5.42386C7.08171 5.74206 7.08171 6.25794 6.75487 6.57614L1.42872 11.7614C1.10188 12.0795 0.571969 12.0795 0.245129 11.7614C-0.0817098 11.4432 -0.0817098 10.9273 0.24513 10.6091L4.97949 6L0.24513 1.39091C-0.0817089 1.07272 -0.0817089 0.556834 0.24513 0.238643C0.57197 -0.0795478 1.10188 -0.0795477 1.42872 0.238643Z\" />\n              <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\n                d=\"M10.5713 0.238643L5.24513 5.42386C4.91829 5.74206 4.91829 6.25794 5.24513 6.57614L10.5713 11.7614C10.8981 12.0795 11.428 12.0795 11.7549 11.7614C12.0817 11.4432 12.0817 10.9273 11.7549 10.6091L7.02051 6L11.7549 1.39091C12.0817 1.07272 12.0817 0.556834 11.7549 0.238643C11.428 -0.0795478 10.8981 -0.0795477 10.5713 0.238643Z\" />\n            </svg>\n          </button>");
-        this.parent.append(el);
-      }
-    }]);
+            return void this.generateMessage(t, h);
 
-    return Option;
-  }();
+          case i:
+            if (!y) break;
+            if (this.validateEmail(m)) break;
+            return void this.generateMessage(i, h);
 
-  var checkedFalse = function checkedFalse() {
-    checkboxIinputs.forEach(function (item) {
-      return item.checked = false;
-    });
-  };
+          case r:
+            if (!y) break;
+            if (this.validateMinLength(m, y)) break;
+            return void this.generateMessage(r, h, y);
 
-  checkboxIinputs.forEach(function (item, i) {
-    item.addEventListener("click", function () {
-      var currentName;
-      checkboxName.forEach(function (item) {
-        if (item) {
-          currentName = checkboxName[i].textContent;
+          case n:
+            if (!y) break;
+            if (this.validateMaxLength(m, y)) break;
+            return void this.generateMessage(n, h, y);
+
+          case a:
+            if (!y) break;
+            if (this.validatePhone(m)) break;
+            return void this.generateMessage(a, h);
+
+          case o:
+            if (!y) break;
+            if (this.validatePassword(m)) break;
+            return void this.generateMessage(o, h);
+
+          case u:
+            if (!y || "object" !== ("undefined" == typeof y ? "undefined" : _typeof(y))) break;
+            if (y["default"] && this.validateStrengthPass(m)) break;
+
+            if (y.custom) {
+              var E = void 0;
+
+              try {
+                E = new RegExp(y.custom);
+              } catch (w) {
+                E = this.REGEXP.strengthPass, console.error("Custom regexp for strength rule is not valid. Default regexp was used.");
+              }
+
+              if (E.test(m)) break;
+            }
+
+            return void this.generateMessage(u, h);
+
+          case s:
+            if (!y) break;
+            if (this.validateZip(m)) break;
+            return void this.generateMessage(s, h);
+
+          case l:
+            if (v) break;
+            if (!y) break;
+            var k = y.url,
+                _ = y.successAnswer,
+                P = y.method,
+                R = y.sendParam,
+                S = this.$form.querySelector('input[data-validate-field="' + h + '"]');
+            return this.setterEventListener(S, "keyup", this.handlerKeyup, "remove"), void this.promisesRemote.push(this.validateRemote({
+              name: h,
+              value: m,
+              url: k,
+              method: P,
+              sendParam: R,
+              successAnswer: _
+            }));
         }
-      });
-
-      if (item.checked == true) {
-        if (item.classList.contains("checkbox_category")) {
-          new Option("lime_color", currentName, ".catalog__options").render();
-        } else if (item.classList.contains("checkbox_sale")) {
-          new Option("pink_violet_color", currentName, ".catalog__options").render();
-        } else if (item.classList.contains("checkbox_color")) {
-          new Option("md_grey", currentName, ".catalog__options").render();
-        }
+      }
+    },
+    clearErrors: function clearErrors() {
+      for (var e = document.querySelectorAll(".js-validate-error-label"), t = 0, i = e.length; t < i; ++t) {
+        e[t].remove();
       }
 
-      setTimeout(checkedFalse, 3000);
-    });
+      e = document.querySelectorAll(".js-validate-error-field");
+
+      for (var r = 0, n = e.length; r < n; ++r) {
+        e[r].classList.remove("js-validate-error-field"), e[r].style.border = "", e[r].style.color = "";
+      }
+    },
+    renderErrors: function renderErrors() {
+      var e = this;
+      if (this.clearErrors(), this.unlockForm(), this.isValidationSuccess = !1, 0 === Object.keys(this.result).length) return void (this.isValidationSuccess = !0);
+
+      for (var t in this.result) {
+        var i = this.result[t].message,
+            r = this.$form.querySelectorAll('[data-validate-field="' + t + '"]'),
+            n = r[r.length - 1],
+            o = document.createElement("div");
+
+        if (o.innerHTML = i, o.className = "js-validate-error-label", o.setAttribute("style", "color: " + this.colorWrong), n.style.border = "1px solid " + this.colorWrong, n.style.color = "" + this.colorWrong, n.classList.add("js-validate-error-field"), "checkbox" === n.type || "radio" === n.type) {
+          var s = document.querySelector('label[for="' + n.getAttribute("id") + '"]');
+          "label" === n.parentNode.tagName.toLowerCase() ? n.parentNode.parentNode.insertBefore(o, null) : s ? s.parentNode.insertBefore(o, s.nextSibling) : n.parentNode.insertBefore(o, n.nextSibling);
+        } else n.parentNode.insertBefore(o, n.nextSibling);
+      }
+
+      this.tooltipSelectorWrap.length && (this.state.tooltipsTimer = setTimeout(function () {
+        e.hideTooltips();
+      }, this.tooltipFadeOutTime));
+    },
+    hideTooltips: function hideTooltips() {
+      var e = this,
+          t = document.querySelectorAll(".js-validate-error-label");
+      t.forEach(function (t) {
+        t.classList.add(e.tooltipFadeOutClass);
+      }), this.state.tooltipsTimer = null;
+    },
+    lockForm: function lockForm() {
+      for (var e = this.$form.querySelectorAll("input, textarea, button, select"), t = 0, i = e.length; t < i; ++t) {
+        e[t].setAttribute("disabled", "disabled"), e[t].style.pointerEvents = "none", e[t].style.webitFilter = "grayscale(100%)", e[t].style.filter = "grayscale(100%)";
+      }
+    },
+    unlockForm: function unlockForm() {
+      for (var e = this.$form.querySelectorAll("input, textarea, button, select"), t = 0, i = e.length; t < i; ++t) {
+        e[t].removeAttribute("disabled"), e[t].style.pointerEvents = "", e[t].style.webitFilter = "", e[t].style.filter = "";
+      }
+    }
+  }, e.JustValidate = f;
+}(window);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
+
+/***/ }),
+
+/***/ "./js/show-more.js":
+/*!*************************!*\
+  !*** ./js/show-more.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var showMoreBtn = document.querySelector(".js-show-more");
+var allRatingCards = document.querySelectorAll(".rating__item");
+
+if (showMoreBtn) {
+  showMoreBtn.addEventListener("click", function () {
+    if (showMoreBtn.classList.contains("js-active")) {
+      allRatingCards.forEach(function (el) {
+        el.classList.remove("show-card");
+      });
+      showMoreBtn.classList.remove("js-active");
+      showMoreBtn.textContent = "Смотреть больше товаров";
+    } else {
+      allRatingCards.forEach(function (el) {
+        el.classList.add("show-card");
+      });
+      showMoreBtn.classList.add("js-active");
+      showMoreBtn.textContent = "Свернуть";
+    }
   });
-  checkboxCost.forEach(function (item) {
-    item.addEventListener("change", function () {
-      var inputValue = item.value;
-      var el = document.createElement("span");
-      el.classList.add("bone_color");
-      el.innerHTML = "\u0414\u043E ".concat(inputValue, "\n          <button class=\"catalog__option_btn btn_reset\">\n            <svg width=\"12\" height=\"12\" viewbox=\"0 0 12 12\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n              <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\n                d=\"M1.42872 0.238643L6.75487 5.42386C7.08171 5.74206 7.08171 6.25794 6.75487 6.57614L1.42872 11.7614C1.10188 12.0795 0.571969 12.0795 0.245129 11.7614C-0.0817098 11.4432 -0.0817098 10.9273 0.24513 10.6091L4.97949 6L0.24513 1.39091C-0.0817089 1.07272 -0.0817089 0.556834 0.24513 0.238643C0.57197 -0.0795478 1.10188 -0.0795477 1.42872 0.238643Z\" />\n              <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\n                d=\"M10.5713 0.238643L5.24513 5.42386C4.91829 5.74206 4.91829 6.25794 5.24513 6.57614L10.5713 11.7614C10.8981 12.0795 11.428 12.0795 11.7549 11.7614C12.0817 11.4432 12.0817 10.9273 11.7549 10.6091L7.02051 6L11.7549 1.39091C12.0817 1.07272 12.0817 0.556834 11.7549 0.238643C11.428 -0.0795478 10.8981 -0.0795477 10.5713 0.238643Z\" />\n            </svg>\n          </button>");
-      document.querySelector(".catalog__options").append(el);
-      item.value = "";
-    });
-  });
+}
 
-  if (optionsField) {
-    optionsField.addEventListener("click", function (e) {
-      var target = e.target.parentElement;
+/***/ }),
 
-      if (target.classList.contains("catalog__option_btn") || target.tagName == "svg") {
-        target.closest("span").remove();
-      }
-    });
+/***/ "./js/swipers.js":
+/*!***********************!*\
+  !*** ./js/swipers.js ***!
+  \***********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
+
+var swiperPromo = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".js-promo-swiper", {
+  direction: "horizontal",
+  slidesPerGroup: 1,
+  slidesPerColumn: 1,
+  slidesPerView: 1,
+  loop: true,
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets"
+  } // autoplay: {
+  //   delay: 3000,
+  // },
+
+});
+var offersSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".js-special-offers-swiper", {
+  direction: "horizontal",
+  slidesPerColumn: 1,
+  slidesPerView: "auto",
+  spaceBetween: 32,
+  navigation: {
+    nextEl: ".js-special-offers-next",
+    prevEl: ".js-special-offers-prev"
+  },
+  breakpoints: {
+    320: {
+      slidesPerGroup: 1
+    },
+    570: {
+      slidesPerGroup: 2
+    },
+    1023: {
+      slidesPerGroup: 3
+    }
   }
-
-  var modalForm = document.querySelector(".modal__form");
-  var modalThank = document.createElement("div");
-  var modalWindow = document.querySelector(".modal");
-  var modalInner = document.querySelector(".modal__inner");
-  var productBtn = document.querySelector(".product__btn");
-  var modalField = document.querySelector(".modal__field");
-  var body = document.querySelector("body");
-  var modalCloseBtn = document.querySelector(".modal__close_btn");
-  var productImg = document.querySelector(".product__main_img");
-  var modalSlider = document.querySelector(".modal__slider__field");
-  var modalSliderCloseBtn = document.querySelector(".modal__slider__btn");
-  var modalSliderField = document.querySelector(".modal__slider__field");
-  var modalFixed = document.querySelectorAll(".fixed");
-
-  var disableScroll = function disableScroll() {
-    var scrollWidth = window.innerWidth - document.body.clientWidth + "px";
-    body.style.overflow = "hidden";
-    modalFixed.forEach(function (el) {
-      el.paddingRight = scrollWidth;
-    });
-    document.body.style.paddingRight = scrollWidth;
-  };
-
-  var anableScroll = function anableScroll() {
-    body.style.overflow = "auto";
-    modalFixed.forEach(function (el) {
-      el.paddingRight = 0;
-    });
-    document.body.style.paddingRight = 0;
-  };
-
-  if (productImg) {
-    productImg.addEventListener("click", function () {
-      modalSlider.classList.toggle("hidden");
-      disableScroll();
-    });
+});
+var usefulSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".js-useful-swiper", {
+  direction: "horizontal",
+  slidesPerColumn: 1,
+  slidesPerView: "auto",
+  spaceBetween: 32,
+  navigation: {
+    nextEl: ".js-useful-next",
+    prevEl: ".js-useful-prev"
+  },
+  breakpoints: {
+    320: {
+      slidesPerGroup: 1,
+      spaceBetween: 16
+    },
+    570: {
+      slidesPerGroup: 2,
+      spaceBetween: 32
+    },
+    1023: {
+      slidesPerGroup: 3
+    }
   }
-
-  if (modalSliderCloseBtn) {
-    modalSliderCloseBtn.addEventListener("click", function () {
-      modalSlider.classList.toggle("hidden");
-      anableScroll();
-    });
+});
+var catalogSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".swiper-container.catalog_products__field", {
+  direction: "horizontal",
+  slidesPerColumnFill: "row",
+  breakpoints: {
+    1: {
+      slidesPerGroup: 2,
+      slidesPerColumn: 3,
+      spaceBetween: 16,
+      slidesPerView: 2
+    },
+    767: {
+      slidesPerGroup: 2,
+      slidesPerColumn: 3,
+      spaceBetween: 32,
+      slidesPerView: 2
+    },
+    1023: {
+      slidesPerGroup: 3,
+      slidesPerColumn: 3,
+      slidesPerView: 3,
+      spaceBetween: 32
+    }
+  },
+  pagination: {
+    el: ".catalog_pagination.swiper-pagination",
+    clickable: true,
+    renderBullet: function renderBullet(index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    }
   }
-
-  if (modalSliderField) {
-    modalSliderField.addEventListener("click", function (e) {
-      var target = e.target;
-
-      if (target == modalSliderField) {
-        modalSlider.classList.toggle("hidden");
-        anableScroll();
-      }
-    });
+});
+var productSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".swiper-container.product__swiper", {
+  direction: "horizontal",
+  breakpoints: {
+    300: {
+      slidesPerGroup: 2,
+      slidesPerColumn: 1,
+      slidesPerView: "auto",
+      spaceBetween: 16
+    },
+    767: {
+      slidesPerGroup: 2,
+      slidesPerColumn: 1,
+      slidesPerView: "auto",
+      spaceBetween: 32
+    }
+  },
+  navigation: {
+    nextEl: ".product__button_next",
+    prevEl: ".product__button_prev"
   }
-
-  if (productBtn) {
-    productBtn.addEventListener("click", function () {
-      modalField.classList.add("active");
-      disableScroll();
-    });
+});
+var modalSwiperThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".swiper-container.slider__thumbs", {
+  direction: "horizontal",
+  breakpoints: {
+    319: {
+      spaceBetween: 63,
+      slidesPerView: 1,
+      slidesPerGroup: 1
+    },
+    400: {
+      spaceBetween: 78,
+      slidesPerView: 2,
+      slidesPerGroup: 1
+    },
+    769: {
+      spaceBetween: 78,
+      slidesPerView: 3,
+      slidesPerGroup: 1
+    },
+    1230: {
+      spaceBetween: 78,
+      slidesPerView: 4,
+      slidesPerGroup: 1
+    }
+  },
+  navigation: {
+    nextEl: ".slider__thumbs_next",
+    prevEl: ".slider__thumbs_prev"
   }
-
-  if (modalCloseBtn) {
-    modalCloseBtn.addEventListener("click", function () {
-      modalField.classList.remove("active");
-      anableScroll();
-    });
-  }
-
-  if (modalField) {
-    modalField.addEventListener("click", function (e) {
-      if (e.target == modalField) {
-        modalField.classList.remove("active");
-        anableScroll();
-      }
-    });
-  }
-
-  modalThank.classList.add("modal__thank");
-  modalThank.innerHTML = "<div class=\"modal__thank__img\">\n    <svg viewBox=\"0 0 32 23\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n    <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M5.08411 20.6446C9.11043 20.6446 9.86916 17.0981 9.86916 14.2587C10.3474 14.2587 14.1267 14.2587 15.8505 14.2587C25.2271 14.2587 25.2295 0.96875 16.1495 0.96875C13.6798 0.96875 12.0891 2.46863 11.6633 2.99113C6.59708 2.99113 5.98131 5.64294 5.98131 10.792C5.98131 11.7854 5.98131 15.0144 5.98131 15.5118C5.98131 16.7225 5.49563 17.508 4.18662 17.508C3.06901 17.508 2.53967 16.5166 2.09316 15.1254C1.86049 15.2506 0.22669 16.1359 0 16.281C0.494354 17.6708 1.0237 20.6446 5.08411 20.6446ZM10.7765 8.76935C12.3104 8.76935 12.4408 11.0806 10.668 11.0806C9.17353 11.0806 9.21241 8.76935 10.7765 8.76935ZM16.1498 15.6955C14.8534 15.6955 11.0654 15.4143 11.0654 15.4143V22.5398L14.6542 22.5912L15.5514 17.4367L26.9159 17.2228L27.2153 22.8741L31.4022 22.9257C31.4022 22.9257 32 11.8567 32 9.63608C32 5.51717 30.1604 3.18592 26.0187 2.99113C24.9809 2.94236 23.6232 2.74842 22.729 2.70221C26.6267 7.45342 23.5254 15.6955 16.1498 15.6955ZM23.3274 18.5846L23.6262 22.7714L26.0187 22.823L25.7196 18.5846H23.3274ZM15.8505 22.6431L18.243 22.6944L18.8408 18.5846H16.7474L15.8505 22.6431Z\" fill=\"#FF862F\"/>\n    </svg>\n    </div>\n    <div class=\"modal__thank__text\">\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u043C\u044B \u0432\u0430\u043C \u043F\u0435\u0440\u0435\u0437\u0432\u043E\u043D\u0438\u043C!</div>";
-
-  if (modalForm) {
-    modalForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      modalWindow.prepend(modalThank);
-      modalWindow.classList.add("thank");
-      modalInner.style.display = "none";
-      setTimeout(function () {
-        modalThank.remove();
-        modalWindow.classList.remove("thank");
-        modalInner.style.display = "block";
-        modalForm.reset();
-        modalField.classList.remove("active");
-        anableScroll();
-      }, 3000);
-    });
-  }
-
-  var map = document.getElementById("map");
-
-  if (map) {
-    ymaps.ready(function () {
-      var myMap = new ymaps.Map("map", {
-        center: [55.75, 37.62],
-        zoom: 14
-      }, {
-        searchControlProvider: "yandex#search"
-      }),
-          MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
-          myPlacemarkWithContent = new ymaps.Placemark([55.752831393462664, 37.63848494650637], {
-        balloonContent: "\n          <div class=\"balloon\">\n          <h4>SitDownPls \u043D\u0430 \u0421\u043E\u043B\u044F\u043D\u043A\u0435 </h4>\n          <address>\u043C. \u041A\u0438\u0442\u0430\u0439-\u0433\u043E\u0440\u043E\u0434, \u0443\u043B. \u0421\u043E\u043B\u044F\u043D\u043A\u0430, \u0434.24</address>\n          <a href=\"tel:+74958854547\" class=\"tel_number\">\n            <svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n              <path\n                d=\"M16.3425 12.0983C15.215 12.0983 14.1242 11.915 13.1067 11.585C12.7858 11.475 12.4283 11.5575 12.1808 11.805L10.7417 13.6108C8.1475 12.3733 5.71833 10.0358 4.42583 7.35L6.21333 5.82833C6.46083 5.57167 6.53417 5.21417 6.43333 4.89333C6.09417 3.87583 5.92 2.785 5.92 1.6575C5.92 1.1625 5.5075 0.75 5.0125 0.75H1.84083C1.34583 0.75 0.75 0.97 0.75 1.6575C0.75 10.1733 7.83583 17.25 16.3425 17.25C16.9933 17.25 17.25 16.6725 17.25 16.1683V13.0058C17.25 12.5108 16.8375 12.0983 16.3425 12.0983Z\" />\n            </svg>\n            <span>+7 (495) 885-45-47</span>\n          </a>\n          <div class=\"worktime\">\n            <span class=\"grey_text\">\u0427\u0430\u0441\u044B \u0440\u0430\u0431\u043E\u0442\u044B:</span>\n            \u0441 10:00 \u0434\u043E 21:00\n          </div>\n          <div class=\"balloon__descr\">\n            <span class=\"grey_text\">\u0427\u0442\u043E \u0437\u0434\u0435\u0441\u044C:</span>\n            \u0448\u043E\u0443\u0440\u0443\u043C, \u043F\u0443\u043D\u043A\u0442 \u043E\u0442\u0433\u0440\u0443\u0437\u043A\u0438, \u043F\u0443\u043D\u043A\u0442 \u0432\u044B\u0434\u0430\u0447\u0438, \u043F\u0443\u043D\u043A\u0442 \u043E\u0431\u043C\u0435\u043D\u0430-\u0432\u043E\u0437\u0432\u0440\u0430\u0442\u0430, \u0441\u0435\u0440\u0432\u0438\u0441\u043D\u044B\u0439 \u0446\u0435\u043D\u0442\u0440\n          </div>\n        </div>\n        "
-      }, {
-        iconLayout: "default#imageWithContent",
-        iconImageHref: "./img/svg/mapIcon.svg",
-        iconImageSize: [32, 22],
-        iconImageOffset: [-20, 0],
-        iconContentOffset: [0],
-        iconContentLayout: MyIconContentLayout
-      });
-      var myPlacemark = new ymaps.Placemark([55.76147157505062, 37.65023838640963], {
-        balloonContent: "Второй баллун"
-      }, {
-        iconLayout: "default#imageWithContent",
-        iconImageHref: "./img/svg/mapIcon.svg",
-        iconImageSize: [32, 22],
-        iconImageOffset: [-20, 0],
-        iconContentOffset: [0],
-        iconContentLayout: MyIconContentLayout
-      });
-      myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
-    });
+});
+var modalSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".swiper-container.modal__slider", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  thumbs: {
+    swiper: modalSwiperThumbs
   }
 });
 
@@ -8040,2262 +8395,396 @@ var scroll = shortcut('scroll');
 
 /***/ }),
 
-/***/ "./node_modules/nouislider/dist/nouislider.js":
-/*!****************************************************!*\
-  !*** ./node_modules/nouislider/dist/nouislider.js ***!
-  \****************************************************/
+/***/ "./node_modules/process/browser.js":
+/*!*****************************************!*\
+  !*** ./node_modules/process/browser.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+
+/***/ "./node_modules/setimmediate/setImmediate.js":
+/*!***************************************************!*\
+  !*** ./node_modules/setimmediate/setImmediate.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-(function (global, factory) {
-     true ? factory(exports) :
-    undefined;
-}(this, (function (exports) { 'use strict';
+/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+    "use strict";
 
-    exports.PipsMode = void 0;
-    (function (PipsMode) {
-        PipsMode["Range"] = "range";
-        PipsMode["Steps"] = "steps";
-        PipsMode["Positions"] = "positions";
-        PipsMode["Count"] = "count";
-        PipsMode["Values"] = "values";
-    })(exports.PipsMode || (exports.PipsMode = {}));
-    exports.PipsType = void 0;
-    (function (PipsType) {
-        PipsType[PipsType["None"] = -1] = "None";
-        PipsType[PipsType["NoValue"] = 0] = "NoValue";
-        PipsType[PipsType["LargeValue"] = 1] = "LargeValue";
-        PipsType[PipsType["SmallValue"] = 2] = "SmallValue";
-    })(exports.PipsType || (exports.PipsType = {}));
-    //region Helper Methods
-    function isValidFormatter(entry) {
-        return isValidPartialFormatter(entry) && typeof entry.from === "function";
+    if (global.setImmediate) {
+        return;
     }
-    function isValidPartialFormatter(entry) {
-        // partial formatters only need a to function and not a from function
-        return typeof entry === "object" && typeof entry.to === "function";
+
+    var nextHandle = 1; // Spec says greater than zero
+    var tasksByHandle = {};
+    var currentlyRunningATask = false;
+    var doc = global.document;
+    var registerImmediate;
+
+    function setImmediate(callback) {
+      // Callback can either be a function or a string
+      if (typeof callback !== "function") {
+        callback = new Function("" + callback);
+      }
+      // Copy function arguments
+      var args = new Array(arguments.length - 1);
+      for (var i = 0; i < args.length; i++) {
+          args[i] = arguments[i + 1];
+      }
+      // Store and register the task
+      var task = { callback: callback, args: args };
+      tasksByHandle[nextHandle] = task;
+      registerImmediate(nextHandle);
+      return nextHandle++;
     }
-    function removeElement(el) {
-        el.parentElement.removeChild(el);
+
+    function clearImmediate(handle) {
+        delete tasksByHandle[handle];
     }
-    function isSet(value) {
-        return value !== null && value !== undefined;
-    }
-    // Bindable version
-    function preventDefault(e) {
-        e.preventDefault();
-    }
-    // Removes duplicates from an array.
-    function unique(array) {
-        return array.filter(function (a) {
-            return !this[a] ? (this[a] = true) : false;
-        }, {});
-    }
-    // Round a value to the closest 'to'.
-    function closest(value, to) {
-        return Math.round(value / to) * to;
-    }
-    // Current position of an element relative to the document.
-    function offset(elem, orientation) {
-        var rect = elem.getBoundingClientRect();
-        var doc = elem.ownerDocument;
-        var docElem = doc.documentElement;
-        var pageOffset = getPageOffset(doc);
-        // getBoundingClientRect contains left scroll in Chrome on Android.
-        // I haven't found a feature detection that proves this. Worst case
-        // scenario on mis-match: the 'tap' feature on horizontal sliders breaks.
-        if (/webkit.*Chrome.*Mobile/i.test(navigator.userAgent)) {
-            pageOffset.x = 0;
-        }
-        return orientation ? rect.top + pageOffset.y - docElem.clientTop : rect.left + pageOffset.x - docElem.clientLeft;
-    }
-    // Checks whether a value is numerical.
-    function isNumeric(a) {
-        return typeof a === "number" && !isNaN(a) && isFinite(a);
-    }
-    // Sets a class and removes it after [duration] ms.
-    function addClassFor(element, className, duration) {
-        if (duration > 0) {
-            addClass(element, className);
-            setTimeout(function () {
-                removeClass(element, className);
-            }, duration);
+
+    function run(task) {
+        var callback = task.callback;
+        var args = task.args;
+        switch (args.length) {
+        case 0:
+            callback();
+            break;
+        case 1:
+            callback(args[0]);
+            break;
+        case 2:
+            callback(args[0], args[1]);
+            break;
+        case 3:
+            callback(args[0], args[1], args[2]);
+            break;
+        default:
+            callback.apply(undefined, args);
+            break;
         }
     }
-    // Limits a value to 0 - 100
-    function limit(a) {
-        return Math.max(Math.min(a, 100), 0);
-    }
-    // Wraps a variable as an array, if it isn't one yet.
-    // Note that an input array is returned by reference!
-    function asArray(a) {
-        return Array.isArray(a) ? a : [a];
-    }
-    // Counts decimals
-    function countDecimals(numStr) {
-        numStr = String(numStr);
-        var pieces = numStr.split(".");
-        return pieces.length > 1 ? pieces[1].length : 0;
-    }
-    // http://youmightnotneedjquery.com/#add_class
-    function addClass(el, className) {
-        if (el.classList && !/\s/.test(className)) {
-            el.classList.add(className);
-        }
-        else {
-            el.className += " " + className;
+
+    function runIfPresent(handle) {
+        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+        // So if we're currently running a task, we'll need to delay this invocation.
+        if (currentlyRunningATask) {
+            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+            // "too much recursion" error.
+            setTimeout(runIfPresent, 0, handle);
+        } else {
+            var task = tasksByHandle[handle];
+            if (task) {
+                currentlyRunningATask = true;
+                try {
+                    run(task);
+                } finally {
+                    clearImmediate(handle);
+                    currentlyRunningATask = false;
+                }
+            }
         }
     }
-    // http://youmightnotneedjquery.com/#remove_class
-    function removeClass(el, className) {
-        if (el.classList && !/\s/.test(className)) {
-            el.classList.remove(className);
-        }
-        else {
-            el.className = el.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " ");
-        }
-    }
-    // https://plainjs.com/javascript/attributes/adding-removing-and-testing-for-classes-9/
-    function hasClass(el, className) {
-        return el.classList ? el.classList.contains(className) : new RegExp("\\b" + className + "\\b").test(el.className);
-    }
-    // https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY#Notes
-    function getPageOffset(doc) {
-        var supportPageOffset = window.pageXOffset !== undefined;
-        var isCSS1Compat = (doc.compatMode || "") === "CSS1Compat";
-        var x = supportPageOffset
-            ? window.pageXOffset
-            : isCSS1Compat
-                ? doc.documentElement.scrollLeft
-                : doc.body.scrollLeft;
-        var y = supportPageOffset
-            ? window.pageYOffset
-            : isCSS1Compat
-                ? doc.documentElement.scrollTop
-                : doc.body.scrollTop;
-        return {
-            x: x,
-            y: y
+
+    function installNextTickImplementation() {
+        registerImmediate = function(handle) {
+            process.nextTick(function () { runIfPresent(handle); });
         };
     }
-    // we provide a function to compute constants instead
-    // of accessing window.* as soon as the module needs it
-    // so that we do not compute anything if not needed
-    function getActions() {
-        // Determine the events to bind. IE11 implements pointerEvents without
-        // a prefix, which breaks compatibility with the IE10 implementation.
-        return window.navigator.pointerEnabled
-            ? {
-                start: "pointerdown",
-                move: "pointermove",
-                end: "pointerup"
-            }
-            : window.navigator.msPointerEnabled
-                ? {
-                    start: "MSPointerDown",
-                    move: "MSPointerMove",
-                    end: "MSPointerUp"
-                }
-                : {
-                    start: "mousedown touchstart",
-                    move: "mousemove touchmove",
-                    end: "mouseup touchend"
-                };
-    }
-    // https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
-    // Issue #785
-    function getSupportsPassive() {
-        var supportsPassive = false;
-        /* eslint-disable */
-        try {
-            var opts = Object.defineProperty({}, "passive", {
-                get: function () {
-                    supportsPassive = true;
-                }
-            });
-            // @ts-ignore
-            window.addEventListener("test", null, opts);
-        }
-        catch (e) { }
-        /* eslint-enable */
-        return supportsPassive;
-    }
-    function getSupportsTouchActionNone() {
-        return window.CSS && CSS.supports && CSS.supports("touch-action", "none");
-    }
-    //endregion
-    //region Range Calculation
-    // Determine the size of a sub-range in relation to a full range.
-    function subRangeRatio(pa, pb) {
-        return 100 / (pb - pa);
-    }
-    // (percentage) How many percent is this value of this range?
-    function fromPercentage(range, value, startRange) {
-        return (value * 100) / (range[startRange + 1] - range[startRange]);
-    }
-    // (percentage) Where is this value on this range?
-    function toPercentage(range, value) {
-        return fromPercentage(range, range[0] < 0 ? value + Math.abs(range[0]) : value - range[0], 0);
-    }
-    // (value) How much is this percentage on this range?
-    function isPercentage(range, value) {
-        return (value * (range[1] - range[0])) / 100 + range[0];
-    }
-    function getJ(value, arr) {
-        var j = 1;
-        while (value >= arr[j]) {
-            j += 1;
-        }
-        return j;
-    }
-    // (percentage) Input a value, find where, on a scale of 0-100, it applies.
-    function toStepping(xVal, xPct, value) {
-        if (value >= xVal.slice(-1)[0]) {
-            return 100;
-        }
-        var j = getJ(value, xVal);
-        var va = xVal[j - 1];
-        var vb = xVal[j];
-        var pa = xPct[j - 1];
-        var pb = xPct[j];
-        return pa + toPercentage([va, vb], value) / subRangeRatio(pa, pb);
-    }
-    // (value) Input a percentage, find where it is on the specified range.
-    function fromStepping(xVal, xPct, value) {
-        // There is no range group that fits 100
-        if (value >= 100) {
-            return xVal.slice(-1)[0];
-        }
-        var j = getJ(value, xPct);
-        var va = xVal[j - 1];
-        var vb = xVal[j];
-        var pa = xPct[j - 1];
-        var pb = xPct[j];
-        return isPercentage([va, vb], (value - pa) * subRangeRatio(pa, pb));
-    }
-    // (percentage) Get the step that applies at a certain value.
-    function getStep(xPct, xSteps, snap, value) {
-        if (value === 100) {
-            return value;
-        }
-        var j = getJ(value, xPct);
-        var a = xPct[j - 1];
-        var b = xPct[j];
-        // If 'snap' is set, steps are used as fixed points on the slider.
-        if (snap) {
-            // Find the closest position, a or b.
-            if (value - a > (b - a) / 2) {
-                return b;
-            }
-            return a;
-        }
-        if (!xSteps[j - 1]) {
-            return value;
-        }
-        return xPct[j - 1] + closest(value - xPct[j - 1], xSteps[j - 1]);
-    }
-    //endregion
-    //region Spectrum
-    var Spectrum = /** @class */ (function () {
-        function Spectrum(entry, snap, singleStep) {
-            this.xPct = [];
-            this.xVal = [];
-            this.xSteps = [];
-            this.xNumSteps = [];
-            this.xHighestCompleteStep = [];
-            this.xSteps = [singleStep || false];
-            this.xNumSteps = [false];
-            this.snap = snap;
-            var index;
-            var ordered = [];
-            // Map the object keys to an array.
-            Object.keys(entry).forEach(function (index) {
-                ordered.push([asArray(entry[index]), index]);
-            });
-            // Sort all entries by value (numeric sort).
-            ordered.sort(function (a, b) {
-                return a[0][0] - b[0][0];
-            });
-            // Convert all entries to subranges.
-            for (index = 0; index < ordered.length; index++) {
-                this.handleEntryPoint(ordered[index][1], ordered[index][0]);
-            }
-            // Store the actual step values.
-            // xSteps is sorted in the same order as xPct and xVal.
-            this.xNumSteps = this.xSteps.slice(0);
-            // Convert all numeric steps to the percentage of the subrange they represent.
-            for (index = 0; index < this.xNumSteps.length; index++) {
-                this.handleStepPoint(index, this.xNumSteps[index]);
-            }
-        }
-        Spectrum.prototype.getDistance = function (value) {
-            var index;
-            var distances = [];
-            for (index = 0; index < this.xNumSteps.length - 1; index++) {
-                // last "range" can't contain step size as it is purely an endpoint.
-                var step = this.xNumSteps[index];
-                if (step && (value / step) % 1 !== 0) {
-                    throw new Error("noUiSlider: 'limit', 'margin' and 'padding' of " +
-                        this.xPct[index] +
-                        "% range must be divisible by step.");
-                }
-                // Calculate percentual distance in current range of limit, margin or padding
-                distances[index] = fromPercentage(this.xVal, value, index);
-            }
-            return distances;
-        };
-        // Calculate the percentual distance over the whole scale of ranges.
-        // direction: 0 = backwards / 1 = forwards
-        Spectrum.prototype.getAbsoluteDistance = function (value, distances, direction) {
-            var xPct_index = 0;
-            // Calculate range where to start calculation
-            if (value < this.xPct[this.xPct.length - 1]) {
-                while (value > this.xPct[xPct_index + 1]) {
-                    xPct_index++;
-                }
-            }
-            else if (value === this.xPct[this.xPct.length - 1]) {
-                xPct_index = this.xPct.length - 2;
-            }
-            // If looking backwards and the value is exactly at a range separator then look one range further
-            if (!direction && value === this.xPct[xPct_index + 1]) {
-                xPct_index++;
-            }
-            if (distances === null) {
-                distances = [];
-            }
-            var start_factor;
-            var rest_factor = 1;
-            var rest_rel_distance = distances[xPct_index];
-            var range_pct = 0;
-            var rel_range_distance = 0;
-            var abs_distance_counter = 0;
-            var range_counter = 0;
-            // Calculate what part of the start range the value is
-            if (direction) {
-                start_factor = (value - this.xPct[xPct_index]) / (this.xPct[xPct_index + 1] - this.xPct[xPct_index]);
-            }
-            else {
-                start_factor = (this.xPct[xPct_index + 1] - value) / (this.xPct[xPct_index + 1] - this.xPct[xPct_index]);
-            }
-            // Do until the complete distance across ranges is calculated
-            while (rest_rel_distance > 0) {
-                // Calculate the percentage of total range
-                range_pct = this.xPct[xPct_index + 1 + range_counter] - this.xPct[xPct_index + range_counter];
-                // Detect if the margin, padding or limit is larger then the current range and calculate
-                if (distances[xPct_index + range_counter] * rest_factor + 100 - start_factor * 100 > 100) {
-                    // If larger then take the percentual distance of the whole range
-                    rel_range_distance = range_pct * start_factor;
-                    // Rest factor of relative percentual distance still to be calculated
-                    rest_factor = (rest_rel_distance - 100 * start_factor) / distances[xPct_index + range_counter];
-                    // Set start factor to 1 as for next range it does not apply.
-                    start_factor = 1;
-                }
-                else {
-                    // If smaller or equal then take the percentual distance of the calculate percentual part of that range
-                    rel_range_distance = ((distances[xPct_index + range_counter] * range_pct) / 100) * rest_factor;
-                    // No rest left as the rest fits in current range
-                    rest_factor = 0;
-                }
-                if (direction) {
-                    abs_distance_counter = abs_distance_counter - rel_range_distance;
-                    // Limit range to first range when distance becomes outside of minimum range
-                    if (this.xPct.length + range_counter >= 1) {
-                        range_counter--;
-                    }
-                }
-                else {
-                    abs_distance_counter = abs_distance_counter + rel_range_distance;
-                    // Limit range to last range when distance becomes outside of maximum range
-                    if (this.xPct.length - range_counter >= 1) {
-                        range_counter++;
-                    }
-                }
-                // Rest of relative percentual distance still to be calculated
-                rest_rel_distance = distances[xPct_index + range_counter] * rest_factor;
-            }
-            return value + abs_distance_counter;
-        };
-        Spectrum.prototype.toStepping = function (value) {
-            value = toStepping(this.xVal, this.xPct, value);
-            return value;
-        };
-        Spectrum.prototype.fromStepping = function (value) {
-            return fromStepping(this.xVal, this.xPct, value);
-        };
-        Spectrum.prototype.getStep = function (value) {
-            value = getStep(this.xPct, this.xSteps, this.snap, value);
-            return value;
-        };
-        Spectrum.prototype.getDefaultStep = function (value, isDown, size) {
-            var j = getJ(value, this.xPct);
-            // When at the top or stepping down, look at the previous sub-range
-            if (value === 100 || (isDown && value === this.xPct[j - 1])) {
-                j = Math.max(j - 1, 1);
-            }
-            return (this.xVal[j] - this.xVal[j - 1]) / size;
-        };
-        Spectrum.prototype.getNearbySteps = function (value) {
-            var j = getJ(value, this.xPct);
-            return {
-                stepBefore: {
-                    startValue: this.xVal[j - 2],
-                    step: this.xNumSteps[j - 2],
-                    highestStep: this.xHighestCompleteStep[j - 2]
-                },
-                thisStep: {
-                    startValue: this.xVal[j - 1],
-                    step: this.xNumSteps[j - 1],
-                    highestStep: this.xHighestCompleteStep[j - 1]
-                },
-                stepAfter: {
-                    startValue: this.xVal[j],
-                    step: this.xNumSteps[j],
-                    highestStep: this.xHighestCompleteStep[j]
-                }
+
+    function canUsePostMessage() {
+        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+        // where `global.postMessage` means something completely different and can't be used for this purpose.
+        if (global.postMessage && !global.importScripts) {
+            var postMessageIsAsynchronous = true;
+            var oldOnMessage = global.onmessage;
+            global.onmessage = function() {
+                postMessageIsAsynchronous = false;
             };
-        };
-        Spectrum.prototype.countStepDecimals = function () {
-            var stepDecimals = this.xNumSteps.map(countDecimals);
-            return Math.max.apply(null, stepDecimals);
-        };
-        Spectrum.prototype.hasNoSize = function () {
-            return this.xVal[0] === this.xVal[this.xVal.length - 1];
-        };
-        // Outside testing
-        Spectrum.prototype.convert = function (value) {
-            return this.getStep(this.toStepping(value));
-        };
-        Spectrum.prototype.handleEntryPoint = function (index, value) {
-            var percentage;
-            // Covert min/max syntax to 0 and 100.
-            if (index === "min") {
-                percentage = 0;
-            }
-            else if (index === "max") {
-                percentage = 100;
-            }
-            else {
-                percentage = parseFloat(index);
-            }
-            // Check for correct input.
-            if (!isNumeric(percentage) || !isNumeric(value[0])) {
-                throw new Error("noUiSlider: 'range' value isn't numeric.");
-            }
-            // Store values.
-            this.xPct.push(percentage);
-            this.xVal.push(value[0]);
-            var value1 = Number(value[1]);
-            // NaN will evaluate to false too, but to keep
-            // logging clear, set step explicitly. Make sure
-            // not to override the 'step' setting with false.
-            if (!percentage) {
-                if (!isNaN(value1)) {
-                    this.xSteps[0] = value1;
-                }
-            }
-            else {
-                this.xSteps.push(isNaN(value1) ? false : value1);
-            }
-            this.xHighestCompleteStep.push(0);
-        };
-        Spectrum.prototype.handleStepPoint = function (i, n) {
-            // Ignore 'false' stepping.
-            if (!n) {
-                return;
-            }
-            // Step over zero-length ranges (#948);
-            if (this.xVal[i] === this.xVal[i + 1]) {
-                this.xSteps[i] = this.xHighestCompleteStep[i] = this.xVal[i];
-                return;
-            }
-            // Factor to range ratio
-            this.xSteps[i] =
-                fromPercentage([this.xVal[i], this.xVal[i + 1]], n, 0) / subRangeRatio(this.xPct[i], this.xPct[i + 1]);
-            var totalSteps = (this.xVal[i + 1] - this.xVal[i]) / this.xNumSteps[i];
-            var highestStep = Math.ceil(Number(totalSteps.toFixed(3)) - 1);
-            var step = this.xVal[i] + this.xNumSteps[i] * highestStep;
-            this.xHighestCompleteStep[i] = step;
-        };
-        return Spectrum;
-    }());
-    //endregion
-    //region Options
-    /*	Every input option is tested and parsed. This will prevent
-        endless validation in internal methods. These tests are
-        structured with an item for every option available. An
-        option can be marked as required by setting the 'r' flag.
-        The testing function is provided with three arguments:
-            - The provided value for the option;
-            - A reference to the options object;
-            - The name for the option;
+            global.postMessage("", "*");
+            global.onmessage = oldOnMessage;
+            return postMessageIsAsynchronous;
+        }
+    }
 
-        The testing function returns false when an error is detected,
-        or true when everything is OK. It can also modify the option
-        object, to make sure all values can be correctly looped elsewhere. */
-    //region Defaults
-    var defaultFormatter = {
-        to: function (value) {
-            return value === undefined ? "" : value.toFixed(2);
-        },
-        from: Number
-    };
-    var cssClasses = {
-        target: "target",
-        base: "base",
-        origin: "origin",
-        handle: "handle",
-        handleLower: "handle-lower",
-        handleUpper: "handle-upper",
-        touchArea: "touch-area",
-        horizontal: "horizontal",
-        vertical: "vertical",
-        background: "background",
-        connect: "connect",
-        connects: "connects",
-        ltr: "ltr",
-        rtl: "rtl",
-        textDirectionLtr: "txt-dir-ltr",
-        textDirectionRtl: "txt-dir-rtl",
-        draggable: "draggable",
-        drag: "state-drag",
-        tap: "state-tap",
-        active: "active",
-        tooltip: "tooltip",
-        pips: "pips",
-        pipsHorizontal: "pips-horizontal",
-        pipsVertical: "pips-vertical",
-        marker: "marker",
-        markerHorizontal: "marker-horizontal",
-        markerVertical: "marker-vertical",
-        markerNormal: "marker-normal",
-        markerLarge: "marker-large",
-        markerSub: "marker-sub",
-        value: "value",
-        valueHorizontal: "value-horizontal",
-        valueVertical: "value-vertical",
-        valueNormal: "value-normal",
-        valueLarge: "value-large",
-        valueSub: "value-sub"
-    };
-    // Namespaces of internal event listeners
-    var INTERNAL_EVENT_NS = {
-        tooltips: ".__tooltips",
-        aria: ".__aria"
-    };
-    //endregion
-    function testStep(parsed, entry) {
-        if (!isNumeric(entry)) {
-            throw new Error("noUiSlider: 'step' is not numeric.");
-        }
-        // The step option can still be used to set stepping
-        // for linear sliders. Overwritten if set in 'range'.
-        parsed.singleStep = entry;
-    }
-    function testKeyboardPageMultiplier(parsed, entry) {
-        if (!isNumeric(entry)) {
-            throw new Error("noUiSlider: 'keyboardPageMultiplier' is not numeric.");
-        }
-        parsed.keyboardPageMultiplier = entry;
-    }
-    function testKeyboardMultiplier(parsed, entry) {
-        if (!isNumeric(entry)) {
-            throw new Error("noUiSlider: 'keyboardMultiplier' is not numeric.");
-        }
-        parsed.keyboardMultiplier = entry;
-    }
-    function testKeyboardDefaultStep(parsed, entry) {
-        if (!isNumeric(entry)) {
-            throw new Error("noUiSlider: 'keyboardDefaultStep' is not numeric.");
-        }
-        parsed.keyboardDefaultStep = entry;
-    }
-    function testRange(parsed, entry) {
-        // Filter incorrect input.
-        if (typeof entry !== "object" || Array.isArray(entry)) {
-            throw new Error("noUiSlider: 'range' is not an object.");
-        }
-        // Catch missing start or end.
-        if (entry.min === undefined || entry.max === undefined) {
-            throw new Error("noUiSlider: Missing 'min' or 'max' in 'range'.");
-        }
-        parsed.spectrum = new Spectrum(entry, parsed.snap || false, parsed.singleStep);
-    }
-    function testStart(parsed, entry) {
-        entry = asArray(entry);
-        // Validate input. Values aren't tested, as the public .val method
-        // will always provide a valid location.
-        if (!Array.isArray(entry) || !entry.length) {
-            throw new Error("noUiSlider: 'start' option is incorrect.");
-        }
-        // Store the number of handles.
-        parsed.handles = entry.length;
-        // When the slider is initialized, the .val method will
-        // be called with the start options.
-        parsed.start = entry;
-    }
-    function testSnap(parsed, entry) {
-        if (typeof entry !== "boolean") {
-            throw new Error("noUiSlider: 'snap' option must be a boolean.");
-        }
-        // Enforce 100% stepping within subranges.
-        parsed.snap = entry;
-    }
-    function testAnimate(parsed, entry) {
-        if (typeof entry !== "boolean") {
-            throw new Error("noUiSlider: 'animate' option must be a boolean.");
-        }
-        // Enforce 100% stepping within subranges.
-        parsed.animate = entry;
-    }
-    function testAnimationDuration(parsed, entry) {
-        if (typeof entry !== "number") {
-            throw new Error("noUiSlider: 'animationDuration' option must be a number.");
-        }
-        parsed.animationDuration = entry;
-    }
-    function testConnect(parsed, entry) {
-        var connect = [false];
-        var i;
-        // Map legacy options
-        if (entry === "lower") {
-            entry = [true, false];
-        }
-        else if (entry === "upper") {
-            entry = [false, true];
-        }
-        // Handle boolean options
-        if (entry === true || entry === false) {
-            for (i = 1; i < parsed.handles; i++) {
-                connect.push(entry);
+    function installPostMessageImplementation() {
+        // Installs an event handler on `global` for the `message` event: see
+        // * https://developer.mozilla.org/en/DOM/window.postMessage
+        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+
+        var messagePrefix = "setImmediate$" + Math.random() + "$";
+        var onGlobalMessage = function(event) {
+            if (event.source === global &&
+                typeof event.data === "string" &&
+                event.data.indexOf(messagePrefix) === 0) {
+                runIfPresent(+event.data.slice(messagePrefix.length));
             }
-            connect.push(false);
+        };
+
+        if (global.addEventListener) {
+            global.addEventListener("message", onGlobalMessage, false);
+        } else {
+            global.attachEvent("onmessage", onGlobalMessage);
         }
-        // Reject invalid input
-        else if (!Array.isArray(entry) || !entry.length || entry.length !== parsed.handles + 1) {
-            throw new Error("noUiSlider: 'connect' option doesn't match handle count.");
-        }
-        else {
-            connect = entry;
-        }
-        parsed.connect = connect;
-    }
-    function testOrientation(parsed, entry) {
-        // Set orientation to an a numerical value for easy
-        // array selection.
-        switch (entry) {
-            case "horizontal":
-                parsed.ort = 0;
-                break;
-            case "vertical":
-                parsed.ort = 1;
-                break;
-            default:
-                throw new Error("noUiSlider: 'orientation' option is invalid.");
-        }
-    }
-    function testMargin(parsed, entry) {
-        if (!isNumeric(entry)) {
-            throw new Error("noUiSlider: 'margin' option must be numeric.");
-        }
-        // Issue #582
-        if (entry === 0) {
-            return;
-        }
-        parsed.margin = parsed.spectrum.getDistance(entry);
-    }
-    function testLimit(parsed, entry) {
-        if (!isNumeric(entry)) {
-            throw new Error("noUiSlider: 'limit' option must be numeric.");
-        }
-        parsed.limit = parsed.spectrum.getDistance(entry);
-        if (!parsed.limit || parsed.handles < 2) {
-            throw new Error("noUiSlider: 'limit' option is only supported on linear sliders with 2 or more handles.");
-        }
-    }
-    function testPadding(parsed, entry) {
-        var index;
-        if (!isNumeric(entry) && !Array.isArray(entry)) {
-            throw new Error("noUiSlider: 'padding' option must be numeric or array of exactly 2 numbers.");
-        }
-        if (Array.isArray(entry) && !(entry.length === 2 || isNumeric(entry[0]) || isNumeric(entry[1]))) {
-            throw new Error("noUiSlider: 'padding' option must be numeric or array of exactly 2 numbers.");
-        }
-        if (entry === 0) {
-            return;
-        }
-        if (!Array.isArray(entry)) {
-            entry = [entry, entry];
-        }
-        // 'getDistance' returns false for invalid values.
-        parsed.padding = [parsed.spectrum.getDistance(entry[0]), parsed.spectrum.getDistance(entry[1])];
-        for (index = 0; index < parsed.spectrum.xNumSteps.length - 1; index++) {
-            // last "range" can't contain step size as it is purely an endpoint.
-            if (parsed.padding[0][index] < 0 || parsed.padding[1][index] < 0) {
-                throw new Error("noUiSlider: 'padding' option must be a positive number(s).");
-            }
-        }
-        var totalPadding = entry[0] + entry[1];
-        var firstValue = parsed.spectrum.xVal[0];
-        var lastValue = parsed.spectrum.xVal[parsed.spectrum.xVal.length - 1];
-        if (totalPadding / (lastValue - firstValue) > 1) {
-            throw new Error("noUiSlider: 'padding' option must not exceed 100% of the range.");
-        }
-    }
-    function testDirection(parsed, entry) {
-        // Set direction as a numerical value for easy parsing.
-        // Invert connection for RTL sliders, so that the proper
-        // handles get the connect/background classes.
-        switch (entry) {
-            case "ltr":
-                parsed.dir = 0;
-                break;
-            case "rtl":
-                parsed.dir = 1;
-                break;
-            default:
-                throw new Error("noUiSlider: 'direction' option was not recognized.");
-        }
-    }
-    function testBehaviour(parsed, entry) {
-        // Make sure the input is a string.
-        if (typeof entry !== "string") {
-            throw new Error("noUiSlider: 'behaviour' must be a string containing options.");
-        }
-        // Check if the string contains any keywords.
-        // None are required.
-        var tap = entry.indexOf("tap") >= 0;
-        var drag = entry.indexOf("drag") >= 0;
-        var fixed = entry.indexOf("fixed") >= 0;
-        var snap = entry.indexOf("snap") >= 0;
-        var hover = entry.indexOf("hover") >= 0;
-        var unconstrained = entry.indexOf("unconstrained") >= 0;
-        var dragAll = entry.indexOf("drag-all") >= 0;
-        if (fixed) {
-            if (parsed.handles !== 2) {
-                throw new Error("noUiSlider: 'fixed' behaviour must be used with 2 handles");
-            }
-            // Use margin to enforce fixed state
-            testMargin(parsed, parsed.start[1] - parsed.start[0]);
-        }
-        if (unconstrained && (parsed.margin || parsed.limit)) {
-            throw new Error("noUiSlider: 'unconstrained' behaviour cannot be used with margin or limit");
-        }
-        parsed.events = {
-            tap: tap || snap,
-            drag: drag,
-            dragAll: dragAll,
-            fixed: fixed,
-            snap: snap,
-            hover: hover,
-            unconstrained: unconstrained
+
+        registerImmediate = function(handle) {
+            global.postMessage(messagePrefix + handle, "*");
         };
     }
-    function testTooltips(parsed, entry) {
-        if (entry === false) {
-            return;
-        }
-        if (entry === true || isValidPartialFormatter(entry)) {
-            parsed.tooltips = [];
-            for (var i = 0; i < parsed.handles; i++) {
-                parsed.tooltips.push(entry);
-            }
-        }
-        else {
-            entry = asArray(entry);
-            if (entry.length !== parsed.handles) {
-                throw new Error("noUiSlider: must pass a formatter for all handles.");
-            }
-            entry.forEach(function (formatter) {
-                if (typeof formatter !== "boolean" && !isValidPartialFormatter(formatter)) {
-                    throw new Error("noUiSlider: 'tooltips' must be passed a formatter or 'false'.");
-                }
-            });
-            parsed.tooltips = entry;
-        }
-    }
-    function testHandleAttributes(parsed, entry) {
-        if (entry.length !== parsed.handles) {
-            throw new Error("noUiSlider: must pass a attributes for all handles.");
-        }
-        parsed.handleAttributes = entry;
-    }
-    function testAriaFormat(parsed, entry) {
-        if (!isValidPartialFormatter(entry)) {
-            throw new Error("noUiSlider: 'ariaFormat' requires 'to' method.");
-        }
-        parsed.ariaFormat = entry;
-    }
-    function testFormat(parsed, entry) {
-        if (!isValidFormatter(entry)) {
-            throw new Error("noUiSlider: 'format' requires 'to' and 'from' methods.");
-        }
-        parsed.format = entry;
-    }
-    function testKeyboardSupport(parsed, entry) {
-        if (typeof entry !== "boolean") {
-            throw new Error("noUiSlider: 'keyboardSupport' option must be a boolean.");
-        }
-        parsed.keyboardSupport = entry;
-    }
-    function testDocumentElement(parsed, entry) {
-        // This is an advanced option. Passed values are used without validation.
-        parsed.documentElement = entry;
-    }
-    function testCssPrefix(parsed, entry) {
-        if (typeof entry !== "string" && entry !== false) {
-            throw new Error("noUiSlider: 'cssPrefix' must be a string or `false`.");
-        }
-        parsed.cssPrefix = entry;
-    }
-    function testCssClasses(parsed, entry) {
-        if (typeof entry !== "object") {
-            throw new Error("noUiSlider: 'cssClasses' must be an object.");
-        }
-        if (typeof parsed.cssPrefix === "string") {
-            parsed.cssClasses = {};
-            Object.keys(entry).forEach(function (key) {
-                parsed.cssClasses[key] = parsed.cssPrefix + entry[key];
-            });
-        }
-        else {
-            parsed.cssClasses = entry;
-        }
-    }
-    // Test all developer settings and parse to assumption-safe values.
-    function testOptions(options) {
-        // To prove a fix for #537, freeze options here.
-        // If the object is modified, an error will be thrown.
-        // Object.freeze(options);
-        var parsed = {
-            margin: null,
-            limit: null,
-            padding: null,
-            animate: true,
-            animationDuration: 300,
-            ariaFormat: defaultFormatter,
-            format: defaultFormatter
+
+    function installMessageChannelImplementation() {
+        var channel = new MessageChannel();
+        channel.port1.onmessage = function(event) {
+            var handle = event.data;
+            runIfPresent(handle);
         };
-        // Tests are executed in the order they are presented here.
-        var tests = {
-            step: { r: false, t: testStep },
-            keyboardPageMultiplier: { r: false, t: testKeyboardPageMultiplier },
-            keyboardMultiplier: { r: false, t: testKeyboardMultiplier },
-            keyboardDefaultStep: { r: false, t: testKeyboardDefaultStep },
-            start: { r: true, t: testStart },
-            connect: { r: true, t: testConnect },
-            direction: { r: true, t: testDirection },
-            snap: { r: false, t: testSnap },
-            animate: { r: false, t: testAnimate },
-            animationDuration: { r: false, t: testAnimationDuration },
-            range: { r: true, t: testRange },
-            orientation: { r: false, t: testOrientation },
-            margin: { r: false, t: testMargin },
-            limit: { r: false, t: testLimit },
-            padding: { r: false, t: testPadding },
-            behaviour: { r: true, t: testBehaviour },
-            ariaFormat: { r: false, t: testAriaFormat },
-            format: { r: false, t: testFormat },
-            tooltips: { r: false, t: testTooltips },
-            keyboardSupport: { r: true, t: testKeyboardSupport },
-            documentElement: { r: false, t: testDocumentElement },
-            cssPrefix: { r: true, t: testCssPrefix },
-            cssClasses: { r: true, t: testCssClasses },
-            handleAttributes: { r: false, t: testHandleAttributes }
+
+        registerImmediate = function(handle) {
+            channel.port2.postMessage(handle);
         };
-        var defaults = {
-            connect: false,
-            direction: "ltr",
-            behaviour: "tap",
-            orientation: "horizontal",
-            keyboardSupport: true,
-            cssPrefix: "noUi-",
-            cssClasses: cssClasses,
-            keyboardPageMultiplier: 5,
-            keyboardMultiplier: 1,
-            keyboardDefaultStep: 10
-        };
-        // AriaFormat defaults to regular format, if any.
-        if (options.format && !options.ariaFormat) {
-            options.ariaFormat = options.format;
-        }
-        // Run all options through a testing mechanism to ensure correct
-        // input. It should be noted that options might get modified to
-        // be handled properly. E.g. wrapping integers in arrays.
-        Object.keys(tests).forEach(function (name) {
-            // If the option isn't set, but it is required, throw an error.
-            if (!isSet(options[name]) && defaults[name] === undefined) {
-                if (tests[name].r) {
-                    throw new Error("noUiSlider: '" + name + "' is required.");
-                }
-                return;
-            }
-            tests[name].t(parsed, !isSet(options[name]) ? defaults[name] : options[name]);
-        });
-        // Forward pips options
-        parsed.pips = options.pips;
-        // All recent browsers accept unprefixed transform.
-        // We need -ms- for IE9 and -webkit- for older Android;
-        // Assume use of -webkit- if unprefixed and -ms- are not supported.
-        // https://caniuse.com/#feat=transforms2d
-        var d = document.createElement("div");
-        var msPrefix = d.style.msTransform !== undefined;
-        var noPrefix = d.style.transform !== undefined;
-        parsed.transformRule = noPrefix ? "transform" : msPrefix ? "msTransform" : "webkitTransform";
-        // Pips don't move, so we can place them using left/top.
-        var styles = [
-            ["left", "top"],
-            ["right", "bottom"]
-        ];
-        parsed.style = styles[parsed.dir][parsed.ort];
-        return parsed;
     }
-    //endregion
-    function scope(target, options, originalOptions) {
-        var actions = getActions();
-        var supportsTouchActionNone = getSupportsTouchActionNone();
-        var supportsPassive = supportsTouchActionNone && getSupportsPassive();
-        // All variables local to 'scope' are prefixed with 'scope_'
-        // Slider DOM Nodes
-        var scope_Target = target;
-        var scope_Base;
-        var scope_Handles;
-        var scope_Connects;
-        var scope_Pips;
-        var scope_Tooltips;
-        // Slider state values
-        var scope_Spectrum = options.spectrum;
-        var scope_Values = [];
-        var scope_Locations = [];
-        var scope_HandleNumbers = [];
-        var scope_ActiveHandlesCount = 0;
-        var scope_Events = {};
-        // Document Nodes
-        var scope_Document = target.ownerDocument;
-        var scope_DocumentElement = options.documentElement || scope_Document.documentElement;
-        var scope_Body = scope_Document.body;
-        // For horizontal sliders in standard ltr documents,
-        // make .noUi-origin overflow to the left so the document doesn't scroll.
-        var scope_DirOffset = scope_Document.dir === "rtl" || options.ort === 1 ? 0 : 100;
-        // Creates a node, adds it to target, returns the new node.
-        function addNodeTo(addTarget, className) {
-            var div = scope_Document.createElement("div");
-            if (className) {
-                addClass(div, className);
-            }
-            addTarget.appendChild(div);
-            return div;
-        }
-        // Append a origin to the base
-        function addOrigin(base, handleNumber) {
-            var origin = addNodeTo(base, options.cssClasses.origin);
-            var handle = addNodeTo(origin, options.cssClasses.handle);
-            addNodeTo(handle, options.cssClasses.touchArea);
-            handle.setAttribute("data-handle", String(handleNumber));
-            if (options.keyboardSupport) {
-                // https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
-                // 0 = focusable and reachable
-                handle.setAttribute("tabindex", "0");
-                handle.addEventListener("keydown", function (event) {
-                    return eventKeydown(event, handleNumber);
-                });
-            }
-            if (options.handleAttributes !== undefined) {
-                var attributes_1 = options.handleAttributes[handleNumber];
-                Object.keys(attributes_1).forEach(function (attribute) {
-                    handle.setAttribute(attribute, attributes_1[attribute]);
-                });
-            }
-            handle.setAttribute("role", "slider");
-            handle.setAttribute("aria-orientation", options.ort ? "vertical" : "horizontal");
-            if (handleNumber === 0) {
-                addClass(handle, options.cssClasses.handleLower);
-            }
-            else if (handleNumber === options.handles - 1) {
-                addClass(handle, options.cssClasses.handleUpper);
-            }
-            return origin;
-        }
-        // Insert nodes for connect elements
-        function addConnect(base, add) {
-            if (!add) {
-                return false;
-            }
-            return addNodeTo(base, options.cssClasses.connect);
-        }
-        // Add handles to the slider base.
-        function addElements(connectOptions, base) {
-            var connectBase = addNodeTo(base, options.cssClasses.connects);
-            scope_Handles = [];
-            scope_Connects = [];
-            scope_Connects.push(addConnect(connectBase, connectOptions[0]));
-            // [::::O====O====O====]
-            // connectOptions = [0, 1, 1, 1]
-            for (var i = 0; i < options.handles; i++) {
-                // Keep a list of all added handles.
-                scope_Handles.push(addOrigin(base, i));
-                scope_HandleNumbers[i] = i;
-                scope_Connects.push(addConnect(connectBase, connectOptions[i + 1]));
-            }
-        }
-        // Initialize a single slider.
-        function addSlider(addTarget) {
-            // Apply classes and data to the target.
-            addClass(addTarget, options.cssClasses.target);
-            if (options.dir === 0) {
-                addClass(addTarget, options.cssClasses.ltr);
-            }
-            else {
-                addClass(addTarget, options.cssClasses.rtl);
-            }
-            if (options.ort === 0) {
-                addClass(addTarget, options.cssClasses.horizontal);
-            }
-            else {
-                addClass(addTarget, options.cssClasses.vertical);
-            }
-            var textDirection = getComputedStyle(addTarget).direction;
-            if (textDirection === "rtl") {
-                addClass(addTarget, options.cssClasses.textDirectionRtl);
-            }
-            else {
-                addClass(addTarget, options.cssClasses.textDirectionLtr);
-            }
-            return addNodeTo(addTarget, options.cssClasses.base);
-        }
-        function addTooltip(handle, handleNumber) {
-            if (!options.tooltips || !options.tooltips[handleNumber]) {
-                return false;
-            }
-            return addNodeTo(handle.firstChild, options.cssClasses.tooltip);
-        }
-        function isSliderDisabled() {
-            return scope_Target.hasAttribute("disabled");
-        }
-        // Disable the slider dragging if any handle is disabled
-        function isHandleDisabled(handleNumber) {
-            var handleOrigin = scope_Handles[handleNumber];
-            return handleOrigin.hasAttribute("disabled");
-        }
-        function removeTooltips() {
-            if (scope_Tooltips) {
-                removeEvent("update" + INTERNAL_EVENT_NS.tooltips);
-                scope_Tooltips.forEach(function (tooltip) {
-                    if (tooltip) {
-                        removeElement(tooltip);
-                    }
-                });
-                scope_Tooltips = null;
-            }
-        }
-        // The tooltips option is a shorthand for using the 'update' event.
-        function tooltips() {
-            removeTooltips();
-            // Tooltips are added with options.tooltips in original order.
-            scope_Tooltips = scope_Handles.map(addTooltip);
-            bindEvent("update" + INTERNAL_EVENT_NS.tooltips, function (values, handleNumber, unencoded) {
-                if (!scope_Tooltips || !options.tooltips) {
-                    return;
-                }
-                if (scope_Tooltips[handleNumber] === false) {
-                    return;
-                }
-                var formattedValue = values[handleNumber];
-                if (options.tooltips[handleNumber] !== true) {
-                    formattedValue = options.tooltips[handleNumber].to(unencoded[handleNumber]);
-                }
-                scope_Tooltips[handleNumber].innerHTML = formattedValue;
-            });
-        }
-        function aria() {
-            removeEvent("update" + INTERNAL_EVENT_NS.aria);
-            bindEvent("update" + INTERNAL_EVENT_NS.aria, function (values, handleNumber, unencoded, tap, positions) {
-                // Update Aria Values for all handles, as a change in one changes min and max values for the next.
-                scope_HandleNumbers.forEach(function (index) {
-                    var handle = scope_Handles[index];
-                    var min = checkHandlePosition(scope_Locations, index, 0, true, true, true);
-                    var max = checkHandlePosition(scope_Locations, index, 100, true, true, true);
-                    var now = positions[index];
-                    // Formatted value for display
-                    var text = String(options.ariaFormat.to(unencoded[index]));
-                    // Map to slider range values
-                    min = scope_Spectrum.fromStepping(min).toFixed(1);
-                    max = scope_Spectrum.fromStepping(max).toFixed(1);
-                    now = scope_Spectrum.fromStepping(now).toFixed(1);
-                    handle.children[0].setAttribute("aria-valuemin", min);
-                    handle.children[0].setAttribute("aria-valuemax", max);
-                    handle.children[0].setAttribute("aria-valuenow", now);
-                    handle.children[0].setAttribute("aria-valuetext", text);
-                });
-            });
-        }
-        function getGroup(pips) {
-            // Use the range.
-            if (pips.mode === exports.PipsMode.Range || pips.mode === exports.PipsMode.Steps) {
-                return scope_Spectrum.xVal;
-            }
-            if (pips.mode === exports.PipsMode.Count) {
-                if (pips.values < 2) {
-                    throw new Error("noUiSlider: 'values' (>= 2) required for mode 'count'.");
-                }
-                // Divide 0 - 100 in 'count' parts.
-                var interval = pips.values - 1;
-                var spread = 100 / interval;
-                var values = [];
-                // List these parts and have them handled as 'positions'.
-                while (interval--) {
-                    values[interval] = interval * spread;
-                }
-                values.push(100);
-                return mapToRange(values, pips.stepped);
-            }
-            if (pips.mode === exports.PipsMode.Positions) {
-                // Map all percentages to on-range values.
-                return mapToRange(pips.values, pips.stepped);
-            }
-            if (pips.mode === exports.PipsMode.Values) {
-                // If the value must be stepped, it needs to be converted to a percentage first.
-                if (pips.stepped) {
-                    return pips.values.map(function (value) {
-                        // Convert to percentage, apply step, return to value.
-                        return scope_Spectrum.fromStepping(scope_Spectrum.getStep(scope_Spectrum.toStepping(value)));
-                    });
-                }
-                // Otherwise, we can simply use the values.
-                return pips.values;
-            }
-            return []; // pips.mode = never
-        }
-        function mapToRange(values, stepped) {
-            return values.map(function (value) {
-                return scope_Spectrum.fromStepping(stepped ? scope_Spectrum.getStep(value) : value);
-            });
-        }
-        function generateSpread(pips) {
-            function safeIncrement(value, increment) {
-                // Avoid floating point variance by dropping the smallest decimal places.
-                return Number((value + increment).toFixed(7));
-            }
-            var group = getGroup(pips);
-            var indexes = {};
-            var firstInRange = scope_Spectrum.xVal[0];
-            var lastInRange = scope_Spectrum.xVal[scope_Spectrum.xVal.length - 1];
-            var ignoreFirst = false;
-            var ignoreLast = false;
-            var prevPct = 0;
-            // Create a copy of the group, sort it and filter away all duplicates.
-            group = unique(group.slice().sort(function (a, b) {
-                return a - b;
-            }));
-            // Make sure the range starts with the first element.
-            if (group[0] !== firstInRange) {
-                group.unshift(firstInRange);
-                ignoreFirst = true;
-            }
-            // Likewise for the last one.
-            if (group[group.length - 1] !== lastInRange) {
-                group.push(lastInRange);
-                ignoreLast = true;
-            }
-            group.forEach(function (current, index) {
-                // Get the current step and the lower + upper positions.
-                var step;
-                var i;
-                var q;
-                var low = current;
-                var high = group[index + 1];
-                var newPct;
-                var pctDifference;
-                var pctPos;
-                var type;
-                var steps;
-                var realSteps;
-                var stepSize;
-                var isSteps = pips.mode === exports.PipsMode.Steps;
-                // When using 'steps' mode, use the provided steps.
-                // Otherwise, we'll step on to the next subrange.
-                if (isSteps) {
-                    step = scope_Spectrum.xNumSteps[index];
-                }
-                // Default to a 'full' step.
-                if (!step) {
-                    step = high - low;
-                }
-                // If high is undefined we are at the last subrange. Make sure it iterates once (#1088)
-                if (high === undefined) {
-                    high = low;
-                }
-                // Make sure step isn't 0, which would cause an infinite loop (#654)
-                step = Math.max(step, 0.0000001);
-                // Find all steps in the subrange.
-                for (i = low; i <= high; i = safeIncrement(i, step)) {
-                    // Get the percentage value for the current step,
-                    // calculate the size for the subrange.
-                    newPct = scope_Spectrum.toStepping(i);
-                    pctDifference = newPct - prevPct;
-                    steps = pctDifference / (pips.density || 1);
-                    realSteps = Math.round(steps);
-                    // This ratio represents the amount of percentage-space a point indicates.
-                    // For a density 1 the points/percentage = 1. For density 2, that percentage needs to be re-divided.
-                    // Round the percentage offset to an even number, then divide by two
-                    // to spread the offset on both sides of the range.
-                    stepSize = pctDifference / realSteps;
-                    // Divide all points evenly, adding the correct number to this subrange.
-                    // Run up to <= so that 100% gets a point, event if ignoreLast is set.
-                    for (q = 1; q <= realSteps; q += 1) {
-                        // The ratio between the rounded value and the actual size might be ~1% off.
-                        // Correct the percentage offset by the number of points
-                        // per subrange. density = 1 will result in 100 points on the
-                        // full range, 2 for 50, 4 for 25, etc.
-                        pctPos = prevPct + q * stepSize;
-                        indexes[pctPos.toFixed(5)] = [scope_Spectrum.fromStepping(pctPos), 0];
-                    }
-                    // Determine the point type.
-                    type = group.indexOf(i) > -1 ? exports.PipsType.LargeValue : isSteps ? exports.PipsType.SmallValue : exports.PipsType.NoValue;
-                    // Enforce the 'ignoreFirst' option by overwriting the type for 0.
-                    if (!index && ignoreFirst && i !== high) {
-                        type = 0;
-                    }
-                    if (!(i === high && ignoreLast)) {
-                        // Mark the 'type' of this point. 0 = plain, 1 = real value, 2 = step value.
-                        indexes[newPct.toFixed(5)] = [i, type];
-                    }
-                    // Update the percentage count.
-                    prevPct = newPct;
-                }
-            });
-            return indexes;
-        }
-        function addMarking(spread, filterFunc, formatter) {
-            var _a, _b;
-            var element = scope_Document.createElement("div");
-            var valueSizeClasses = (_a = {},
-                _a[exports.PipsType.None] = "",
-                _a[exports.PipsType.NoValue] = options.cssClasses.valueNormal,
-                _a[exports.PipsType.LargeValue] = options.cssClasses.valueLarge,
-                _a[exports.PipsType.SmallValue] = options.cssClasses.valueSub,
-                _a);
-            var markerSizeClasses = (_b = {},
-                _b[exports.PipsType.None] = "",
-                _b[exports.PipsType.NoValue] = options.cssClasses.markerNormal,
-                _b[exports.PipsType.LargeValue] = options.cssClasses.markerLarge,
-                _b[exports.PipsType.SmallValue] = options.cssClasses.markerSub,
-                _b);
-            var valueOrientationClasses = [options.cssClasses.valueHorizontal, options.cssClasses.valueVertical];
-            var markerOrientationClasses = [options.cssClasses.markerHorizontal, options.cssClasses.markerVertical];
-            addClass(element, options.cssClasses.pips);
-            addClass(element, options.ort === 0 ? options.cssClasses.pipsHorizontal : options.cssClasses.pipsVertical);
-            function getClasses(type, source) {
-                var a = source === options.cssClasses.value;
-                var orientationClasses = a ? valueOrientationClasses : markerOrientationClasses;
-                var sizeClasses = a ? valueSizeClasses : markerSizeClasses;
-                return source + " " + orientationClasses[options.ort] + " " + sizeClasses[type];
-            }
-            function addSpread(offset, value, type) {
-                // Apply the filter function, if it is set.
-                type = filterFunc ? filterFunc(value, type) : type;
-                if (type === exports.PipsType.None) {
-                    return;
-                }
-                // Add a marker for every point
-                var node = addNodeTo(element, false);
-                node.className = getClasses(type, options.cssClasses.marker);
-                node.style[options.style] = offset + "%";
-                // Values are only appended for points marked '1' or '2'.
-                if (type > exports.PipsType.NoValue) {
-                    node = addNodeTo(element, false);
-                    node.className = getClasses(type, options.cssClasses.value);
-                    node.setAttribute("data-value", String(value));
-                    node.style[options.style] = offset + "%";
-                    node.innerHTML = String(formatter.to(value));
-                }
-            }
-            // Append all points.
-            Object.keys(spread).forEach(function (offset) {
-                addSpread(offset, spread[offset][0], spread[offset][1]);
-            });
-            return element;
-        }
-        function removePips() {
-            if (scope_Pips) {
-                removeElement(scope_Pips);
-                scope_Pips = null;
-            }
-        }
-        function pips(pips) {
-            // Fix #669
-            removePips();
-            var spread = generateSpread(pips);
-            var filter = pips.filter;
-            var format = pips.format || {
-                to: function (value) {
-                    return String(Math.round(value));
-                }
+
+    function installReadyStateChangeImplementation() {
+        var html = doc.documentElement;
+        registerImmediate = function(handle) {
+            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+            var script = doc.createElement("script");
+            script.onreadystatechange = function () {
+                runIfPresent(handle);
+                script.onreadystatechange = null;
+                html.removeChild(script);
+                script = null;
             };
-            scope_Pips = scope_Target.appendChild(addMarking(spread, filter, format));
-            return scope_Pips;
-        }
-        // Shorthand for base dimensions.
-        function baseSize() {
-            var rect = scope_Base.getBoundingClientRect();
-            var alt = ("offset" + ["Width", "Height"][options.ort]);
-            return options.ort === 0 ? rect.width || scope_Base[alt] : rect.height || scope_Base[alt];
-        }
-        // Handler for attaching events trough a proxy.
-        function attachEvent(events, element, callback, data) {
-            // This function can be used to 'filter' events to the slider.
-            // element is a node, not a nodeList
-            var method = function (event) {
-                var e = fixEvent(event, data.pageOffset, data.target || element);
-                // fixEvent returns false if this event has a different target
-                // when handling (multi-) touch events;
-                if (!e) {
-                    return false;
-                }
-                // doNotReject is passed by all end events to make sure released touches
-                // are not rejected, leaving the slider "stuck" to the cursor;
-                if (isSliderDisabled() && !data.doNotReject) {
-                    return false;
-                }
-                // Stop if an active 'tap' transition is taking place.
-                if (hasClass(scope_Target, options.cssClasses.tap) && !data.doNotReject) {
-                    return false;
-                }
-                // Ignore right or middle clicks on start #454
-                if (events === actions.start && e.buttons !== undefined && e.buttons > 1) {
-                    return false;
-                }
-                // Ignore right or middle clicks on start #454
-                if (data.hover && e.buttons) {
-                    return false;
-                }
-                // 'supportsPassive' is only true if a browser also supports touch-action: none in CSS.
-                // iOS safari does not, so it doesn't get to benefit from passive scrolling. iOS does support
-                // touch-action: manipulation, but that allows panning, which breaks
-                // sliders after zooming/on non-responsive pages.
-                // See: https://bugs.webkit.org/show_bug.cgi?id=133112
-                if (!supportsPassive) {
-                    e.preventDefault();
-                }
-                e.calcPoint = e.points[options.ort];
-                // Call the event handler with the event [ and additional data ].
-                callback(e, data);
-                return;
-            };
-            var methods = [];
-            // Bind a closure on the target for every event type.
-            events.split(" ").forEach(function (eventName) {
-                element.addEventListener(eventName, method, supportsPassive ? { passive: true } : false);
-                methods.push([eventName, method]);
-            });
-            return methods;
-        }
-        // Provide a clean event with standardized offset values.
-        function fixEvent(e, pageOffset, eventTarget) {
-            // Filter the event to register the type, which can be
-            // touch, mouse or pointer. Offset changes need to be
-            // made on an event specific basis.
-            var touch = e.type.indexOf("touch") === 0;
-            var mouse = e.type.indexOf("mouse") === 0;
-            var pointer = e.type.indexOf("pointer") === 0;
-            var x = 0;
-            var y = 0;
-            // IE10 implemented pointer events with a prefix;
-            if (e.type.indexOf("MSPointer") === 0) {
-                pointer = true;
-            }
-            // Erroneous events seem to be passed in occasionally on iOS/iPadOS after user finishes interacting with
-            // the slider. They appear to be of type MouseEvent, yet they don't have usual properties set. Ignore
-            // events that have no touches or buttons associated with them. (#1057, #1079, #1095)
-            if (e.type === "mousedown" && !e.buttons && !e.touches) {
-                return false;
-            }
-            // The only thing one handle should be concerned about is the touches that originated on top of it.
-            if (touch) {
-                // Returns true if a touch originated on the target.
-                var isTouchOnTarget = function (checkTouch) {
-                    var target = checkTouch.target;
-                    return (target === eventTarget ||
-                        eventTarget.contains(target) ||
-                        (e.composed && e.composedPath().shift() === eventTarget));
-                };
-                // In the case of touchstart events, we need to make sure there is still no more than one
-                // touch on the target so we look amongst all touches.
-                if (e.type === "touchstart") {
-                    var targetTouches = Array.prototype.filter.call(e.touches, isTouchOnTarget);
-                    // Do not support more than one touch per handle.
-                    if (targetTouches.length > 1) {
-                        return false;
-                    }
-                    x = targetTouches[0].pageX;
-                    y = targetTouches[0].pageY;
-                }
-                else {
-                    // In the other cases, find on changedTouches is enough.
-                    var targetTouch = Array.prototype.find.call(e.changedTouches, isTouchOnTarget);
-                    // Cancel if the target touch has not moved.
-                    if (!targetTouch) {
-                        return false;
-                    }
-                    x = targetTouch.pageX;
-                    y = targetTouch.pageY;
-                }
-            }
-            pageOffset = pageOffset || getPageOffset(scope_Document);
-            if (mouse || pointer) {
-                x = e.clientX + pageOffset.x;
-                y = e.clientY + pageOffset.y;
-            }
-            e.pageOffset = pageOffset;
-            e.points = [x, y];
-            e.cursor = mouse || pointer; // Fix #435
-            return e;
-        }
-        // Translate a coordinate in the document to a percentage on the slider
-        function calcPointToPercentage(calcPoint) {
-            var location = calcPoint - offset(scope_Base, options.ort);
-            var proposal = (location * 100) / baseSize();
-            // Clamp proposal between 0% and 100%
-            // Out-of-bound coordinates may occur when .noUi-base pseudo-elements
-            // are used (e.g. contained handles feature)
-            proposal = limit(proposal);
-            return options.dir ? 100 - proposal : proposal;
-        }
-        // Find handle closest to a certain percentage on the slider
-        function getClosestHandle(clickedPosition) {
-            var smallestDifference = 100;
-            var handleNumber = false;
-            scope_Handles.forEach(function (handle, index) {
-                // Disabled handles are ignored
-                if (isHandleDisabled(index)) {
-                    return;
-                }
-                var handlePosition = scope_Locations[index];
-                var differenceWithThisHandle = Math.abs(handlePosition - clickedPosition);
-                // Initial state
-                var clickAtEdge = differenceWithThisHandle === 100 && smallestDifference === 100;
-                // Difference with this handle is smaller than the previously checked handle
-                var isCloser = differenceWithThisHandle < smallestDifference;
-                var isCloserAfter = differenceWithThisHandle <= smallestDifference && clickedPosition > handlePosition;
-                if (isCloser || isCloserAfter || clickAtEdge) {
-                    handleNumber = index;
-                    smallestDifference = differenceWithThisHandle;
-                }
-            });
-            return handleNumber;
-        }
-        // Fire 'end' when a mouse or pen leaves the document.
-        function documentLeave(event, data) {
-            if (event.type === "mouseout" &&
-                event.target.nodeName === "HTML" &&
-                event.relatedTarget === null) {
-                eventEnd(event, data);
-            }
-        }
-        // Handle movement on document for handle and range drag.
-        function eventMove(event, data) {
-            // Fix #498
-            // Check value of .buttons in 'start' to work around a bug in IE10 mobile (data.buttonsProperty).
-            // https://connect.microsoft.com/IE/feedback/details/927005/mobile-ie10-windows-phone-buttons-property-of-pointermove-event-always-zero
-            // IE9 has .buttons and .which zero on mousemove.
-            // Firefox breaks the spec MDN defines.
-            if (navigator.appVersion.indexOf("MSIE 9") === -1 && event.buttons === 0 && data.buttonsProperty !== 0) {
-                return eventEnd(event, data);
-            }
-            // Check if we are moving up or down
-            var movement = (options.dir ? -1 : 1) * (event.calcPoint - data.startCalcPoint);
-            // Convert the movement into a percentage of the slider width/height
-            var proposal = (movement * 100) / data.baseSize;
-            moveHandles(movement > 0, proposal, data.locations, data.handleNumbers, data.connect);
-        }
-        // Unbind move events on document, call callbacks.
-        function eventEnd(event, data) {
-            // The handle is no longer active, so remove the class.
-            if (data.handle) {
-                removeClass(data.handle, options.cssClasses.active);
-                scope_ActiveHandlesCount -= 1;
-            }
-            // Unbind the move and end events, which are added on 'start'.
-            data.listeners.forEach(function (c) {
-                scope_DocumentElement.removeEventListener(c[0], c[1]);
-            });
-            if (scope_ActiveHandlesCount === 0) {
-                // Remove dragging class.
-                removeClass(scope_Target, options.cssClasses.drag);
-                setZindex();
-                // Remove cursor styles and text-selection events bound to the body.
-                if (event.cursor) {
-                    scope_Body.style.cursor = "";
-                    scope_Body.removeEventListener("selectstart", preventDefault);
-                }
-            }
-            data.handleNumbers.forEach(function (handleNumber) {
-                fireEvent("change", handleNumber);
-                fireEvent("set", handleNumber);
-                fireEvent("end", handleNumber);
-            });
-        }
-        // Bind move events on document.
-        function eventStart(event, data) {
-            // Ignore event if any handle is disabled
-            if (data.handleNumbers.some(isHandleDisabled)) {
-                return;
-            }
-            var handle;
-            if (data.handleNumbers.length === 1) {
-                var handleOrigin = scope_Handles[data.handleNumbers[0]];
-                handle = handleOrigin.children[0];
-                scope_ActiveHandlesCount += 1;
-                // Mark the handle as 'active' so it can be styled.
-                addClass(handle, options.cssClasses.active);
-            }
-            // A drag should never propagate up to the 'tap' event.
-            event.stopPropagation();
-            // Record the event listeners.
-            var listeners = [];
-            // Attach the move and end events.
-            var moveEvent = attachEvent(actions.move, scope_DocumentElement, eventMove, {
-                // The event target has changed so we need to propagate the original one so that we keep
-                // relying on it to extract target touches.
-                target: event.target,
-                handle: handle,
-                connect: data.connect,
-                listeners: listeners,
-                startCalcPoint: event.calcPoint,
-                baseSize: baseSize(),
-                pageOffset: event.pageOffset,
-                handleNumbers: data.handleNumbers,
-                buttonsProperty: event.buttons,
-                locations: scope_Locations.slice()
-            });
-            var endEvent = attachEvent(actions.end, scope_DocumentElement, eventEnd, {
-                target: event.target,
-                handle: handle,
-                listeners: listeners,
-                doNotReject: true,
-                handleNumbers: data.handleNumbers
-            });
-            var outEvent = attachEvent("mouseout", scope_DocumentElement, documentLeave, {
-                target: event.target,
-                handle: handle,
-                listeners: listeners,
-                doNotReject: true,
-                handleNumbers: data.handleNumbers
-            });
-            // We want to make sure we pushed the listeners in the listener list rather than creating
-            // a new one as it has already been passed to the event handlers.
-            listeners.push.apply(listeners, moveEvent.concat(endEvent, outEvent));
-            // Text selection isn't an issue on touch devices,
-            // so adding cursor styles can be skipped.
-            if (event.cursor) {
-                // Prevent the 'I' cursor and extend the range-drag cursor.
-                scope_Body.style.cursor = getComputedStyle(event.target).cursor;
-                // Mark the target with a dragging state.
-                if (scope_Handles.length > 1) {
-                    addClass(scope_Target, options.cssClasses.drag);
-                }
-                // Prevent text selection when dragging the handles.
-                // In noUiSlider <= 9.2.0, this was handled by calling preventDefault on mouse/touch start/move,
-                // which is scroll blocking. The selectstart event is supported by FireFox starting from version 52,
-                // meaning the only holdout is iOS Safari. This doesn't matter: text selection isn't triggered there.
-                // The 'cursor' flag is false.
-                // See: http://caniuse.com/#search=selectstart
-                scope_Body.addEventListener("selectstart", preventDefault, false);
-            }
-            data.handleNumbers.forEach(function (handleNumber) {
-                fireEvent("start", handleNumber);
-            });
-        }
-        // Move closest handle to tapped location.
-        function eventTap(event) {
-            // The tap event shouldn't propagate up
-            event.stopPropagation();
-            var proposal = calcPointToPercentage(event.calcPoint);
-            var handleNumber = getClosestHandle(proposal);
-            // Tackle the case that all handles are 'disabled'.
-            if (handleNumber === false) {
-                return;
-            }
-            // Flag the slider as it is now in a transitional state.
-            // Transition takes a configurable amount of ms (default 300). Re-enable the slider after that.
-            if (!options.events.snap) {
-                addClassFor(scope_Target, options.cssClasses.tap, options.animationDuration);
-            }
-            setHandle(handleNumber, proposal, true, true);
-            setZindex();
-            fireEvent("slide", handleNumber, true);
-            fireEvent("update", handleNumber, true);
-            if (!options.events.snap) {
-                fireEvent("change", handleNumber, true);
-                fireEvent("set", handleNumber, true);
-            }
-            else {
-                eventStart(event, { handleNumbers: [handleNumber] });
-            }
-        }
-        // Fires a 'hover' event for a hovered mouse/pen position.
-        function eventHover(event) {
-            var proposal = calcPointToPercentage(event.calcPoint);
-            var to = scope_Spectrum.getStep(proposal);
-            var value = scope_Spectrum.fromStepping(to);
-            Object.keys(scope_Events).forEach(function (targetEvent) {
-                if ("hover" === targetEvent.split(".")[0]) {
-                    scope_Events[targetEvent].forEach(function (callback) {
-                        callback.call(scope_Self, value);
-                    });
-                }
-            });
-        }
-        // Handles keydown on focused handles
-        // Don't move the document when pressing arrow keys on focused handles
-        function eventKeydown(event, handleNumber) {
-            if (isSliderDisabled() || isHandleDisabled(handleNumber)) {
-                return false;
-            }
-            var horizontalKeys = ["Left", "Right"];
-            var verticalKeys = ["Down", "Up"];
-            var largeStepKeys = ["PageDown", "PageUp"];
-            var edgeKeys = ["Home", "End"];
-            if (options.dir && !options.ort) {
-                // On an right-to-left slider, the left and right keys act inverted
-                horizontalKeys.reverse();
-            }
-            else if (options.ort && !options.dir) {
-                // On a top-to-bottom slider, the up and down keys act inverted
-                verticalKeys.reverse();
-                largeStepKeys.reverse();
-            }
-            // Strip "Arrow" for IE compatibility. https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
-            var key = event.key.replace("Arrow", "");
-            var isLargeDown = key === largeStepKeys[0];
-            var isLargeUp = key === largeStepKeys[1];
-            var isDown = key === verticalKeys[0] || key === horizontalKeys[0] || isLargeDown;
-            var isUp = key === verticalKeys[1] || key === horizontalKeys[1] || isLargeUp;
-            var isMin = key === edgeKeys[0];
-            var isMax = key === edgeKeys[1];
-            if (!isDown && !isUp && !isMin && !isMax) {
-                return true;
-            }
-            event.preventDefault();
-            var to;
-            if (isUp || isDown) {
-                var direction = isDown ? 0 : 1;
-                var steps = getNextStepsForHandle(handleNumber);
-                var step = steps[direction];
-                // At the edge of a slider, do nothing
-                if (step === null) {
-                    return false;
-                }
-                // No step set, use the default of 10% of the sub-range
-                if (step === false) {
-                    step = scope_Spectrum.getDefaultStep(scope_Locations[handleNumber], isDown, options.keyboardDefaultStep);
-                }
-                if (isLargeUp || isLargeDown) {
-                    step *= options.keyboardPageMultiplier;
-                }
-                else {
-                    step *= options.keyboardMultiplier;
-                }
-                // Step over zero-length ranges (#948);
-                step = Math.max(step, 0.0000001);
-                // Decrement for down steps
-                step = (isDown ? -1 : 1) * step;
-                to = scope_Values[handleNumber] + step;
-            }
-            else if (isMax) {
-                // End key
-                to = options.spectrum.xVal[options.spectrum.xVal.length - 1];
-            }
-            else {
-                // Home key
-                to = options.spectrum.xVal[0];
-            }
-            setHandle(handleNumber, scope_Spectrum.toStepping(to), true, true);
-            fireEvent("slide", handleNumber);
-            fireEvent("update", handleNumber);
-            fireEvent("change", handleNumber);
-            fireEvent("set", handleNumber);
-            return false;
-        }
-        // Attach events to several slider parts.
-        function bindSliderEvents(behaviour) {
-            // Attach the standard drag event to the handles.
-            if (!behaviour.fixed) {
-                scope_Handles.forEach(function (handle, index) {
-                    // These events are only bound to the visual handle
-                    // element, not the 'real' origin element.
-                    attachEvent(actions.start, handle.children[0], eventStart, {
-                        handleNumbers: [index]
-                    });
-                });
-            }
-            // Attach the tap event to the slider base.
-            if (behaviour.tap) {
-                attachEvent(actions.start, scope_Base, eventTap, {});
-            }
-            // Fire hover events
-            if (behaviour.hover) {
-                attachEvent(actions.move, scope_Base, eventHover, {
-                    hover: true
-                });
-            }
-            // Make the range draggable.
-            if (behaviour.drag) {
-                scope_Connects.forEach(function (connect, index) {
-                    if (connect === false || index === 0 || index === scope_Connects.length - 1) {
-                        return;
-                    }
-                    var handleBefore = scope_Handles[index - 1];
-                    var handleAfter = scope_Handles[index];
-                    var eventHolders = [connect];
-                    var handlesToDrag = [handleBefore, handleAfter];
-                    var handleNumbersToDrag = [index - 1, index];
-                    addClass(connect, options.cssClasses.draggable);
-                    // When the range is fixed, the entire range can
-                    // be dragged by the handles. The handle in the first
-                    // origin will propagate the start event upward,
-                    // but it needs to be bound manually on the other.
-                    if (behaviour.fixed) {
-                        eventHolders.push(handleBefore.children[0]);
-                        eventHolders.push(handleAfter.children[0]);
-                    }
-                    if (behaviour.dragAll) {
-                        handlesToDrag = scope_Handles;
-                        handleNumbersToDrag = scope_HandleNumbers;
-                    }
-                    eventHolders.forEach(function (eventHolder) {
-                        attachEvent(actions.start, eventHolder, eventStart, {
-                            handles: handlesToDrag,
-                            handleNumbers: handleNumbersToDrag,
-                            connect: connect
-                        });
-                    });
-                });
-            }
-        }
-        // Attach an event to this slider, possibly including a namespace
-        function bindEvent(namespacedEvent, callback) {
-            scope_Events[namespacedEvent] = scope_Events[namespacedEvent] || [];
-            scope_Events[namespacedEvent].push(callback);
-            // If the event bound is 'update,' fire it immediately for all handles.
-            if (namespacedEvent.split(".")[0] === "update") {
-                scope_Handles.forEach(function (a, index) {
-                    fireEvent("update", index);
-                });
-            }
-        }
-        function isInternalNamespace(namespace) {
-            return namespace === INTERNAL_EVENT_NS.aria || namespace === INTERNAL_EVENT_NS.tooltips;
-        }
-        // Undo attachment of event
-        function removeEvent(namespacedEvent) {
-            var event = namespacedEvent && namespacedEvent.split(".")[0];
-            var namespace = event ? namespacedEvent.substring(event.length) : namespacedEvent;
-            Object.keys(scope_Events).forEach(function (bind) {
-                var tEvent = bind.split(".")[0];
-                var tNamespace = bind.substring(tEvent.length);
-                if ((!event || event === tEvent) && (!namespace || namespace === tNamespace)) {
-                    // only delete protected internal event if intentional
-                    if (!isInternalNamespace(tNamespace) || namespace === tNamespace) {
-                        delete scope_Events[bind];
-                    }
-                }
-            });
-        }
-        // External event handling
-        function fireEvent(eventName, handleNumber, tap) {
-            Object.keys(scope_Events).forEach(function (targetEvent) {
-                var eventType = targetEvent.split(".")[0];
-                if (eventName === eventType) {
-                    scope_Events[targetEvent].forEach(function (callback) {
-                        callback.call(
-                        // Use the slider public API as the scope ('this')
-                        scope_Self, 
-                        // Return values as array, so arg_1[arg_2] is always valid.
-                        scope_Values.map(options.format.to), 
-                        // Handle index, 0 or 1
-                        handleNumber, 
-                        // Un-formatted slider values
-                        scope_Values.slice(), 
-                        // Event is fired by tap, true or false
-                        tap || false, 
-                        // Left offset of the handle, in relation to the slider
-                        scope_Locations.slice(), 
-                        // add the slider public API to an accessible parameter when this is unavailable
-                        scope_Self);
-                    });
-                }
-            });
-        }
-        // Split out the handle positioning logic so the Move event can use it, too
-        function checkHandlePosition(reference, handleNumber, to, lookBackward, lookForward, getValue) {
-            var distance;
-            // For sliders with multiple handles, limit movement to the other handle.
-            // Apply the margin option by adding it to the handle positions.
-            if (scope_Handles.length > 1 && !options.events.unconstrained) {
-                if (lookBackward && handleNumber > 0) {
-                    distance = scope_Spectrum.getAbsoluteDistance(reference[handleNumber - 1], options.margin, false);
-                    to = Math.max(to, distance);
-                }
-                if (lookForward && handleNumber < scope_Handles.length - 1) {
-                    distance = scope_Spectrum.getAbsoluteDistance(reference[handleNumber + 1], options.margin, true);
-                    to = Math.min(to, distance);
-                }
-            }
-            // The limit option has the opposite effect, limiting handles to a
-            // maximum distance from another. Limit must be > 0, as otherwise
-            // handles would be unmovable.
-            if (scope_Handles.length > 1 && options.limit) {
-                if (lookBackward && handleNumber > 0) {
-                    distance = scope_Spectrum.getAbsoluteDistance(reference[handleNumber - 1], options.limit, false);
-                    to = Math.min(to, distance);
-                }
-                if (lookForward && handleNumber < scope_Handles.length - 1) {
-                    distance = scope_Spectrum.getAbsoluteDistance(reference[handleNumber + 1], options.limit, true);
-                    to = Math.max(to, distance);
-                }
-            }
-            // The padding option keeps the handles a certain distance from the
-            // edges of the slider. Padding must be > 0.
-            if (options.padding) {
-                if (handleNumber === 0) {
-                    distance = scope_Spectrum.getAbsoluteDistance(0, options.padding[0], false);
-                    to = Math.max(to, distance);
-                }
-                if (handleNumber === scope_Handles.length - 1) {
-                    distance = scope_Spectrum.getAbsoluteDistance(100, options.padding[1], true);
-                    to = Math.min(to, distance);
-                }
-            }
-            to = scope_Spectrum.getStep(to);
-            // Limit percentage to the 0 - 100 range
-            to = limit(to);
-            // Return false if handle can't move
-            if (to === reference[handleNumber] && !getValue) {
-                return false;
-            }
-            return to;
-        }
-        // Uses slider orientation to create CSS rules. a = base value;
-        function inRuleOrder(v, a) {
-            var o = options.ort;
-            return (o ? a : v) + ", " + (o ? v : a);
-        }
-        // Moves handle(s) by a percentage
-        // (bool, % to move, [% where handle started, ...], [index in scope_Handles, ...])
-        function moveHandles(upward, proposal, locations, handleNumbers, connect) {
-            var proposals = locations.slice();
-            // Store first handle now, so we still have it in case handleNumbers is reversed
-            var firstHandle = handleNumbers[0];
-            var b = [!upward, upward];
-            var f = [upward, !upward];
-            // Copy handleNumbers so we don't change the dataset
-            handleNumbers = handleNumbers.slice();
-            // Check to see which handle is 'leading'.
-            // If that one can't move the second can't either.
-            if (upward) {
-                handleNumbers.reverse();
-            }
-            // Step 1: get the maximum percentage that any of the handles can move
-            if (handleNumbers.length > 1) {
-                handleNumbers.forEach(function (handleNumber, o) {
-                    var to = checkHandlePosition(proposals, handleNumber, proposals[handleNumber] + proposal, b[o], f[o], false);
-                    // Stop if one of the handles can't move.
-                    if (to === false) {
-                        proposal = 0;
-                    }
-                    else {
-                        proposal = to - proposals[handleNumber];
-                        proposals[handleNumber] = to;
-                    }
-                });
-            }
-            // If using one handle, check backward AND forward
-            else {
-                b = f = [true];
-            }
-            var state = false;
-            // Step 2: Try to set the handles with the found percentage
-            handleNumbers.forEach(function (handleNumber, o) {
-                state = setHandle(handleNumber, locations[handleNumber] + proposal, b[o], f[o]) || state;
-            });
-            // Step 3: If a handle moved, fire events
-            if (state) {
-                handleNumbers.forEach(function (handleNumber) {
-                    fireEvent("update", handleNumber);
-                    fireEvent("slide", handleNumber);
-                });
-                // If target is a connect, then fire drag event
-                if (connect != undefined) {
-                    fireEvent("drag", firstHandle);
-                }
-            }
-        }
-        // Takes a base value and an offset. This offset is used for the connect bar size.
-        // In the initial design for this feature, the origin element was 1% wide.
-        // Unfortunately, a rounding bug in Chrome makes it impossible to implement this feature
-        // in this manner: https://bugs.chromium.org/p/chromium/issues/detail?id=798223
-        function transformDirection(a, b) {
-            return options.dir ? 100 - a - b : a;
-        }
-        // Updates scope_Locations and scope_Values, updates visual state
-        function updateHandlePosition(handleNumber, to) {
-            // Update locations.
-            scope_Locations[handleNumber] = to;
-            // Convert the value to the slider stepping/range.
-            scope_Values[handleNumber] = scope_Spectrum.fromStepping(to);
-            var translation = 10 * (transformDirection(to, 0) - scope_DirOffset);
-            var translateRule = "translate(" + inRuleOrder(translation + "%", "0") + ")";
-            scope_Handles[handleNumber].style[options.transformRule] = translateRule;
-            updateConnect(handleNumber);
-            updateConnect(handleNumber + 1);
-        }
-        // Handles before the slider middle are stacked later = higher,
-        // Handles after the middle later is lower
-        // [[7] [8] .......... | .......... [5] [4]
-        function setZindex() {
-            scope_HandleNumbers.forEach(function (handleNumber) {
-                var dir = scope_Locations[handleNumber] > 50 ? -1 : 1;
-                var zIndex = 3 + (scope_Handles.length + dir * handleNumber);
-                scope_Handles[handleNumber].style.zIndex = String(zIndex);
-            });
-        }
-        // Test suggested values and apply margin, step.
-        // if exactInput is true, don't run checkHandlePosition, then the handle can be placed in between steps (#436)
-        function setHandle(handleNumber, to, lookBackward, lookForward, exactInput) {
-            if (!exactInput) {
-                to = checkHandlePosition(scope_Locations, handleNumber, to, lookBackward, lookForward, false);
-            }
-            if (to === false) {
-                return false;
-            }
-            updateHandlePosition(handleNumber, to);
-            return true;
-        }
-        // Updates style attribute for connect nodes
-        function updateConnect(index) {
-            // Skip connects set to false
-            if (!scope_Connects[index]) {
-                return;
-            }
-            var l = 0;
-            var h = 100;
-            if (index !== 0) {
-                l = scope_Locations[index - 1];
-            }
-            if (index !== scope_Connects.length - 1) {
-                h = scope_Locations[index];
-            }
-            // We use two rules:
-            // 'translate' to change the left/top offset;
-            // 'scale' to change the width of the element;
-            // As the element has a width of 100%, a translation of 100% is equal to 100% of the parent (.noUi-base)
-            var connectWidth = h - l;
-            var translateRule = "translate(" + inRuleOrder(transformDirection(l, connectWidth) + "%", "0") + ")";
-            var scaleRule = "scale(" + inRuleOrder(connectWidth / 100, "1") + ")";
-            scope_Connects[index].style[options.transformRule] =
-                translateRule + " " + scaleRule;
-        }
-        // Parses value passed to .set method. Returns current value if not parse-able.
-        function resolveToValue(to, handleNumber) {
-            // Setting with null indicates an 'ignore'.
-            // Inputting 'false' is invalid.
-            if (to === null || to === false || to === undefined) {
-                return scope_Locations[handleNumber];
-            }
-            // If a formatted number was passed, attempt to decode it.
-            if (typeof to === "number") {
-                to = String(to);
-            }
-            to = options.format.from(to);
-            if (to !== false) {
-                to = scope_Spectrum.toStepping(to);
-            }
-            // If parsing the number failed, use the current value.
-            if (to === false || isNaN(to)) {
-                return scope_Locations[handleNumber];
-            }
-            return to;
-        }
-        // Set the slider value.
-        function valueSet(input, fireSetEvent, exactInput) {
-            var values = asArray(input);
-            var isInit = scope_Locations[0] === undefined;
-            // Event fires by default
-            fireSetEvent = fireSetEvent === undefined ? true : fireSetEvent;
-            // Animation is optional.
-            // Make sure the initial values were set before using animated placement.
-            if (options.animate && !isInit) {
-                addClassFor(scope_Target, options.cssClasses.tap, options.animationDuration);
-            }
-            // First pass, without lookAhead but with lookBackward. Values are set from left to right.
-            scope_HandleNumbers.forEach(function (handleNumber) {
-                setHandle(handleNumber, resolveToValue(values[handleNumber], handleNumber), true, false, exactInput);
-            });
-            var i = scope_HandleNumbers.length === 1 ? 0 : 1;
-            // Spread handles evenly across the slider if the range has no size (min=max)
-            if (isInit && scope_Spectrum.hasNoSize()) {
-                exactInput = true;
-                scope_Locations[0] = 0;
-                if (scope_HandleNumbers.length > 1) {
-                    var space_1 = 100 / (scope_HandleNumbers.length - 1);
-                    scope_HandleNumbers.forEach(function (handleNumber) {
-                        scope_Locations[handleNumber] = handleNumber * space_1;
-                    });
-                }
-            }
-            // Secondary passes. Now that all base values are set, apply constraints.
-            // Iterate all handles to ensure constraints are applied for the entire slider (Issue #1009)
-            for (; i < scope_HandleNumbers.length; ++i) {
-                scope_HandleNumbers.forEach(function (handleNumber) {
-                    setHandle(handleNumber, scope_Locations[handleNumber], true, true, exactInput);
-                });
-            }
-            setZindex();
-            scope_HandleNumbers.forEach(function (handleNumber) {
-                fireEvent("update", handleNumber);
-                // Fire the event only for handles that received a new value, as per #579
-                if (values[handleNumber] !== null && fireSetEvent) {
-                    fireEvent("set", handleNumber);
-                }
-            });
-        }
-        // Reset slider to initial values
-        function valueReset(fireSetEvent) {
-            valueSet(options.start, fireSetEvent);
-        }
-        // Set value for a single handle
-        function valueSetHandle(handleNumber, value, fireSetEvent, exactInput) {
-            // Ensure numeric input
-            handleNumber = Number(handleNumber);
-            if (!(handleNumber >= 0 && handleNumber < scope_HandleNumbers.length)) {
-                throw new Error("noUiSlider: invalid handle number, got: " + handleNumber);
-            }
-            // Look both backward and forward, since we don't want this handle to "push" other handles (#960);
-            // The exactInput argument can be used to ignore slider stepping (#436)
-            setHandle(handleNumber, resolveToValue(value, handleNumber), true, true, exactInput);
-            fireEvent("update", handleNumber);
-            if (fireSetEvent) {
-                fireEvent("set", handleNumber);
-            }
-        }
-        // Get the slider value.
-        function valueGet(unencoded) {
-            if (unencoded === void 0) { unencoded = false; }
-            if (unencoded) {
-                // return a copy of the raw values
-                return scope_Values.length === 1 ? scope_Values[0] : scope_Values.slice(0);
-            }
-            var values = scope_Values.map(options.format.to);
-            // If only one handle is used, return a single value.
-            if (values.length === 1) {
-                return values[0];
-            }
-            return values;
-        }
-        // Removes classes from the root and empties it.
-        function destroy() {
-            // remove protected internal listeners
-            removeEvent(INTERNAL_EVENT_NS.aria);
-            removeEvent(INTERNAL_EVENT_NS.tooltips);
-            Object.keys(options.cssClasses).forEach(function (key) {
-                removeClass(scope_Target, options.cssClasses[key]);
-            });
-            while (scope_Target.firstChild) {
-                scope_Target.removeChild(scope_Target.firstChild);
-            }
-            delete scope_Target.noUiSlider;
-        }
-        function getNextStepsForHandle(handleNumber) {
-            var location = scope_Locations[handleNumber];
-            var nearbySteps = scope_Spectrum.getNearbySteps(location);
-            var value = scope_Values[handleNumber];
-            var increment = nearbySteps.thisStep.step;
-            var decrement = null;
-            // If snapped, directly use defined step value
-            if (options.snap) {
-                return [
-                    value - nearbySteps.stepBefore.startValue || null,
-                    nearbySteps.stepAfter.startValue - value || null
-                ];
-            }
-            // If the next value in this step moves into the next step,
-            // the increment is the start of the next step - the current value
-            if (increment !== false) {
-                if (value + increment > nearbySteps.stepAfter.startValue) {
-                    increment = nearbySteps.stepAfter.startValue - value;
-                }
-            }
-            // If the value is beyond the starting point
-            if (value > nearbySteps.thisStep.startValue) {
-                decrement = nearbySteps.thisStep.step;
-            }
-            else if (nearbySteps.stepBefore.step === false) {
-                decrement = false;
-            }
-            // If a handle is at the start of a step, it always steps back into the previous step first
-            else {
-                decrement = value - nearbySteps.stepBefore.highestStep;
-            }
-            // Now, if at the slider edges, there is no in/decrement
-            if (location === 100) {
-                increment = null;
-            }
-            else if (location === 0) {
-                decrement = null;
-            }
-            // As per #391, the comparison for the decrement step can have some rounding issues.
-            var stepDecimals = scope_Spectrum.countStepDecimals();
-            // Round per #391
-            if (increment !== null && increment !== false) {
-                increment = Number(increment.toFixed(stepDecimals));
-            }
-            if (decrement !== null && decrement !== false) {
-                decrement = Number(decrement.toFixed(stepDecimals));
-            }
-            return [decrement, increment];
-        }
-        // Get the current step size for the slider.
-        function getNextSteps() {
-            return scope_HandleNumbers.map(getNextStepsForHandle);
-        }
-        // Updatable: margin, limit, padding, step, range, animate, snap
-        function updateOptions(optionsToUpdate, fireSetEvent) {
-            // Spectrum is created using the range, snap, direction and step options.
-            // 'snap' and 'step' can be updated.
-            // If 'snap' and 'step' are not passed, they should remain unchanged.
-            var v = valueGet();
-            var updateAble = [
-                "margin",
-                "limit",
-                "padding",
-                "range",
-                "animate",
-                "snap",
-                "step",
-                "format",
-                "pips",
-                "tooltips"
-            ];
-            // Only change options that we're actually passed to update.
-            updateAble.forEach(function (name) {
-                // Check for undefined. null removes the value.
-                if (optionsToUpdate[name] !== undefined) {
-                    originalOptions[name] = optionsToUpdate[name];
-                }
-            });
-            var newOptions = testOptions(originalOptions);
-            // Load new options into the slider state
-            updateAble.forEach(function (name) {
-                if (optionsToUpdate[name] !== undefined) {
-                    options[name] = newOptions[name];
-                }
-            });
-            scope_Spectrum = newOptions.spectrum;
-            // Limit, margin and padding depend on the spectrum but are stored outside of it. (#677)
-            options.margin = newOptions.margin;
-            options.limit = newOptions.limit;
-            options.padding = newOptions.padding;
-            // Update pips, removes existing.
-            if (options.pips) {
-                pips(options.pips);
-            }
-            else {
-                removePips();
-            }
-            // Update tooltips, removes existing.
-            if (options.tooltips) {
-                tooltips();
-            }
-            else {
-                removeTooltips();
-            }
-            // Invalidate the current positioning so valueSet forces an update.
-            scope_Locations = [];
-            valueSet(isSet(optionsToUpdate.start) ? optionsToUpdate.start : v, fireSetEvent);
-        }
-        // Initialization steps
-        function setupSlider() {
-            // Create the base element, initialize HTML and set classes.
-            // Add handles and connect elements.
-            scope_Base = addSlider(scope_Target);
-            addElements(options.connect, scope_Base);
-            // Attach user events.
-            bindSliderEvents(options.events);
-            // Use the public value method to set the start values.
-            valueSet(options.start);
-            if (options.pips) {
-                pips(options.pips);
-            }
-            if (options.tooltips) {
-                tooltips();
-            }
-            aria();
-        }
-        setupSlider();
-        var scope_Self = {
-            destroy: destroy,
-            steps: getNextSteps,
-            on: bindEvent,
-            off: removeEvent,
-            get: valueGet,
-            set: valueSet,
-            setHandle: valueSetHandle,
-            reset: valueReset,
-            // Exposed for unit testing, don't use this in your application.
-            __moveHandles: function (upward, proposal, handleNumbers) {
-                moveHandles(upward, proposal, scope_Locations, handleNumbers);
-            },
-            options: originalOptions,
-            updateOptions: updateOptions,
-            target: scope_Target,
-            removePips: removePips,
-            removeTooltips: removeTooltips,
-            getPositions: function () {
-                return scope_Locations.slice();
-            },
-            getTooltips: function () {
-                return scope_Tooltips;
-            },
-            getOrigins: function () {
-                return scope_Handles;
-            },
-            pips: pips // Issue #594
+            html.appendChild(script);
         };
-        return scope_Self;
     }
-    // Run the standard initializer
-    function initialize(target, originalOptions) {
-        if (!target || !target.nodeName) {
-            throw new Error("noUiSlider: create requires a single element, got: " + target);
-        }
-        // Throw an error if the slider was already initialized.
-        if (target.noUiSlider) {
-            throw new Error("noUiSlider: Slider was already initialized.");
-        }
-        // Test the options and create the slider environment;
-        var options = testOptions(originalOptions);
-        var api = scope(target, options, originalOptions);
-        target.noUiSlider = api;
-        return api;
+
+    function installSetTimeoutImplementation() {
+        registerImmediate = function(handle) {
+            setTimeout(runIfPresent, 0, handle);
+        };
     }
-    var nouislider = {
-        // Exposed for unit testing, don't use this in your application.
-        __spectrum: Spectrum,
-        // A reference to the default classes, allows global changes.
-        // Use the cssClasses option for changes to one slider.
-        cssClasses: cssClasses,
-        create: initialize
-    };
 
-    exports.create = initialize;
-    exports.cssClasses = cssClasses;
-    exports['default'] = nouislider;
+    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
+    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
+    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
 
-    Object.defineProperty(exports, '__esModule', { value: true });
+    // Don't get fooled by e.g. browserify environments.
+    if ({}.toString.call(global.process) === "[object process]") {
+        // For Node.js before 0.9
+        installNextTickImplementation();
 
-})));
+    } else if (canUsePostMessage()) {
+        // For non-IE10 modern browsers
+        installPostMessageImplementation();
 
+    } else if (global.MessageChannel) {
+        // For web workers, where supported
+        installMessageChannelImplementation();
+
+    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+        // For IE 6–8
+        installReadyStateChangeImplementation();
+
+    } else {
+        // For older browsers
+        installSetTimeoutImplementation();
+    }
+
+    attachTo.setImmediate = setImmediate;
+    attachTo.clearImmediate = clearImmediate;
+}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -20658,6 +19147,112 @@ __webpack_require__.r(__webpack_exports__);
 // Swiper Class
 var components = [_esm_components_virtual_virtual__WEBPACK_IMPORTED_MODULE_1__["default"], _esm_components_keyboard_keyboard__WEBPACK_IMPORTED_MODULE_2__["default"], _esm_components_mousewheel_mousewheel__WEBPACK_IMPORTED_MODULE_3__["default"], _esm_components_navigation_navigation__WEBPACK_IMPORTED_MODULE_4__["default"], _esm_components_pagination_pagination__WEBPACK_IMPORTED_MODULE_5__["default"], _esm_components_scrollbar_scrollbar__WEBPACK_IMPORTED_MODULE_6__["default"], _esm_components_parallax_parallax__WEBPACK_IMPORTED_MODULE_7__["default"], _esm_components_zoom_zoom__WEBPACK_IMPORTED_MODULE_8__["default"], _esm_components_lazy_lazy__WEBPACK_IMPORTED_MODULE_9__["default"], _esm_components_controller_controller__WEBPACK_IMPORTED_MODULE_10__["default"], _esm_components_a11y_a11y__WEBPACK_IMPORTED_MODULE_11__["default"], _esm_components_history_history__WEBPACK_IMPORTED_MODULE_12__["default"], _esm_components_hash_navigation_hash_navigation__WEBPACK_IMPORTED_MODULE_13__["default"], _esm_components_autoplay_autoplay__WEBPACK_IMPORTED_MODULE_14__["default"], _esm_components_effect_fade_effect_fade__WEBPACK_IMPORTED_MODULE_15__["default"], _esm_components_effect_cube_effect_cube__WEBPACK_IMPORTED_MODULE_16__["default"], _esm_components_effect_flip_effect_flip__WEBPACK_IMPORTED_MODULE_17__["default"], _esm_components_effect_coverflow_effect_coverflow__WEBPACK_IMPORTED_MODULE_18__["default"], _esm_components_thumbs_thumbs__WEBPACK_IMPORTED_MODULE_19__["default"]];
 _esm_components_core_core_class__WEBPACK_IMPORTED_MODULE_0__["default"].use(components);
+
+
+/***/ }),
+
+/***/ "./node_modules/timers-browserify/main.js":
+/*!************************************************!*\
+  !*** ./node_modules/timers-browserify/main.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
+            (typeof self !== "undefined" && self) ||
+            window;
+var apply = Function.prototype.apply;
+
+// DOM APIs, for completeness
+
+exports.setTimeout = function() {
+  return new Timeout(apply.call(setTimeout, scope, arguments), clearTimeout);
+};
+exports.setInterval = function() {
+  return new Timeout(apply.call(setInterval, scope, arguments), clearInterval);
+};
+exports.clearTimeout =
+exports.clearInterval = function(timeout) {
+  if (timeout) {
+    timeout.close();
+  }
+};
+
+function Timeout(id, clearFn) {
+  this._id = id;
+  this._clearFn = clearFn;
+}
+Timeout.prototype.unref = Timeout.prototype.ref = function() {};
+Timeout.prototype.close = function() {
+  this._clearFn.call(scope, this._id);
+};
+
+// Does not start the time, just sets up the members needed.
+exports.enroll = function(item, msecs) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = msecs;
+};
+
+exports.unenroll = function(item) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = -1;
+};
+
+exports._unrefActive = exports.active = function(item) {
+  clearTimeout(item._idleTimeoutId);
+
+  var msecs = item._idleTimeout;
+  if (msecs >= 0) {
+    item._idleTimeoutId = setTimeout(function onTimeout() {
+      if (item._onTimeout)
+        item._onTimeout();
+    }, msecs);
+  }
+};
+
+// setimmediate attaches itself to the global object
+__webpack_require__(/*! setimmediate */ "./node_modules/setimmediate/setImmediate.js");
+// On some exotic environments, it's not clear which object `setimmediate` was
+// able to install onto.  Search each possibility in the same order as the
+// `setimmediate` library.
+exports.setImmediate = (typeof self !== "undefined" && self.setImmediate) ||
+                       (typeof global !== "undefined" && global.setImmediate) ||
+                       (this && this.setImmediate);
+exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
+                         (typeof global !== "undefined" && global.clearImmediate) ||
+                         (this && this.clearImmediate);
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/webpack/buildin/global.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
 
 
 /***/ })

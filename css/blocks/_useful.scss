@@ -1,4 +1,10 @@
 .useful {
+  margin-bottom: 68px;
+
+  @include phablet() {
+    margin-bottom: 114px;
+  }
+
   &__container {
     position: relative;
   }
