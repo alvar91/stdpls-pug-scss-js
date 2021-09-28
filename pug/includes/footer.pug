@@ -3,7 +3,8 @@ include ./mixins.pug
 footer.footer
     .footer__content.container
         .footer__left-column
-            +logo()
+            .footer__logo
+                +logo()
             ul.footer__social-list
                 li.footer__item
                     a(href="#" class="footer__social-link footer__social-link--facebook")
@@ -14,8 +15,7 @@ footer.footer
         .footer__right-column
             ul.footer__list
                 li.footer__item
-                    a(href="#" class="footer__link")
-                        | О нас
+                    | О нас
                 li.footer__item
                     a(href="#" class="footer__link")
                         | О компании
@@ -24,8 +24,7 @@ footer.footer
                         | Блог
             ul.footer__list
                 li.footer__item
-                    a(href="#" class="footer__link")
-                        | Услуги
+                    | Услуги
                 li.footer__item
                     a(href="#" class="footer__link")
                         | Доставка
@@ -37,8 +36,7 @@ footer.footer
                         | Сборка и установка
             ul.footer__list
                 li.footer__item
-                    a(href="#" class="footer__link")
-                        | Связь с нами
+                    | Связь с нами
                 li.footer__item
                     a(href="#" class="footer__link")
                         | Обратная связь
