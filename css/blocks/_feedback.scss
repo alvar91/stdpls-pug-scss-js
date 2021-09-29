@@ -118,6 +118,7 @@
   }
 
   &__img {
+    max-width: 100%;
     transform: translateY(-17px);
 
     // @include laptop() {

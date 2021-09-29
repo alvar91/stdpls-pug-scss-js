@@ -2,7 +2,7 @@
   margin-bottom: 64px;
 
   @include laptop() {
-    margin-bottom: 154px;
+    margin-bottom: 61px;
   }
 
   @include tablet() {
@@ -10,27 +10,125 @@
   }
 
   @include mobile() {
-    margin-bottom: 52px;
+    margin-bottom: 77px;
   }
 
   &__field {
     @include list-reset();
+
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 511px 405px;
     gap: 32px;
+    grid-template-areas:
+      "a a a b b b"
+      "c c d d e e";
+
+    @include laptop() {
+      grid-template-rows: repeat(2, 511px);
+      grid-template-areas:
+        "a a a a c c"
+        "d d b b e e";
+    }
+
+    @include tablet() {
+      gap: 32px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 511px);
+      grid-template-areas:
+        "a a"
+        "c b"
+        "d e";
+    }
+
+    @include phablet() {
+      grid-column-gap: 17px;
+      grid-template-rows: 332px 206px 206px;
+    }
   }
 
   &__card {
     position: relative;
-    grid-column: 2 span;
-    padding: 25px 0 82px 30px;
-    background-color: var(--grey-light);
+    padding: 30px;
+    padding-top: 25px;
+    background-color: #f6f6f6;
     border-radius: 10px;
+
+    @include laptop() {
+      position: relative;
+      overflow: hidden;
+    }
   }
 
-  &__card:nth-child(1),
+  &__card:first-child {
+    grid-area: a;
+
+    @include phablet() {
+      padding: 28px;
+
+      .top__card-img {
+        width: 350px;
+        transform: translateX(-73px);
+      }
+    }
+  }
+
   &__card:nth-child(2) {
-    grid-column: 3 span;
+    grid-area: b;
+
+    @include laptop() {
+      .top__card-img {
+        width: 505px;
+        transform: translateX(-273px);
+      }
+    }
+  }
+
+  &__card:nth-child(3) {
+    grid-area: c;
+
+    @include laptop() {
+      .top__card-img {
+        width: 447px;
+      }
+    }
+  }
+
+  &__card:nth-child(4) {
+    grid-area: d;
+
+    @include laptop() {
+      .top__card-img {
+        width: 485px;
+        transform: translateX(-261px);
+      }
+    }
+  }
+
+  &__card:last-child {
+    grid-area: e;
+
+    @include laptop() {
+      .top__card-img {
+        width: 376px;
+        transform: translateX(-143px);
+      }
+    }
+  }
+
+  &__card:not(:first-child) {
+    @include phablet() {
+      padding: 16px;
+
+      .top__card-img {
+        transform: translateX(-15px);
+        width: 152px;
+      }
+    }
+
+    @include mobile() {
+      padding-top: 14px;
+    }
   }
 
   &__feature {
@@ -39,10 +137,18 @@
     line-height: 1;
     color: var(--grey);
     margin-bottom: 14px;
+
+    @include mobile() {
+      display: block;
+    }
   }
 
   &__feature:not(:last-of-type) {
-    margin-right: 30px;
+    margin-right: 26px;
+
+    @include mobile() {
+      margin-bottom: 5px;
+    }
   }
 
   &__card-name {
@@ -58,18 +164,15 @@
       line-height: 18px;
       vertical-align: middle;
 
-      @include mobile() {
+      @include phablet() {
         display: inline-block;
       }
     }
   }
 
   &__card-img {
-    display: block;
-    max-width: 90%;
-    margin-left: -30px;
-    margin-bottom: 3px;
-    object-fit: cover;
+    margin-bottom: 22px;
+    transform: translateX(-30px);
   }
 
   &__card-link {
@@ -81,7 +184,11 @@
     text-decoration: none;
 
     @include laptop() {
-      bottom: 40px;
+      bottom: 32px;
+    }
+
+    @include tablet() {
+      bottom: 28px;
     }
 
     .link-inner {
@@ -146,95 +253,21 @@
     }
   }
 
-  @include laptop() {
-    &__field {
-      grid-auto-flow: dense;
-
-      .top__card:nth-child(1) {
-        grid-column: 4 span;
-      }
-
-      .top__card:nth-child(2) {
-        grid-column: 2 span;
-        grid-column: 3 / 5;
-      }
-
-      .top__card:nth-child(3) {
-        grid-column: 5 / 7;
-        grid-row: 1 / 2;
-      }
-    }
-
-    &__card {
-      padding-bottom: 89px;
-    }
-
-    &__card-img {
-      max-width: 111%;
-    }
-  }
-
-  @include tablet() {
-    &__field {
-      .top__card:nth-child(1) {
-        grid-column: 6 span;
-        grid-row: 1 / 2;
-      }
-
-      .top__card {
-        grid-column: 3 span;
-      }
-
-      .top__card:nth-child(2) {
-        grid-column: 3 span;
-        grid-column: 4 / 7;
-      }
-
-      .top__card:nth-child(3) {
-        grid-column: 3 span;
-        grid-column: 1 / 4;
-        grid-row: 2 / 3;
-      }
-    }
-
-    .top__card-link {
-      bottom: 28px;
+  @include phablet() {
+    &__card-link {
+      display: none;
     }
   }
 
   @include mobile() {
-
-    &__card {
-      overflow: hidden;
-      position: relative;
-      padding: 9px 0 16px 16px;
-    }
-
-    &__card:first-child {
-      padding: 26px 0 16px 30px;
-
-      .top__feature {
-        font-size: 14px;
-      }
-
-      .top__card:nth-child(2) {
-        font-size: 24px;
-        line-height: 33px;
-      }
-
-      .top__card-img {
-        margin-left: -73px;
-      }
-    }
-
-    &__field {
-      column-gap: 16px;
-    }
-
     &__card-name {
       font-size: 16px;
       line-height: 20px;
       margin: 0 0 16px;
+    }
+
+    &__card-link-top {
+      margin-left: 7px;
     }
 
     &__feature {
@@ -244,41 +277,38 @@
 
     &__feature:not(:last-of-type) {
       margin-right: 50px;
-    }
 
-    &__card:first-child {
-      .top__feature:not(:last-of-type) {
-        margin-right: 16px;
+      @include mobile() {
+        margin-right: 12px;
       }
-
-      &__card-name {
-        max-width: 125px;
-
-        a {
-          display: inline-block;
-        }
-
-        margin-top: 15px;
-      }
-
-      &__card-img {
-        margin-left: -16px;
-        width: 130%;
-        max-width: 130%;
-      }
-    }
-
-    &__card-link {
-      display: none;
-    }
-
-    &__card-img {
-      margin-left: -16px;
-      max-width: 121%;
     }
   }
 
   &__category-list {
     @include list-reset();
+
+    @include mobile {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.top__card:first-child {
+  @include mobile {
+    .top__feature {
+      display: inline-block;
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+
+    .top__card-name {
+      font-size: 24px;
+    }
+
+    .top__category-list {
+      @include list-reset();
+      padding: 0;
+      margin-bottom: 18px;
+    }
   }
 }

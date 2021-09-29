@@ -128,21 +128,19 @@ mixin categoriesList(categories)
         -var imageBig = categorie.imageBig ? categorie.imageBig : categorie.image
 
         li.top__card
-            article
+            article.top__category
                 ul.top__category-list
                     each subCategorie in categorie.subCategories
                         li.top__feature
                             | #{subCategorie}
                 h3.top__card-name
                     | #{categorie.categorie}
-                    a(href="#")
+                    a(href="#" class="top__card-link-top")
                         span.link-arrow
                             span
                 picture
-                    source(media="(max-width: 767px)" srcset=`images/${categorie.image}.webp` type="image/webp")
-                    source(media="(max-width: 1024px)" srcset=`images/${imageBig}.webp` type="image/webp")
                     source(srcset=`images/${categorie.image}.webp` type="image/webp")
-                    img(class="top__card-img" src=`images/${categorie.image}.png` alt=`${categorie.name}`)
+                    img(class="top__card-img" src=`images/${categorie.image}.png` alt=`${categorie.image}`)
                 a(class="top__card-link" href="#")
                     span.link-inner
                         | В каталог

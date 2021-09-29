@@ -7,7 +7,7 @@
 
   &__list {
     @include list-reset();
-    margin-bottom: 32px;
+    margin-bottom: 29px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
@@ -22,7 +22,7 @@
     }
 
     @include phablet() {
-      margin-bottom: 28px;
+      margin-bottom: 25px;
       gap: 14px;
     }
   }
