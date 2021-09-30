@@ -222,8 +222,9 @@ new JustValidate(".js-form", {
     };
 
     xhr.open("POST", "https://calm-earth-01166.herokuapp.com/order", true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.send(new URLSearchParams(formData).toString()); //form.reset();
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(new URLSearchParams(formData).toString());
+    form.reset();
   }
 });
 
@@ -247,6 +248,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _just_validate_min_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./just-validate.min.js */ "./js/just-validate.min.js");
 /* harmony import */ var _just_validate_min_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_just_validate_min_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _form_feedback_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./form-feedback.js */ "./js/form-feedback.js");
+/* harmony import */ var _popup_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./popup.js */ "./js/popup.js");
+/* harmony import */ var _popup_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_popup_js__WEBPACK_IMPORTED_MODULE_6__);
+
 
 
 
@@ -878,6 +882,38 @@ var _typeof = "function" == typeof Symbol && "symbol" == _typeof2(Symbol.iterato
   }, e.JustValidate = f;
 }(window);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
+
+/***/ }),
+
+/***/ "./js/popup.js":
+/*!*********************!*\
+  !*** ./js/popup.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var popup = document.querySelector(".js-popup-call");
+var closeBtn = document.querySelector(".js-close-btn");
+var body = document.querySelector("body");
+
+var hidePopup = function hidePopup() {
+  body.style.overflow = "auto";
+  popup.classList.remove("active");
+};
+
+var showPopup = function showPopup() {
+  body.style.overflow = "hidden";
+  popup.classList.add("active");
+};
+
+var handlerActive = function handlerActive(event) {
+  if (!event.target.closest(".js-content")) {
+    hidePopup();
+  }
+};
+
+popup.addEventListener("click", handlerActive);
+closeBtn.addEventListener("click", hidePopup);
 
 /***/ }),
 

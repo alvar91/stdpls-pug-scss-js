@@ -1,6 +1,22 @@
-const closeBtn = document.querySelector("js-close-btn");
 const popup = document.querySelector(".js-popup-call");
+const closeBtn = document.querySelector(".js-close-btn");
+const body = document.querySelector("body");
 
-closeBtn.addEventListener("click", () => {
-    popup.classList.remove("active");
-})
+const hidePopup = () => {
+  body.style.overflow = "auto";
+  popup.classList.remove("active");
+};
+
+const showPopup = () => {
+  body.style.overflow = "hidden";
+  popup.classList.add("active");
+};
+
+const handlerActive = (event) => {
+  if (!event.target.closest(".js-content")) {
+    hidePopup();
+  }
+};
+
+popup.addEventListener("click", handlerActive);
+closeBtn.addEventListener("click", hidePopup);
