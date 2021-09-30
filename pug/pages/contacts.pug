@@ -1,0 +1,28 @@
+extends ../main.layout.pug
+include ../includes/mixins.pug
+
+block title 
+    title SitDownPls - Contacts
+
+block metatags
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="msapplication-TileColor" content="#ffffff")
+    meta(name="theme-color" content="#ffffff")
+    
+block links
+    link(rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png")
+    link(rel="stylesheet" href="styles.css")
+
+block content
+    include ../includes/header.pug
+    main
+        +breadcrumbs({"/": "Главная", "contacts": "Контакты" })
+        include ../includes/map.pug
+    include ../includes/footer.pug
+
+block scripts        
+    script(src="scripts.js")

@@ -1,0 +1,32 @@
+.breadcrumbs {
+  &__list {
+    @include list-reset();
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    font-size: 14px;
+    line-height: 1;
+    color: var(--grey);
+
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+
+    &:last-child .breadcrumbs__link {
+      color: var(--primary-shade);
+    }
+
+    &:last-child .breadcrumbs__delimiter {
+        display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+}
