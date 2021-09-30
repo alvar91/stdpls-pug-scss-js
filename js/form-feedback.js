@@ -50,18 +50,21 @@ new JustValidate(".js-form", {
   submitHandler: (form) => {
     const formData = new FormData(form);
     const xhr = new XMLHttpRequest();
+    const body = document.querySelector("body");
+    
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
+          body.style.overflow = "hidden";
           popup.classList.add("active");
+
+          form.reset();
         }
       }
     };
     xhr.open("POST", "https://calm-earth-01166.herokuapp.com/order", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send(new URLSearchParams(formData).toString());
-
-    form.reset();
   },
 });
 
