@@ -1,4 +1,6 @@
 .breadcrumbs {
+  margin-bottom: 32px;
+
   &__list {
     @include list-reset();
     display: flex;

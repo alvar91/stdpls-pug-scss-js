@@ -21,8 +21,9 @@ block content
     include ../includes/header.pug
     main
         +breadcrumbs({"/": "Главная", "contacts": "Контакты" })
-        include ../includes/map.pug
+        include ../includes/contacts.pug
     include ../includes/footer.pug
 
-block scripts        
-    script(src="scripts.js")
+block scripts
+    script(defer src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU")       
+    script(defer src="scripts.js")

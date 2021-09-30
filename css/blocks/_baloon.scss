@@ -1,0 +1,57 @@
+.balloon {
+  max-width: 283px;
+  padding: 10px;
+  font-family: "OpenSans", "Arial", sans-serif;
+  color: var(--black);
+
+  &__title {
+    font-size: 16px;
+    line-height: 1;
+    margin: 0;
+    margin-bottom: 7px;
+  }
+
+  &__address {
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+
+  &__tel-number {
+    margin-bottom: 26px;
+    text-decoration: none;
+
+    & svg {
+      width: 16px;
+      height: 16px;
+      vertical-align: bottom;
+    }
+
+    & svg path {
+      fill: var(--secondary-main);
+    }
+
+    &:hover svg path {
+      fill: var(--secondary-light);
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 1;
+      color: var(--secondary-main);
+    }
+
+    &:hover span {
+      color: var(--secondary-light);
+    }
+  }
+
+  &__worktime {
+    margin-bottom: 22px;
+  }
+
+  &__grey-text {
+    color: var(--grey);
+  }
+}

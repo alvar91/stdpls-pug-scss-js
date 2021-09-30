@@ -142,8 +142,8 @@
       </div>
     </header>
     <main>
-          <div class="container">
-            <nav class="breadcrumbs">
+          <div class="breadcrumbs">
+            <nav class="container">
               <ul class="breadcrumbs__list">
                     <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="//">Главная</a><span class="breadcrumbs__delimiter"> / </span></li>
                     <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/contacts">Контакты</a><span class="breadcrumbs__delimiter"> / </span></li>
@@ -153,10 +153,10 @@
       <section class="contacts">
         <h1 class="visually-hidden">Контакты</h1>
         <div class="container">
-          <h2 class="section_title contacts__title">Контакты</h2>
+          <h2 class="section-title contacts__title">Контакты</h2>
           <form class="contacts__form">
             <input class="contacts__input" type="search" name="search" required placeholder="Поиск магазина">
-            <button class="contacts__btn btn_reset" type="submit">Поиск</button>
+                  <button class="button contacts__btn">Поиск</button>
           </form>
           <div class="contacts__map" id="map"></div>
         </div>
@@ -227,6 +227,7 @@
         <p class="footer__copyright-text">SDP&reg; &nbsp;2011-2021</p>
       </div>
     </footer>
-    <script src="scripts.js"></script>
+    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&amp;lang=ru_RU">      </script>
+    <script defer src="scripts.js"></script>
   </body>
 </html>

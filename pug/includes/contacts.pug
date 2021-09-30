@@ -1,11 +1,12 @@
+include ./mixins.pug
+
 section.contacts
     h1.visually-hidden
         | Контакты
     .container
-        h2.section_title.contacts__title
+        h2.section-title.contacts__title
             | Контакты
         form.contacts__form
             input(class="contacts__input" type="search" name="search" required placeholder="Поиск магазина")
-            button(class="contacts__btn btn_reset" type="submit")
-                | Поиск
+            +buttonFilled("Поиск", ["contacts__btn"])
         .contacts__map#map

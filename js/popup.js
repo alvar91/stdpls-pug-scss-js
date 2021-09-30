@@ -18,5 +18,7 @@ const handlerActive = (event) => {
   }
 };
 
-popup.addEventListener("click", handlerActive);
-closeBtn.addEventListener("click", hidePopup);
+if (popup && closeBtn) {
+  popup.addEventListener("click", handlerActive);
+  closeBtn.addEventListener("click", hidePopup);
+}
