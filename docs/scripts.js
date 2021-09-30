@@ -227,6 +227,13 @@ new JustValidate(".js-form", {
     form.reset();
   }
 });
+var inputs = document.querySelectorAll(".feedback__input");
+var button = document.querySelector(".js-submit");
+button.addEventListener("click", function () {
+  inputs.forEach(function (el) {
+    if (!el.classList.contains("js-validate-error-field")) el.classList.add("js-validate-success-field");
+  });
+});
 
 /***/ }),
 

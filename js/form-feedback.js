@@ -64,3 +64,12 @@ new JustValidate(".js-form", {
     form.reset();
   },
 });
+
+const inputs = document.querySelectorAll(".feedback__input");
+const button = document.querySelector(".js-submit");
+button.addEventListener("click", () => {
+  inputs.forEach((el) => {
+    if (!el.classList.contains("js-validate-error-field"))
+      el.classList.add("js-validate-success-field");
+  });
+});
