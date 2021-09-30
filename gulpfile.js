@@ -1,5 +1,5 @@
 const gulp = require("gulp");
-const pug = require('gulp-pug');
+const pug = require("gulp-pug");
 const gulpLoadPlugins = require("gulp-load-plugins");
 const plugins = gulpLoadPlugins();
 const webpackStream = require("webpack-stream");
@@ -119,7 +119,14 @@ gulp.task(
   "build",
   gulp.series(
     "clean",
-    gulp.parallel("html", "fonts","scripts", "styles", "images", "blocks images")
+    gulp.parallel(
+      "html",
+      "fonts",
+      "scripts",
+      "styles",
+      "images",
+      "blocks images"
+    )
   )
 );
 gulp.task("default", gulp.series("build", "watch"));

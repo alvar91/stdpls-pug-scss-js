@@ -4,7 +4,7 @@ section.feedback.container
     h2.section-title
         | Мы всегда вам рады!
     .feedback__content
-        form(action="" enctype="multipart/form-data" class="feedback__form js-form" method="POST")
+        form(action="#" enctype="multipart/form-data" class="feedback__form js-form")
             p.feedback__text
                 | Безусловно, новая модель организационной деятельности в значительной степени обусловливает важность распределения внутренних резервов и ресурсов.
                 span.feedback__tooltip                         
@@ -12,7 +12,7 @@ section.feedback.container
                 input(class="feedback__input" id="name" name="name" type="text" placeholder="Как вас зовут?" data-validate-field="name")
 
             .just-validate-tooltip-container
-                input.input(class="feedback__input" id="tel" name="tel" type="tel" placeholder="Ваш телефон" data-validate-field="tel")
+                input(class="feedback__input" id="tel" name="phone" type="tel" placeholder="Ваш телефон" data-validate-field="tel")
 
             .just-validate-tooltip-container
                 input(class="feedback__input" id="email" name="email" type="email" placeholder="Ваш e-mail" data-validate-field="email")
