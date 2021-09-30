@@ -3,23 +3,25 @@
 
   &__content {
     padding-top: 27px;
-    padding-bottom: 24px;
+    padding-bottom: 17px;
     display: grid;
     grid-template-columns: 187px 844px;
     justify-content: space-between;
 
     @include laptop() {
       grid-template-columns: repeat(2, 1fr);
-      padding-bottom: 22px;
+      padding-bottom: 16px;
     }
 
     @include tablet() {
       padding-top: 25px;
       display: block;
+      padding-bottom: 23px;
     }
 
     @include phablet() {
       padding-top: 22px;
+      padding-bottom: 23px;
     }
   }
 
@@ -34,6 +36,10 @@
       margin-bottom: 22px;
       grid-template-columns: unset;
       justify-content: center;
+    }
+
+    @include mobile() {
+      margin-bottom: 17px;
     }
   }
 
@@ -67,12 +73,16 @@
     }
 
     @include tablet() {
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       transform: translateY(2px);
     }
 
     @include phablet() {
       margin-bottom: 27px;
+    }
+
+    @include mobile() {
+      margin-bottom: 23px;
     }
   }
 
@@ -165,7 +175,11 @@
     }
 
     @include tablet() {
-      padding: 8px 0;
+      padding: 6px 0;
+    }
+
+    @include phablet() {
+      padding: 7px 0;
     }
   }
 

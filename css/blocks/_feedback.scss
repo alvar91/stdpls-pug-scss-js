@@ -9,6 +9,14 @@
     margin-bottom: 68px;
   }
 
+  @include mobile() {
+    margin-bottom: 71px;
+  }
+
+  &__title {
+    margin-bottom: 6px;
+  }
+
   &__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -37,6 +45,8 @@
 
   &__tooltip {
     position: relative;
+    margin-left: 5px;
+    margin-top: 2px;
     cursor: pointer;
     display: inline-block;
     background-image: url("images/question.svg");
@@ -131,11 +141,9 @@
     max-width: 100%;
     transform: translateY(-17px);
 
-    // @include laptop() {
-    //   width: 517px;
-    //   margin-top: 36px;
-    //   transform: unset;
-    // }
+    @include laptop() {
+      transform: translateY(32px);
+    }
 
     @include tablet() {
       width: unset;
@@ -180,8 +188,8 @@
     left: 0;
     top: 0;
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     border: 1px solid var(--grey);
     border-radius: 2px;
   }
@@ -190,14 +198,23 @@
     content: "";
     position: absolute;
     left: 6px;
-    top: 3px;
-    width: 3px;
-    height: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
     border: solid var(--white);
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
     transition: border 0.2s ease-in-out, opacity 0.2s ease-in-out;
     opacity: 0;
+  }
+
+  &__button {
+    margin-bottom: 12px;
+    padding: 17px 32px;
+
+    @include mobile() {
+      margin-bottom: 9px;
+    }
   }
 }
 
@@ -235,16 +252,16 @@
 .js-validate-error-label {
   font-size: 12px;
   line-height: 16px;
-  color: #FF6972 !important;
+  color: var(--red-input) !important;
   background: unset;
 }
 
 .js-validate-error-field {
-  border: 2px solid #FF6972 !important;
+  border: 2px solid var(--red-input) !important;
 }
 
 .js-validate-success-field {
-  border: 2px solid #B8EC64;
+  border: 2px solid var(--green-input);
 }
 
 .just-validate-tooltip-container:last-child {

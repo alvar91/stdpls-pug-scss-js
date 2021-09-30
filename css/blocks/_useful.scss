@@ -1,8 +1,20 @@
 .useful {
   margin-bottom: 68px;
 
+  @include laptop() {
+    margin-bottom: 66px;
+  }
+
+  @include tablet() {
+    margin-bottom: 60px;
+  }
+
   @include phablet() {
     margin-bottom: 114px;
+  }
+
+  @include mobile() {
+    margin-bottom: 110px;
   }
 
   &__container {
