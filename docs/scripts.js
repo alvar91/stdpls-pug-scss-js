@@ -912,7 +912,7 @@ var _typeof = "function" == typeof Symbol && "symbol" == _typeof2(Symbol.iterato
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var map = document.getElementById('map');
+var map = document.getElementById("map");
 
 if (map) {
   ymaps.ready(function () {
@@ -923,7 +923,7 @@ if (map) {
       searchControlProvider: "yandex#search"
     }),
         MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
-        myPlacemarkWithContent = new ymaps.Placemark([55.752831393462664, 37.63848494650637], {
+        myPlacemark1 = new ymaps.Placemark([55.752831393462664, 37.63848494650637], {
       balloonContent: "\n          <div class=\"balloon\">\n            <h4 class=\"balloon__title\">SitDownPls \u043D\u0430 \u0421\u043E\u043B\u044F\u043D\u043A\u0435 </h4>\n            <address class=\"balloon__address\">\u043C. \u041A\u0438\u0442\u0430\u0439-\u0433\u043E\u0440\u043E\u0434, \u0443\u043B. \u0421\u043E\u043B\u044F\u043D\u043A\u0430, \u0434.24</address>\n            <a href=\"tel:+74958854547\" class=\"balloon__tel-number\">\n                <svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                    <path d=\"M16.3425 12.0983C15.215 12.0983 14.1242 11.915 13.1067 11.585C12.7858 11.475 12.4283 11.5575 12.1808 11.805L10.7417 13.6108C8.1475 12.3733 5.71833 10.0358 4.42583 7.35L6.21333 5.82833C6.46083 5.57167 6.53417 5.21417 6.43333 4.89333C6.09417 3.87583 5.92 2.785 5.92 1.6575C5.92 1.1625 5.5075 0.75 5.0125 0.75H1.84083C1.34583 0.75 0.75 0.97 0.75 1.6575C0.75 10.1733 7.83583 17.25 16.3425 17.25C16.9933 17.25 17.25 16.6725 17.25 16.1683V13.0058C17.25 12.5108 16.8375 12.0983 16.3425 12.0983Z\" />\n                </svg>\n                <span>+7 (495) 885-45-47</span>\n            </a>\n            <div class=\"balloon__worktime\">\n                <span class=\"grey_text\">\u0427\u0430\u0441\u044B \u0440\u0430\u0431\u043E\u0442\u044B:</span>\n                \u0441 10:00 \u0434\u043E 21:00\n            </div>\n            <div class=\"balloon__description\">\n                <span class=\"balloon__grey-text\">\u0427\u0442\u043E \u0437\u0434\u0435\u0441\u044C:</span>\n                \u0448\u043E\u0443\u0440\u0443\u043C, \u043F\u0443\u043D\u043A\u0442 \u043E\u0442\u0433\u0440\u0443\u0437\u043A\u0438, \u043F\u0443\u043D\u043A\u0442 \u0432\u044B\u0434\u0430\u0447\u0438, \u043F\u0443\u043D\u043A\u0442 \u043E\u0431\u043C\u0435\u043D\u0430-\u0432\u043E\u0437\u0432\u0440\u0430\u0442\u0430, \u0441\u0435\u0440\u0432\u0438\u0441\u043D\u044B\u0439 \u0446\u0435\u043D\u0442\u0440\n            </div>\n        </div>\n        "
     }, {
       iconLayout: "default#imageWithContent",
@@ -933,7 +933,7 @@ if (map) {
       iconContentOffset: [0],
       iconContentLayout: MyIconContentLayout
     });
-    var myPlacemark = new ymaps.Placemark([55.76147157505062, 37.65023838640963], {
+    var myPlacemark2 = new ymaps.Placemark([55.76147157505062, 37.65023838640963], {
       balloonContent: "\n            <div class=\"balloon\">\n            <h4 class=\"balloon__title\">SitDownPls \u043D\u0430 \u041F\u043E\u043A\u0440\u043E\u0432\u043A\u0435 </h4>\n            <address class=\"balloon__address\">\u043C. \u041A\u0438\u0442\u0430\u0439-\u0433\u043E\u0440\u043E\u0434, \u0443\u043B. \u041F\u043E\u043A\u0440\u043E\u0432\u043A\u0435, \u0434.35</address>\n            <a href=\"tel:+74958854547\" class=\"balloon__tel-number\">\n                <svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                    <path d=\"M16.3425 12.0983C15.215 12.0983 14.1242 11.915 13.1067 11.585C12.7858 11.475 12.4283 11.5575 12.1808 11.805L10.7417 13.6108C8.1475 12.3733 5.71833 10.0358 4.42583 7.35L6.21333 5.82833C6.46083 5.57167 6.53417 5.21417 6.43333 4.89333C6.09417 3.87583 5.92 2.785 5.92 1.6575C5.92 1.1625 5.5075 0.75 5.0125 0.75H1.84083C1.34583 0.75 0.75 0.97 0.75 1.6575C0.75 10.1733 7.83583 17.25 16.3425 17.25C16.9933 17.25 17.25 16.6725 17.25 16.1683V13.0058C17.25 12.5108 16.8375 12.0983 16.3425 12.0983Z\" />\n                </svg>\n                <span>+7 (495) 885-45-47</span>\n            </a>\n            <div class=\"balloon__worktime\">\n                <span class=\"grey_text\">\u0427\u0430\u0441\u044B \u0440\u0430\u0431\u043E\u0442\u044B:</span>\n                \u0441 10:00 \u0434\u043E 21:00\n            </div>\n            <div class=\"balloon__description\">\n                <span class=\"balloon__grey-text\">\u0427\u0442\u043E \u0437\u0434\u0435\u0441\u044C:</span>\n                \u0448\u043E\u0443\u0440\u0443\u043C, \u043F\u0443\u043D\u043A\u0442 \u043E\u0442\u0433\u0440\u0443\u0437\u043A\u0438, \u043F\u0443\u043D\u043A\u0442 \u0432\u044B\u0434\u0430\u0447\u0438, \u043F\u0443\u043D\u043A\u0442 \u043E\u0431\u043C\u0435\u043D\u0430-\u0432\u043E\u0437\u0432\u0440\u0430\u0442\u0430, \u0441\u0435\u0440\u0432\u0438\u0441\u043D\u044B\u0439 \u0446\u0435\u043D\u0442\u0440\n            </div>\n        </div>\n      "
     }, {
       iconLayout: "default#imageWithContent",
@@ -943,7 +943,7 @@ if (map) {
       iconContentOffset: [0],
       iconContentLayout: MyIconContentLayout
     });
-    myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
+    myMap.geoObjects.add(myPlacemark1).add(myPlacemark2);
   });
 }
 

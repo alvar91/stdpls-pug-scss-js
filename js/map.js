@@ -1,4 +1,4 @@
-const map = document.getElementById('map');
+const map = document.getElementById("map");
 
 if (map) {
   ymaps.ready(function () {
@@ -15,7 +15,7 @@ if (map) {
       MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
         '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
       ),
-      myPlacemarkWithContent = new ymaps.Placemark(
+      myPlacemark1 = new ymaps.Placemark(
         [55.752831393462664, 37.63848494650637],
         {
           balloonContent: `
@@ -49,7 +49,7 @@ if (map) {
         }
       );
 
-    const myPlacemark = new ymaps.Placemark(
+    const myPlacemark2 = new ymaps.Placemark(
       [55.76147157505062, 37.65023838640963],
       {
         balloonContent: `
@@ -83,6 +83,6 @@ if (map) {
       }
     );
 
-    myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
+    myMap.geoObjects.add(myPlacemark1).add(myPlacemark2);
   });
 }
