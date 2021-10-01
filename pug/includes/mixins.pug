@@ -30,7 +30,7 @@ mixin listMenu(classMenu, listItems)
     ul(class=`${classMenu}__list`)
         each item, key in listItems
             li(class=`${classMenu}__list-item`)
-                a(href=`/${key}` class=`link ${classMenu}__link`)
+                a(href=`/${key}.html` class=`link ${classMenu}__link`)
                     | #{item}
 
 mixin optionsMenu(optionsItems)
@@ -141,7 +141,7 @@ mixin categoriesList(categories)
                 picture
                     source(srcset=`images/${categorie.image}.webp` type="image/webp")
                     img(class="top__card-img" src=`images/${categorie.image}.png` alt=`${categorie.image}`)
-                a(class="top__card-link" href="#")
+                a(class="top__card-link" href="/catalog.html")
                     span.link-inner
                         | В каталог
                     span.link-arrow
@@ -187,7 +187,7 @@ mixin breadcrumbs(items)
 mixin breadcrumbList(items)
     each item, key in items
         li.breadcrumbs__item
-            a(class="breadcrumbs__link" href=`/${key}`)
+            a(class="link breadcrumbs__link" href=`${key}.html`)
                 | #{item}
             span.breadcrumbs__delimiter
                 | #{" /"} 

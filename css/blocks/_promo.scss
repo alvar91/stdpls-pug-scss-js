@@ -43,6 +43,10 @@
       font-size: 20px;
       line-height: 27px;
     }
+
+    &--white {
+      color: var(--white);
+    }
   }
 
   &-btn-container {
@@ -103,6 +107,10 @@
   @include mobile() {
     width: 6px;
     height: 6px;
+
+    & svg {
+      display: none;
+    }
   }
 
   &.swiper-pagination-bullet-active {

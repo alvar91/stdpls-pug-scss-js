@@ -1,10 +1,10 @@
-@mixin list-reset(){
+@mixin list-reset() {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-@mixin font($font-size, $font-weight){
+@mixin font($font-size, $font-weight) {
   font-size: $font-size;
   font-weight: $font-weight;
 }

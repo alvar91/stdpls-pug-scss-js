@@ -39,6 +39,7 @@
     "choices.js": "^9.0.1",
     "inputmask": "^5.0.6",
     "nouislider": "^15.2.0",
+    "progressbar.js": "^1.1.0",
     "swiper": "^6.7.5"
   }
 }
