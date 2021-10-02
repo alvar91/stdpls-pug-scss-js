@@ -23,9 +23,9 @@ const swiperPromo = new Swiper(".js-promo-swiper", {
     },
   },
 
-  // autoplay: {
-  //   delay: duration,
-  // },
+  autoplay: {
+    delay: duration,
+  },
 });
 
 const promoBullets = document.querySelectorAll(".js-bullet-promo");
