@@ -7,7 +7,7 @@
 
   &__list {
     @include list-reset();
-    margin-bottom: 29px;
+    margin-bottom: 26px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
@@ -56,7 +56,7 @@
       width: auto;
       min-width: 140px;
       //padding-top: 36px;
-      min-height: 261px;
+      min-height: 279px;
     }
   }
 
@@ -91,12 +91,10 @@
   &__wrapper {
     min-height: 192px;
     padding: 0 15px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 
     @include laptop() {
       padding-top: 9px;
@@ -124,18 +122,17 @@
   }
 
   &__description {
-    width: 236px;
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
+    width: 264px;
+    padding-left: 28px;
+    padding-bottom: 33px;
     text-align: left;
 
     @include laptop() {
-      width: 236px;
+      width: 265px;
     }
 
     @include tablet() {
-      width: 236px;
+      width: 266px;
     }
 
     @include phablet() {
@@ -190,6 +187,8 @@
   }
 
   &__btn {
+    //margin-bottom: 43px;
+
     @include laptop() {
       padding: 17px 32px;
     }
@@ -212,6 +211,13 @@
     // @include mobile() {
     //   padding: 20px 34px;
     // }
+  }
+
+  &__card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 

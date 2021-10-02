@@ -13,7 +13,8 @@ header.header
                 +logo()
         .container.header-top__container
             label.city-label
-                | Ваш регион:
+                span.header__region
+                    | Ваш регион:
                 select(name="city-select" id="#city-select" class="city-select" data-trigger)
                     +optionsMenu(cities)
 

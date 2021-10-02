@@ -1045,10 +1045,10 @@ var swiperPromo = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".js
     renderBullet: function renderBullet(index, className) {
       return "<button class=\"".concat(className, " js-bullet-promo\"></button>");
     }
-  },
-  autoplay: {
-    delay: duration
-  }
+  } // autoplay: {
+  //   delay: duration,
+  // },
+
 });
 var promoBullets = document.querySelectorAll(".js-bullet-promo");
 var progressBars = Array.from(promoBullets).map(function (node) {

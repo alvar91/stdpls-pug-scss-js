@@ -90,7 +90,7 @@
   }
 
   &:disabled {
-    border: 2px solid var(--grey-shade);
+    border: 2px solid var(--grey);
     background-color: transparent;
     transition: background-color 0.3s;
   }
@@ -126,8 +126,8 @@
   }
 
   &:disabled span {
-    border-top: 2px solid var(--grey-shade);
-    border-right: 2px solid var(--grey-shade);
+    border-top: 2px solid var(--grey);
+    border-right: 2px solid var(--grey);
     transition: border-color 0.3s;
   }
 
