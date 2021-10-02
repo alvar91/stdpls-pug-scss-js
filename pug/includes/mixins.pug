@@ -102,7 +102,7 @@ mixin ratingList(products)
     each product in products
         - var cur = product.currency === "RUB" ? "руб" : "USD"
 
-        li.rating__item
+        li.rating__item.swiper-slide
             article.rating__card
                 .rating__index
                     +ratingStar()
@@ -191,3 +191,14 @@ mixin breadcrumbList(items)
                 | #{item}
             span.breadcrumbs__delimiter
                 | #{" /"} 
+
+mixin filterList(items, classes = [])
+    each item, key in items
+        label.filter__label
+            input(type="checkbox" name="checkbox" class=`${classes.join(" ")}` aria-label=`${item.text}`)
+            span.fake_checkbox
+                <svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
+                </svg>
+            span.checkbox_name
+                | #{item.label}
