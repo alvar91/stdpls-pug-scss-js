@@ -155,3 +155,37 @@
   vertical-align: middle;
   transform: rotate(45deg);
 }
+
+.button-filters {
+  display: block;
+  padding: 0 2px;
+  border: none;
+  border-bottom: 1px solid transparent;
+  font-size: 16px;
+  line-height: 1.3;
+  color: var(--primary-main);
+  transition: border-bottom 0.3s;
+
+  background-color: transparent;
+  cursor: pointer;
+
+  @include laptop() {
+    display: block;
+  }
+
+  &:hover {
+    border-bottom: 1px solid var(--primary-main);
+    transition: border-bottom 0.3s;
+  }
+
+  &:active {
+    border-bottom: 1px solid var(--primary-shade);
+    color: var(--primary-shade);
+    background-color: transparent;
+  }
+
+  &:focus {
+    color: var(--white);
+    background-color: var(--primary-light);
+  }
+}

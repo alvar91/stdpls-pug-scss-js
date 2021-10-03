@@ -104,7 +104,7 @@ const usefulSwiper = new Swiper(".js-useful-swiper", {
   },
 });
 
-const catalogSwiper = new Swiper(".swiper-container.catalog_products__field", {
+const catalogSwiper = new Swiper(".js-catalog-products-swiper", {
   direction: "horizontal",
   slidesPerColumnFill: "row",
 
