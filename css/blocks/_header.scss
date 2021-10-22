@@ -429,26 +429,26 @@
     }
 
     @include desktop() {
-      width: 91%;
+      width: 100%;
     }
 
     @include laptop() {
       padding: 20px 18px 18px 58px;
       background-position: 30px 19px;
-      width: 90%;
+      width: 100%;
     }
 
     @include tablet() {
-      width: 85%;
+      width: 100%;
       background-position: 30px 20px;
     }
 
     @include phablet() {
-      width: 84%;
+      width: 100%;
     }
 
     @include mobile() {
-      width: 77.5%;
+      width: 100%;
     }
 
     &:focus {
