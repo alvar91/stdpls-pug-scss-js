@@ -13,66 +13,71 @@ include ./mixins.pug
         .container.catalog__container
             h1.visually-hidden
                 | Каталог
-            .filters.filters--desktop
-                .filters__subtitle
-                    | Фильтровать по:
-                .filters__category
-                    span.filters__title
-                        | Категория
-                    .filters__inner
-                        +filterList(filterItems, ["input-checkbox", "filter-checkbox", "checkbox-category"])
+            .catalog__grid.catalog-grid.grid
+                .catalog-grid__filters
+                    .catalog-filter
+                        h2.catalog-filter__subtitle
+                            | Фильтровать по:
+                        .catalog-filter__prop
+                            h3.catalog-filter__caption
+                                | Категория
+                            .catalog-filter__bottom
+                                ul.catalog-filter__items
+                                    +filterList(filterItems, ["input-checkbox", "filter-checkbox", "checkbox-category"])
 
-                        - if(filterItemsLength > maxItemsCount)
-                            button(class="button-filters")
-                                | + еще #{filterItemsLength - maxItemsCount}
+                                    - if(filterItemsLength > maxItemsCount)
+                                        button(class="catalog-filter__btn")
+                                            | + еще #{filterItemsLength - maxItemsCount}
 
-                .filters__cost-slider
-                    span.filters__title
+                .catalog-filter__prop.catalog-price
+                    h3.catalog-filter__caption.catalog-price__caption
                         | Цена
-                    .filters__inner.filters__slider-inner
-                        label
-                            span
-                                | от
-                            input(type="number" min="2000" max="250000" placeholder="2000" name="number" class="input-number" aria-label="Выбрать диапазон цен на товары от 2000")
+                    .catalog-filter__bottom.catalog-price__bottom
+                        .catalog-price__wrapper
+                            label.catalog-price__label
+                                span.catalog-price__text
+                                    | от
+                                input(type="number" min="2000" max="250000" placeholder="2000" name="number" class="catalog-price__input" aria-label="Выбрать диапазон цен на товары от 2000")
 
-                        label
-                            span
-                                | до
-                            input(type="number" min="2000" max="250000" placeholder="150 000" name="number" class="input-number checkbox-cost" aria-label="Выбрать диапазон цен на товары до 250000")
-                    .filters__range
+                            label.catalog-price__label
+                                span.catalog-price__text
+                                    | до
+                                input(type="number" min="2000" max="250000" placeholder="150 000" name="number" class="catalog-price__input" aria-label="Выбрать диапазон цен на товары до 250000")
+                        .catalog-price__element#range-slider
 
-                .filters__sale
-                    span.filters__title
+                .catalog-filter__prop
+                    h3.catalog-filter__caption
                         | Скидка
-                    .filters__inner
+                    .catalog-filter__bottom
                         +filterList(costItems, ["input-checkbox", "filter-checkbox", "checkbox-sale"])
 
-                .filters__color
+                .catalog-filter__prop
                     span.filters__title
                         | Цвет
                     .filters__inner
-                        +filterList(colorItems, ["input-checkbox", "filter-checkbox", "checkbox-color"])
+                        ul.catalog-filter__items
+                            +filterList(colorItems, ["input-checkbox", "filter-checkbox", "checkbox-color"])
 
                         - if(colorItemsLength > maxItemsCount)
-                            button(class="button-filters")
+                            button(class="catalog-filter__btn")
                                 | + еще #{colorItemsLength - maxItemsCount}
 
-                article.filters__card
-                    h2.visually-hidden
-                        | Filter card
-                    picture
-                        source(srcset="images/filter-img.webp" type="image/webp")
-                        img(src="images/filter-img.jpg" alt="oxford-collection" class="filters__card-img")
-                    .filters__card-inner
-                        p.filters__card-description
-                            span
-                                | Оксфорд 1950
+                article.catalog-banner
+                    .catalog-banner__img
+                        picture
+                            source(srcset="images/filter-img.webp" type="image/webp")
+                            img(src="images/filter-img.jpg" alt="oxford-collection" class="filters__card-img")
+                    .catalog-banner__content
+                        h3.catalog-banner__title
+                            | Оксфорд 1950
+                        p
                             | Новая коллекция изысканных кресел
                         a(href="#" class="top__card-link")
-                            span.link__inner
+                            span.link-inner
                                 | В каталог
-                            span.link__arrow
-                                span
+                            <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke-linejoin="round"/>
+                            </svg>
 
             .catalog__main
                 h3.section-title.catalog-title

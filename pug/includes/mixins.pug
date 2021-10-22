@@ -212,11 +212,12 @@ mixin breadcrumbList(items)
 mixin filterList(items, classes = [])
     each item, key in items
         - var isChecked = item.selected == "true" ? true : false
-        label.filters__label
-            input(type="checkbox" name="checkbox" class=`${classes.join(" ")}` checked=isChecked aria-label=`${item.text}`)
-            span.fake-checkbox
-                <svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
-                </svg>
-            span.checkbox-name
-                | #{item.label}
+        li.catalog-filter__item
+            label.filters__label
+                input(type="checkbox" name="checkbox" class=`${classes.join(" ")}` checked=isChecked aria-label=`${item.text}`)
+                span.fake-checkbox
+                    <svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
+                    </svg>
+                span.checkbox-name
+                    | #{item.label}

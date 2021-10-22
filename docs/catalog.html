@@ -153,250 +153,351 @@
       <section class="catalog">
         <div class="container catalog__container">
           <h1 class="visually-hidden">Каталог</h1>
-          <div class="filters filters--desktop">
-            <div class="filters__subtitle">Фильтровать по:</div>
-            <div class="filters__category"><span class="filters__title">Категория</span>
-              <div class="filters__inner">
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" checked aria-label="Выбрать категорию. Диваны"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div class="catalog__grid catalog-grid grid">
+            <div class="catalog-grid__filters">
+              <div class="catalog-filter">
+                <h2 class="catalog-filter__subtitle">Фильтровать по:</h2>
+                <div class="catalog-filter__prop">
+                  <h3 class="catalog-filter__caption">Категория</h3>
+                  <div class="catalog-filter__bottom">
+                    <ul class="catalog-filter__items">
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" checked aria-label="Выбрать категорию. Диваны"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Диваны</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Кресла"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Кресла"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Кресла</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Пуфы"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Пуфы"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Пуфы</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Кровати"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Кровати"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Кровати</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Тумбы"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Тумбы"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Тумбы</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Комоды"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Комоды"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Комоды</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию.Стулья"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию.Стулья"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Стулья</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Столы"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Столы"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Столы</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Акксесуары"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Акксесуары"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Акксесуары</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              </label>
+                            </li>
+                            <li class="catalog-filter__item">
+                              <label class="filters__label">
+                                <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                      </label>
-                <button class="button-filters">+ еще 12</button>
+                              </label>
+                            </li>
+                      <button class="catalog-filter__btn">+ еще 12</button>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="filters__cost-slider"><span class="filters__title">Цена</span>
-              <div class="filters__inner filters__slider-inner">
-                <label><span>от</span>
-                  <input class="input-number" type="number" min="2000" max="250000" placeholder="2000" name="number" aria-label="Выбрать диапазон цен на товары от 2000">
-                </label>
-                <label><span>до</span>
-                  <input class="input-number checkbox-cost" type="number" min="2000" max="250000" placeholder="150 000" name="number" aria-label="Выбрать диапазон цен на товары до 250000">
-                </label>
+            <div class="catalog-filter__prop catalog-price">
+              <h3 class="catalog-filter__caption catalog-price__caption">Цена</h3>
+              <div class="catalog-filter__bottom catalog-price__bottom">
+                <div class="catalog-price__wrapper">
+                  <label class="catalog-price__label"><span class="catalog-price__text">от</span>
+                    <input class="catalog-price__input" type="number" min="2000" max="250000" placeholder="2000" name="number" aria-label="Выбрать диапазон цен на товары от 2000">
+                  </label>
+                  <label class="catalog-price__label"><span class="catalog-price__text">до</span>
+                    <input class="catalog-price__input" type="number" min="2000" max="250000" placeholder="150 000" name="number" aria-label="Выбрать диапазон цен на товары до 250000">
+                  </label>
+                </div>
+                <div class="catalog-price__element" id="range-slider"></div>
               </div>
-              <div class="filters__range"></div>
             </div>
-            <div class="filters__sale"><span class="filters__title">Скидка</span>
-              <div class="filters__inner">
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-sale" type="checkbox" name="checkbox" checked aria-label="Скидка на товары. Более 5 000"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="catalog-filter__prop">
+              <h3 class="catalog-filter__caption">Скидка</h3>
+              <div class="catalog-filter__bottom">
+                      <li class="catalog-filter__item">
+                        <label class="filters__label">
+                          <input class="input-checkbox filter-checkbox checkbox-sale" type="checkbox" name="checkbox" checked aria-label="Скидка на товары. Более 5 000"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Более 5 000</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-sale" type="checkbox" name="checkbox" aria-label="Скидка на товары. Менее 5 000"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        </label>
+                      </li>
+                      <li class="catalog-filter__item">
+                        <label class="filters__label">
+                          <input class="input-checkbox filter-checkbox checkbox-sale" type="checkbox" name="checkbox" aria-label="Скидка на товары. Менее 5 000"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Менее 5 000</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-sale" type="checkbox" name="checkbox" aria-label="Скидка на товары. Неважно"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        </label>
+                      </li>
+                      <li class="catalog-filter__item">
+                        <label class="filters__label">
+                          <input class="input-checkbox filter-checkbox checkbox-sale" type="checkbox" name="checkbox" aria-label="Скидка на товары. Неважно"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Неважно</span>
-                      </label>
+                        </label>
+                      </li>
               </div>
             </div>
-            <div class="filters__color"><span class="filters__title">Цвет</span>
+            <div class="catalog-filter__prop"><span class="filters__title">Цвет</span>
               <div class="filters__inner">
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Коричневый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ul class="catalog-filter__items">
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Коричневый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Коричневый</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Черный"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Черный"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Черный</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Бержевый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Бержевый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Бержевый</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Серый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Серый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Серый</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Белый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Белый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Белый</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Синий"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Синий"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Синий</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Оранжевый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Оранжевый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Оранжевый</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Желтый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Желтый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Желтый</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Зеленый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Зеленый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Зеленый</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                      </label>
-                      <label class="filters__label">
-                        <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </label>
+                        </li>
+                        <li class="catalog-filter__item">
+                          <label class="filters__label">
+                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                      </label>
-                <button class="button-filters">+ еще 7</button>
+                          </label>
+                        </li>
+                </ul>
+                <button class="catalog-filter__btn">+ еще 7</button>
               </div>
             </div>
-            <article class="filters__card">
-              <h2 class="visually-hidden">Filter card</h2>
-              <picture>
-                <source srcset="images/filter-img.webp" type="image/webp"><img class="filters__card-img" src="images/filter-img.jpg" alt="oxford-collection">
-              </picture>
-              <div class="filters__card-inner">
-                <p class="filters__card-description"><span>Оксфорд 1950</span>Новая коллекция изысканных кресел</p><a class="top__card-link" href="#"><span class="link__inner">В каталог</span><span class="link__arrow"><span></span></span></a>
+            <article class="catalog-banner">
+              <div class="catalog-banner__img">
+                <picture>
+                  <source srcset="images/filter-img.webp" type="image/webp"><img class="filters__card-img" src="images/filter-img.jpg" alt="oxford-collection">
+                </picture>
+              </div>
+              <div class="catalog-banner__content">
+                <h3 class="catalog-banner__title">Оксфорд 1950</h3>
+                <p>Новая коллекция изысканных кресел</p><a class="top__card-link" href="#"><span class="link-inner">В каталог</span><svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke-linejoin="round"/>
+</svg></a>
               </div>
             </article>
           </div>
@@ -409,116 +510,160 @@
                 <div class="filters__category filters__group">
                   <button class="filters__open-btn" aria-label="Открыть список категорий товаров">Категория</button>
                   <div class="filters__inner tablet-filters__inner">
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" checked aria-label="Выбрать категорию. Диваны"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" checked aria-label="Выбрать категорию. Диваны"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Диваны</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Кресла"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Кресла"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Кресла</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Пуфы"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Пуфы"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Пуфы</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Кровати"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Кровати"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Кровати</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Тумбы"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Тумбы"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Тумбы</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Комоды"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Комоды"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Комоды</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию.Стулья"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию.Стулья"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Стулья</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Столы"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Столы"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Столы</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Акксесуары"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Акксесуары"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Акксесуары</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-category" type="checkbox" name="checkbox" aria-label="Выбрать категорию. Категория"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Категория</span>
-                          </label>
+                            </label>
+                          </li>
                     <button class="button-filters">+ еще 12</button>
                   </div>
                 </div>
@@ -536,111 +681,151 @@
                 <div class="filters__sale filters__group">
                   <button class="filters__open-btn" aria-label="Выбрать скидку на товары">Скидка</button>
                   <div class="filters__inner filters__inner--tablet" data-sale>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-sale" type="checkbox" name="checkbox" checked aria-label="Скидка на товары. Более 5 000"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-sale" type="checkbox" name="checkbox" checked aria-label="Скидка на товары. Более 5 000"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Более 5 000</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-sale" type="checkbox" name="checkbox" aria-label="Скидка на товары. Менее 5 000"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-sale" type="checkbox" name="checkbox" aria-label="Скидка на товары. Менее 5 000"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Менее 5 000</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-sale" type="checkbox" name="checkbox" aria-label="Скидка на товары. Неважно"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-sale" type="checkbox" name="checkbox" aria-label="Скидка на товары. Неважно"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Неважно</span>
-                          </label>
+                            </label>
+                          </li>
                   </div>
                 </div>
                 <div class="filters__color filters__group">
                   <button class="filters__open-btn">Цвет</button>
                   <div class="filters__inner tablet-filters__inner" data-color>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Коричневый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Коричневый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Коричневый</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Черный"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Черный"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Черный</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Бержевый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Бержевый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Бержевый</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Серый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Серый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Серый</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Белый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Белый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Белый</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Синий"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Синий"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Синий</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Оранжевый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Оранжевый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Оранжевый</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Желтый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Желтый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Желтый</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Зеленый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" checked aria-label="Выбрать цвет товара. Зеленый"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Зеленый</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                          </label>
-                          <label class="filters__label">
-                            <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </label>
+                          </li>
+                          <li class="catalog-filter__item">
+                            <label class="filters__label">
+                              <input class="input-checkbox filter-checkbox checkbox-color" type="checkbox" name="checkbox" aria-label="Выбрать цвет товара. Цвет"><span class="fake-checkbox"><svg width="11" height="9" viewbox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.800049 4L3.96943 7.16939L9.65318 0.785645" stroke-width="2" />
 </svg></span><span class="checkbox-name">Цвет</span>
-                          </label>
+                            </label>
+                          </li>
                     <button class="button-filters">+ еще 7</button>
                   </div>
                 </div>
