@@ -460,6 +460,13 @@
       transition: border 0.3s ease;
     }
   }
+
+  &__submit-button {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .choices__list--single {
@@ -865,6 +872,7 @@
   .choices[data-type*="select-one"] {
     width: 300px;
     padding: 15px 22px;
+    padding-left: 27px;
     border: 2px solid var(--grey-light);
     border-radius: 0px 10px 10px 0px;
 
