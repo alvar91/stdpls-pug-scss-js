@@ -112,6 +112,18 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
+.brake-laptop {
+  display: none;
+
+  @include laptop() {
+    display: block;
+  }
+
+  @include tablet() {
+    display: none;
+  }
+}
+
 .brake-tablet {
   display: none;
 
@@ -124,8 +136,16 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
+.brake-phablet {
+  display: none;
+
+  @include phablet() {
+    display: block;
+  }
+}
+
 .brake-mobile {
-  //display: none;
+  display: none;
 
   @include mobile() {
     display: block;

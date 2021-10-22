@@ -2,25 +2,25 @@
   margin-bottom: 70px;
   padding-top: 157px;
   padding-bottom: 154px;
-  background-image: url("images/new-collection-banner.jpg");
-  background-repeat: no-repeat;
 
   background-image: url("images/new-collection-banner.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   object-fit: cover;
-  padding: 150px 0;
+  padding-top: 158px;
+  padding-bottom: 147px;
 
   @include laptop {
     padding: 156px 0;
   } 
 
   @include tablet() {
-    padding: 158px 0 150px;
+    padding: 158px 0 154px;
+    margin-bottom: 69px;
   }
 
-  @include phablet() {
+  @include mobile() {
     position: relative;
     padding-top: 32px;
     padding-bottom: 160px;
@@ -29,7 +29,7 @@
   }
 
   @include mobile() {
-    margin-bottom: 16px;
+    margin-bottom: 19px;
     padding: 34px 0 51px;
   }
 

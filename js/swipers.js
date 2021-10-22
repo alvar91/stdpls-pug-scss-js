@@ -1,5 +1,5 @@
 import Swiper from "swiper/bundle";
-import ProgressBar from "progressbar.js";
+// import ProgressBar from "progressbar.js";
 
 const duration = 3000;
 
@@ -19,7 +19,12 @@ const swiperPromo = new Swiper(".js-promo-swiper", {
     type: "bullets",
     clickable: true,
     renderBullet: function (index, className) {
-      return `<button class="${className} js-bullet-promo"></button>`;
+      return `<button class="${className} js-bullet-promo">
+        <svg class="swiper-pagination-progress" viewbox="-2 -2 20 20">
+          <circle class="swiper-pagination-progress__background" r="7" cx="7" cy="7" fill="none" />
+          <circle class="swiper-pagination-progress__circle" r="7" cx="7" cy="7" fill="none"/>
+        </svg>
+      </button>`;
     },
   },
 
@@ -30,28 +35,28 @@ const swiperPromo = new Swiper(".js-promo-swiper", {
 
 const promoBullets = document.querySelectorAll(".js-bullet-promo");
 
-const progressBars = Array.from(promoBullets).map((node) => {
-  return new ProgressBar.Circle(node, {
-    strokeWidth: 10,
-    easing: "easeInOut",
-    duration: duration,
-    color: "#FF862F",
-    trailColor: "#FFF",
-    trailWidth: 10,
-    svgStyle: null,
-  });
-});
+// const progressBars = Array.from(promoBullets).map((node) => {
+//   return new ProgressBar.Circle(node, {
+//     strokeWidth: 10,
+//     easing: "easeInOut",
+//     duration: duration,
+//     color: "#FF862F",
+//     trailColor: "#FFF",
+//     trailWidth: 10,
+//     svgStyle: null,
+//   });
+// });
 
 swiperPromo.on("slideChangeTransitionStart", function () {
-  progressBars[swiperPromo.realIndex].animate(1.0);
+  //progressBars[swiperPromo.realIndex].animate(1.0);
 });
 
 swiperPromo.on("slideChangeTransitionEnd", function () {
-  progressBars.forEach((item, index) => {
-    if (index !== swiperPromo.realIndex) {
-      item.animate(0);
-    }
-  });
+  // progressBars.forEach((item, index) => {
+  //   if (index !== swiperPromo.realIndex) {
+  //     item.animate(0);
+  //   }
+  // });
 });
 
 const offersSwiper = new Swiper(".js-special-offers-swiper", {

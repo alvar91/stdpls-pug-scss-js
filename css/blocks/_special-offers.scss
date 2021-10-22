@@ -1,8 +1,13 @@
 .special-offers {
-  margin-bottom: 67px;
+  margin-bottom: 127px;
+  height: 513px;
+
+  @include laptop() {
+    margin-bottom: 127px;
+  }
 
   @include tablet() {
-    margin-bottom: 67px;
+    margin-bottom: 127px;
   }
 
   @include phablet() {
@@ -10,8 +15,16 @@
   }
 
   @include mobile() {
-    margin-bottom: 113px;
+    margin-bottom: 82px;
+    height: 625px;
   }
+
+  // &__swiper {
+  //   @include phablet() {
+  //     height: 513px;
+  //   }
+
+  // }
 
   &__container {
     position: relative;
@@ -38,7 +51,7 @@
       top: auto;
       right: auto;
       left: calc((100% - 78px) / 2);
-      bottom: -42px;
+      bottom: 48px;
       z-index: 2;
     }
   }

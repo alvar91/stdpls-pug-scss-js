@@ -5,9 +5,13 @@
     margin-bottom: 67px;
   }
 
+  @include mobile() {
+    margin-bottom: 71px;
+  }
+
   &__list {
     @include list-reset();
-    margin-bottom: 26px;
+    margin-bottom: 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
@@ -94,30 +98,35 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 
     @include laptop() {
       padding-top: 9px;
+      margin-bottom: 13px;
     }
 
     @include tablet() {
       padding-top: 0px;
+    
     }
 
     @include phablet() {
       padding-top: 14px;
+
     }
 
     @include mobile() {
-      padding-top: 53px;
+      padding-top: 46px;
       min-height: 51px;
+      margin-bottom: 8px;
     }
   }
 
   &__img {
     @include phablet() {
-      width: 108px;
-      height: 33px;
+      width: 93%;
+      // width: 108px;
+      // height: 33px;
     }
   }
 
@@ -174,7 +183,7 @@
     margin: 0;
     padding: 0;
     margin-bottom: 25px;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--grey-shade);
 
     @include laptop() {
@@ -206,7 +215,7 @@
     display: block;
     margin: 0 auto;
 
-    padding: 22px 34px;
+    padding: 20px 34px;
 
     // @include mobile() {
     //   padding: 20px 34px;

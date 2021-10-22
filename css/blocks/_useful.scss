@@ -1,12 +1,12 @@
 .useful {
-  margin-bottom: 68px;
+  margin-bottom: 63px;
 
   @include laptop() {
     margin-bottom: 66px;
   }
 
   @include tablet() {
-    margin-bottom: 60px;
+    margin-bottom: 66px;
   }
 
   @include phablet() {
@@ -14,11 +14,20 @@
   }
 
   @include mobile() {
-    margin-bottom: 110px;
+    margin-bottom: 113px;
   }
 
   &__container {
     position: relative;
+  }
+
+  &__article {
+    position: relative;
+    min-height: 679px;
+
+    @include laptop() {
+      min-height: 453px;
+    }
   }
 
   &__btns {
@@ -31,7 +40,8 @@
     }
 
     @include tablet() {
-      right: 69px;
+      right: 72px;
+      top: 2px;
     }
 
     @include phablet() {
@@ -42,7 +52,7 @@
       top: auto;
       right: auto;
       left: calc((100% - 78px) / 2);
-      bottom: -48px;
+      bottom: -44px;
       z-index: 2;
     }
   }
@@ -53,29 +63,47 @@
 
   &__item {
     position: relative;
-    max-width: 624px;
-    min-height: 676px;
-    height: auto;
+    width: calc((100% - 32px) / 2);
+    //min-height: 676px;
     background-color: var(--grey-light);
     border-radius: 10px;
+    //padding-bottom: 100px;
 
     @include laptop() {
-      width: 296px;
-      min-height: 458px;
+      min-height: 456px;
+      width: calc((100% - 64px) / 3);
+    }
+
+    @include tablet() {
+      width: calc((100% - 32px) / 2);
+    }
+
+    @include mobile() {
+      width: 100%;
     }
   }
 
   &__img {
+    max-width: 100%;
+    display: block;
+    max-height: 426px;
+    object-fit: cover;
+    margin-bottom: 30px;
+
     @include laptop() {
-      width: 296px;
+      //width: 296px;
+    }
+
+    @include tablet() {
+      margin-bottom: 27px;
     }
   }
 
   &__description {
-    padding: 27px 30px 100px;
+    padding: 0px 30px 122px;
 
     @include laptop() {
-      padding: 25px 37px 114px 30px;
+      padding: 0px 37px 114px 30px;
     }
   }
 
@@ -95,5 +123,14 @@
     position: absolute;
     bottom: 35px;
     left: 31px;
+
+    @include laptop() {
+      bottom: 28px;
+      left: 31px;
+    }
+
+    @include tablet() {
+      bottom: 29px;
+    }
   }
 }

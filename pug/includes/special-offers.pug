@@ -13,6 +13,6 @@ section.special-offers
             button(class="button-circle special-offers__next js-special-offers-next" aria-label="Следующий слайд")
                 span
 
-        .special-offers__cards.swiper-container.js-special-offers-swiper
-            ul.swiper-wrapper.special-offers__list
+        .special-offers__swiper.swiper-container.js-special-offers-swiper
+            .special-offers__cards-field.swiper-wrapper
                 +productsList(products)

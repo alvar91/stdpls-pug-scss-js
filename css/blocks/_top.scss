@@ -2,11 +2,11 @@
   margin-bottom: 64px;
 
   @include laptop() {
-    margin-bottom: 61px;
+    margin-bottom: 66px;
   }
 
   @include tablet() {
-    margin-bottom: 68px;
+    margin-bottom: 65px;
   }
 
   @include mobile() {
@@ -73,23 +73,13 @@
     }
   }
 
-  &__card:nth-child(2) {
-    grid-area: b;
-
-    @include laptop() {
-      .top__card-img {
-        width: 505px;
-        transform: translateX(-273px);
-      }
-    }
-  }
-
   &__card:nth-child(3) {
     grid-area: c;
 
     @include laptop() {
       .top__card-img {
         width: 447px;
+        transform: translate(-30px, 6px);      
       }
     }
   }
@@ -100,18 +90,7 @@
     @include laptop() {
       .top__card-img {
         width: 485px;
-        transform: translateX(-261px);
-      }
-    }
-  }
-
-  &__card:last-child {
-    grid-area: e;
-
-    @include laptop() {
-      .top__card-img {
-        width: 376px;
-        transform: translateX(-143px);
+        transform: translate(-261px, 5px);
       }
     }
   }
@@ -121,13 +100,70 @@
       padding: 16px;
 
       .top__card-img {
-        transform: translateX(-15px);
+        transform: translateX(-13px) scale(1.04);
         width: 152px;
       }
     }
 
     @include mobile() {
       padding-top: 14px;
+    }
+  }
+
+  &__card:nth-child(2) {
+    grid-area: b;
+
+    @include laptop() {
+      .top__card-img {
+        width: 489px;
+        transform: translate(-268px, 4px) scale(1.04);
+      }
+    }
+
+    @include tablet() {
+      .top__card-img {
+        width: 417px;
+        transform: translate(-228px, 28px) scale(1.2);
+      }
+    }
+
+    @include phablet() {
+      .top__card-img {
+        width: 152px;
+        transform: translate(-23px, 3px) scale(1.2);
+      }
+    }
+  }
+
+  &__card:last-child {
+    grid-area: e;
+
+    @include laptop() {
+      .top__card-img {
+        width: 375px;
+        transform: translate(-142px, 8px);
+      }
+    }
+
+    @include tablet() {
+      .top__card-img {
+        width: 375px;
+        transform: translate(-142px, 8px);
+      }
+    }
+
+    @include phablet() {
+      .top__card-img {
+        width: 137px;
+        transform: translate(-16px, 2px);
+      }
+    }
+
+    @include mobile() {
+      .top__card-img {
+        width: 137px;
+        transform: translate(-16px, 2px);
+      }
     }
   }
 
@@ -183,8 +219,23 @@
     padding-bottom: 2px;
     text-decoration: none;
 
+    & svg {
+      //margin-left: 5px;
+      border: 2px solid var(--primary-main);
+      border-radius: 100%;
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: var(--primary-main);
+      stroke-linecap: round;
+      stroke-width: 2px;
+      vertical-align: sub;
+      transition: background-color 0.3s ease-in-out, stroke 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
+    }
+
     @include laptop() {
-      bottom: 32px;
+      //bottom: 32px;
     }
 
     @include tablet() {
@@ -204,6 +255,11 @@
   }
 
   &__card-link:hover {
+    & svg {
+      stroke: var(--white);
+      background-color: var(--primary-main);
+    }
+
     .link-inner {
       border-bottom: 2px solid var(--primary-main);
       transition: border-bottom 0.3s ease;
@@ -236,6 +292,12 @@
   }
 
   &__card-link:active {
+    & svg {
+      border-color: var(--primary-shade);
+      stroke: var(--white);
+      background-color: var(--primary-shade);
+    }
+
     .link-inner {
       color: var(--primary-shade);
       border-bottom: 2px solid var(--primary-shade);
@@ -253,16 +315,47 @@
     }
   }
 
+  &__card-link-top svg {
+      //margin-left: 5px;
+      border: 2px solid var(--primary-main);
+      border-radius: 100%;
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: var(--primary-main);
+      stroke-linecap: round;
+      stroke-width: 2px;
+      vertical-align: sub;
+      transition: background-color 0.3s ease-in-out, stroke 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
+  }
+
+  &__card-link-top:hover svg {
+    stroke: var(--white);
+    background-color: var(--primary-main);
+  }
+
+  &__card-link-top:active svg {
+    border-color: var(--primary-shade);
+    stroke: var(--white);
+    background-color: var(--primary-shade);
+  }
+
+
   @include phablet() {
     &__card-link {
       display: none;
+    }
+
+    &__card-link-top {
+      margin-left: 7px;
     }
   }
 
   @include mobile() {
     &__card-name {
       font-size: 16px;
-      line-height: 20px;
+      line-height: 18px;
       margin: 0 0 16px;
     }
 
@@ -288,7 +381,7 @@
     @include list-reset();
 
     @include mobile {
-      margin-bottom: 6px;
+      margin-bottom: 7px;
     }
   }
 }

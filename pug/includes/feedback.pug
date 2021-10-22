@@ -6,7 +6,9 @@ section.feedback.container
     .feedback__content
         form(action="#" enctype="multipart/form-data" class="feedback__form js-form")
             p.feedback__text
-                | Безусловно, новая модель организационной деятельности в значительной степени обусловливает важность распределения внутренних резервов и ресурсов.
+                | Безусловно, новая модель организационной деятельности 
+                | <br class="brake-mobile" /> в значительной степени обусловливает важность распределения внутренних резервов
+                | <br class="feedback__text-brake" /> и ресурсов.
                 span.feedback__tooltip                         
             .just-validate-tooltip-container
                 input(class="feedback__input" id="name" name="name" type="text" placeholder="Как вас зовут?" data-validate-field="name")

@@ -101,7 +101,8 @@ mixin ratingStar()
 mixin ratingList(products)
     each product in products
         - var cur = product.currency === "RUB" ? "руб" : "USD"
-
+        - var productName = product.name.split(" ")[0];
+        - var productDecription = product.name.split(" ").slice(1).join(" ");
         li.rating__item.swiper-slide
             article.rating__card
                 .rating__index
@@ -115,7 +116,9 @@ mixin ratingList(products)
                 .rating__description
                     h3.rating__title
                         a(class="link rating__link" href="#")
-                            | !{product.name}
+                            | !{productName} 
+                            |  <br class="brake-mobile" />
+                            | !{productDecription}
                             <br />
                             | !{product.model}
                     p.rating__price
@@ -125,7 +128,9 @@ mixin ratingList(products)
 
 mixin categoriesList(categories)
     each categorie in categories 
-        -var imageBig = categorie.imageBig ? categorie.imageBig : categorie.image
+        -var imageMobile = categorie.imageMobile ? categorie.imageMobile : categorie.image
+        -var categorieName = categorie.categorie.split(" ")[0]
+        -var categorieDescription = categorie.categorie.split(" ").slice(1).join(" ");
 
         li.top__card
             article.top__category
@@ -134,18 +139,29 @@ mixin categoriesList(categories)
                         li.top__feature
                             | #{subCategorie}
                 h3.top__card-name
-                    | #{categorie.categorie}
+                    | #{categorieName}
+                    if(categorieDescription.length > 0)
+                        | <br class="brake-mobile">
+                        | #{categorieDescription}
+
                     a(href="#" class="top__card-link-top")
-                        span.link-arrow
-                            span
+                        <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke-linejoin="round"/>
+                        </svg>
                 picture
+                    
+                    if(categorie.imageMobile)
+                        source(media="(max-width: 576px)" srcset=`images/${imageMobile}.webp` type="image/webp")
+                        source(media="(max-width: 576px)" srcset=`images/${imageMobile}.png`)
                     source(srcset=`images/${categorie.image}.webp` type="image/webp")
                     img(class="top__card-img" src=`images/${categorie.image}.png` alt=`${categorie.image}`)
                 a(class="top__card-link" href="/catalog.html")
                     span.link-inner
                         | В каталог
-                    span.link-arrow
-                        span
+                    <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke-linejoin="round"/>
+                    </svg>
+
 
 mixin usefulList(posts)
     each post in posts

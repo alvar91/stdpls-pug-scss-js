@@ -1,7 +1,8 @@
 extends ../main.layout.pug
+include ../includes/mixins.pug
 
 block title 
-    title SitDownPls
+    title Sofa - D-31
 
 block metatags
     meta(charset="UTF-8")
@@ -19,17 +20,9 @@ block links
 block content
     include ../includes/header.pug
     main
-        include ../includes/promo.pug
-        include ../includes/special-offers.pug
-        include ../includes/rating.pug
-        include ../includes/new-collection.pug
-        include ../includes/top.pug
-        include ../includes/useful.pug
-        include ../includes/feedback.pug
+        +breadcrumbs({"/": "Главная", "/catalog": "Каталог", "/sofas": "Диваны", "/straight": "Прямые диваны", "/D-31": "D-31",})
+        //include ../includes/cooperation.pug
     include ../includes/footer.pug
 
-block popup
-    include ../includes/popup-call.pug
-
-block scripts        
+block scripts      
     script(defer src="scripts.js")

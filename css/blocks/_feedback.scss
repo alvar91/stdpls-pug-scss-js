@@ -96,6 +96,10 @@
       opacity: 0;
       transition: opacity 0.2s ease;
     }
+
+    @include mobile {
+      margin-left: 2px;
+    }
   }
 
   &__input {
@@ -214,6 +218,18 @@
 
     @include mobile() {
       margin-bottom: 9px;
+    }
+  }
+
+  &__text-brake {
+    display: none;
+
+    @include laptop() {
+      display: block;
+    }
+
+    @include mobile() {
+      display: none;
     }
   }
 }
