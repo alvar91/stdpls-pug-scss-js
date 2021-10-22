@@ -377,6 +377,7 @@
 }
 
 .search-form {
+  position: relative;
   width: 59.3%;
   border-radius: 10px 0 0 10px;
   border: 2px solid var(--grey-light);
@@ -395,12 +396,12 @@
     margin-bottom: 12px;
   }
 
-  &:focus {
-    border: 2px solid var(--primary-main);
-    background-color: var(--pink-light);
-    transition: background-color 0.3s ease;
-    transition: border 0.3s ease;
-  }
+  // &:focus {
+  //   border: 2px solid var(--primary-main);
+  //   background-color: var(--pink-light);
+  //   transition: background-color 0.3s ease;
+  //   transition: border 0.3s ease;
+  // }
 
   &:hover {
     border: 2px solid var(--md-grey);
@@ -411,7 +412,7 @@
 
   &__input {
     padding: 18px 18px 18px 58px;
-    width: 90%;
+    width: 100%;
     background-color: transparent;
     border: transparent;
     border-top-left-radius: 10px;
@@ -454,6 +455,9 @@
       background-image: url("images/search-violet.svg");
       box-shadow: 0 0 0 2px var(--primary-main);
       outline: none;
+      background-color: var(--pink-light);
+      transition: background-color 0.3s ease;
+      transition: border 0.3s ease;
     }
   }
 }
