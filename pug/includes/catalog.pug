@@ -5,7 +5,7 @@ include ./mixins.pug
 - var costItems = {"range1": {"label": "Более 5 000","selected": "true", "text" : "Скидка на товары. Более 5 000"}, "range2": {"label": "Менее 5 000","selected": "false", "text" : "Скидка на товары. Менее 5 000"}, "range3": {"label": "Неважно","selected": "false", "text" : "Скидка на товары. Неважно"}}
 - var colorItems = {"black": {"label": "Коричневый","selected": "true", "text" : "Выбрать цвет товара. Коричневый"}, "brown": {"label": "Черный","selected": "true", "text" : "Выбрать цвет товара. Черный"},"beige": {"label": "Бержевый","selected": "true", "text" : "Выбрать цвет товара. Бержевый"},"grey": {"label": "Серый","selected": "true", "text" : "Выбрать цвет товара. Серый"},"white": {"label": "Белый","selected": "true", "text" : "Выбрать цвет товара. Белый"},"blue": {"label": "Синий","selected": "true", "text" : "Выбрать цвет товара. Синий"},"orange": {"label": "Оранжевый","selected": "true", "text" : "Выбрать цвет товара. Оранжевый"},"yellow": {"label": "Желтый","selected": "true", "text" : "Выбрать цвет товара. Желтый"},"green": {"label": "Зеленый","selected": "true", "text" : "Выбрать цвет товара. Зеленый"},"color1": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color2": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color3": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color4": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color5": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color6": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color7": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color8": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"}}
 - var colorItemsLength = Object.keys(colorItems).length
-- var ratingProducts = [{"name": "Диван кожаный", "model": "“R-94”", "rating": "5,0", "cost": "94 990", "image": "rating-img-1", "currency": "RUB"},{"name": "Диван апартековый","model": "“T-75”", "rating": "4,9", "cost": "69 990", "image": "rating-img-2", "currency": "RUB"},{"name": "Диван тканевый","model": "“D-31”", "rating": "4,8", "cost": "28 490", "image": "rating-img-3", "currency": "RUB"},{"name": "Диван велюровый", "model": "“Y-68”", "rating": "4,8", "cost": "22 990", "image": "rating-img-4", "currency": "RUB"},{"name": "Диван из шинила", "model": "“W-95”", "rating": "4,8", "cost": "22 990", "image": "rating-img-5", "currency": "RUB"},{"name": "Диван флоковый", "model": "“G-41”", "rating": "4,8", "cost": "17 990", "image": "rating-img-6", "currency": "RUB"},{"name": "Диван шиниловый", "model": "“V-43”", "rating": "4,8", "cost": "19 990", "image": "rating-img-7", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-99”", "rating": "4,8", "cost": "19 990", "image": "rating-img-8", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-99”", "rating": "4,8", "cost": "19 990", "image": "rating-img-8", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-99”", "rating": "4,8", "cost": "19 990", "image": "rating-img-8", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-99”", "rating": "4,8", "cost": "19 990", "image": "rating-img-8", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-99”", "rating": "4,8", "cost": "19 990", "image": "rating-img-8", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-99”", "rating": "4,8", "cost": "19 990", "image": "rating-img-8", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-99”", "rating": "4,8", "cost": "19 990", "image": "rating-img-8", "currency": "RUB"}]
+- var ratingProducts = [{"name": "Диван кожаный", "model": "“R-94”", "rating": "5,0", "cost": "94 990", "image": "rating-img-1", "currency": "RUB"},{"name": "Диван апартековый","model": "“T-75”", "rating": "4,9", "cost": "69 990", "image": "rating-img-2", "currency": "RUB"},{"name": "Диван тканевый","model": "“D-31”", "rating": "4,8", "cost": "28 490", "image": "rating-img-3", "currency": "RUB"},{"name": "Диван велюровый", "model": "“Y-68”", "rating": "4,8", "cost": "22 990", "image": "rating-img-4", "currency": "RUB"},{"name": "Диван из шинила", "model": "“W-95”", "rating": "4,8", "cost": "22 990", "image": "rating-img-5", "currency": "RUB"},{"name": "Диван флоковый", "model": "“G-41”", "rating": "4,8", "cost": "17 990", "image": "rating-img-6", "currency": "RUB"},{"name": "Диван шиниловый", "model": "“V-43”", "rating": "4,8", "cost": "19 990", "image": "rating-img-7", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-99”", "rating": "4,8", "cost": "19 990", "image": "rating-img-8", "currency": "RUB"},{"name": "Диван из кожзама", "model": "“F-85”", "rating": "4,7", "cost": "26 990", "image": "rating-img-9", "currency": "RUB"},{"name": "Диван флоковый", "model": "“H-64”", "rating": "4,6", "cost": "25 990", "image": "rating-img-10", "currency": "RUB"},{"name": "Диван флоковый", "model": "“H-58”", "rating": "4,6", "cost": "23 990", "image": "rating-img-11", "currency": "RUB"},{"name": "Диван из кожзама", "model": "“R-43”", "rating": "4,6", "cost": "33 990", "image": "rating-img-12", "currency": "RUB"},{"name": "Диван из шинила", "model": "“С-42”", "rating": "4,6", "cost": "18 990", "image": "rating-img-13", "currency": "RUB"},{"name": "Диван велюровый", "model": "“U-58”", "rating": "4,6", "cost": "21 990", "image": "rating-img-14", "currency": "RUB"},{"name": "Диван флоковый", "model": "“F-41”", "rating": "4,5", "cost": "17 990", "image": "rating-img-15", "currency": "RUB"},{"name": "Диван велюровый", "model": "“R-85”", "rating": "4,5", "cost": "34 990", "image": "rating-img-16", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-44”", "rating": "4,5", "cost": "19 990", "image": "rating-img-17", "currency": "RUB"},{"name": "Диван из шинила", "model": "“С-80”", "rating": "4,4", "cost": "20 990", "image": "rating-img-18", "currency": "RUB"}]
 
 - var maxItemsCount = 10
 
@@ -79,59 +79,13 @@ include ./mixins.pug
                                 <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke-linejoin="round"/>
                             </svg>
 
-            .catalog__main
+            .catalog-grid__props.catalog-choice
                 h3.section-title.catalog-title
                     | Каталог
-                .catalog__options
-                .filters__wrapper.filters__wrapper--tablet
-                    .filters__subtitle
-                        | Фильтры:
-                    .filters__group-wrapper
-                        .filters__category.filters__group
-                            button(class="filters__open-btn" aria-label="Открыть список категорий товаров")
-                                | Категория
-                            .filters__inner.tablet-filters__inner
-                                +filterList(filterItems, ["input-checkbox", "filter-checkbox", "checkbox-category"])
-
-                                - if(filterItemsLength > maxItemsCount)
-                                    button(class="button-filters")
-                                        | + еще #{filterItemsLength - maxItemsCount}
-
-                        .filters__cost-slider.filters__group
-                            button.filters__open-btn
-                                | Цена
-
-                            div(class="filters__inner filters__slider-inner filters__inner--tablet" data-cost)
-                                label.filters__slider-label
-                                    span
-                                        | от
-                                    input(type="number" min="2000" max="150000" placeholder="2000" name="number" class="input-number" aria-label="Выбрать диапазон цен на товары от 2000")
-
-                                label.filters__slider-label
-                                    span
-                                        | до
-                                    input(type="number" min="2000" max="250000" placeholder="150 000" name="number" class="input-number checkbox-cost" aria-label="Выбрать диапазон цен на товары до 250000")
-
-                        .filters__sale.filters__group
-                            button(class="filters__open-btn" aria-label="Выбрать скидку на товары")
-                                | Скидка
-
-                            div(class="filters__inner filters__inner--tablet" data-sale)
-                                +filterList(costItems, ["input-checkbox", "filter-checkbox", "checkbox-sale"])
-
-                        .filters__color.filters__group
-                            button.filters__open-btn
-                                | Цвет
-
-                            div(class="filters__inner tablet-filters__inner" data-color)
-                                +filterList(colorItems, ["input-checkbox", "filter-checkbox", "checkbox-color"])
-
-                                - if(colorItemsLength > maxItemsCount)
-                                    button(class="button-filters")
-                                        | + еще #{colorItemsLength - maxItemsCount}
-
-                .swiper-container.catalog-products__field.js-catalog-products-swiper
-                    ul.swiper-wrapper.catalog-products__list
-                        +ratingList(ratingProducts)
+                .catalog-choice__list
+            .catalog-grid__content
+            .catalog-grid__content
+                ul.catalog-content
+                    +ratingList(ratingProducts)
 
                 .catalog-pagination.swiper-pagination
