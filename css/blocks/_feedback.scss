@@ -1,5 +1,6 @@
 .feedback {
   margin-bottom: 70px;
+  overflow: hidden;
 
   @include tablet() {
     margin-bottom: 52px;
