@@ -214,3 +214,45 @@ const modalSwiper = new Swiper(".swiper-container.modal__slider", {
     swiper: modalSwiperThumbs,
   },
 });
+
+
+
+
+
+const productSliderNav = new Swiper('.slider-nav', {
+  slideClass: 'slider-nav__item',
+  direction: 'horizontal',
+  freeMode: true,
+  breakpoints: {
+    1025: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+    890: {
+      spaceBetween: 20,
+      slidesPerView: 'auto',
+    },
+    695: {
+      slidesPerView: 'auto',
+      direction: 'vertical',
+      spaceBetween: 20,
+    },
+    320: {
+      direction: 'horizontal',
+      slidesPerView: 'auto',
+      spaceBetween: 5,
+    },
+  }
+});
+
+const productSlider = new Swiper('.product-slider', {
+  slideClass: 'product-slider__item',
+  slidesPerView: 1,
+  initialSlide: 4,
+  spaceBetween: 10,
+  mousewheel: true,
+  grabCursor: true,
+  thumbs: {
+    swiper: productSliderNav
+  }
+});

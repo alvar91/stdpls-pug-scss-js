@@ -1262,6 +1262,42 @@ var modalSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".sw
     swiper: modalSwiperThumbs
   }
 });
+var productSliderNav = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-nav', {
+  slideClass: 'slider-nav__item',
+  direction: 'horizontal',
+  freeMode: true,
+  breakpoints: {
+    1025: {
+      slidesPerView: 4,
+      spaceBetween: 20
+    },
+    890: {
+      spaceBetween: 20,
+      slidesPerView: 'auto'
+    },
+    695: {
+      slidesPerView: 'auto',
+      direction: 'vertical',
+      spaceBetween: 20
+    },
+    320: {
+      direction: 'horizontal',
+      slidesPerView: 'auto',
+      spaceBetween: 5
+    }
+  }
+});
+var productSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-slider', {
+  slideClass: 'product-slider__item',
+  slidesPerView: 1,
+  initialSlide: 4,
+  spaceBetween: 10,
+  mousewheel: true,
+  grabCursor: true,
+  thumbs: {
+    swiper: productSliderNav
+  }
+});
 
 /***/ }),
 

@@ -6,51 +6,51 @@ section.product
                     .product-slider__item
                         picture
                             source(srcset="images/d-31-1.webp" type="image/webp")
-                            img(src="images/d-31-1.png" alt="Диван D-31")
+                            img(class="product-slider__item-img" src="images/d-31-1.png" alt="Диван D-31")
                     .product-slider__item
                         picture
                             source(srcset="images/d-31-2.webp" type="image/webp")
-                            img(src="images/d-31-2.png" alt="Диван D-31")
+                            img(class="product-slider__item-img" src="images/d-31-2.png" alt="Диван D-31")
 
                     .product-slider__item
                         picture
                             source(srcset="images/d-31-3.webp" type="image/webp")
-                            img(src="images/d-31-3.png" alt="Диван D-31")
+                            img(class="product-slider__item-img" src="images/d-31-3.png" alt="Диван D-31")
 
                     .product-slider__item
                         picture
                             source(srcset="images/d-31-4.webp" type="image/webp")
-                            img(src="images/d-31-4.png" alt="Диван D-31")
+                            img(class="product-slider__item-img" src="images/d-31-4.png" alt="Диван D-31")
 
                     .product-slider__item
                         picture
                             source(srcset="images/d-31-5.webp" type="image/webp")
-                            img(src="images/d-31-5.png" alt="Диван D-31")
+                            img(class="product-slider__item-img" src="images/d-31-5.png" alt="Диван D-31")
 
             .product__slider-nav.slider-nav
                 .swiper-wrapper
                     div(class="slider-nav__item" tabindex="0")
                         picture
                             source(srcset="images/d-31-1.webp" type="image/webp")
-                            img(src="images/d-31-1.png" alt="Диван D-31")
+                            img(class="slider-nav__item-img" src="images/d-31-1.png" alt="Диван D-31")
                     div(class="slider-nav__item" tabindex="0")
                         picture
                             source(srcset="images/d-31-2.webp" type="image/webp")
-                            img(src="images/d-31-2.png" alt="Диван D-31")
+                            img(class="slider-nav__item-img" src="images/d-31-2.png" alt="Диван D-31")
                     div(class="slider-nav__item" tabindex="0")
                         picture
                             source(srcset="images/d-31-3.webp" type="image/webp")
-                            img(src="images/d-31-3.png" alt="Диван D-31")
+                            img(class="slider-nav__item-img" src="images/d-31-3.png" alt="Диван D-31")
 
                     div(class="slider-nav__item" tabindex="0")
                         picture
                             source(srcset="images/d-31-4.webp" type="image/webp")
-                            img(src="images/d-31-4.png" alt="Диван D-31")
+                            img(class="slider-nav__item-img" src="images/d-31-4.png" alt="Диван D-31")
 
                     div(class="slider-nav__item" tabindex="0")
                         picture
                             source(srcset="images/d-31-5.webp" type="image/webp")
-                            img(src="images/d-31-5.png" alt="Диван D-31")
+                            img(class="slider-nav__item-img" src="images/d-31-5.png" alt="Диван D-31")
 
             .product__info.product-info
                 .product-info__rating
@@ -65,12 +65,12 @@ section.product
                     | 28 490 руб
 
                 .product-info__btns
-                    button(class="product-info__btn btn--primary")
+                    button(class="button product-info__btn")
                         | Купить в один клик
                     button(class="product-info__btn--cart")
                         | + Добавить в корзину
 
-        .product__bottom.product-bottom
+        .product__bottom
             .product-bottom__col
                 .product-bottom__content
                     h3.product-bottom__title
@@ -93,14 +93,14 @@ section.product
                             source(srcset="images/product-pattern.webp" type="image/webp")
                             img(src="images/product-pattern.png" alt="Диван D-31 разложенный")
 
-        -var productItems = [{title:"Гарантия", description: "18 месяцев"},{title:"Артикул", description: "AAA41269004"},{title:"Длина", description: "163 см"},{title:"Высота", description: "90 cм"},{title:"Глубина", description: "108 см"},{title:"Спальное место", description: "200 см х 125 см"},{title:"Высота посадки", description: "45 см"},{title:"Механизм", description: "Опорный"},{title:"Тип обивки", description: "Рогожка"},{title:"Цвет", description: "Синий"},{title:"Наполнитель", description: "Независимый пружинный блок"},{title:"Материал каркаса", description: "Металл. рама с дерев. латами"},{title:"Количество мест", description: "Двухместные"},{title:"Категория", description: "Прямые тканевые диваны"},{title:"Возврат", description: "Условия"}]
+            -var productItems = [{title:"Гарантия", description: "18 месяцев"},{title:"Артикул", description: "AAA41269004"},{title:"Длина", description: "163 см"},{title:"Высота", description: "90 cм"},{title:"Глубина", description: "108 см"},{title:"Спальное место", description: "200 см х 125 см"},{title:"Высота посадки", description: "45 см"},{title:"Механизм", description: "Опорный"},{title:"Тип обивки", description: "Рогожка"},{title:"Цвет", description: "Синий"},{title:"Наполнитель", description: "Независимый пружинный блок"},{title:"Материал каркаса", description: "Металл. рама с дерев. латами"},{title:"Количество мест", description: "Двухместные"},{title:"Категория", description: "Прямые тканевые диваны"},{title:"Возврат", description: "Условия"}]
 
-        .product-bottom__col.product-bottom__col--right
-            ul.product-bottom__chars.list-reset.product-chars
-                each item in productItems
-                    li.product-chars__item
-                        .product-chars__title
-                            | #{item.title}
-                            .product-chars__dots
-                        .product-chars__descr
-                            | #{item.description}
+            .product-bottom__col.product-bottom__col--right
+                ul.product-bottom__chars.list-reset.product-chars
+                    each item in productItems
+                        li.product-chars__item
+                            .product-chars__title
+                                | #{item.title}
+                                .product-chars__dots
+                            .product-chars__descr
+                                | #{item.description}
