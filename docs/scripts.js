@@ -1173,8 +1173,8 @@ var usefulSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".j
   }
 });
 var catalogSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".js-catalog-products-swiper", {
-  direction: "horizontal",
-  slidesPerColumnFill: "row",
+  direction: 'horizontal',
+  slidesPerColumnFill: 'row',
   breakpoints: {
     1: {
       slidesPerGroup: 2,
@@ -1196,7 +1196,7 @@ var catalogSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".
     }
   },
   pagination: {
-    el: ".catalog_pagination.swiper-pagination",
+    el: '.catalog-pagination.swiper-pagination',
     clickable: true,
     renderBullet: function renderBullet(index, className) {
       return '<span class="' + className + '">' + (index + 1) + "</span>";

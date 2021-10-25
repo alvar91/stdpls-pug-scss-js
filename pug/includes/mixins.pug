@@ -103,7 +103,7 @@ mixin ratingList(products)
         - var cur = product.currency === "RUB" ? "руб" : "USD"
         - var productName = product.name.split(" ")[0];
         - var productDecription = product.name.split(" ").slice(1).join(" ");
-        li.rating__item.swiper-slide
+        li.rating__item
             article.rating__card
                 .rating__index
                     +ratingStar()
@@ -115,7 +115,7 @@ mixin ratingList(products)
                         img(class="rating__img" src=`images/${product.image}.png` alt=`Изображение товара`)
                 .rating__description
                     h3.rating__title
-                        a(class="link rating__link" href="#")
+                        a(class="link rating__link" href="/product.html")
                             | !{productName} 
                             |  <br class="brake-mobile" />
                             | !{productDecription}
@@ -221,3 +221,31 @@ mixin filterList(items, classes = [])
                     </svg>
                 span.checkbox-name
                     | #{item.label}
+
+mixin catalogList(products)
+    each product in products
+        - var cur = product.currency === "RUB" ? "руб" : "USD"
+        - var productName = product.name.split(" ")[0];
+        - var productDecription = product.name.split(" ").slice(1).join(" ");
+        li.swiper-slide.catalog__item
+            article.catalog__card
+                .catalog__index
+                    +ratingStar()
+                    span.catalog__count
+                        | #{product.rating}
+                .catalog__wrapper
+                    picture
+                        source(type="image/webp" srcset=`images/${product.image}.webp`)
+                        img(class="catalog__img" src=`images/${product.image}.png` alt=`Изображение товара`)
+                .catalog__description
+                    h3.catalog__title
+                        a(class="link catalog__link" href="/product.html")
+                            | !{productName} 
+                            |  <br class="brake-mobile" />
+                            | !{productDecription}
+                            <br />
+                            | !{product.model}
+                    p.catalog__price
+                        | #{product.cost} #{cur}
+                    button.button-transparent.catalog__btn
+                        | Купить

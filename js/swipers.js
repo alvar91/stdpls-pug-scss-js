@@ -110,34 +110,34 @@ const usefulSwiper = new Swiper(".js-useful-swiper", {
 });
 
 const catalogSwiper = new Swiper(".js-catalog-products-swiper", {
-  direction: "horizontal",
-  slidesPerColumnFill: "row",
+  direction: 'horizontal',
+  slidesPerColumnFill: 'row',
 
   breakpoints: {
     1: {
       slidesPerGroup: 2,
       slidesPerColumn: 3,
       spaceBetween: 16,
-      slidesPerView: 2,
+      slidesPerView: 2
     },
 
     767: {
       slidesPerGroup: 2,
       slidesPerColumn: 3,
       spaceBetween: 32,
-      slidesPerView: 2,
+      slidesPerView: 2
     },
 
     1023: {
       slidesPerGroup: 3,
       slidesPerColumn: 3,
       slidesPerView: 3,
-      spaceBetween: 32,
-    },
+      spaceBetween: 32
+    }
   },
 
   pagination: {
-    el: ".catalog_pagination.swiper-pagination",
+    el: '.catalog-pagination.swiper-pagination',
     clickable: true,
     renderBullet: function (index, className) {
       return '<span class="' + className + '">' + (index + 1) + "</span>";

@@ -22,6 +22,217 @@
     margin-right: 17px;
     margin-bottom: 24px;
   }
+
+  &__list {
+    @include list-reset();
+  }
+
+  &__item {
+    //padding-top: 83px;
+    position: relative;
+    width: 296px !important;
+    min-height: 418px;
+    background-color: var(--grey-light);
+    border-radius: 10px;
+    text-align: center;
+
+    // &:nth-child(n + 9) {
+    //   display: none;
+    // }
+
+    @include laptop() {
+      min-height: 418px;
+
+      // &:nth-child(n + 7) {
+      //   display: none;
+      // }
+    }
+
+    @include tablet() {
+      min-height: 420px;
+    }
+
+    @include phablet() {
+      width: auto;
+      min-width: 140px;
+      //padding-top: 36px;
+      min-height: 279px;
+    }
+  }
+
+  &__products-field {
+    width: 952px;
+    margin-bottom: 32px;
+
+    @include laptop() {
+      width: 100%;
+      margin-bottom: 32px;
+    }
+
+    @include tablet() {
+      width: 100%;
+    }
+
+    @include mobile() {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__index {
+    position: absolute;
+    text-align: center;
+    top: 27px;
+    left: 30px;
+    //padding-left: 22px;
+    color: var(--secondary-main);
+
+    @include laptop() {
+      top: 27px;
+      left: 31px;
+    }
+
+    @include tablet() {
+      top: 28px;
+    }
+
+    @include phablet() {
+      font-size: 12px;
+      top: 15px;
+      left: 16px;
+    }
+  }
+
+  &__card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__count {
+    padding-left: 4px;
+  }
+
+  &__wrapper {
+    min-height: 192px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 10px;
+
+    @include laptop() {
+      padding-top: 9px;
+      margin-bottom: 13px;
+    }
+
+    @include tablet() {
+      padding-top: 0px;
+    
+    }
+
+    @include phablet() {
+      padding-top: 14px;
+
+    }
+
+    @include mobile() {
+      padding-top: 46px;
+      min-height: 51px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__img {
+    @include phablet() {
+      width: 93%;
+      // width: 108px;
+      // height: 33px;
+    }
+  }
+
+  &__description {
+    width: 264px;
+    padding-left: 28px;
+    padding-bottom: 33px;
+    text-align: left;
+
+    @include laptop() {
+      width: 265px;
+    }
+
+    @include tablet() {
+      width: 266px;
+    }
+
+    @include phablet() {
+      width: 140px;
+      padding: 20px 16px;
+      padding-right: 20px;
+      padding-top: 0;
+      position: unset;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 23px;
+
+    @include phablet() {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__link {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: normal;
+    word-break: break-word;
+
+    @include phablet() {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 25px;
+    font-size: 16px;
+    color: var(--grey-shade);
+
+    @include laptop() {
+      font-size: 16px;
+    }
+
+    @include phablet() {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__btn {
+    //margin-bottom: 43px;
+
+    @include laptop() {
+      padding: 17px 32px;
+    }
+
+    @include tablet() {
+      padding: 18px 32px;
+    }
+
+    @include phablet() {
+      padding: 10px 21px;
+    }
+  }
+
+
 }
 
 .catalog-products {
@@ -41,4 +252,33 @@
   &__list {
       @include list-reset();
   }
+}
+
+.catalog-pagination.swiper-pagination {
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.swiper-pagination-bullet:not(:last-child) {
+    margin-right: 16px;
+}
+
+.swiper-pagination-bullet {
+  width: 32px;
+  height: 32px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--primary-main);
+  opacity: 1;
+  background: 0 0;
+  border: 2px solid var(--primary-main);
+  border-radius: 10px;
+  vertical-align: text-bottom;
+  background: var(--white);
+}
+
+.swiper-pagination-bullet-active {
+  color: var(--white);
+  background: var(--primary-shade);
 }
