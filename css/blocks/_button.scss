@@ -2,8 +2,9 @@
   padding: 22px 50px;
   border: 2px solid var(--primary-main);
   border-radius: 10px;
-  @include font(16px, 700);
-  line-height: 1;
+  font-family: "OpenSans", "Arial", sans-serif;
+  @include font(16px, 600);
+  line-height: 16px;
   color: var(--white);
   background-color: var(--primary-main);
   cursor: pointer;
@@ -34,8 +35,9 @@
   padding: 17px 32px;
   border: 2px solid var(--primary-main);
   border-radius: 10px;
+  font-family: "OpenSans", "Arial", sans-serif;
   @include font(16px, 600);
-  line-height: 1;
+  line-height: 16px;
   color: var(--primary-main);
   background-color: transparent;
   cursor: pointer;

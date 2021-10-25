@@ -1133,6 +1133,7 @@ var offersSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".j
   slidesPerColumn: 1,
   slidesPerView: "auto",
   spaceBetween: 32,
+  autoHeight: true,
   navigation: {
     nextEl: ".js-special-offers-next",
     prevEl: ".js-special-offers-prev"

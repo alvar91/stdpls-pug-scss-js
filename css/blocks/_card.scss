@@ -18,7 +18,7 @@
 
   &__img {
     padding-top: 61px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 
     @include laptop() {
       padding-top: 73px;
@@ -38,7 +38,7 @@
     }
 
     .card__img {
-      padding-top: 32px;
+      padding-top: 35px;
 
       @include laptop() {
         padding-top: 5px;
@@ -53,11 +53,15 @@
       padding-top: 69px;
 
       @include laptop() {
-        padding-top: 73px;
+        padding-top: 70px;
       }
 
       @include tablet() {
-        padding-top: 73px;
+        padding-top: 70px;
+      }
+
+      @include mobile() {
+        padding-top: 66px;
       }
     }
   }
@@ -67,7 +71,7 @@
       padding-top: 61px;
 
       @include laptop() {
-        padding-top: 65px;
+        padding-top: 61px;
       }
 
       @include tablet() {
@@ -119,7 +123,7 @@
 
   &__ticket {
     position: absolute;
-    top: 25px;
+    top: 28px;
     left: 0;
     padding: 7px 16px 9px 3px;
     min-width: 73px;
@@ -131,6 +135,10 @@
 
     @include laptop() {
       top: 29px;
+    }
+
+    @include mobile() {
+      top: 25px;
     }
   }
 
@@ -216,7 +224,7 @@
 
   &__buy-btn {
     display: inline-block;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
 }
 

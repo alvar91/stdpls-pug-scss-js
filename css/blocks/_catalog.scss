@@ -259,11 +259,11 @@
   transform: translate(-50%);
 }
 
-.swiper-pagination-bullet:not(:last-child) {
+.catalog-pagination.swiper-pagination-bullet:not(:last-child) {
     margin-right: 16px;
 }
 
-.swiper-pagination-bullet {
+.catalog-pagination.swiper-pagination-bullet {
   width: 32px;
   height: 32px;
   font-weight: 600;
@@ -278,7 +278,7 @@
   background: var(--white);
 }
 
-.swiper-pagination-bullet-active {
+.catalog-pagination.swiper-pagination-bullet-active {
   color: var(--white);
   background: var(--primary-shade);
 }

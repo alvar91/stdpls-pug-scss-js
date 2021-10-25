@@ -1,13 +1,13 @@
 .special-offers {
-  margin-bottom: 127px;
-  height: 513px;
+  margin-bottom: 70px;
+  //height: 513px;
 
   @include laptop() {
-    margin-bottom: 127px;
+    margin-bottom: 67px;
   }
 
   @include tablet() {
-    margin-bottom: 127px;
+    margin-bottom: 65px;
   }
 
   @include phablet() {
@@ -15,7 +15,7 @@
   }
 
   @include mobile() {
-    margin-bottom: 82px;
+    margin-bottom: 79px;
     height: 625px;
   }
 
@@ -51,7 +51,7 @@
       top: auto;
       right: auto;
       left: calc((100% - 78px) / 2);
-      bottom: 48px;
+      bottom: -47px;
       z-index: 2;
     }
   }

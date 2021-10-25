@@ -1,5 +1,5 @@
 .promo {
-  padding-top: 35px;
+  padding-top: 32px;
   margin-bottom: 68px;
   overflow-x: hidden;
   
@@ -16,20 +16,56 @@
     width: 100vw;
 
     @include mobile {
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
   }
 
   &__slide1 {
     background-image: url("images/promo-1.jpg");
+
+    @include laptop() {
+      background-image: url("images/promo-1-laptop.jpg");
+    }
+
+    @include tablet() {
+      background-image: url("images/promo-1-tablet.jpg");
+    }
+
+    @include phablet() {
+      background-image: url("images/promo-1-phablet.jpg");
+    }
   }
 
   &__slide2 {
     background-image: url("images/promo-2.jpg");
+
+    @include laptop() {
+      background-image: url("images/promo-2-laptop.jpg");
+    }
+
+    @include tablet() {
+      background-image: url("images/promo-2-tablet.jpg");
+    }
+
+    @include phablet() {
+      background-image: url("images/promo-2-phablet.jpg");
+    }
   }
 
   &__slide3 {
     background-image: url("images/promo-3.jpg");
+
+    @include laptop() {
+      background-image: url("images/promo-3-laptop.jpg");
+    }
+
+    @include tablet() {
+      background-image: url("images/promo-3-tablet.jpg");
+    }
+
+    @include phablet() {
+      background-image: url("images/promo-3-phablet.jpg");
+    }
   }
 
   &__sale {
@@ -37,14 +73,14 @@
     @include font(48px, 700);
     line-height: 65px;
     color: var(--grey);
-    margin-bottom: 50px;
+    margin-bottom: 46px;
 
     @include laptop() {
-      margin-bottom: 43px;
+      margin-bottom: 47px;
     }
 
     @include tablet() {
-      margin-bottom: 46px;
+      margin-bottom: 50px;
     }
 
     @include mobile {
@@ -95,6 +131,7 @@
 .slide {
   &__inner {
     padding: 78px 12px;
+    padding-top: 82px;
 
     @include laptop {
       padding: 80px 0;
@@ -132,7 +169,7 @@
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
   @include laptop() {
-    bottom: 20px;
+    bottom: 16px;
   }
 
   @include mobile() {

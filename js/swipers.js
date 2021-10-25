@@ -64,6 +64,7 @@ const offersSwiper = new Swiper(".js-special-offers-swiper", {
   slidesPerColumn: 1,
   slidesPerView: "auto",
   spaceBetween: 32,
+  autoHeight: true,
 
   navigation: {
     nextEl: ".js-special-offers-next",

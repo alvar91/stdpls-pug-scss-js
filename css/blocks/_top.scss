@@ -10,7 +10,7 @@
   }
 
   @include mobile() {
-    margin-bottom: 77px;
+    margin-bottom: 74px;
   }
 
   &__field {
@@ -372,7 +372,7 @@
       margin-right: 50px;
 
       @include mobile() {
-        margin-right: 12px;
+        margin-right: 17px;
       }
     }
   }
@@ -388,10 +388,12 @@
 
 .top__card:first-child {
   @include mobile {
+    padding: 24px 28px;
+
     .top__feature {
       display: inline-block;
       margin-bottom: 0;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .top__card-name {

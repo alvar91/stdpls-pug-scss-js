@@ -26,7 +26,7 @@
     }
 
     @include phablet() {
-      margin-bottom: 25px;
+      margin-bottom: 28px;
       gap: 14px;
     }
   }
@@ -142,6 +142,7 @@
 
     @include tablet() {
       width: 266px;
+      //padding-bottom: 30px;
     }
 
     @include phablet() {
