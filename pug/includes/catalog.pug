@@ -1,91 +1,97 @@
 include ./mixins.pug
 
-- var filterItems = {"sofas": {"label": "Диваны","selected": "true", "text" : "Выбрать категорию. Диваны"}, "armchairs": {"label": "Кресла", "selected": "false", "text" : "Выбрать категорию. Кресла"}, "pouf": {"label": "Пуфы", "selected": "false", "text" : "Выбрать категорию. Пуфы"}, "bed": {"label": "Кровати", "selected": "false", "text" : "Выбрать категорию. Кровати"}, "stand": {"label": "Тумбы", "selected": "false", "text" : "Выбрать категорию. Тумбы"},"commode": {"label": "Комоды","selected": "false", "text" : "Выбрать категорию. Комоды"},"chair": {"label": "Стулья","selected": "false", "text" : "Выбрать категорию.Стулья"},"table": {"label": "Столы", "selected": "false", "text" : "Выбрать категорию. Столы"}, "accesuar": {"label": "Акксесуары","selected": "false","text" : "Выбрать категорию. Акксесуары"}, "item1": {"label": "Категория","selected": "false","text" : "Выбрать категорию. Категория"}, "item2": {"label": "Категория","selected": "false", "text" : "Выбрать категорию. Категория"}, "item3": {"label": "Категория","selected": "false", "text" : "Выбрать категорию. Категория"}, "item4": {"label": "Категория","selected": "false", "text" : "Выбрать категорию. Категория"}, "item5": {"label": "Категория","selected": "false", "text" : "Выбрать категорию. Категория"}, "item6": {"label": "Категория","selected": "false", "text" : "Выбрать категорию. Категория"}, "item7": {"label": "Категория","selected": "false", "text" : "Выбрать категорию. Категория"}, "item8": {"label": "Категория","selected": "false", "text" : "Выбрать категорию. Категория"}, "item9": {"label": "Категория","selected": "false", "text" : "Выбрать категорию. Категория"}, "item10": {"label": "Категория","selected": "false", "text" : "Выбрать категорию. Категория"}, "item11": {"label": "Категория","selected": "false", "text" : "Выбрать категорию. Категория"}, "item12": {"label": "Категория","selected": "false", "text" : "Выбрать категорию. Категория"}, "item13": {"label": "Категория","selected": "false", "text" : "Выбрать категорию. Категория"}}
+- var filterItems = {"sofas": {"label": "Диваны","selected": "true", "text" : "Выбрать категорию. Диваны"}, "armchairs": {"label": "Кресла", "selected": "false", "text" : "Выбрать категорию. Кресла"}, "pouf": {"label": "Пуфы", "selected": "false", "text" : "Выбрать категорию. Пуфы"}, "bed": {"label": "Кровати", "selected": "false", "text" : "Выбрать категорию. Кровати"}, "stand": {"label": "Тумбы", "selected": "false", "text" : "Выбрать категорию. Тумбы"},"commode": {"label": "Комоды","selected": "false", "text" : "Выбрать категорию. Комоды"},"chair": {"label": "Стулья","selected": "false", "text" : "Выбрать категорию.Стулья"},"table": {"label": "Столы", "selected": "false", "text" : "Выбрать категорию. Столы"}, "accesuar": {"label": "Акксесуары","selected": "false","text" : "Выбрать категорию. Акксесуары"}, "item1": {"label": "Кат1","selected": "false","text" : "Выбрать категорию. Категория1"}, "item2": {"label": "Кат2","selected": "false", "text" : "Выбрать категорию. Категория2"}, "item3": {"label": "Кат3","selected": "false", "text" : "Выбрать категорию. Категория3"}, "item4": {"label": "Кат4","selected": "false", "text" : "Выбрать категорию. Категория4"}, "item5": {"label": "Кат5","selected": "false", "text" : "Выбрать категорию. Категория5"}, "item6": {"label": "Кат6","selected": "false", "text" : "Выбрать категорию. Категория6"}, "item7": {"label": "Кат7","selected": "false", "text" : "Выбрать категорию. Категория7"}, "item8": {"label": "Кат8","selected": "false", "text" : "Выбрать категорию. Категория8"}, "item9": {"label": "Кат9","selected": "false", "text" : "Выбрать категорию. Категория9"}, "item10": {"label": "Кат10","selected": "false", "text" : "Выбрать категорию. Категория10"}, "item11": {"label": "Кат11","selected": "false", "text" : "Выбрать категорию. Категория11"}, "item12": {"label": "Кат12","selected": "false", "text" : "Выбрать категорию. Категория12"}}
 - var filterItemsLength = Object.keys(filterItems).length
 - var costItems = {"range1": {"label": "Более 5 000","selected": "true", "text" : "Скидка на товары. Более 5 000"}, "range2": {"label": "Менее 5 000","selected": "false", "text" : "Скидка на товары. Менее 5 000"}, "range3": {"label": "Неважно","selected": "false", "text" : "Скидка на товары. Неважно"}}
-- var colorItems = {"black": {"label": "Коричневый","selected": "true", "text" : "Выбрать цвет товара. Коричневый"}, "brown": {"label": "Черный","selected": "true", "text" : "Выбрать цвет товара. Черный"},"beige": {"label": "Бержевый","selected": "true", "text" : "Выбрать цвет товара. Бержевый"},"grey": {"label": "Серый","selected": "true", "text" : "Выбрать цвет товара. Серый"},"white": {"label": "Белый","selected": "true", "text" : "Выбрать цвет товара. Белый"},"blue": {"label": "Синий","selected": "true", "text" : "Выбрать цвет товара. Синий"},"orange": {"label": "Оранжевый","selected": "true", "text" : "Выбрать цвет товара. Оранжевый"},"yellow": {"label": "Желтый","selected": "true", "text" : "Выбрать цвет товара. Желтый"},"green": {"label": "Зеленый","selected": "true", "text" : "Выбрать цвет товара. Зеленый"},"color1": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color2": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color3": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color4": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color5": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color6": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color7": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"},"color8": {"label": "Цвет","selected": "false", "text" : "Выбрать цвет товара. Цвет"}}
+- var colorItems = {"black": {"label": "Коричневый","selected": "false", "text" : "Выбрать цвет товара. Коричневый"}, "brown": {"label": "Черный","selected": "false", "text" : "Выбрать цвет товара. Черный"},"beige": {"label": "Бежевый","selected": "false", "text" : "Выбрать цвет товара. Бержевый"},"grey": {"label": "Серый","selected": "false", "text" : "Выбрать цвет товара. Серый"},"white": {"label": "Белый","selected": "false", "text" : "Выбрать цвет товара. Белый"},"blue": {"label": "Синий","selected": "false", "text" : "Выбрать цвет товара. Синий"},"orange": {"label": "Оранжевый","selected": "true", "text" : "Выбрать цвет товара. Оранжевый"},"yellow": {"label": "Желтый","selected": "false", "text" : "Выбрать цвет товара. Желтый"},"green": {"label": "Зеленый","selected": "false", "text" : "Выбрать цвет товара. Зеленый"},"color1": {"label": "Цвет1","selected": "false", "text" : "Выбрать цвет товара. Цвет1"},"color2": {"label": "Цвет2","selected": "false", "text" : "Выбрать цвет товара. Цвет2"},"color3": {"label": "Цвет3","selected": "false", "text" : "Выбрать цвет товара. Цвет3"},"color4": {"label": "Цвет4","selected": "false", "text" : "Выбрать цвет товара. Цвет4"},"color5": {"label": "Цвет5","selected": "false", "text" : "Выбрать цвет товара. Цвет5"},"color6": {"label": "Цвет6","selected": "false", "text" : "Выбрать цвет товара. Цвет6"},"color7": {"label": "Цвет7","selected": "false", "text" : "Выбрать цвет товара. Цвет7"}}
 - var colorItemsLength = Object.keys(colorItems).length
 - var catalogProducts = [{"name": "Диван кожаный", "model": "“R-94”", "rating": "5,0", "cost": "94 990", "image": "rating-img-1", "currency": "RUB"},{"name": "Диван апартековый","model": "“T-75”", "rating": "4,9", "cost": "69 990", "image": "rating-img-2", "currency": "RUB"},{"name": "Диван тканевый","model": "“D-31”", "rating": "4,8", "cost": "28 490", "image": "rating-img-3", "currency": "RUB"},{"name": "Диван велюровый", "model": "“Y-68”", "rating": "4,8", "cost": "22 990", "image": "rating-img-4", "currency": "RUB"},{"name": "Диван из шинила", "model": "“W-95”", "rating": "4,8", "cost": "22 990", "image": "rating-img-5", "currency": "RUB"},{"name": "Диван флоковый", "model": "“G-41”", "rating": "4,8", "cost": "17 990", "image": "rating-img-6", "currency": "RUB"},{"name": "Диван шиниловый", "model": "“V-43”", "rating": "4,8", "cost": "19 990", "image": "rating-img-7", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-99”", "rating": "4,8", "cost": "19 990", "image": "rating-img-8", "currency": "RUB"},{"name": "Диван из кожзама", "model": "“F-85”", "rating": "4,7", "cost": "26 990", "image": "rating-img-9", "currency": "RUB"},{"name": "Диван флоковый", "model": "“H-64”", "rating": "4,6", "cost": "25 990", "image": "rating-img-10", "currency": "RUB"},{"name": "Диван флоковый", "model": "“H-58”", "rating": "4,6", "cost": "23 990", "image": "rating-img-11", "currency": "RUB"},{"name": "Диван из кожзама", "model": "“R-43”", "rating": "4,6", "cost": "33 990", "image": "rating-img-12", "currency": "RUB"},{"name": "Диван из шинила", "model": "“С-42”", "rating": "4,6", "cost": "18 990", "image": "rating-img-13", "currency": "RUB"},{"name": "Диван велюровый", "model": "“U-58”", "rating": "4,6", "cost": "21 990", "image": "rating-img-14", "currency": "RUB"},{"name": "Диван флоковый", "model": "“F-41”", "rating": "4,5", "cost": "17 990", "image": "rating-img-15", "currency": "RUB"},{"name": "Диван велюровый", "model": "“R-85”", "rating": "4,5", "cost": "34 990", "image": "rating-img-16", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-44”", "rating": "4,5", "cost": "19 990", "image": "rating-img-17", "currency": "RUB"},{"name": "Диван из шинила", "model": "“С-80”", "rating": "4,4", "cost": "20 990", "image": "rating-img-18", "currency": "RUB"}]
 
-- var maxItemsCount = 10
+- var maxItemsCount = 9
 
     section.catalog
         .container.catalog__container
             h1.visually-hidden
                 | Каталог
-            .catalog__grid.catalog-grid.grid
-                .catalog-grid__filters
+            .catalog__content
+                .catalog__filters
                     .catalog-filter
                         h2.catalog-filter__subtitle
                             | Фильтровать по:
+                        h2.catalog-filter__subtitle-mobile
+                            | Фильтры
                         .catalog-filter__prop
                             h3.catalog-filter__caption
                                 | Категория
                             .catalog-filter__bottom
-                                ul.catalog-filter__items
-                                    +filterList(filterItems, ["input-checkbox", "filter-checkbox", "checkbox-category"])
+                                ul.catalog-filter__items.catalog-filter__category.js-items-container
+                                    +filterList(filterItems, "var(--catalog-category)", ["input-checkbox", "filter-checkbox", "checkbox-category"])
 
                                     - if(filterItemsLength > maxItemsCount)
-                                        button(class="catalog-filter__btn")
+                                        button(class="catalog-filter__btn js-catalog-more")
                                             | + еще #{filterItemsLength - maxItemsCount}
 
-                .catalog-filter__prop.catalog-price
-                    h3.catalog-filter__caption.catalog-price__caption
-                        | Цена
-                    .catalog-filter__bottom.catalog-price__bottom
-                        .catalog-price__wrapper
-                            label.catalog-price__label
-                                span.catalog-price__text
-                                    | от
-                                input(type="number" min="2000" max="250000" placeholder="2000" name="number" class="catalog-price__input" aria-label="Выбрать диапазон цен на товары от 2000")
+                        .catalog-filter__prop.catalog-price
+                            h3.catalog-filter__caption.catalog-price__caption
+                                | Цена
+                            .catalog-filter__bottom.catalog-price__bottom
+                                .catalog-price__wrapper
+                                    label.catalog-price__label
+                                        span.catalog-price__text
+                                            | от
+                                        input(id="input-0" type="number" min="2000" max="250000" placeholder="2000" name="number" class="catalog-price__input" aria-label="Выбрать диапазон цен на товары от 2000")
 
-                            label.catalog-price__label
-                                span.catalog-price__text
-                                    | до
-                                input(type="number" min="2000" max="250000" placeholder="150 000" name="number" class="catalog-price__input" aria-label="Выбрать диапазон цен на товары до 250000")
-                        .catalog-price__element#range-slider
+                                    label.catalog-price__label
+                                        span.catalog-price__text
+                                            | до
+                                        input(id="input-1" type="number" min="2000" max="250000" placeholder="150 000" name="number" class="catalog-price__input" aria-label="Выбрать диапазон цен на товары до 250000")
+                                .catalog-price__element#range-slider
 
-                .catalog-filter__prop
-                    h3.catalog-filter__caption
-                        | Скидка
-                    .catalog-filter__bottom
-                        +filterList(costItems, ["input-checkbox", "filter-checkbox", "checkbox-sale"])
+                        .catalog-filter__prop
+                            h3.catalog-filter__caption
+                                | Скидка
+                            .catalog-filter__bottom.js-items-container
+                                ul.catalog-filter__items.catalog-filter__color.js-items-container
+                                    +filterList(costItems, "var(--catalog-cost)", ["input-checkbox", "filter-checkbox", "checkbox-sale"])
 
-                .catalog-filter__prop
-                    span.filters__title
-                        | Цвет
-                    .filters__inner
-                        ul.catalog-filter__items
-                            +filterList(colorItems, ["input-checkbox", "filter-checkbox", "checkbox-color"])
+                        .catalog-filter__prop
+                            span.filters__title
+                            h3.catalog-filter__caption
+                                | Цвет
+                            .filters__inner
+                                ul.catalog-filter__items.catalog-filter__color.js-items-container
+                                    +filterList(colorItems, "var(--catalog-color)", ["input-checkbox", "filter-checkbox", "checkbox-color"])
 
-                        - if(colorItemsLength > maxItemsCount)
-                            button(class="catalog-filter__btn")
-                                | + еще #{colorItemsLength - maxItemsCount}
+                                    - if(colorItemsLength > maxItemsCount)
+                                        button(class="catalog-filter__btn js-catalog-more")
+                                            | + еще #{colorItemsLength - maxItemsCount}
 
-                article.catalog-banner
-                    .catalog-banner__img
-                        picture
-                            source(srcset="images/filter-img.webp" type="image/webp")
-                            img(src="images/filter-img.jpg" alt="oxford-collection" class="filters__card-img")
-                    .catalog-banner__content
-                        h3.catalog-banner__title
-                            | Оксфорд 1950
-                        p
-                            | Новая коллекция изысканных кресел
-                        a(href="#" class="top__card-link")
-                            span.link-inner
-                                | В каталог
-                            <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke-linejoin="round"/>
-                            </svg>
+                    article.catalog-banner
+                        .catalog-banner__img
+                            picture
+                                source(srcset="images/filter-img.webp" type="image/webp")
+                                img(src="images/filter-img.jpg" alt="oxford-collection" class="filters__card-img")
+                        .catalog-banner__content
+                            h3.catalog-banner__title
+                                | Оксфорд 1950
+                            p.catalog-banner__descr
+                                | Новая коллекция изысканных&nbsp;кресел
+                            a(href="#" class="catalog-banner__card-link")
+                                span.link-inner
+                                    | В каталог
+                                <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke-linejoin="round"/>
+                                </svg>
 
-            .catalog__main
-                h3.section-title.catalog-title
-                    | Каталог
-                .catalog-choice__list
+                .catalog__props.catalog-choice
+                    h3.catalog-choice__title
+                        | Каталог
+                    .catalog-choice__list
 
-                .swiper-container.catalog__products-field.js-catalog-products-swiper
-                    ul.swiper-wrapper.catalog__list
-                        +catalogList(catalogProducts)
+                .catalog__main
+
+                    .swiper-container.catalog__products-field.js-catalog-products-swiper
+                        ul.swiper-wrapper.catalog__list
+                            +catalogList(catalogProducts)
 
                     .catalog-pagination.swiper-pagination

@@ -111,8 +111,8 @@ const usefulSwiper = new Swiper(".js-useful-swiper", {
 });
 
 const catalogSwiper = new Swiper(".js-catalog-products-swiper", {
-  direction: 'horizontal',
-  slidesPerColumnFill: 'row',
+  direction: "horizontal",
+  slidesPerColumnFill: "row",
 
   breakpoints: {
     1: {
@@ -121,24 +121,34 @@ const catalogSwiper = new Swiper(".js-catalog-products-swiper", {
       spaceBetween: 16,
       slidesPerView: 2
     },
-
-    767: {
-      slidesPerGroup: 2,
+    768: {
+      slidesPerGroup: 3,
       slidesPerColumn: 3,
       spaceBetween: 32,
       slidesPerView: 2
     },
-
-    1023: {
+    1080: {
+      slidesPerGroup: 3,
+      slidesPerColumn: 3,
+      spaceBetween: 32,
+      slidesPerView: 3
+    },
+    1031: {
       slidesPerGroup: 3,
       slidesPerColumn: 3,
       slidesPerView: 3,
       spaceBetween: 32
+    },
+    1920: {
+      slidesPerGroup: 3,
+      slidesPerColumn: 3,
+      slidesPerView: 3,
+      spaceBetween: 35
     }
   },
 
   pagination: {
-    el: '.catalog-pagination.swiper-pagination',
+    el: ".catalog-pagination.swiper-pagination",
     clickable: true,
     renderBullet: function (index, className) {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
@@ -216,13 +226,9 @@ const modalSwiper = new Swiper(".swiper-container.modal__slider", {
   },
 });
 
-
-
-
-
-const productSliderNav = new Swiper('.slider-nav', {
-  slideClass: 'slider-nav__item',
-  direction: 'horizontal',
+const productSliderNav = new Swiper(".slider-nav", {
+  slideClass: "slider-nav__item",
+  direction: "horizontal",
   freeMode: true,
   breakpoints: {
     1025: {
@@ -231,29 +237,29 @@ const productSliderNav = new Swiper('.slider-nav', {
     },
     890: {
       spaceBetween: 20,
-      slidesPerView: 'auto',
+      slidesPerView: "auto",
     },
     695: {
-      slidesPerView: 'auto',
-      direction: 'vertical',
+      slidesPerView: "auto",
+      direction: "vertical",
       spaceBetween: 20,
     },
     320: {
-      direction: 'horizontal',
-      slidesPerView: 'auto',
+      direction: "horizontal",
+      slidesPerView: "auto",
       spaceBetween: 5,
     },
-  }
+  },
 });
 
-const productSlider = new Swiper('.product-slider', {
-  slideClass: 'product-slider__item',
+const productSlider = new Swiper(".product-slider", {
+  slideClass: "product-slider__item",
   slidesPerView: 1,
   initialSlide: 4,
   spaceBetween: 10,
   mousewheel: true,
   grabCursor: true,
   thumbs: {
-    swiper: productSliderNav
-  }
+    swiper: productSliderNav,
+  },
 });

@@ -1,6 +1,10 @@
 .breadcrumbs {
   margin-bottom: 32px;
-  padding-top: 19px;
+  padding-top: 23px;
+
+  @include mobile() {
+    display: none;
+  }
 
   &__list {
     @include list-reset();
@@ -24,6 +28,10 @@
     &:last-child .breadcrumbs__delimiter {
         display: none;
     }
+  }
+
+  &__delimeter {
+    padding-left: 3px;
   }
 
   &__link {

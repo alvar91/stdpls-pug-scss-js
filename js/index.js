@@ -9,3 +9,10 @@ import "./popup.js";
 import "./map.js";
 
 import "./range-slider.js";
+
+import "./range-slider.js";
+
+import "./catalog-filters-show-more.js";
+import "./catalog-filters-choice.js";
+import "./catalog-range.js";
+import "./catalog-filter-dropdown.js";
