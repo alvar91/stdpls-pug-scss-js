@@ -59,9 +59,6 @@
 
     @include laptop() {
       min-height: 418px;
-      &:nth-child(n + 4) {
-        //margin-top: 0px !important;
-      }
       // &:nth-child(n + 7) {
       //   display: none;
       // }
@@ -304,10 +301,6 @@
       margin-bottom: 35px;
     }
 
-    // @include small-tablet {
-    //   grid-column-end: 4 span;
-    // }
-
     @include phablet {
       grid-column: 6 span;
     }
@@ -329,11 +322,6 @@
       grid-column: 12 span;
       margin-bottom: 18px;
     }
-
-    // @include small-tablet {
-    //   grid-column: 6 span;
-    //   margin-bottom: 18px;
-    // }
 
     @include phablet {
       margin-bottom: 3px;
@@ -374,11 +362,6 @@
     row-gap: 15px;
     column-gap: 15px;
   }
-
-  // @include small-tablet {
-  //   grid-row-gap: 15px;
-  //   grid-template-columns: repeat(4, 1fr);
-  // }
 
   &__prop {
     margin-bottom: 24px;
@@ -435,10 +418,6 @@
       margin-bottom: 0;
       font-size: 14px;
     }
-
-    // @include small-tablet {
-    //   grid-column: 4 span;
-    // }
   }
 
   &__subtitle-mobile {
@@ -460,10 +439,6 @@
     @include tablet() {
       grid-column: 8 span;
     }
-
-    // @include small-tablet {
-    //   grid-column: 4 span;
-    // }
   }
 
   &__caption {
@@ -494,7 +469,7 @@
         top: 50%;
         width: 11px;
         height: 7px;
-        background-image: url("../../images/arrow-select-top.png");
+        background-image: url("images/arrow-select-top.png");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -511,7 +486,6 @@
           display: block;
           transform: translateY(-50%) rotate(-180deg);
           transition: transform 0.3s ease;
-          //background-image: url("../../img/arrow-select-down.png");
         }
       }
     }
@@ -557,30 +531,6 @@
       display: flex;
     }
   }
-
-  // &__checkbox-content {
-  //   padding-left: 30px;
-  //   @include font(16px, 400);
-  //   color: var(--grey-shade);
-
-  //   &::before {
-  //     top: -2px;
-  //     width: 20px;
-  //     height: 20px;
-  //   }
-
-  //   &::after {
-  //     width: 20px;
-  //     height: 15px;
-  //   }
-
-  //   @include mobile {
-  //     overflow: hidden;
-  //     width: 120px;
-  //     white-space: nowrap;
-  //     text-overflow: ellipsis;
-  //   }
-  // }
 
   &__btn {
     position: relative;
