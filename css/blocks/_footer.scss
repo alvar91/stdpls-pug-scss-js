@@ -14,7 +14,7 @@
     }
 
     @include tablet() {
-      padding-top: 25px;
+      padding-top: 21px;
       display: block;
       padding-bottom: 23px;
     }
@@ -66,14 +66,15 @@
   }
 
   &__logo {
-    margin-bottom: 26px;
+    margin-bottom: 22px;
 
     @include laptop() {
+      margin-bottom: 22px;
       transform: translateY(-2px);
     }
 
     @include tablet() {
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       transform: translateY(2px);
     }
 

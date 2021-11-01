@@ -1,8 +1,13 @@
 .cooperation {
-  margin-bottom: 70px;
+  margin-bottom: 69px;
+
+  @include mobile() {
+    padding-top: 26px;
+    margin-bottom: 47px;
+  }
 
   &__title {
-    margin-bottom: 32px;
+    margin-bottom: 29px;
 
     @include phablet() {
       font-size: 28px;
@@ -26,8 +31,12 @@
     margin: 0 0 12px;
 
     @include mobile() {
-      font-size: 15px;
+      font-size: 16px;
       line-height: 22px;
+
+      &--small {
+        font-size: 14px;
+      }
     }
   }
 
@@ -36,8 +45,10 @@
   }
 
   &__text {
+    margin: 0;
+    margin-bottom: 12px;
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.85;
     color: var(--grey-shade);
 
     @include mobile() {
@@ -47,8 +58,7 @@
 
   &__subtitle {
     display: inline-block;
-    font-weight: 600;
-    font-size: 16px;
+    @include font(16px, 500);
     line-height: 22px;
     margin-bottom: 12px;
     color: var(--secondary-main);
@@ -94,8 +104,8 @@
     background-size: 77px 116px;
 
     @include mobile() {
-      padding: 22px 0 22px 58px;
-      background-position: left center;
+      padding: 0px 0 22px 52px;
+      background-position: left 7px;
       background-size: 36px 54px;
     }
 

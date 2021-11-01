@@ -101,7 +101,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .brake-laptop {
-  //display: none;
+  display: none;
 
   @include laptop() {
     display: block;
@@ -112,12 +112,8 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
-.brake-laptop {
-  display: none;
-
-  @include laptop() {
-    display: block;
-  }
+.brake-laptop-desktop {
+  display: block;
 
   @include tablet() {
     display: none;
@@ -146,6 +142,62 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .brake-mobile {
   display: none;
+
+  @include mobile() {
+    display: block;
+  }
+}
+
+.brake-mobile-laptop-desktop {
+  display: block;
+
+  @include laptop() {
+    display: block;
+  }
+
+  @include tablet() {
+    display: none;
+  }
+
+  @include phablet() {
+    display: none;
+  }
+
+  @include mobile() {
+    display: block;
+  }
+}
+
+.brake-mobile-phablet-tablet {
+  display: none;
+
+  @include tablet() {
+    display: block;
+  }
+
+  @include phablet() {
+    display: block;
+  }
+
+  @include mobile() {
+    display: block;
+  }
+}
+
+.brake-mobile-tablet {
+  display: none;
+
+  @include laptop() {
+    display: none;
+  }
+
+  @include tablet() {
+    display: none;
+  }
+
+  @include phablet() {
+    display: none;
+  }
 
   @include mobile() {
     display: block;
