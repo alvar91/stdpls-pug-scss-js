@@ -127,17 +127,17 @@ const catalogSwiper = new Swiper(".js-catalog-products-swiper", {
       spaceBetween: 32,
       slidesPerView: 2
     },
+    1030: {
+      slidesPerGroup: 3,
+      slidesPerColumn: 3,
+      slidesPerView: 3,
+      spaceBetween: 32
+    },
     1080: {
       slidesPerGroup: 3,
       slidesPerColumn: 3,
       spaceBetween: 32,
       slidesPerView: 3
-    },
-    1031: {
-      slidesPerGroup: 3,
-      slidesPerColumn: 3,
-      slidesPerView: 3,
-      spaceBetween: 32
     },
     1920: {
       slidesPerGroup: 3,
@@ -156,76 +156,6 @@ const catalogSwiper = new Swiper(".js-catalog-products-swiper", {
   },
 });
 
-const productSwiper = new Swiper(".swiper-container.product__swiper", {
-  direction: "horizontal",
-
-  breakpoints: {
-    300: {
-      slidesPerGroup: 2,
-      slidesPerColumn: 1,
-      slidesPerView: "auto",
-      spaceBetween: 16,
-    },
-
-    767: {
-      slidesPerGroup: 2,
-      slidesPerColumn: 1,
-      slidesPerView: "auto",
-      spaceBetween: 32,
-    },
-  },
-
-  navigation: {
-    nextEl: ".product__button_next",
-    prevEl: ".product__button_prev",
-  },
-});
-
-const modalSwiperThumbs = new Swiper(".swiper-container.slider__thumbs", {
-  direction: "horizontal",
-
-  breakpoints: {
-    319: {
-      spaceBetween: 63,
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-    },
-
-    400: {
-      spaceBetween: 78,
-      slidesPerView: 2,
-      slidesPerGroup: 1,
-    },
-    769: {
-      spaceBetween: 78,
-      slidesPerView: 3,
-      slidesPerGroup: 1,
-    },
-
-    1230: {
-      spaceBetween: 78,
-      slidesPerView: 4,
-      slidesPerGroup: 1,
-    },
-  },
-
-  navigation: {
-    nextEl: ".slider__thumbs_next",
-    prevEl: ".slider__thumbs_prev",
-  },
-});
-
-const modalSwiper = new Swiper(".swiper-container.modal__slider", {
-  loop: true,
-  spaceBetween: 10,
-  slidesPerView: 1,
-  slidesPerGroup: 1,
-
-  thumbs: {
-    swiper: modalSwiperThumbs,
-  },
-});
-
 const productSliderNav = new Swiper(".slider-nav", {
   slideClass: "slider-nav__item",
   direction: "horizontal",
@@ -236,11 +166,12 @@ const productSliderNav = new Swiper(".slider-nav", {
       spaceBetween: 20,
     },
     890: {
+      direction: "horizontal",
       spaceBetween: 20,
-      slidesPerView: "auto",
+      slidesPerView: 4,
     },
     695: {
-      slidesPerView: "auto",
+      slidesPerView: 4,
       direction: "vertical",
       spaceBetween: 20,
     },
@@ -261,5 +192,71 @@ const productSlider = new Swiper(".product-slider", {
   grabCursor: true,
   thumbs: {
     swiper: productSliderNav,
+  },
+});
+
+const sliderThumbs = new Swiper('.modal-thumbs__slider-container', {
+  slideClass: 'modal-thumbs__slide',
+  spaceBetween: 10,
+  direction: 'horizontal',
+  freeMode: true,
+  breakpoints: {
+    1025: {
+      slidesPerView: 4,
+    },
+    769: {
+      slidesPerView: 3,
+    },
+    695: {
+      slidesPerView: 2,
+    },
+    320: {
+      slidesPerView: 1,
+    },
+  },
+  navigation: {
+    prevEl: ".js-slider-next",
+    nextEl: ".js-slider-prev",
+  },
+});
+
+const sliderImages = new Swiper('.modal-slider__container', {
+  slideClass: 'modal-slider__item',
+  slidesPerView: 1,
+  initialSlide: 4,
+  spaceBetween: 10,
+  mousewheel: true,
+  navigation: {
+    nextEl: '.modal-thumbs__btn-next',
+    prevEl: '.modal-thumbs__btn-prev',
+  },
+  grabCursor: true,
+  thumbs: {
+    swiper: sliderThumbs
+  },
+});
+
+const productSwiper = new Swiper(".js-product-swiper", {
+  direction: "horizontal",
+
+  breakpoints: {
+    300: {
+      slidesPerGroup: 2,
+      slidesPerColumn: 1,
+      slidesPerView: "auto",
+      spaceBetween: 16,
+    },
+
+    767: {
+      slidesPerGroup: 2,
+      slidesPerColumn: 1,
+      slidesPerView: "auto",
+      spaceBetween: 32,
+    },
+  },
+
+  navigation: {
+    nextEl: ".js-product-next",
+    prevEl: ".js-product-prev",
   },
 });

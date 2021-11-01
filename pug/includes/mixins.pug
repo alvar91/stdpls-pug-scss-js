@@ -250,3 +250,31 @@ mixin catalogList(products)
                         | #{product.cost} #{cur}
                     button.button-transparent.catalog__btn
                         | Купить
+
+mixin productList(products)
+    each product in products
+        - var cur = product.currency === "RUB" ? "руб" : "USD"
+        - var productName = product.name.split(" ")[0];
+        - var productDecription = product.name.split(" ").slice(1).join(" ");
+        li.swiper-slide.product__item
+            article.product__card
+                .product__index
+                    +ratingStar()
+                    span.product__count
+                        | #{product.rating}
+                .product__wrapper
+                    picture
+                        source(type="image/webp" srcset=`images/${product.image}.webp`)
+                        img(class="product__img" src=`images/${product.image}.png` alt=`Изображение товара`)
+                .product__description
+                    h3.product__title
+                        a(class="link product__link" href="/product.html")
+                            | !{productName} 
+                            |  <br class="brake-mobile" />
+                            | !{productDecription}
+                            <br />
+                            | !{product.model}
+                    p.product__price
+                        | #{product.cost} #{cur}
+                    button.button-transparent.product__btn
+                        | Купить

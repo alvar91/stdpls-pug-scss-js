@@ -184,7 +184,7 @@
               </div>
             </div>
             <div class="product__slider-nav slider-nav">
-              <div class="swiper-wrapper">
+              <div class="slider-nav__list swiper-wrapper">
                 <div class="slider-nav__item" tabindex="0">
                   <picture>
                     <source srcset="images/d-31-1.webp" type="image/webp"><img class="slider-nav__item-img" src="images/d-31-1.png" alt="Диван D-31">
@@ -221,7 +221,7 @@
               <p class="product-info__descr">Мини 120 см без ящика Stark синий (Рогожка)</p>
               <div class="product-info__price">28 490 руб</div>
               <div class="product-info__btns">
-                <button class="button product-info__btn">Купить в один клик</button>
+                <button class="button product-info__btn js-btn-buy">Купить в один клик</button>
                 <button class="product-info__btn--cart">+ Добавить в корзину</button>
               </div>
             </div>
@@ -251,7 +251,7 @@
               </div>
             </div>
             <div class="product-bottom__col product-bottom__col--right">
-              <ul class="product-bottom__chars list-reset product-chars">
+              <ul class="product-bottom__chars">
                 <li class="product-chars__item">
                   <div class="product-chars__title">Гарантия
                     <div class="product-chars__dots"></div>
@@ -347,6 +347,179 @@
           </div>
         </div>
       </section>
+      <section class="product-more-section">
+        <div class="container product__more">
+          <h2 class="section-title product-more__title">Похожие товары</h2>
+          <div class="product__btns">
+            <button class="button-circle button-circle--left product__prev js-product-prev"><span></span></button>
+            <button class="button-circle product__next js-product-next"><span></span></button>
+          </div>
+          <div class="swiper-container js-product-swiper">
+            <ul class="swiper-wrapper product__list">
+                    <li class="swiper-slide product__item">
+                      <article class="product__card">
+                        <div class="product__index"><svg class="rating-star" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+</svg><span class="product__count">4,5</span>
+                        </div>
+                        <div class="product__wrapper">
+                          <picture>
+                            <source type="image/webp" srcset="images/rating-img-16.webp"><img class="product__img" src="images/rating-img-16.png" alt="Изображение товара">
+                          </picture>
+                        </div>
+                        <div class="product__description">
+                          <h3 class="product__title"><a class="link product__link" href="/product.html">Диван 
+                               <br class="brake-mobile" />
+велюровый<br />“R-85”</a></h3>
+                          <p class="product__price">34 990 руб</p>
+                          <button class="button-transparent product__btn">Купить</button>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="swiper-slide product__item">
+                      <article class="product__card">
+                        <div class="product__index"><svg class="rating-star" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+</svg><span class="product__count">4,6</span>
+                        </div>
+                        <div class="product__wrapper">
+                          <picture>
+                            <source type="image/webp" srcset="images/rating-img-11.webp"><img class="product__img" src="images/rating-img-11.png" alt="Изображение товара">
+                          </picture>
+                        </div>
+                        <div class="product__description">
+                          <h3 class="product__title"><a class="link product__link" href="/product.html">Диван 
+                               <br class="brake-mobile" />
+флоковый<br />“H-58”</a></h3>
+                          <p class="product__price">23 990 руб</p>
+                          <button class="button-transparent product__btn">Купить</button>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="swiper-slide product__item">
+                      <article class="product__card">
+                        <div class="product__index"><svg class="rating-star" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+</svg><span class="product__count">4,5</span>
+                        </div>
+                        <div class="product__wrapper">
+                          <picture>
+                            <source type="image/webp" srcset="images/rating-img-17.webp"><img class="product__img" src="images/rating-img-17.png" alt="Изображение товара">
+                          </picture>
+                        </div>
+                        <div class="product__description">
+                          <h3 class="product__title"><a class="link product__link" href="/product.html">Диван 
+                               <br class="brake-mobile" />
+велюровый<br />“S-44”</a></h3>
+                          <p class="product__price">19 990 руб</p>
+                          <button class="button-transparent product__btn">Купить</button>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="swiper-slide product__item">
+                      <article class="product__card">
+                        <div class="product__index"><svg class="rating-star" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+</svg><span class="product__count">4,8</span>
+                        </div>
+                        <div class="product__wrapper">
+                          <picture>
+                            <source type="image/webp" srcset="images/rating-img-7.webp"><img class="product__img" src="images/rating-img-7.png" alt="Изображение товара">
+                          </picture>
+                        </div>
+                        <div class="product__description">
+                          <h3 class="product__title"><a class="link product__link" href="/product.html">Диван 
+                               <br class="brake-mobile" />
+шиниловый<br />“V-43”</a></h3>
+                          <p class="product__price">19 990 руб</p>
+                          <button class="button-transparent product__btn">Купить</button>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="swiper-slide product__item">
+                      <article class="product__card">
+                        <div class="product__index"><svg class="rating-star" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+</svg><span class="product__count">4,5</span>
+                        </div>
+                        <div class="product__wrapper">
+                          <picture>
+                            <source type="image/webp" srcset="images/rating-img-16.webp"><img class="product__img" src="images/rating-img-16.png" alt="Изображение товара">
+                          </picture>
+                        </div>
+                        <div class="product__description">
+                          <h3 class="product__title"><a class="link product__link" href="/product.html">Диван 
+                               <br class="brake-mobile" />
+велюровый<br />“R-85”</a></h3>
+                          <p class="product__price">34 990 руб</p>
+                          <button class="button-transparent product__btn">Купить</button>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="swiper-slide product__item">
+                      <article class="product__card">
+                        <div class="product__index"><svg class="rating-star" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+</svg><span class="product__count">4,6</span>
+                        </div>
+                        <div class="product__wrapper">
+                          <picture>
+                            <source type="image/webp" srcset="images/rating-img-11.webp"><img class="product__img" src="images/rating-img-11.png" alt="Изображение товара">
+                          </picture>
+                        </div>
+                        <div class="product__description">
+                          <h3 class="product__title"><a class="link product__link" href="/product.html">Диван 
+                               <br class="brake-mobile" />
+флоковый<br />“H-58”</a></h3>
+                          <p class="product__price">23 990 руб</p>
+                          <button class="button-transparent product__btn">Купить</button>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="swiper-slide product__item">
+                      <article class="product__card">
+                        <div class="product__index"><svg class="rating-star" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+</svg><span class="product__count">4,5</span>
+                        </div>
+                        <div class="product__wrapper">
+                          <picture>
+                            <source type="image/webp" srcset="images/rating-img-17.webp"><img class="product__img" src="images/rating-img-17.png" alt="Изображение товара">
+                          </picture>
+                        </div>
+                        <div class="product__description">
+                          <h3 class="product__title"><a class="link product__link" href="/product.html">Диван 
+                               <br class="brake-mobile" />
+велюровый<br />“S-44”</a></h3>
+                          <p class="product__price">19 990 руб</p>
+                          <button class="button-transparent product__btn">Купить</button>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="swiper-slide product__item">
+                      <article class="product__card">
+                        <div class="product__index"><svg class="rating-star" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+</svg><span class="product__count">4,8</span>
+                        </div>
+                        <div class="product__wrapper">
+                          <picture>
+                            <source type="image/webp" srcset="images/rating-img-7.webp"><img class="product__img" src="images/rating-img-7.png" alt="Изображение товара">
+                          </picture>
+                        </div>
+                        <div class="product__description">
+                          <h3 class="product__title"><a class="link product__link" href="/product.html">Диван 
+                               <br class="brake-mobile" />
+шиниловый<br />“V-43”</a></h3>
+                          <p class="product__price">19 990 руб</p>
+                          <button class="button-transparent product__btn">Купить</button>
+                        </div>
+                      </article>
+                    </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="footer__content container">
@@ -413,6 +586,145 @@
         <p class="footer__copyright-text">SDP&reg; &nbsp;2011-2021</p>
       </div>
     </footer>
+    <section class="popup-slider js-popup-slider">
+      <div class="popup-slider__container js-content">
+        <button class="popup-slider__close-btn js-close-btn-slider"><svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.42872 0.238643L6.75487 5.42386C7.08171 5.74206 7.08171 6.25794 6.75487 6.57614L1.42872 11.7614C1.10188 12.0795 0.571969 12.0795 0.245129 11.7614C-0.0817098 11.4432 -0.0817098 10.9273 0.24513 10.6091L4.97949 6L0.24513 1.39091C-0.0817089 1.07272 -0.0817089 0.556834 0.24513 0.238643C0.57197 -0.0795478 1.10188 -0.0795477 1.42872 0.238643Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.5713 0.238643L5.24513 5.42386C4.91829 5.74206 4.91829 6.25794 5.24513 6.57614L10.5713 11.7614C10.8981 12.0795 11.428 12.0795 11.7549 11.7614C12.0817 11.4432 12.0817 10.9273 11.7549 10.6091L7.02051 6L11.7549 1.39091C12.0817 1.07272 12.0817 0.556834 11.7549 0.238643C11.428 -0.0795478 10.8981 -0.0795477 10.5713 0.238643Z"/>
+</svg>
+        </button>
+        <div class="modal-content modal-gallery__content">
+          <div class="modal-slider">
+            <div class="modal-slider__container">
+              <div class="swiper-wrapper">
+                <div class="modal-slider__item">
+                  <div class="modal-slider__img">
+                    <picture>
+                      <source srcset="images/d-31-1.webp" type="image/webp"><img src="images/d-31-1.png" alt="Диван D-31">
+                    </picture>
+                  </div>
+                </div>
+                <div class="modal-slider__item">
+                  <div class="modal-slider__img">
+                    <picture>
+                      <source srcset="images/d-31-2.webp" type="image/webp"><img src="images/d-31-2.png" alt="Диван D-31">
+                    </picture>
+                  </div>
+                </div>
+                <div class="modal-slider__item">
+                  <div class="modal-slider__img">
+                    <picture>
+                      <source srcset="images/d-31-3.webp" type="image/webp"><img src="images/d-31-3.png" alt="Диван D-31">
+                    </picture>
+                  </div>
+                </div>
+                <div class="modal-slider__item">
+                  <div class="modal-slider__img">
+                    <picture>
+                      <source srcset="images/d-31-4.webp" type="image/webp"><img src="images/d-31-4.png" alt="Диван D-31">
+                    </picture>
+                  </div>
+                </div>
+                <div class="modal-slider__item">
+                  <div class="modal-slider__img">
+                    <picture>
+                      <source srcset="images/d-31-5.webp" type="image/webp"><img src="images/d-31-5.png" alt="Диван D-31">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-thumbs">
+            <button class="button-circle button-circle--left button-circle--slider-next js-slider-next"><span class="btn-arrow"></span></button>
+            <div class="modal-thumbs__slider">
+              <div class="modal-thumbs__slider-container">
+                <div class="swiper-wrapper">
+                  <div class="modal-thumbs__slide">
+                    <div class="modal-thumbs__img">
+                      <picture>
+                        <source srcset="images/d-31-1.webp" type="image/webp"><img src="images/d-31-1.png" alt="Диван D-31">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="modal-thumbs__slide swiper-main-slide__item">
+                    <div class="modal-thumbs__img">
+                      <picture>
+                        <source srcset="images/d-31-2.webp" type="image/webp"><img src="images/d-31-2.png" alt="Диван D-31">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="modal-thumbs__slide">
+                    <div class="modal-thumbs__img">
+                      <picture>
+                        <source srcset="images/d-31-3.webp" type="image/webp"><img src="images/d-31-3.png" alt="Диван D-31">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="modal-thumbs__slide">
+                    <div class="modal-thumbs__img">
+                      <picture>
+                        <source srcset="images/d-31-4.webp" type="image/webp"><img src="images/d-31-4.png" alt="Диван D-31">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="modal-thumbs__slide">
+                    <div class="modal-thumbs__img">
+                      <picture>
+                        <source srcset="images/d-31-5.webp" type="image/webp"><img src="images/d-31-5.png" alt="Диван D-31">
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="button-circle button-circle--slider-prev js-slider-prev"><span class="btn-arrow"></span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="popup-form js-popup-form">
+      <div class="popup-call__container js-content">
+        <button class="popup-call__close-btn js-close-btn-form"><svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.42872 0.238643L6.75487 5.42386C7.08171 5.74206 7.08171 6.25794 6.75487 6.57614L1.42872 11.7614C1.10188 12.0795 0.571969 12.0795 0.245129 11.7614C-0.0817098 11.4432 -0.0817098 10.9273 0.24513 10.6091L4.97949 6L0.24513 1.39091C-0.0817089 1.07272 -0.0817089 0.556834 0.24513 0.238643C0.57197 -0.0795478 1.10188 -0.0795477 1.42872 0.238643Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.5713 0.238643L5.24513 5.42386C4.91829 5.74206 4.91829 6.25794 5.24513 6.57614L10.5713 11.7614C10.8981 12.0795 11.428 12.0795 11.7549 11.7614C12.0817 11.4432 12.0817 10.9273 11.7549 10.6091L7.02051 6L11.7549 1.39091C12.0817 1.07272 12.0817 0.556834 11.7549 0.238643C11.428 -0.0795478 10.8981 -0.0795477 10.5713 0.238643Z"/>
+</svg>
+        </button>
+        <div class="feedback__content123">
+          <h2 class="section-title feedback__title">Купить в один клик</h2>
+          <form class="feedback__form js-form" action="#" enctype="multipart/form-data">
+            <p class="feedback__text">Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.</p>
+            <div class="just-validate-tooltip-container">
+              <input class="feedback__input" id="name" name="name" type="text" placeholder="Как вас зовут?" data-validate-field="name">
+            </div>
+            <div class="just-validate-tooltip-container">
+              <input class="feedback__input" id="tel" name="phone" type="tel" placeholder="Ваш телефон" data-validate-field="tel">
+            </div>
+                <button class="button feedback__button js-submit">Отправить</button>
+            <div class="just-validate-tooltip-container">
+              <label class="feedback__checkbox feedback__label">
+                <input class="checkbox visually-hidden" type="checkbox" name="checkbox" checked required data-validate-field="checkbox"><span class="feedback__span">
+                     Принимаю&nbsp;<a class="feedback__link" href="#">пользовательское&nbsp;соглашение </a></span>
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="popup-call js-popup-call">
+      <div class="popup-call__container js-content">
+        <button class="popup-call__close-btn js-close-btn"><svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.42872 0.238643L6.75487 5.42386C7.08171 5.74206 7.08171 6.25794 6.75487 6.57614L1.42872 11.7614C1.10188 12.0795 0.571969 12.0795 0.245129 11.7614C-0.0817098 11.4432 -0.0817098 10.9273 0.24513 10.6091L4.97949 6L0.24513 1.39091C-0.0817089 1.07272 -0.0817089 0.556834 0.24513 0.238643C0.57197 -0.0795478 1.10188 -0.0795477 1.42872 0.238643Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.5713 0.238643L5.24513 5.42386C4.91829 5.74206 4.91829 6.25794 5.24513 6.57614L10.5713 11.7614C10.8981 12.0795 11.428 12.0795 11.7549 11.7614C12.0817 11.4432 12.0817 10.9273 11.7549 10.6091L7.02051 6L11.7549 1.39091C12.0817 1.07272 12.0817 0.556834 11.7549 0.238643C11.428 -0.0795478 10.8981 -0.0795477 10.5713 0.238643Z"/>
+</svg>
+        </button>
+        <div class="popup-call__img"><svg viewbox="0 0 32 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.08411 20.6446C9.11043 20.6446 9.86916 17.0981 9.86916 14.2587C10.3474 14.2587 14.1267 14.2587 15.8505 14.2587C25.2271 14.2587 25.2295 0.96875 16.1495 0.96875C13.6798 0.96875 12.0891 2.46863 11.6633 2.99113C6.59708 2.99113 5.98131 5.64294 5.98131 10.792C5.98131 11.7854 5.98131 15.0144 5.98131 15.5118C5.98131 16.7225 5.49563 17.508 4.18662 17.508C3.06901 17.508 2.53967 16.5166 2.09316 15.1254C1.86049 15.2506 0.22669 16.1359 0 16.281C0.494354 17.6708 1.0237 20.6446 5.08411 20.6446ZM10.7765 8.76935C12.3104 8.76935 12.4408 11.0806 10.668 11.0806C9.17353 11.0806 9.21241 8.76935 10.7765 8.76935ZM16.1498 15.6955C14.8534 15.6955 11.0654 15.4143 11.0654 15.4143V22.5398L14.6542 22.5912L15.5514 17.4367L26.9159 17.2228L27.2153 22.8741L31.4022 22.9257C31.4022 22.9257 32 11.8567 32 9.63608C32 5.51717 30.1604 3.18592 26.0187 2.99113C24.9809 2.94236 23.6232 2.74842 22.729 2.70221C26.6267 7.45342 23.5254 15.6955 16.1498 15.6955ZM23.3274 18.5846L23.6262 22.7714L26.0187 22.823L25.7196 18.5846H23.3274ZM15.8505 22.6431L18.243 22.6944L18.8408 18.5846H16.7474L15.8505 22.6431Z" fill="#FF862F"/>
+</svg>
+        </div>
+        <div class="popup-call__text">Спасибо, мы вам перезвоним!</div>
+      </div>
+    </section>
     <script defer src="scripts.js"></script>
   </body>
 </html>

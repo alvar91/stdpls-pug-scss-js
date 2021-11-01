@@ -29,28 +29,49 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     padding: 2px;
     border: none;
     background-color: transparent;
     cursor: pointer;
     z-index: 1;
+    transition: fill 0.3s ease, background-color 0.3s ease;
 
     & svg {
       width: 100%;
       height: 100%;
+      vertical-align: super;
     }
 
     & svg path {
       fill: var(--grey);
     }
 
-    @include mobile() {
-      top: 16px;
-      right: 16px;
-      width: 18px;
-      height: 18px;
+    &:hover {
+      & svg path {
+        fill: var(--primary-main);
+      }
+
+      transition: fill 0.3s ease;
+    }
+
+    &:focus {
+      background-color: var(--pink-violet);
+      
+      & svg path {
+        fill: var(--primary-shade);
+      }
+
+      transition: fill  0.3s ease, background-color 0.3s ease;
+    }
+
+    &:active {
+      & svg path {
+        fill: var(--primary-shade);
+      }
+
+      transition: fill  0.3s ease;
     }
   }
 

@@ -1,0 +1,108 @@
+.popup-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.3);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s ease;
+  
+    &__container {
+      position: relative;
+      max-width: 1280px;
+      max-height: 684px;
+      padding: 30px;
+      background: var(--white);
+      border-radius: 10px;
+  
+      @include phablet() {
+        width: 90%;
+      }
+    }
+  
+    &__close-btn {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 16px;
+      height: 16px;
+      padding: 2px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      z-index: 1;
+      transition: fill 0.3s ease, background-color 0.3s ease;
+  
+      & svg {
+        width: 100%;
+        height: 100%;
+        vertical-align: super;
+      }
+  
+      & svg path {
+        fill: var(--grey);
+      }
+  
+      &:hover {
+        & svg path {
+          fill: var(--primary-main);
+        }
+  
+        transition: fill 0.3s ease;
+      }
+  
+      &:focus {
+        background-color: var(--pink-violet);
+        
+        & svg path {
+          fill: var(--primary-shade);
+        }
+  
+        transition: fill  0.3s ease, background-color 0.3s ease;
+      }
+  
+      &:active {
+        & svg path {
+          fill: var(--primary-shade);
+        }
+  
+        transition: fill  0.3s ease;
+      }
+    }
+  
+    &__img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 32px;
+  
+      & svg {
+        width: 172px;
+        height: 117px;
+      }
+    }
+  
+    &__text {
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 1;
+      color: var(--black);
+      text-align: center;
+  
+      @include mobile() {
+        font-size: 27px;
+      }
+    }
+  }
+  
+  .active {
+    opacity: 1;
+    z-index: 999;
+    transition: all 0.3s ease;
+  }

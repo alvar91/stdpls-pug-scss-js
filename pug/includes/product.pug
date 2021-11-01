@@ -1,5 +1,7 @@
 include ./mixins.pug
 
+- var products = [{"name": "Диван велюровый", "model": "“R-85”", "rating": "4,5", "cost": "34 990", "image": "rating-img-16", "currency": "RUB"},{"name": "Диван флоковый", "model": "“H-58”", "rating": "4,6", "cost": "23 990", "image": "rating-img-11", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-44”", "rating": "4,5", "cost": "19 990", "image": "rating-img-17", "currency": "RUB"},{"name": "Диван шиниловый", "model": "“V-43”", "rating": "4,8", "cost": "19 990", "image": "rating-img-7", "currency": "RUB"},{"name": "Диван велюровый", "model": "“R-85”", "rating": "4,5", "cost": "34 990", "image": "rating-img-16", "currency": "RUB"},{"name": "Диван флоковый", "model": "“H-58”", "rating": "4,6", "cost": "23 990", "image": "rating-img-11", "currency": "RUB"},{"name": "Диван велюровый", "model": "“S-44”", "rating": "4,5", "cost": "19 990", "image": "rating-img-17", "currency": "RUB"},{"name": "Диван шиниловый", "model": "“V-43”", "rating": "4,8", "cost": "19 990", "image": "rating-img-7", "currency": "RUB"}]
+
 section.product
     .product__container.container
         .product__top
@@ -30,7 +32,7 @@ section.product
                             img(class="product-slider__item-img" src="images/d-31-5.png" alt="Диван D-31")
 
             .product__slider-nav.slider-nav
-                .swiper-wrapper
+                .slider-nav__list.swiper-wrapper
                     div(class="slider-nav__item" tabindex="0")
                         picture
                             source(srcset="images/d-31-1.webp" type="image/webp")
@@ -68,7 +70,7 @@ section.product
                     | 28 490 руб
 
                 .product-info__btns
-                    button(class="button product-info__btn")
+                    button(class="button product-info__btn js-btn-buy")
                         | Купить в один клик
                     button(class="product-info__btn--cart")
                         | + Добавить в корзину
@@ -99,7 +101,7 @@ section.product
             -var productItems = [{title:"Гарантия", description: "18 месяцев"},{title:"Артикул", description: "AAA41269004"},{title:"Длина", description: "163 см"},{title:"Высота", description: "90 cм"},{title:"Глубина", description: "108 см"},{title:"Спальное место", description: "200 см х 125 см"},{title:"Высота посадки", description: "45 см"},{title:"Механизм", description: "Опорный"},{title:"Тип обивки", description: "Рогожка"},{title:"Цвет", description: "Синий"},{title:"Наполнитель", description: "Независимый пружинный блок"},{title:"Материал каркаса", description: "Металл. рама с дерев. латами"},{title:"Количество мест", description: "Двухместные"},{title:"Категория", description: "Прямые тканевые диваны"},{title:"Возврат", description: "Условия"}]
 
             .product-bottom__col.product-bottom__col--right
-                ul.product-bottom__chars.list-reset.product-chars
+                ul.product-bottom__chars
                     each item in productItems
                         li.product-chars__item
                             .product-chars__title
@@ -107,3 +109,16 @@ section.product
                                 .product-chars__dots
                             .product-chars__descr
                                 | #{item.description}
+
+section.product-more-section
+    .container.product__more
+        h2.section-title.product-more__title
+            | Похожие товары
+        .product__btns
+            button.button-circle.button-circle--left.product__prev.js-product-prev
+                span
+            button.button-circle.product__next.js-product-next
+                span
+        .swiper-container.js-product-swiper
+            ul.swiper-wrapper.product__list
+                +productList(products)

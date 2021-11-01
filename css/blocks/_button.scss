@@ -3,7 +3,7 @@
   border: 2px solid var(--primary-main);
   border-radius: 10px;
   font-family: "OpenSans", "Arial", sans-serif;
-  @include font(16px, 600);
+  @include font(16px, 500);
   line-height: 16px;
   color: var(--white);
   background-color: var(--primary-main);
@@ -13,11 +13,13 @@
   transition: background-color 0.3s;
 
   &:hover {
+    border: 2px solid var(--primary-light);
     background-color: var(--primary-light);
     transition: background-color 0.3s;
   }
 
   &:active {
+   
     border: 2px solid var(--primary-shade);
     background-color: var(--primary-shade);
     transition: background-color 0.3s;
@@ -36,7 +38,7 @@
   border: 2px solid var(--primary-main);
   border-radius: 10px;
   font-family: "OpenSans", "Arial", sans-serif;
-  @include font(16px, 600);
+  @include font(16px, 500);
   line-height: 16px;
   color: var(--primary-main);
   background-color: transparent;
@@ -52,6 +54,7 @@
   }
 
   &:active {
+    border: 2px solid var(--primary-shade);
     color: var(--white);
     background: var(--primary-shade);
     transition: background-color 0.3s;
@@ -135,6 +138,30 @@
 
   &--left {
     transform: rotate(180deg);
+  }
+
+  &--slider-next {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    display: none;
+    transform: translateY(-50%) rotate(180deg);
+
+    @include tablet() {
+      display: block;
+    }
+  }
+
+  &--slider-prev {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    display: none;
+    transform: translateY(-50%);
+
+    @include tablet() {
+      display: block;
+    }
   }
 }
 

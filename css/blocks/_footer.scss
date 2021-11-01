@@ -82,7 +82,7 @@
     }
 
     @include mobile() {
-      margin-bottom: 23px;
+      margin-bottom: 21px;
     }
   }
 
@@ -99,11 +99,11 @@
 
   &__social-link {
     margin: 0;
-    padding: 0;
+    padding: 3px;
     text-decoration: none;
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
     background-repeat: no-repeat;
     transition: opacity 0.2s ease;
     transition: fill 0.3s ease;
@@ -118,16 +118,6 @@
       transition: fill 0.3s ease;
     }
 
-    &:active {
-      background-color: transparent;
-      transition: background-color 0.3s ease;
-    }
-
-    &:active svg path {
-      fill: var(--primary-shade);
-      transition: fill 0.3s ease;
-    }
-
     &:focus {
       background-color: var(--primary-light);
       transition: background-color 0.3s ease;
@@ -135,6 +125,16 @@
 
     &:focus svg path {
       fill: var(--white);
+      transition: fill 0.3s ease;
+    }
+
+    &:active {
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    &:active svg path {
+      fill: var(--primary-shade);
       transition: fill 0.3s ease;
     }
   }
