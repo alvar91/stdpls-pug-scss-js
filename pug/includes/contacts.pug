@@ -1,12 +1,14 @@
 include ./mixins.pug
 
-section.contacts
+section.contact
     h1.visually-hidden
         | Контакты
     .container
-        h2.section-title.contacts__title
+        h2.section-title.contact__title
             | Контакты
-        form.contacts__form
-            input(class="contacts__input" type="search" name="search" required placeholder="Поиск магазина")
-            +buttonFilled("Поиск", ["contacts__btn"])
-        .contacts__map#map
+        .contact-shop
+            .contact-shop__selected
+                input(type="text" class="contact-shop__input" placeholder="Поиск магазина")
+                ul.contact-shop__list.hidden-all
+            +buttonFilled("Поиск", ["contact-shop__btn"])
+        .map#map

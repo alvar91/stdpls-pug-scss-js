@@ -2,7 +2,7 @@ extends ../main.layout.pug
 include ../includes/mixins.pug
 
 block title 
-    title SitDownPls - Contacts
+    title SitDownPls - Контакты
 
 block metatags
     meta(charset="UTF-8")
@@ -24,6 +24,10 @@ block content
         include ../includes/contacts.pug
     include ../includes/footer.pug
 
+block popup
+    include ../includes/popup-empty-search.pug
+
 block scripts
-    script(defer src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU")       
+    script(defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous") 
+    script(defer src="https://api-maps.yandex.ru/2.1/?apikey=00dd0c3c-03d1-4425-bc9e-72cda7ab59cc&lang=ru_RU")       
     script(defer src="scripts.js")

@@ -78,14 +78,14 @@ mixin productsList(products)
                         img(class="card__img" src=`images/${product.image}.png` alt=`${product.name}`)
                     .card__description
                         h3.card__title
-                            a(class="link card__link" href="#")
+                            a(class="link card__link" href="/product.html")
                                 | #{product.name}
                         .card__cost-wrapper
                             span.card__sale
                                 | #{product.sale} #{cur}
                             span.card__cost
                                 | #{product.cost} #{cur}
-                        button.button-transparent.card__buy-btn
+                        a(class="button-transparent card__buy-btn" href="/product.html")
                             | Купить
                         if product.scheme
                             picture
@@ -123,7 +123,7 @@ mixin ratingList(products)
                             | !{product.model}
                     p.rating__price
                         | #{product.cost} #{cur}
-                    button.button-transparent.rating__btn
+                    a(class="button-transparent rating__btn" href="/product.html")
                         | Купить
 
 mixin categoriesList(categories)
@@ -248,7 +248,7 @@ mixin catalogList(products)
                             | !{product.model}
                     p.catalog__price
                         | #{product.cost} #{cur}
-                    button.button-transparent.catalog__btn
+                    a(class="button-transparent catalog__btn" href="/product.html")
                         | Купить
 
 mixin productList(products)
@@ -276,5 +276,5 @@ mixin productList(products)
                             | !{product.model}
                     p.product__price
                         | #{product.cost} #{cur}
-                    button.button-transparent.product__btn
+                    a(class="button-transparent product__btn" href="/product.html")
                         | Купить

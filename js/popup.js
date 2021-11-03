@@ -19,8 +19,8 @@ const handlerActive = (event, popup) => {
 };
 
 if (popup && closeBtn) {
-  popup.addEventListener("click", handlerActive);
-  closeBtn.addEventListener("click", hidePopup);
+  popup.addEventListener("click", (e) => handlerActive(e, popup));
+  closeBtn.addEventListener("click", () => hidePopup(popup));
 }
 
 // Form popup

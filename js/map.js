@@ -1,88 +1,173 @@
-const map = document.getElementById("map");
+const contact = document.querySelector(".contact");
+console.log(123);
+let shopList = [
+  {
+    name: "SitDownPls на Солянке",
+    adress: "м. Китай-город, ул. Солянка, д.24",
+    coordinates: [55.750651875191934, 37.64164806745906],
+  },
+  {
+    name: "SitDownPls на Покровке",
+    adress: "м. Курская, ул. Покровка, д.14",
+    coordinates: [55.759091068985285, 37.64497999999997],
+  },
+];
 
-if (map) {
-  ymaps.ready(function () {
-    const myMap = new ymaps.Map(
-        "map",
-        {
-          center: [55.75, 37.62],
-          zoom: 14,
-        },
-        {
-          searchControlProvider: "yandex#search",
-        }
-      ),
-      MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-        '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-      ),
-      myPlacemark1 = new ymaps.Placemark(
-        [55.752831393462664, 37.63848494650637],
-        {
-          balloonContent: `
-          <div class="balloon">
-            <h4 class="balloon__title">SitDownPls на Солянке </h4>
-            <address class="balloon__address">м. Китай-город, ул. Солянка, д.24</address>
-            <a href="tel:+74958854547" class="balloon__tel-number">
-                <svg width="100%" height="100%" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.3425 12.0983C15.215 12.0983 14.1242 11.915 13.1067 11.585C12.7858 11.475 12.4283 11.5575 12.1808 11.805L10.7417 13.6108C8.1475 12.3733 5.71833 10.0358 4.42583 7.35L6.21333 5.82833C6.46083 5.57167 6.53417 5.21417 6.43333 4.89333C6.09417 3.87583 5.92 2.785 5.92 1.6575C5.92 1.1625 5.5075 0.75 5.0125 0.75H1.84083C1.34583 0.75 0.75 0.97 0.75 1.6575C0.75 10.1733 7.83583 17.25 16.3425 17.25C16.9933 17.25 17.25 16.6725 17.25 16.1683V13.0058C17.25 12.5108 16.8375 12.0983 16.3425 12.0983Z" />
-                </svg>
-                <span>+7 (495) 885-45-47</span>
-            </a>
-            <div class="balloon__worktime">
-                <span class="grey_text">Часы работы:</span>
-                с 10:00 до 21:00
+if (contact) {
+  let placemarkCollections = {};
+  let placemarkList = {};
+  let map = "";
+  let shopListUl = document.querySelector(".contact-shop__list");
+
+  for (let i = 0; i < shopList.length; i++) {
+    shopListUl.innerHTML += `<li class="contact-shop__item" value="${i}">
+        <h5 class="contact-shop__item-title">Москва, ${shopList[i].name}</h5>
+        <p class="contact-shop__descr">${shopList[i].adress}</p>
+      </li>`;
+  }
+
+  ymaps.ready(init);
+  function init() {
+    map = new ymaps.Map("map", {
+      center: [55.75, 37.62],
+      zoom: 14,
+      controls: [],
+    });
+
+    for (let i = 0; i < shopList.length; i++) {
+      let cityCollection = new ymaps.GeoObjectCollection();
+
+      let shopInfo = shopList[i];
+
+      let shopsBalloon = ymaps.templateLayoutFactory.createClass(
+        `<div class="balloon">
+          <button class="balloon__close btn-reset"></button>
+          <div class="balloon__arrow"></div>
+          <div class="balloon__inner">
+            <div class="balloon__header">
+              <h5 class="balloon__title">${shopList[i].name}</h5>
+              <p class="balloon__descr">${shopList[i].adress}</p>
+              <a class="balloon__phone" href="tel:+74958854547">+7 (495) 885-45-47</a>
             </div>
-            <div class="balloon__description">
-                <span class="balloon__grey-text">Что здесь:</span>
-                шоурум, пункт отгрузки, пункт выдачи, пункт обмена-возврата, сервисный центр
+            <div class="balloon__body">
+              <p class="balloon__descr">
+                <span class="baloon__subtitle">Часы работы:</span> с 10:00 до 21:00
+              </p>
             </div>
-        </div>
-        `,
-        },
+            <div class="balloon__footer">
+              <p class="balloon__descr mb-0">
+                <span class="baloon__subtitle">Что здесь:</span> шоурум, пункт отгрузки, пункт выдачи, пункт обмена-возврата, сервисный центр</p>
+            </div>
+          </div>
+        </div>`,
         {
-          iconLayout: "default#imageWithContent",
-          iconImageHref: "images/map-icon.svg",
-          iconImageSize: [32, 22],
-          iconImageOffset: [-20, 0],
-          iconContentOffset: [0],
-          iconContentLayout: MyIconContentLayout,
+          build: function () {
+            this.constructor.superclass.build.call(this);
+            this.element = $(".balloon", this.getParentElement());
+            this.applyElementOffset();
+            this.element
+              .find(".balloon__close")
+              .on("click", $.proxy(this.onCloseClick, this));
+          },
+          clear: function () {
+            this.element.find(".balloon__close").off("click");
+            this.constructor.superclass.clear.call(this);
+          },
+          onSublayoutSizeChange: function () {
+            MyBalloonLayout.superclass.onSublayoutSizeChange.apply(
+              this,
+              arguments
+            );
+
+            if (!this._isElement(this.element)) {
+              return;
+            }
+
+            this.applyElementOffset();
+            this.events.fire("shapechange");
+          },
+          applyElementOffset: function () {
+            this.element.css({
+              left: -(this.element[0].offsetWidth / 2),
+              top: -(
+                this.element[0].offsetHeight +
+                this.element.find(".balloon__arrow")[0].offsetHeight
+              ),
+            });
+          },
+          onCloseClick: function (e) {
+            e.preventDefault();
+            this.events.fire("userclose");
+          },
+          getShape: function () {
+            if (!this._isElement(this.element)) {
+              return MyBalloonLayout.superclass.getShape.call(this);
+            }
+            let position = this.element.position();
+
+            return new ymaps.shape.Rectangle(
+              new ymaps.geometry.pixel.Rectangle([
+                [position.left, position.top],
+                [
+                  position.left + this.element[0].offsetWidth,
+                  position.top +
+                    this.element[0].offsetHeight +
+                    this.element.find(".balloon__arrow")[0].offsetHeight,
+                ],
+              ])
+            );
+          },
+
+          _isElement: function (element) {
+            return element && element[0] && element.find(".balloon__arrow")[0];
+          },
         }
       );
 
-    const myPlacemark2 = new ymaps.Placemark(
-      [55.76147157505062, 37.65023838640963],
-      {
-        balloonContent: `
-            <div class="balloon">
-            <h4 class="balloon__title">SitDownPls на Покровке </h4>
-            <address class="balloon__address">м. Китай-город, ул. Покровке, д.35</address>
-            <a href="tel:+74958854547" class="balloon__tel-number">
-                <svg width="100%" height="100%" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.3425 12.0983C15.215 12.0983 14.1242 11.915 13.1067 11.585C12.7858 11.475 12.4283 11.5575 12.1808 11.805L10.7417 13.6108C8.1475 12.3733 5.71833 10.0358 4.42583 7.35L6.21333 5.82833C6.46083 5.57167 6.53417 5.21417 6.43333 4.89333C6.09417 3.87583 5.92 2.785 5.92 1.6575C5.92 1.1625 5.5075 0.75 5.0125 0.75H1.84083C1.34583 0.75 0.75 0.97 0.75 1.6575C0.75 10.1733 7.83583 17.25 16.3425 17.25C16.9933 17.25 17.25 16.6725 17.25 16.1683V13.0058C17.25 12.5108 16.8375 12.0983 16.3425 12.0983Z" />
-                </svg>
-                <span>+7 (495) 885-45-47</span>
-            </a>
-            <div class="balloon__worktime">
-                <span class="grey_text">Часы работы:</span>
-                с 10:00 до 21:00
-            </div>
-            <div class="balloon__description">
-                <span class="balloon__grey-text">Что здесь:</span>
-                шоурум, пункт отгрузки, пункт выдачи, пункт обмена-возврата, сервисный центр
-            </div>
-        </div>
-      `,
-      },
-      {
-        iconLayout: "default#imageWithContent",
-        iconImageHref: "images/map-icon.svg",
-        iconImageSize: [32, 22],
-        iconImageOffset: [-20, 0],
-        iconContentOffset: [0],
-        iconContentLayout: MyIconContentLayout,
-      }
-    );
+      let shopPlacemark = new ymaps.Placemark(
+        shopInfo.coordinates,
+        {},
+        {
+          balloonLayout: shopsBalloon,
+          balloonPanelMaxMapArea: 0,
+          iconLayout: "default#image",
+          iconImageHref: "images/map-icon.svg",
+          iconImageSize: [40, 31],
+          iconImageOffset: [-19, -44],
+          hideIconOnBalloonOpen: false,
+          balloonOffset: [3, -50],
+        }
+      );
 
-    myMap.geoObjects.add(myPlacemark1).add(myPlacemark2);
-  });
+      if (!placemarkList[i]) placemarkList[i] = {};
+      placemarkList[i] = shopPlacemark;
+      placemarkCollections[i] = cityCollection;
+
+      cityCollection.add(shopPlacemark);
+
+      map.geoObjects.add(cityCollection);
+    }
+
+    document.querySelectorAll(".contact-shop__item").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        let cityId = e.currentTarget.getAttribute("value");
+        document
+          .querySelector(".contact-shop__input")
+          .setAttribute("id", cityId);
+      });
+    });
+
+    document
+      .querySelector(".contact-shop__btn")
+      .addEventListener("click", function (e) {
+        let inputId = document
+          .querySelector(".contact-shop__input")
+          .getAttribute("id");
+        if (placemarkList[inputId]) {
+          placemarkList[inputId].events.fire("click");
+        } else {
+          document.querySelector(".modal-search").classList.add("active");
+        }
+      });
+  }
 }

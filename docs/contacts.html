@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>SitDownPls - Contacts</title>
+    <title>SitDownPls - Контакты</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -148,15 +148,18 @@
               </ul>
             </nav>
           </div>
-      <section class="contacts">
+      <section class="contact">
         <h1 class="visually-hidden">Контакты</h1>
         <div class="container">
-          <h2 class="section-title contacts__title">Контакты</h2>
-          <form class="contacts__form">
-            <input class="contacts__input" type="search" name="search" required placeholder="Поиск магазина">
-                  <button class="button contacts__btn">Поиск</button>
-          </form>
-          <div class="contacts__map" id="map"></div>
+          <h2 class="section-title contact__title">Контакты</h2>
+          <div class="contact-shop">
+            <div class="contact-shop__selected">
+              <input class="contact-shop__input" type="text" placeholder="Поиск магазина">
+              <ul class="contact-shop__list hidden-all"></ul>
+            </div>
+                  <button class="button contact-shop__btn">Поиск</button>
+          </div>
+          <div class="map" id="map"></div>
         </div>
       </section>
     </main>
@@ -225,7 +228,16 @@
         <p class="footer__copyright-text">SDP&reg; &nbsp;2011-2021</p>
       </div>
     </footer>
-    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&amp;lang=ru_RU">      </script>
+    <section class="modal-search">
+      <div class="modal__container modal-search__container">
+        <div class="modal-content modal-search__content">
+          <div class="modal-search__img"><img src="images/search-el.png" alt="Изображение слона"></div>
+          <p class="modal-search__text">По вашему запросу ничего не нашлось</p>
+        </div>
+      </div>
+    </section>
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"> </script>
+    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=00dd0c3c-03d1-4425-bc9e-72cda7ab59cc&amp;lang=ru_RU">      </script>
     <script defer src="scripts.js"></script>
   </body>
 </html>

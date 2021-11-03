@@ -4,6 +4,8 @@ import Swiper from "swiper/bundle";
 const duration = 3000;
 
 const swiperPromo = new Swiper(".js-promo-swiper", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   direction: "horizontal",
   slidesPerGroup: 1,
   slidesPerColumn: 1,
@@ -60,6 +62,8 @@ swiperPromo.on("slideChangeTransitionEnd", function () {
 });
 
 const offersSwiper = new Swiper(".js-special-offers-swiper", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   direction: "horizontal",
   slidesPerColumn: 1,
   slidesPerView: "auto",
@@ -85,6 +89,8 @@ const offersSwiper = new Swiper(".js-special-offers-swiper", {
 });
 
 const usefulSwiper = new Swiper(".js-useful-swiper", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   direction: "horizontal",
   slidesPerColumn: 1,
   slidesPerView: "auto",
@@ -111,6 +117,8 @@ const usefulSwiper = new Swiper(".js-useful-swiper", {
 });
 
 const catalogSwiper = new Swiper(".js-catalog-products-swiper", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   direction: "horizontal",
   slidesPerColumnFill: "row",
 
@@ -157,16 +165,19 @@ const catalogSwiper = new Swiper(".js-catalog-products-swiper", {
 });
 
 const productSliderNav = new Swiper(".slider-nav", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   slideClass: "slider-nav__item",
   direction: "horizontal",
   freeMode: true,
   breakpoints: {
     1025: {
+      direction: "horizontal",
       slidesPerView: 4,
       spaceBetween: 20,
     },
     890: {
-      direction: "horizontal",
+      direction: "vertical",
       spaceBetween: 20,
       slidesPerView: 4,
     },
@@ -183,7 +194,11 @@ const productSliderNav = new Swiper(".slider-nav", {
   },
 });
 
+
+
 const productSlider = new Swiper(".product-slider", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   slideClass: "product-slider__item",
   slidesPerView: 1,
   initialSlide: 4,
@@ -196,6 +211,8 @@ const productSlider = new Swiper(".product-slider", {
 });
 
 const sliderThumbs = new Swiper('.modal-thumbs__slider-container', {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   slideClass: 'modal-thumbs__slide',
   spaceBetween: 10,
   direction: 'horizontal',
@@ -221,6 +238,8 @@ const sliderThumbs = new Swiper('.modal-thumbs__slider-container', {
 });
 
 const sliderImages = new Swiper('.modal-slider__container', {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   slideClass: 'modal-slider__item',
   slidesPerView: 1,
   initialSlide: 4,
@@ -237,8 +256,10 @@ const sliderImages = new Swiper('.modal-slider__container', {
 });
 
 const productSwiper = new Swiper(".js-product-swiper", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   direction: "horizontal",
-
+  
   breakpoints: {
     300: {
       slidesPerGroup: 2,

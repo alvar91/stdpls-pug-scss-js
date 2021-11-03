@@ -1,15 +1,17 @@
 .button {
+  display: inline-block;
   padding: 22px 50px;
   border: 2px solid var(--primary-main);
   border-radius: 10px;
   font-family: "OpenSans", "Arial", sans-serif;
   @include font(16px, 500);
   line-height: 16px;
+  text-decoration: none;
   color: var(--white);
   background-color: var(--primary-main);
   cursor: pointer;
   outline: none;
-  z-index: 999;
+  z-index: 100;
   transition: background-color 0.3s;
 
   &:hover {
@@ -19,7 +21,6 @@
   }
 
   &:active {
-   
     border: 2px solid var(--primary-shade);
     background-color: var(--primary-shade);
     transition: background-color 0.3s;
@@ -33,12 +34,13 @@
 }
 
 .button-transparent {
-  // display: inline-block;
+  display: inline-block;
   padding: 17px 32px;
   border: 2px solid var(--primary-main);
   border-radius: 10px;
   font-family: "OpenSans", "Arial", sans-serif;
   @include font(16px, 500);
+  text-decoration: none;
   line-height: 16px;
   color: var(--primary-main);
   background-color: transparent;
@@ -147,7 +149,7 @@
     display: none;
     transform: translateY(-50%) rotate(180deg);
 
-    @include tablet() {
+    @include laptop() {
       display: block;
     }
   }
@@ -159,7 +161,7 @@
     display: none;
     transform: translateY(-50%);
 
-    @include tablet() {
+    @include laptop() {
       display: block;
     }
   }

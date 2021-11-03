@@ -6,7 +6,9 @@ import "./just-validate.min.js";
 import "./form-feedback.js";
 import "./popup.js";
 
+
 import "./map.js";
+import "./search-dropdown.js";
 
 import "./range-slider.js";
 

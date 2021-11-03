@@ -514,13 +514,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _popup_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_popup_js__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _map_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./map.js */ "./js/map.js");
 /* harmony import */ var _map_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_map_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _range_slider_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./range-slider.js */ "./js/range-slider.js");
-/* harmony import */ var _catalog_filters_show_more_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./catalog-filters-show-more.js */ "./js/catalog-filters-show-more.js");
-/* harmony import */ var _catalog_filters_choice_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./catalog-filters-choice.js */ "./js/catalog-filters-choice.js");
-/* harmony import */ var _catalog_filters_choice_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_catalog_filters_choice_js__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _catalog_range_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./catalog-range.js */ "./js/catalog-range.js");
-/* harmony import */ var _catalog_filter_dropdown_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./catalog-filter-dropdown.js */ "./js/catalog-filter-dropdown.js");
-/* harmony import */ var _catalog_filter_dropdown_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_catalog_filter_dropdown_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _search_dropdown_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./search-dropdown.js */ "./js/search-dropdown.js");
+/* harmony import */ var _search_dropdown_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_search_dropdown_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _range_slider_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./range-slider.js */ "./js/range-slider.js");
+/* harmony import */ var _catalog_filters_show_more_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./catalog-filters-show-more.js */ "./js/catalog-filters-show-more.js");
+/* harmony import */ var _catalog_filters_choice_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./catalog-filters-choice.js */ "./js/catalog-filters-choice.js");
+/* harmony import */ var _catalog_filters_choice_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_catalog_filters_choice_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _catalog_range_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./catalog-range.js */ "./js/catalog-range.js");
+/* harmony import */ var _catalog_filter_dropdown_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./catalog-filter-dropdown.js */ "./js/catalog-filter-dropdown.js");
+/* harmony import */ var _catalog_filter_dropdown_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_catalog_filter_dropdown_js__WEBPACK_IMPORTED_MODULE_13__);
+
 
 
 
@@ -1170,39 +1173,116 @@ var _typeof = "function" == typeof Symbol && "symbol" == _typeof2(Symbol.iterato
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var map = document.getElementById("map");
+var contact = document.querySelector(".contact");
+console.log(123);
+var shopList = [{
+  name: "SitDownPls на Солянке",
+  adress: "м. Китай-город, ул. Солянка, д.24",
+  coordinates: [55.750651875191934, 37.64164806745906]
+}, {
+  name: "SitDownPls на Покровке",
+  adress: "м. Курская, ул. Покровка, д.14",
+  coordinates: [55.759091068985285, 37.64497999999997]
+}];
 
-if (map) {
-  ymaps.ready(function () {
-    var myMap = new ymaps.Map("map", {
+if (contact) {
+  var placemarkCollections = {};
+  var placemarkList = {};
+  var map = "";
+  var shopListUl = document.querySelector(".contact-shop__list");
+
+  for (var i = 0; i < shopList.length; i++) {
+    shopListUl.innerHTML += "<li class=\"contact-shop__item\" value=\"".concat(i, "\">\n        <h5 class=\"contact-shop__item-title\">\u041C\u043E\u0441\u043A\u0432\u0430, ").concat(shopList[i].name, "</h5>\n        <p class=\"contact-shop__descr\">").concat(shopList[i].adress, "</p>\n      </li>");
+  }
+
+  ymaps.ready(init);
+
+  function init() {
+    map = new ymaps.Map("map", {
       center: [55.75, 37.62],
-      zoom: 14
-    }, {
-      searchControlProvider: "yandex#search"
-    }),
-        MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
-        myPlacemark1 = new ymaps.Placemark([55.752831393462664, 37.63848494650637], {
-      balloonContent: "\n          <div class=\"balloon\">\n            <h4 class=\"balloon__title\">SitDownPls \u043D\u0430 \u0421\u043E\u043B\u044F\u043D\u043A\u0435 </h4>\n            <address class=\"balloon__address\">\u043C. \u041A\u0438\u0442\u0430\u0439-\u0433\u043E\u0440\u043E\u0434, \u0443\u043B. \u0421\u043E\u043B\u044F\u043D\u043A\u0430, \u0434.24</address>\n            <a href=\"tel:+74958854547\" class=\"balloon__tel-number\">\n                <svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                    <path d=\"M16.3425 12.0983C15.215 12.0983 14.1242 11.915 13.1067 11.585C12.7858 11.475 12.4283 11.5575 12.1808 11.805L10.7417 13.6108C8.1475 12.3733 5.71833 10.0358 4.42583 7.35L6.21333 5.82833C6.46083 5.57167 6.53417 5.21417 6.43333 4.89333C6.09417 3.87583 5.92 2.785 5.92 1.6575C5.92 1.1625 5.5075 0.75 5.0125 0.75H1.84083C1.34583 0.75 0.75 0.97 0.75 1.6575C0.75 10.1733 7.83583 17.25 16.3425 17.25C16.9933 17.25 17.25 16.6725 17.25 16.1683V13.0058C17.25 12.5108 16.8375 12.0983 16.3425 12.0983Z\" />\n                </svg>\n                <span>+7 (495) 885-45-47</span>\n            </a>\n            <div class=\"balloon__worktime\">\n                <span class=\"grey_text\">\u0427\u0430\u0441\u044B \u0440\u0430\u0431\u043E\u0442\u044B:</span>\n                \u0441 10:00 \u0434\u043E 21:00\n            </div>\n            <div class=\"balloon__description\">\n                <span class=\"balloon__grey-text\">\u0427\u0442\u043E \u0437\u0434\u0435\u0441\u044C:</span>\n                \u0448\u043E\u0443\u0440\u0443\u043C, \u043F\u0443\u043D\u043A\u0442 \u043E\u0442\u0433\u0440\u0443\u0437\u043A\u0438, \u043F\u0443\u043D\u043A\u0442 \u0432\u044B\u0434\u0430\u0447\u0438, \u043F\u0443\u043D\u043A\u0442 \u043E\u0431\u043C\u0435\u043D\u0430-\u0432\u043E\u0437\u0432\u0440\u0430\u0442\u0430, \u0441\u0435\u0440\u0432\u0438\u0441\u043D\u044B\u0439 \u0446\u0435\u043D\u0442\u0440\n            </div>\n        </div>\n        "
-    }, {
-      iconLayout: "default#imageWithContent",
-      iconImageHref: "images/map-icon.svg",
-      iconImageSize: [32, 22],
-      iconImageOffset: [-20, 0],
-      iconContentOffset: [0],
-      iconContentLayout: MyIconContentLayout
+      zoom: 14,
+      controls: []
     });
-    var myPlacemark2 = new ymaps.Placemark([55.76147157505062, 37.65023838640963], {
-      balloonContent: "\n            <div class=\"balloon\">\n            <h4 class=\"balloon__title\">SitDownPls \u043D\u0430 \u041F\u043E\u043A\u0440\u043E\u0432\u043A\u0435 </h4>\n            <address class=\"balloon__address\">\u043C. \u041A\u0438\u0442\u0430\u0439-\u0433\u043E\u0440\u043E\u0434, \u0443\u043B. \u041F\u043E\u043A\u0440\u043E\u0432\u043A\u0435, \u0434.35</address>\n            <a href=\"tel:+74958854547\" class=\"balloon__tel-number\">\n                <svg width=\"100%\" height=\"100%\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                    <path d=\"M16.3425 12.0983C15.215 12.0983 14.1242 11.915 13.1067 11.585C12.7858 11.475 12.4283 11.5575 12.1808 11.805L10.7417 13.6108C8.1475 12.3733 5.71833 10.0358 4.42583 7.35L6.21333 5.82833C6.46083 5.57167 6.53417 5.21417 6.43333 4.89333C6.09417 3.87583 5.92 2.785 5.92 1.6575C5.92 1.1625 5.5075 0.75 5.0125 0.75H1.84083C1.34583 0.75 0.75 0.97 0.75 1.6575C0.75 10.1733 7.83583 17.25 16.3425 17.25C16.9933 17.25 17.25 16.6725 17.25 16.1683V13.0058C17.25 12.5108 16.8375 12.0983 16.3425 12.0983Z\" />\n                </svg>\n                <span>+7 (495) 885-45-47</span>\n            </a>\n            <div class=\"balloon__worktime\">\n                <span class=\"grey_text\">\u0427\u0430\u0441\u044B \u0440\u0430\u0431\u043E\u0442\u044B:</span>\n                \u0441 10:00 \u0434\u043E 21:00\n            </div>\n            <div class=\"balloon__description\">\n                <span class=\"balloon__grey-text\">\u0427\u0442\u043E \u0437\u0434\u0435\u0441\u044C:</span>\n                \u0448\u043E\u0443\u0440\u0443\u043C, \u043F\u0443\u043D\u043A\u0442 \u043E\u0442\u0433\u0440\u0443\u0437\u043A\u0438, \u043F\u0443\u043D\u043A\u0442 \u0432\u044B\u0434\u0430\u0447\u0438, \u043F\u0443\u043D\u043A\u0442 \u043E\u0431\u043C\u0435\u043D\u0430-\u0432\u043E\u0437\u0432\u0440\u0430\u0442\u0430, \u0441\u0435\u0440\u0432\u0438\u0441\u043D\u044B\u0439 \u0446\u0435\u043D\u0442\u0440\n            </div>\n        </div>\n      "
-    }, {
-      iconLayout: "default#imageWithContent",
-      iconImageHref: "images/map-icon.svg",
-      iconImageSize: [32, 22],
-      iconImageOffset: [-20, 0],
-      iconContentOffset: [0],
-      iconContentLayout: MyIconContentLayout
+
+    for (var _i = 0; _i < shopList.length; _i++) {
+      var cityCollection = new ymaps.GeoObjectCollection();
+      var shopInfo = shopList[_i];
+      var shopsBalloon = ymaps.templateLayoutFactory.createClass("<div class=\"balloon\">\n          <button class=\"balloon__close btn-reset\"></button>\n          <div class=\"balloon__arrow\"></div>\n          <div class=\"balloon__inner\">\n            <div class=\"balloon__header\">\n              <h5 class=\"balloon__title\">".concat(shopList[_i].name, "</h5>\n              <p class=\"balloon__descr\">").concat(shopList[_i].adress, "</p>\n              <a class=\"balloon__phone\" href=\"tel:+74958854547\">+7 (495) 885-45-47</a>\n            </div>\n            <div class=\"balloon__body\">\n              <p class=\"balloon__descr\">\n                <span class=\"baloon__subtitle\">\u0427\u0430\u0441\u044B \u0440\u0430\u0431\u043E\u0442\u044B:</span> \u0441 10:00 \u0434\u043E 21:00\n              </p>\n            </div>\n            <div class=\"balloon__footer\">\n              <p class=\"balloon__descr mb-0\">\n                <span class=\"baloon__subtitle\">\u0427\u0442\u043E \u0437\u0434\u0435\u0441\u044C:</span> \u0448\u043E\u0443\u0440\u0443\u043C, \u043F\u0443\u043D\u043A\u0442 \u043E\u0442\u0433\u0440\u0443\u0437\u043A\u0438, \u043F\u0443\u043D\u043A\u0442 \u0432\u044B\u0434\u0430\u0447\u0438, \u043F\u0443\u043D\u043A\u0442 \u043E\u0431\u043C\u0435\u043D\u0430-\u0432\u043E\u0437\u0432\u0440\u0430\u0442\u0430, \u0441\u0435\u0440\u0432\u0438\u0441\u043D\u044B\u0439 \u0446\u0435\u043D\u0442\u0440</p>\n            </div>\n          </div>\n        </div>"), {
+        build: function build() {
+          this.constructor.superclass.build.call(this);
+          this.element = $(".balloon", this.getParentElement());
+          this.applyElementOffset();
+          this.element.find(".balloon__close").on("click", $.proxy(this.onCloseClick, this));
+        },
+        clear: function clear() {
+          this.element.find(".balloon__close").off("click");
+          this.constructor.superclass.clear.call(this);
+        },
+        onSublayoutSizeChange: function onSublayoutSizeChange() {
+          MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
+
+          if (!this._isElement(this.element)) {
+            return;
+          }
+
+          this.applyElementOffset();
+          this.events.fire("shapechange");
+        },
+        applyElementOffset: function applyElementOffset() {
+          this.element.css({
+            left: -(this.element[0].offsetWidth / 2),
+            top: -(this.element[0].offsetHeight + this.element.find(".balloon__arrow")[0].offsetHeight)
+          });
+        },
+        onCloseClick: function onCloseClick(e) {
+          e.preventDefault();
+          this.events.fire("userclose");
+        },
+        getShape: function getShape() {
+          if (!this._isElement(this.element)) {
+            return MyBalloonLayout.superclass.getShape.call(this);
+          }
+
+          var position = this.element.position();
+          return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([[position.left, position.top], [position.left + this.element[0].offsetWidth, position.top + this.element[0].offsetHeight + this.element.find(".balloon__arrow")[0].offsetHeight]]));
+        },
+        _isElement: function _isElement(element) {
+          return element && element[0] && element.find(".balloon__arrow")[0];
+        }
+      });
+      var shopPlacemark = new ymaps.Placemark(shopInfo.coordinates, {}, {
+        balloonLayout: shopsBalloon,
+        balloonPanelMaxMapArea: 0,
+        iconLayout: "default#image",
+        iconImageHref: "images/map-icon.svg",
+        iconImageSize: [40, 31],
+        iconImageOffset: [-19, -44],
+        hideIconOnBalloonOpen: false,
+        balloonOffset: [3, -50]
+      });
+      if (!placemarkList[_i]) placemarkList[_i] = {};
+      placemarkList[_i] = shopPlacemark;
+      placemarkCollections[_i] = cityCollection;
+      cityCollection.add(shopPlacemark);
+      map.geoObjects.add(cityCollection);
+    }
+
+    document.querySelectorAll(".contact-shop__item").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        var cityId = e.currentTarget.getAttribute("value");
+        document.querySelector(".contact-shop__input").setAttribute("id", cityId);
+      });
     });
-    myMap.geoObjects.add(myPlacemark1).add(myPlacemark2);
-  });
+    document.querySelector(".contact-shop__btn").addEventListener("click", function (e) {
+      var inputId = document.querySelector(".contact-shop__input").getAttribute("id");
+
+      if (placemarkList[inputId]) {
+        placemarkList[inputId].events.fire("click");
+      } else {
+        document.querySelector(".modal-search").classList.add("active");
+      }
+    });
+  }
 }
 
 /***/ }),
@@ -1235,8 +1315,12 @@ var handlerActive = function handlerActive(event, popup) {
 };
 
 if (popup && closeBtn) {
-  popup.addEventListener("click", handlerActive);
-  closeBtn.addEventListener("click", hidePopup);
+  popup.addEventListener("click", function (e) {
+    return handlerActive(e, popup);
+  });
+  closeBtn.addEventListener("click", function () {
+    return hidePopup(popup);
+  });
 } // Form popup
 
 
@@ -1333,6 +1417,287 @@ handles.forEach(function (el) {
 
 /***/ }),
 
+/***/ "./js/search-dropdown.js":
+/*!*******************************!*\
+  !*** ./js/search-dropdown.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var csSelector = document.querySelector(".contact-shop__selected");
+
+if (csSelector) {
+  var csInput = csSelector.querySelector(".contact-shop__input");
+  var csList = csSelector.querySelector(".contact-shop__list");
+  var csOptions = csList.querySelectorAll(".contact-shop__item");
+  var aOptions = Array.from(csOptions);
+  var csState = "initial";
+  csSelector.setAttribute("role", "combobox");
+  csSelector.setAttribute("aria-haspopup", "listbox");
+  csSelector.setAttribute("aria-owns", "custom-select-list");
+  csInput.setAttribute("aria-autocomplete", "both");
+  csInput.setAttribute("aria-controls", "custom-select-list");
+  csList.setAttribute("role", "listbox");
+  csOptions.forEach(function (option) {
+    option.setAttribute("role", "option");
+    option.setAttribute("tabindex", "-1");
+  });
+  csSelector.addEventListener("click", function (e) {
+    var currentFocus = findFocus();
+
+    switch (csState) {
+      case "initial":
+        toggleList("Open");
+        setState("opened");
+        break;
+
+      case "opened":
+        if (currentFocus === csInput) {
+          toggleList("Shut");
+          setState("initial");
+        } else if (currentFocus.tagName === "LI") {
+          makeChoice(currentFocus);
+          toggleList("Shut");
+          setState("closed");
+        }
+
+        break;
+
+      case "filtered":
+        if (currentFocus.tagName === "LI") {
+          makeChoice(currentFocus);
+          toggleList("Shut");
+          setState("closed");
+        }
+
+        break;
+
+      case "closed":
+        toggleList("Open");
+        setState("filtered");
+        break;
+    }
+  });
+  csSelector.addEventListener("keyup", function (e) {
+    doKeyAction(e.key);
+  });
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".contact-shop__selected")) {
+      toggleList("Shut");
+      setState("initial");
+    }
+  });
+
+  function toggleList(whichWay) {
+    if (whichWay === "Open") {
+      csList.classList.remove("hidden-all");
+      csSelector.setAttribute("aria-expanded", "true");
+    } else {
+      csList.classList.add("hidden-all");
+      csSelector.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  function findFocus() {
+    var focusPoint = document.activeElement;
+    return focusPoint;
+  }
+
+  function moveFocus(fromHere, toThere) {
+    var aCurrentOptions = aOptions.filter(function (option) {
+      if (option.style.display === "") {
+        return true;
+      }
+    });
+
+    if (aCurrentOptions.length === 0) {
+      return;
+    }
+
+    if (toThere === "input") {
+      csInput.focus();
+    }
+
+    switch (fromHere) {
+      case csInput:
+        if (toThere === "forward") {
+          aCurrentOptions[0].focus();
+        } else if (toThere === "back") {
+          aCurrentOptions[aCurrentOptions.length - 1].focus();
+        }
+
+        break;
+
+      case csOptions[0]:
+        if (toThere === "forward") {
+          aCurrentOptions[1].focus();
+        } else if (toThere === "back") {
+          csInput.focus();
+        }
+
+        break;
+
+      case csOptions[csOptions.length - 1]:
+        if (toThere === "forward") {
+          aCurrentOptions[0].focus();
+        } else if (toThere === "back") {
+          aCurrentOptions[aCurrentOptions.length - 2].focus();
+        }
+
+        break;
+
+      default:
+        var currentItem = findFocus();
+        var whichOne = aCurrentOptions.indexOf(currentItem);
+
+        if (toThere === "forward") {
+          var nextOne = aCurrentOptions[whichOne + 1];
+          nextOne.focus();
+        } else if (toThere === "back" && whichOne > 0) {
+          var previousOne = aCurrentOptions[whichOne - 1];
+          previousOne.focus();
+        } else {
+          csInput.focus();
+        }
+
+        break;
+    }
+  }
+
+  function doFilter() {
+    var terms = csInput.value;
+    var aFilteredOptions = aOptions.filter(function (option) {
+      if (option.innerText.toUpperCase().includes(terms.toUpperCase())) {
+        document.querySelector(".contact-shop__btn").removeAttribute("data-modal-path");
+        return true;
+      } else {
+        csInput.classList.remove("contact-shop__input-full");
+        csInput.removeAttribute("id");
+        document.querySelector(".contact-shop__btn").setAttribute("data-modal-path", "emptySearch");
+      }
+    });
+    csOptions.forEach(function (option) {
+      return option.style.display = "none";
+    });
+    aFilteredOptions.forEach(function (option) {
+      option.style.display = "";
+    });
+  }
+
+  function makeChoice(whichOption) {
+    var optionTitle = whichOption.querySelector(".contact-shop__item-title");
+    csInput.value = optionTitle.textContent;
+    moveFocus(document.activeElement, "input");
+
+    if (csInput.value === "") {
+      csInput.classList.remove("contact-shop__input-full");
+      csInput.removeAttribute("id");
+    } else {
+      csInput.classList.add("contact-shop__input-full");
+    }
+  }
+
+  function setState(newState) {
+    switch (newState) {
+      case "initial":
+        csState = "initial";
+        break;
+
+      case "opened":
+        csState = "opened";
+        break;
+
+      case "filtered":
+        csState = "filtered";
+        break;
+
+      case "closed":
+        csState = "closed";
+    }
+  }
+
+  function doKeyAction(whichKey) {
+    var currentFocus = findFocus();
+
+    switch (whichKey) {
+      case "Enter":
+        if (csState === "initial") {
+          toggleList("Open");
+          setState("opened");
+        } else if (csState === "opened" && currentFocus.tagName === "LI") {
+          makeChoice(currentFocus);
+          toggleList("Shut");
+          setState("closed");
+        } else if (csState === "opened" && currentFocus === csInput) {
+          toggleList("Shut");
+          setState("closed");
+        } else if (csState === "filtered" && currentFocus.tagName === "LI") {
+          makeChoice(currentFocus);
+          toggleList("Shut");
+          setState("closed");
+        } else if (csState === "filtered" && currentFocus === csInput) {
+          toggleList("Open");
+          setState("opened");
+        } else {
+          toggleList("Open");
+          setState("filtered");
+        }
+
+        break;
+
+      case "Escape":
+        if (csState === "opened" || csState === "filtered") {
+          toggleList("Shut");
+          setState("initial");
+        }
+
+        break;
+
+      case "ArrowDown":
+        if (csState === "initial" || csState === "closed") {
+          toggleList("Open");
+          moveFocus(csInput, "forward");
+          setState("opened");
+        } else {
+          toggleList("Open");
+          moveFocus(currentFocus, "forward");
+        }
+
+        break;
+
+      case "ArrowUp":
+        if (csState === "initial" || csState === "closed") {
+          toggleList("Open");
+          moveFocus(csInput, "back");
+          setState("opened");
+        } else {
+          moveFocus(currentFocus, "back");
+        }
+
+        break;
+
+      default:
+        if (csState === "initial") {
+          toggleList("Open");
+          doFilter();
+          setState("filtered");
+        } else if (csState === "opened") {
+          doFilter();
+          setState("filtered");
+        } else if (csState === "closed") {
+          doFilter();
+          setState("filtered");
+        } else {
+          doFilter();
+        }
+
+        break;
+    }
+  }
+}
+
+/***/ }),
+
 /***/ "./js/show-more.js":
 /*!*************************!*\
   !*** ./js/show-more.js ***!
@@ -1382,6 +1747,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var duration = 3000;
 var swiperPromo = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".js-promo-swiper", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   direction: "horizontal",
   slidesPerGroup: 1,
   slidesPerColumn: 1,
@@ -1424,6 +1791,8 @@ swiperPromo.on("slideChangeTransitionEnd", function () {// progressBars.forEach(
   // });
 });
 var offersSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".js-special-offers-swiper", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   direction: "horizontal",
   slidesPerColumn: 1,
   slidesPerView: "auto",
@@ -1446,6 +1815,8 @@ var offersSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".j
   }
 });
 var usefulSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".js-useful-swiper", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   direction: "horizontal",
   slidesPerColumn: 1,
   slidesPerView: "auto",
@@ -1469,6 +1840,8 @@ var usefulSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".j
   }
 });
 var catalogSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".js-catalog-products-swiper", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   direction: "horizontal",
   slidesPerColumnFill: "row",
   breakpoints: {
@@ -1512,16 +1885,19 @@ var catalogSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".
   }
 });
 var productSliderNav = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".slider-nav", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   slideClass: "slider-nav__item",
   direction: "horizontal",
   freeMode: true,
   breakpoints: {
     1025: {
+      direction: "horizontal",
       slidesPerView: 4,
       spaceBetween: 20
     },
     890: {
-      direction: "horizontal",
+      direction: "vertical",
       spaceBetween: 20,
       slidesPerView: 4
     },
@@ -1538,6 +1914,8 @@ var productSliderNav = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 var productSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".product-slider", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   slideClass: "product-slider__item",
   slidesPerView: 1,
   initialSlide: 4,
@@ -1549,6 +1927,8 @@ var productSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".
   }
 });
 var sliderThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.modal-thumbs__slider-container', {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   slideClass: 'modal-thumbs__slide',
   spaceBetween: 10,
   direction: 'horizontal',
@@ -1573,6 +1953,8 @@ var sliderThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.m
   }
 });
 var sliderImages = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.modal-slider__container', {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   slideClass: 'modal-slider__item',
   slidesPerView: 1,
   initialSlide: 4,
@@ -1588,6 +1970,8 @@ var sliderImages = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.m
   }
 });
 var productSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".js-product-swiper", {
+  resizeObserver: true,
+  updateOnWindowResize: true,
   direction: "horizontal",
   breakpoints: {
     300: {
