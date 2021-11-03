@@ -84,6 +84,11 @@
     & svg {
       width: 172px;
       height: 117px;
+
+      @include mobile() {
+        width: 72px;
+        height: 50px;
+      }
     }
   }
 
@@ -95,7 +100,7 @@
     text-align: center;
 
     @include mobile() {
-      font-size: 27px;
+      font-size: 16px;
     }
   }
 }
