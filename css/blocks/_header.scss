@@ -281,7 +281,7 @@
       z-index: -1;
 
       &.active {
-        z-index: 2;
+        z-index: 300;
         transform: translateY(0);
         transition: transform 0.3s;
       }
