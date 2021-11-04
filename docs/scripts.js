@@ -1174,7 +1174,6 @@ var _typeof = "function" == typeof Symbol && "symbol" == _typeof2(Symbol.iterato
 /***/ (function(module, exports) {
 
 var contact = document.querySelector(".contact");
-console.log(123);
 var shopList = [{
   name: "SitDownPls на Солянке",
   adress: "м. Китай-город, ул. Солянка, д.24",
@@ -1844,6 +1843,7 @@ var catalogSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".
   updateOnWindowResize: true,
   direction: "horizontal",
   slidesPerColumnFill: "row",
+  //autoHeight: true,
   breakpoints: {
     1: {
       slidesPerGroup: 2,

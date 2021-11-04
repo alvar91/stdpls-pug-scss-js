@@ -194,8 +194,6 @@ const productSliderNav = new Swiper(".slider-nav", {
   },
 });
 
-
-
 const productSlider = new Swiper(".product-slider", {
   resizeObserver: true,
   updateOnWindowResize: true,

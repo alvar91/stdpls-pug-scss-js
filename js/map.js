@@ -1,5 +1,5 @@
 const contact = document.querySelector(".contact");
-console.log(123);
+
 let shopList = [
   {
     name: "SitDownPls на Солянке",

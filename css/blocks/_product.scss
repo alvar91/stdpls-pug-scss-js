@@ -119,6 +119,7 @@
   }
 
   &__item {
+    height: auto;
     width: calc((100% - 95px)/ 4);
 
     @include laptop() {
@@ -156,6 +157,10 @@
     justify-content: space-between;
     background-color: var(--grey-light);
     border-radius: 10px;
+
+    @include mobile() {
+      height: 96%;
+    }
   }
 
   &__index {

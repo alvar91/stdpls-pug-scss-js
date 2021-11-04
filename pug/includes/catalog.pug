@@ -24,7 +24,7 @@ include ./mixins.pug
                             h3.catalog-filter__caption
                                 | Категория
                             .catalog-filter__bottom
-                                ul.catalog-filter__items.catalog-filter__category.js-items-container
+                                .catalog-filter__items.catalog-filter__category.js-items-container
                                     +filterList(filterItems, "var(--catalog-category)", ["input-checkbox", "filter-checkbox", "checkbox-category"])
 
                                     - if(filterItemsLength > maxItemsCount)
@@ -51,7 +51,7 @@ include ./mixins.pug
                             h3.catalog-filter__caption
                                 | Скидка
                             .catalog-filter__bottom.js-items-container
-                                ul.catalog-filter__items.catalog-filter__color.js-items-container
+                                .catalog-filter__items.catalog-filter__color.js-items-container
                                     +filterList(costItems, "var(--catalog-cost)", ["input-checkbox", "filter-checkbox", "checkbox-sale"])
 
                         .catalog-filter__prop
@@ -59,7 +59,7 @@ include ./mixins.pug
                             h3.catalog-filter__caption
                                 | Цвет
                             .filters__inner
-                                ul.catalog-filter__items.catalog-filter__color.js-items-container
+                                .catalog-filter__items.catalog-filter__color.js-items-container
                                     +filterList(colorItems, "var(--catalog-color)", ["input-checkbox", "filter-checkbox", "checkbox-color"])
 
                                     - if(colorItemsLength > maxItemsCount)
@@ -90,7 +90,7 @@ include ./mixins.pug
 
                 .catalog__main
                     .swiper-container.catalog__products-field.js-catalog-products-swiper
-                        ul.swiper-wrapper.catalog__list
+                        .swiper-wrapper.catalog__list
                             +catalogList(catalogProducts)
 
                     .catalog-pagination.swiper-pagination
