@@ -75,7 +75,7 @@ mixin productsList(products)
                 .card__wrapper
                     picture
                         source(type="image/webp" srcset=`images/${product.image}.webp`)
-                        img(class="card__img" src=`images/${product.image}.png` alt=`${product.name}`)
+                        img(class="card__img" src=`images/${product.image}.png` loading="lazy" alt=`${product.name}`)
                     .card__description
                         h3.card__title
                             a(class="link card__link" href="/product.html")
@@ -90,7 +90,7 @@ mixin productsList(products)
                         if product.scheme
                             picture
                                 source(srcset=`images/${product.scheme}.webp` type="image/webp")
-                                img(class="card__scheme" src=`images/${product.scheme}.png` alt="scheme")
+                                img(class="card__scheme" src=`images/${product.scheme}.png` loading="lazy" alt="scheme")
 
 mixin ratingStar()
     <svg role="img" aria-label="Изображение иконки звезды" class="rating-star" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +112,7 @@ mixin ratingList(products)
                 .rating__wrapper
                     picture
                         source(type="image/webp" srcset=`images/${product.image}.webp`)
-                        img(class="rating__img" src=`images/${product.image}.png` alt=`Изображение товара`)
+                        img(class="rating__img" src=`images/${product.image}.png` loading="lazy" alt=`Изображение товара`)
                 .rating__description
                     h3.rating__title
                         a(class="link rating__link" href="/product.html")
@@ -154,7 +154,7 @@ mixin categoriesList(categories)
                         source(media="(max-width: 576px)" srcset=`images/${imageMobile}.webp` type="image/webp")
                         source(media="(max-width: 576px)" srcset=`images/${imageMobile}.png`)
                     source(srcset=`images/${categorie.image}.webp` type="image/webp")
-                    img(class="top__card-img" src=`images/${categorie.image}.png` alt=`${categorie.image}`)
+                    img(class="top__card-img" src=`images/${categorie.image}.png` loading="lazy" alt=`${categorie.image}`)
                 a(class="top__card-link" href="/catalog.html")
                     span.link-inner
                         | В каталог
@@ -171,7 +171,7 @@ mixin usefulList(posts)
                     | Заголовок статьи
                 picture
                     source(srcset=`images/${post.image}.webp` type="image/webp")
-                    img(class="useful__img" src=`images/${post.image}.jpg` alt="image")
+                    img(class="useful__img" src=`images/${post.image}.jpg` loading="lazy" alt="image")
                 .useful__description
                     p.useful__content
                         | #{post.content}
@@ -237,7 +237,7 @@ mixin catalogList(products)
                 .catalog__wrapper
                     picture
                         source(type="image/webp" srcset=`images/${product.image}.webp`)
-                        img(class="catalog__img" src=`images/${product.image}.png` alt=`Изображение товара`)
+                        img(class="catalog__img" src=`images/${product.image}.png` loading="lazy" alt=`Изображение товара`)
                 .catalog__description
                     h3.catalog__title
                         a(class="link catalog__link" href="/product.html")
@@ -265,7 +265,7 @@ mixin productList(products)
                 .product__wrapper
                     picture
                         source(type="image/webp" srcset=`images/${product.image}.webp`)
-                        img(class="product__img" src=`images/${product.image}.png` alt=`Изображение товара`)
+                        img(class="product__img" src=`images/${product.image}.png` loading="lazy" alt=`Изображение товара`)
                 .product__description
                     h3.product__title
                         a(class="link product__link" href="/product.html")
