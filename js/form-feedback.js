@@ -64,6 +64,9 @@ if (form) {
             popup.classList.add("active");
 
             form.reset();
+            
+            const popupForm = document.querySelector(".js-popup-form");
+            if(popupForm) popupForm.classList.remove("active");
           }
         }
       };

@@ -473,6 +473,8 @@ if (form) {
             body.style.overflow = "hidden";
             popup.classList.add("active");
             form.reset();
+            var popupForm = document.querySelector(".js-popup-form");
+            if (popupForm) popupForm.classList.remove("active");
           }
         }
       };
@@ -1843,7 +1845,6 @@ var catalogSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".
   updateOnWindowResize: true,
   direction: "horizontal",
   slidesPerColumnFill: "row",
-  //autoHeight: true,
   breakpoints: {
     1: {
       slidesPerGroup: 2,
