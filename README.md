@@ -1,5 +1,4 @@
-# Выпускная работа студента Skillbox Варова А.П.
-Многостраничный сайт интернет-магазина
+# Многостраничный сайт интернет-магазина
 * [Главная](https://alvar91.github.io/stdpls-pug-scss-js/)
 * [Каталог](https://alvar91.github.io/stdpls-pug-scss-js/catalog.html)
 * [Карточка товара](https://alvar91.github.io/stdpls-pug-scss-js/product.html)
